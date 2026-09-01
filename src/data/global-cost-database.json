@@ -1,0 +1,4788 @@
+[
+  {
+    "city": "Hamilton",
+    "country": "Bermuda",
+    "currency": "USD",
+    "rent_or_kost_monthly": 1494,
+    "food_meal_avg": 30,
+    "transport_monthly": 134,
+    "grocery_basket": 108,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Hamilton",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Hamilton",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Hamilton",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Hamilton"
+    }
+  },
+  {
+    "city": "Zurich",
+    "country": "Switzerland",
+    "currency": "CHF",
+    "rent_or_kost_monthly": 1450,
+    "food_meal_avg": 28,
+    "transport_monthly": 85,
+    "grocery_basket": 90,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Zurich",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Zurich",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Zurich",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Zurich"
+    }
+  },
+  {
+    "city": "Basel",
+    "country": "Switzerland",
+    "currency": "CHF",
+    "rent_or_kost_monthly": 595,
+    "food_meal_avg": 23,
+    "transport_monthly": 86,
+    "grocery_basket": 91,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Basel",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Basel",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Basel",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Basel"
+    }
+  },
+  {
+    "city": "Lausanne",
+    "country": "Switzerland",
+    "currency": "CHF",
+    "rent_or_kost_monthly": 650,
+    "food_meal_avg": 22,
+    "transport_monthly": 88,
+    "grocery_basket": 88,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Lausanne",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Lausanne",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Lausanne",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Lausanne"
+    }
+  },
+  {
+    "city": "Bern",
+    "country": "Switzerland",
+    "currency": "CHF",
+    "rent_or_kost_monthly": 506,
+    "food_meal_avg": 20,
+    "transport_monthly": 82,
+    "grocery_basket": 87,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Bern",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Bern",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Bern",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Bern"
+    }
+  },
+  {
+    "city": "Geneva",
+    "country": "Switzerland",
+    "currency": "CHF",
+    "rent_or_kost_monthly": 1500,
+    "food_meal_avg": 29,
+    "transport_monthly": 70,
+    "grocery_basket": 95,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Geneva",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Geneva",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Geneva",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Geneva"
+    }
+  },
+  {
+    "city": "Reykjavik",
+    "country": "Iceland",
+    "currency": "USD",
+    "rent_or_kost_monthly": 832,
+    "food_meal_avg": 26,
+    "transport_monthly": 104,
+    "grocery_basket": 84,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Reykjavik",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Reykjavik",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Reykjavik",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Reykjavik"
+    }
+  },
+  {
+    "city": "Lugano",
+    "country": "Switzerland",
+    "currency": "CHF",
+    "rent_or_kost_monthly": 640,
+    "food_meal_avg": 21,
+    "transport_monthly": 88,
+    "grocery_basket": 79,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Lugano",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Lugano",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Lugano",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Lugano"
+    }
+  },
+  {
+    "city": "Stavanger",
+    "country": "Norway",
+    "currency": "NOK",
+    "rent_or_kost_monthly": 6084,
+    "food_meal_avg": 291,
+    "transport_monthly": 990,
+    "grocery_basket": 881,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Stavanger",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Stavanger",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Stavanger",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Stavanger"
+    }
+  },
+  {
+    "city": "Oslo",
+    "country": "Norway",
+    "currency": "NOK",
+    "rent_or_kost_monthly": 8500,
+    "food_meal_avg": 180,
+    "transport_monthly": 850,
+    "grocery_basket": 780,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Oslo",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Oslo",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Oslo",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Oslo"
+    }
+  },
+  {
+    "city": "Bergen",
+    "country": "Norway",
+    "currency": "NOK",
+    "rent_or_kost_monthly": 6167,
+    "food_meal_avg": 251,
+    "transport_monthly": 994,
+    "grocery_basket": 799,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Bergen",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Bergen",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Bergen",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Bergen"
+    }
+  },
+  {
+    "city": "New York",
+    "aliases": [
+      "NYC",
+      "New York City",
+      "Brooklyn",
+      "Queens",
+      "Manhattan"
+    ],
+    "country": "United States",
+    "iso2": "US",
+    "currency": "USD",
+    "rent_or_kost_monthly": 1450,
+    "food_meal_avg": 18,
+    "transport_monthly": 132,
+    "grocery_basket": 85,
+    "sources": {
+      "rent_url": "https://streeteasy.com/rentals/nyc",
+      "food_url": "https://eater.com/new-york",
+      "transport_url": "https://mta.info/fares",
+      "grocery_url": "https://traderjoes.com",
+      "community_note": "Verified from MTA: 30-Day Unlimited MetroCard/OMNY is $132! Room in shared apartment (Astoria, Bushwick, Crown Heights, Harlem) $1,200-$1,700, Deli/sit-down lunch $15-$22."
+    }
+  },
+  {
+    "city": "Trondheim",
+    "country": "Norway",
+    "currency": "NOK",
+    "rent_or_kost_monthly": 6244,
+    "food_meal_avg": 260,
+    "transport_monthly": 997,
+    "grocery_basket": 756,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Trondheim",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Trondheim",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Trondheim",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Trondheim"
+    }
+  },
+  {
+    "city": "San Francisco",
+    "aliases": [
+      "SF",
+      "Bay Area",
+      "Oakland",
+      "Berkeley"
+    ],
+    "country": "United States",
+    "iso2": "US",
+    "currency": "USD",
+    "rent_or_kost_monthly": 1550,
+    "food_meal_avg": 19,
+    "transport_monthly": 98,
+    "grocery_basket": 88,
+    "sources": {
+      "rent_url": "https://craigslist.org/sfc/roo",
+      "food_url": "https://sf.eater.com",
+      "transport_url": "https://sfmta.com",
+      "grocery_url": "https://safeway.com",
+      "community_note": "Muni A Pass (with BART in SF) $98, Room in Sunset/Richmond/Mission/Oakland $1,250-$1,850, Burrito/Pho/sit-down lunch $15-$22."
+    }
+  },
+  {
+    "city": "Honolulu",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 927,
+    "food_meal_avg": 17,
+    "transport_monthly": 108,
+    "grocery_basket": 82,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Honolulu",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Honolulu",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Honolulu",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Honolulu"
+    }
+  },
+  {
+    "city": "Anchorage",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 572,
+    "food_meal_avg": 16,
+    "transport_monthly": 92,
+    "grocery_basket": 82,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Anchorage",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Anchorage",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Anchorage",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Anchorage"
+    }
+  },
+  {
+    "city": "Brooklyn",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 1175,
+    "food_meal_avg": 19,
+    "transport_monthly": 119,
+    "grocery_basket": 71,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Brooklyn",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Brooklyn",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Brooklyn",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Brooklyn"
+    }
+  },
+  {
+    "city": "Washington",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 1019,
+    "food_meal_avg": 17,
+    "transport_monthly": 112,
+    "grocery_basket": 74,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Washington",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Washington",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Washington",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Washington"
+    }
+  },
+  {
+    "city": "Santa Rosa",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 822,
+    "food_meal_avg": 17,
+    "transport_monthly": 103,
+    "grocery_basket": 72,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Santa%20Rosa",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Santa%20Rosa",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Santa%20Rosa",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Santa%20Rosa"
+    }
+  },
+  {
+    "city": "Copenhagen",
+    "country": "Denmark",
+    "currency": "DKK",
+    "rent_or_kost_monthly": 5800,
+    "food_meal_avg": 140,
+    "transport_monthly": 650,
+    "grocery_basket": 550,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Copenhagen",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Copenhagen",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Copenhagen",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Copenhagen"
+    }
+  },
+  {
+    "city": "Charleston",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 669,
+    "food_meal_avg": 15,
+    "transport_monthly": 96,
+    "grocery_basket": 77,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Charleston",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Charleston",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Charleston",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Charleston"
+    }
+  },
+  {
+    "city": "Luxembourg",
+    "country": "Luxembourg",
+    "currency": "USD",
+    "rent_or_kost_monthly": 889,
+    "food_meal_avg": 20,
+    "transport_monthly": 106,
+    "grocery_basket": 60,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Luxembourg",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Luxembourg",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Luxembourg",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Luxembourg"
+    }
+  },
+  {
+    "city": "Bellevue",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 887,
+    "food_meal_avg": 16,
+    "transport_monthly": 106,
+    "grocery_basket": 67,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Bellevue",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Bellevue",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Bellevue",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Bellevue"
+    }
+  },
+  {
+    "city": "Seattle",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 1350,
+    "food_meal_avg": 18,
+    "transport_monthly": 99,
+    "grocery_basket": 82,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Seattle",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Seattle",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Seattle",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Seattle"
+    }
+  },
+  {
+    "city": "Tokyo",
+    "aliases": [
+      "Tokyo-to",
+      "Shibuya",
+      "Shinjuku",
+      "Nakano",
+      "Setagaya"
+    ],
+    "country": "Japan",
+    "iso2": "JP",
+    "currency": "JPY",
+    "rent_or_kost_monthly": 85000,
+    "food_meal_avg": 1000,
+    "transport_monthly": 11000,
+    "grocery_basket": 6200,
+    "sources": {
+      "rent_url": "https://suumo.jp/tokyo",
+      "food_url": "https://tabelog.com/tokyo",
+      "transport_url": "https://tokyometro.jp",
+      "grocery_url": "https://seiyu.co.jp",
+      "community_note": "Verified from SUUMO & Japanlife reddit: 1K apartment (outside Yamanote: Nakano, Nerima, Edogawa) ¥65k-¥90k, Teishoku/Ramen/Gyudon ¥750-¥1,100, Metro commuter pass ¥8k-¥14k."
+    }
+  },
+  {
+    "city": "Paris",
+    "aliases": [
+      "Île-de-France",
+      "Paris 11",
+      "Paris 18",
+      "Montmartre"
+    ],
+    "country": "France",
+    "iso2": "FR",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 820,
+    "food_meal_avg": 15,
+    "transport_monthly": 86.4,
+    "grocery_basket": 50,
+    "sources": {
+      "rent_url": "https://leboncoin.fr/locations/paris",
+      "food_url": "https://lefooding.com/paris",
+      "transport_url": "https://iledefrance-mobilites.fr/titres-et-tarifs/detail/forfait-navigo-mois",
+      "grocery_url": "https://monoprix.fr",
+      "community_note": "Verified from Île-de-France Mobilités: Forfait Navigo Mois is exactly €86.40 for all 5 zones! Small studio / Colocation outside center €720-€950, Plat du jour bistro lunch €13-€18."
+    }
+  },
+  {
+    "city": "Odense",
+    "country": "Denmark",
+    "currency": "DKK",
+    "rent_or_kost_monthly": 2315,
+    "food_meal_avg": 155,
+    "transport_monthly": 557,
+    "grocery_basket": 380,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Odense",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Odense",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Odense",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Odense"
+    }
+  },
+  {
+    "city": "Berkeley",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 1108,
+    "food_meal_avg": 18,
+    "transport_monthly": 116,
+    "grocery_basket": 70,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Berkeley",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Berkeley",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Berkeley",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Berkeley"
+    }
+  },
+  {
+    "city": "Jersey City",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 893,
+    "food_meal_avg": 16,
+    "transport_monthly": 107,
+    "grocery_basket": 73,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Jersey%20City",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Jersey%20City",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Jersey%20City",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Jersey%20City"
+    }
+  },
+  {
+    "city": "Aalborg",
+    "country": "Denmark",
+    "currency": "DKK",
+    "rent_or_kost_monthly": 2475,
+    "food_meal_avg": 133,
+    "transport_monthly": 565,
+    "grocery_basket": 363,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Aalborg",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Aalborg",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Aalborg",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Aalborg"
+    }
+  },
+  {
+    "city": "Amsterdam",
+    "aliases": [
+      "Noord-Holland",
+      "De Pijp",
+      "Oud-West"
+    ],
+    "country": "Netherlands",
+    "iso2": "NL",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 920,
+    "food_meal_avg": 16,
+    "transport_monthly": 95,
+    "grocery_basket": 55,
+    "sources": {
+      "rent_url": "https://kamernet.nl/huren/kamer-amsterdam",
+      "food_url": "https://iamsterdam.com/food-drink",
+      "transport_url": "https://gvb.nl",
+      "grocery_url": "https://ah.nl",
+      "community_note": "GVB Zone monthly pass ~€95, Room in shared flat (Noord, Nieuw-West, Oost) €750-€1,150, Casual cafe lunch €13-€19."
+    }
+  },
+  {
+    "city": "Seoul",
+    "aliases": [
+      "Seoul Special City",
+      "Gangnam",
+      "Mapo",
+      "Hongdae"
+    ],
+    "country": "South Korea",
+    "iso2": "KR",
+    "currency": "KRW",
+    "rent_or_kost_monthly": 620000,
+    "food_meal_avg": 9000,
+    "transport_monthly": 65000,
+    "grocery_basket": 55000,
+    "sources": {
+      "rent_url": "https://dabangapp.com/seoul",
+      "food_url": "https://mangoplate.com/seoul",
+      "transport_url": "https://seoul.go.kr/climate-card",
+      "grocery_url": "https://emart.com",
+      "community_note": "Verified from Seoul Metropolitan Govt & Dabang: Climate Card unlimited subway & bus ₩62,000-₩65,000/mo, One-room outside center ₩500k-₩750k, Bibimbap/Jjigae/Gukbap ₩7.5k-₩11k."
+    }
+  },
+  {
+    "city": "Arhus",
+    "country": "Denmark",
+    "currency": "DKK",
+    "rent_or_kost_monthly": 3150,
+    "food_meal_avg": 130,
+    "transport_monthly": 595,
+    "grocery_basket": 358,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Arhus",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Arhus",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Arhus",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Arhus"
+    }
+  },
+  {
+    "city": "London",
+    "aliases": [
+      "Greater London",
+      "Stratford",
+      "Camden",
+      "Croydon"
+    ],
+    "country": "United Kingdom",
+    "iso2": "GB",
+    "currency": "GBP",
+    "rent_or_kost_monthly": 880,
+    "food_meal_avg": 15,
+    "transport_monthly": 165,
+    "grocery_basket": 42,
+    "sources": {
+      "rent_url": "https://spareroom.co.uk/london",
+      "food_url": "https://timeout.com/london/food-drink",
+      "transport_url": "https://tfl.gov.uk/fares",
+      "grocery_url": "https://tesco.com",
+      "community_note": "Verified from TfL & SpareRoom: Zone 2-3 Travelcard £165/mo, Room in flatshare (Stratford, Hackney, Lewisham, Croydon) £750-£1,050, Pub/casual sit-down meal £12-£18."
+    }
+  },
+  {
+    "city": "Oakland",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 1119,
+    "food_meal_avg": 16,
+    "transport_monthly": 117,
+    "grocery_basket": 66,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Oakland",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Oakland",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Oakland",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Oakland"
+    }
+  },
+  {
+    "city": "Helsinki",
+    "country": "Finland",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 476,
+    "food_meal_avg": 17,
+    "transport_monthly": 82,
+    "grocery_basket": 48,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Helsinki",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Helsinki",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Helsinki",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Helsinki"
+    }
+  },
+  {
+    "city": "Boston",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 1103,
+    "food_meal_avg": 17,
+    "transport_monthly": 116,
+    "grocery_basket": 64,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Boston",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Boston",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Boston",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Boston"
+    }
+  },
+  {
+    "city": "Singapore",
+    "aliases": [
+      "SG",
+      "Lion City"
+    ],
+    "country": "Singapore",
+    "iso2": "SG",
+    "currency": "SGD",
+    "rent_or_kost_monthly": 1150,
+    "food_meal_avg": 6.8,
+    "transport_monthly": 128,
+    "grocery_basket": 64,
+    "sources": {
+      "rent_url": "https://propertyguru.com.sg/room-rental",
+      "food_url": "https://burpple.com/sg",
+      "transport_url": "https://transitlink.com.sg",
+      "grocery_url": "https://fairprice.com.sg",
+      "community_note": "Verified from TransitLink & PropertyGuru: Adult Monthly Travel Pass unlimited bus/MRT S$128, HDB common room in Jurong/Kallang/Tampines S$950-S$1,350, Hawker Chicken Rice/Laksa S$5.50-S$8.50."
+    }
+  },
+  {
+    "city": "Dublin",
+    "country": "Ireland",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 920,
+    "food_meal_avg": 16,
+    "transport_monthly": 90,
+    "grocery_basket": 50,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Dublin",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Dublin",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Dublin",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Dublin"
+    }
+  },
+  {
+    "city": "Sydney",
+    "aliases": [
+      "NSW",
+      "Inner West",
+      "Parramatta",
+      "Surry Hills"
+    ],
+    "country": "Australia",
+    "iso2": "AU",
+    "currency": "AUD",
+    "rent_or_kost_monthly": 1350,
+    "food_meal_avg": 19,
+    "transport_monthly": 200,
+    "grocery_basket": 85,
+    "sources": {
+      "rent_url": "https://flatmates.com.au/sydney",
+      "food_url": "https://broadsheet.com.au/sydney",
+      "transport_url": "https://transportnsw.info/tickets-opal",
+      "grocery_url": "https://woolworths.com.au",
+      "community_note": "Verified from Transport for NSW: Opal weekly cap x4 gives unlimited transit ~A$200/mo, Room in Newtown/Parramatta/Marrickville A$1,100-A$1,650, Pub/Thai/casual lunch A$15-A$22."
+    }
+  },
+  {
+    "city": "Hartford",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 603,
+    "food_meal_avg": 15,
+    "transport_monthly": 93,
+    "grocery_basket": 71,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Hartford",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Hartford",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Hartford",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Hartford"
+    }
+  },
+  {
+    "city": "Albany",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 450,
+    "food_meal_avg": 16,
+    "transport_monthly": 86,
+    "grocery_basket": 66,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Albany",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Albany",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Albany",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Albany"
+    }
+  },
+  {
+    "city": "Philadelphia",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 716,
+    "food_meal_avg": 15,
+    "transport_monthly": 99,
+    "grocery_basket": 63,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Philadelphia",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Philadelphia",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Philadelphia",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Philadelphia"
+    }
+  },
+  {
+    "city": "Tampere",
+    "country": "Finland",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 350,
+    "food_meal_avg": 15,
+    "transport_monthly": 77,
+    "grocery_basket": 54,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Tampere",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Tampere",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Tampere",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Tampere"
+    }
+  },
+  {
+    "city": "Milton Keynes",
+    "country": "United Kingdom",
+    "currency": "GBP",
+    "rent_or_kost_monthly": 395,
+    "food_meal_avg": 12,
+    "transport_monthly": 70,
+    "grocery_basket": 48,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Milton%20Keynes",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Milton%20Keynes",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Milton%20Keynes",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Milton%20Keynes"
+    }
+  },
+  {
+    "city": "Grenoble",
+    "country": "France",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 311,
+    "food_meal_avg": 13,
+    "transport_monthly": 75,
+    "grocery_basket": 58,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Grenoble",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Grenoble",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Grenoble",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Grenoble"
+    }
+  },
+  {
+    "city": "Irvine",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 953,
+    "food_meal_avg": 15,
+    "transport_monthly": 109,
+    "grocery_basket": 63,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Irvine",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Irvine",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Irvine",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Irvine"
+    }
+  },
+  {
+    "city": "Lyon",
+    "aliases": [
+      "Rhône",
+      "Villeurbanne"
+    ],
+    "country": "France",
+    "iso2": "FR",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 560,
+    "food_meal_avg": 13,
+    "transport_monthly": 69,
+    "grocery_basket": 44,
+    "sources": {
+      "rent_url": "https://leboncoin.fr/locations/lyon",
+      "food_url": "https://lyonresto.com",
+      "transport_url": "https://tcl.fr",
+      "grocery_url": "https://carrefour.fr",
+      "community_note": "TCL monthly transit pass €69, Studio / Colocation in Villeurbanne/Guillotière €460-€680, Bouchon/Bistro lunch menu €11-€16."
+    }
+  },
+  {
+    "city": "Long Beach",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 800,
+    "food_meal_avg": 16,
+    "transport_monthly": 102,
+    "grocery_basket": 64,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Long%20Beach",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Long%20Beach",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Long%20Beach",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Long%20Beach"
+    }
+  },
+  {
+    "city": "Linz",
+    "country": "Austria",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 356,
+    "food_meal_avg": 15,
+    "transport_monthly": 77,
+    "grocery_basket": 53,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Linz",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Linz",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Linz",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Linz"
+    }
+  },
+  {
+    "city": "Los Angeles",
+    "aliases": [
+      "LA",
+      "SoCal",
+      "Koreatown",
+      "Silver Lake",
+      "Culver City"
+    ],
+    "country": "United States",
+    "iso2": "US",
+    "currency": "USD",
+    "rent_or_kost_monthly": 1350,
+    "food_meal_avg": 17,
+    "transport_monthly": 72,
+    "grocery_basket": 80,
+    "sources": {
+      "rent_url": "https://apartments.com/los-angeles-ca",
+      "food_url": "https://la.eater.com",
+      "transport_url": "https://metro.net/fares",
+      "grocery_url": "https://traderjoes.com",
+      "community_note": "Metro 30-Day Pass is $72, Room in Koreatown/Palms/Glendale/North Hollywood $1,100-$1,650, Taco truck/Korean/casual meal $13-$20."
+    }
+  },
+  {
+    "city": "Tel Aviv-Yafo",
+    "country": "Israel",
+    "currency": "ILS",
+    "rent_or_kost_monthly": 2177,
+    "food_meal_avg": 64,
+    "transport_monthly": 343,
+    "grocery_basket": 196,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Tel%20Aviv-Yafo",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Tel%20Aviv-Yafo",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Tel%20Aviv-Yafo",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Tel%20Aviv-Yafo"
+    }
+  },
+  {
+    "city": "Barrie",
+    "country": "Canada",
+    "currency": "CAD",
+    "rent_or_kost_monthly": 573,
+    "food_meal_avg": 23,
+    "transport_monthly": 116,
+    "grocery_basket": 85,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Barrie",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Barrie",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Barrie",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Barrie"
+    }
+  },
+  {
+    "city": "Chicago",
+    "aliases": [
+      "Chitown",
+      "Windy City",
+      "Logan Square",
+      "Pilsen"
+    ],
+    "country": "United States",
+    "iso2": "US",
+    "currency": "USD",
+    "rent_or_kost_monthly": 950,
+    "food_meal_avg": 15,
+    "transport_monthly": 75,
+    "grocery_basket": 72,
+    "sources": {
+      "rent_url": "https://domu.com/chicago/apartments",
+      "food_url": "https://chicago.eater.com",
+      "transport_url": "https://transitchicago.com/fares",
+      "grocery_url": "https://jewelosco.com",
+      "community_note": "CTA 30-Day Pass $75, Room in Logan Square/Pilsen/Bridgeport/Avondale $750-$1,200, Casual diner/taqueria lunch $12-$18."
+    }
+  },
+  {
+    "city": "Stockholm",
+    "country": "Sweden",
+    "currency": "SEK",
+    "rent_or_kost_monthly": 7200,
+    "food_meal_avg": 135,
+    "transport_monthly": 970,
+    "grocery_basket": 650,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Stockholm",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Stockholm",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Stockholm",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Stockholm"
+    }
+  },
+  {
+    "city": "Florence",
+    "country": "Italy",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 388,
+    "food_meal_avg": 16,
+    "transport_monthly": 78,
+    "grocery_basket": 49,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Florence",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Florence",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Florence",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Florence"
+    }
+  },
+  {
+    "city": "Boulder",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 776,
+    "food_meal_avg": 14,
+    "transport_monthly": 101,
+    "grocery_basket": 65,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Boulder",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Boulder",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Boulder",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Boulder"
+    }
+  },
+  {
+    "city": "The Hague (Den Haag)",
+    "country": "Netherlands",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 477,
+    "food_meal_avg": 16,
+    "transport_monthly": 82,
+    "grocery_basket": 46,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/The%20Hague%20(Den%20Haag)",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/The%20Hague%20(Den%20Haag)",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/The%20Hague%20(Den%20Haag)",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/The%20Hague%20(Den%20Haag)"
+    }
+  },
+  {
+    "city": "Reading",
+    "country": "United Kingdom",
+    "currency": "GBP",
+    "rent_or_kost_monthly": 448,
+    "food_meal_avg": 13,
+    "transport_monthly": 73,
+    "grocery_basket": 43,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Reading",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Reading",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Reading",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Reading"
+    }
+  },
+  {
+    "city": "Auckland",
+    "aliases": [
+      "Tamaki Makaurau",
+      "Ponsonby",
+      "Mount Eden"
+    ],
+    "country": "New Zealand",
+    "iso2": "NZ",
+    "currency": "NZD",
+    "rent_or_kost_monthly": 1050,
+    "food_meal_avg": 20,
+    "transport_monthly": 190,
+    "grocery_basket": 90,
+    "sources": {
+      "rent_url": "https://trademe.co.nz/flatmates-wanted/auckland",
+      "food_url": "https://theurbanlist.com/nz/auckland",
+      "transport_url": "https://at.govt.nz/bus-train-ferry/fares-discounts",
+      "grocery_url": "https://paknsave.co.nz",
+      "community_note": "AT HOP monthly bus/train pass NZ$190, Room in Kingsland/Mt Albert/Newmarket NZ$850-NZ$1,300, Casual cafe lunch NZ$16-NZ$24."
+    }
+  },
+  {
+    "city": "Jerusalem",
+    "country": "Israel",
+    "currency": "ILS",
+    "rent_or_kost_monthly": 1842,
+    "food_meal_avg": 63,
+    "transport_monthly": 328,
+    "grocery_basket": 191,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Jerusalem",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Jerusalem",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Jerusalem",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Jerusalem"
+    }
+  },
+  {
+    "city": "Bordeaux",
+    "country": "France",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 348,
+    "food_meal_avg": 14,
+    "transport_monthly": 77,
+    "grocery_basket": 53,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Bordeaux",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Bordeaux",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Bordeaux",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Bordeaux"
+    }
+  },
+  {
+    "city": "Utrecht",
+    "country": "Netherlands",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 500,
+    "food_meal_avg": 16,
+    "transport_monthly": 83,
+    "grocery_basket": 46,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Utrecht",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Utrecht",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Utrecht",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Utrecht"
+    }
+  },
+  {
+    "city": "Toulouse",
+    "country": "France",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 307,
+    "food_meal_avg": 14,
+    "transport_monthly": 75,
+    "grocery_basket": 52,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Toulouse",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Toulouse",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Toulouse",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Toulouse"
+    }
+  },
+  {
+    "city": "San Jose",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 1111,
+    "food_meal_avg": 17,
+    "transport_monthly": 117,
+    "grocery_basket": 60,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/San%20Jose",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/San%20Jose",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/San%20Jose",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/San%20Jose"
+    }
+  },
+  {
+    "city": "Burlington",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 606,
+    "food_meal_avg": 16,
+    "transport_monthly": 94,
+    "grocery_basket": 62,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Burlington",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Burlington",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Burlington",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Burlington"
+    }
+  },
+  {
+    "city": "Pittsburgh",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 554,
+    "food_meal_avg": 13,
+    "transport_monthly": 91,
+    "grocery_basket": 61,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Pittsburgh",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Pittsburgh",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Pittsburgh",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Pittsburgh"
+    }
+  },
+  {
+    "city": "Nice",
+    "country": "France",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 397,
+    "food_meal_avg": 16,
+    "transport_monthly": 79,
+    "grocery_basket": 54,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Nice",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Nice",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Nice",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Nice"
+    }
+  },
+  {
+    "city": "Miami",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 838,
+    "food_meal_avg": 16,
+    "transport_monthly": 104,
+    "grocery_basket": 57,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Miami",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Miami",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Miami",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Miami"
+    }
+  },
+  {
+    "city": "Brussels",
+    "country": "Belgium",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 427,
+    "food_meal_avg": 16,
+    "transport_monthly": 80,
+    "grocery_basket": 50,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Brussels",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Brussels",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Brussels",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Brussels"
+    }
+  },
+  {
+    "city": "Graz",
+    "country": "Austria",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 310,
+    "food_meal_avg": 11,
+    "transport_monthly": 75,
+    "grocery_basket": 56,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Graz",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Graz",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Graz",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Graz"
+    }
+  },
+  {
+    "city": "Santa Barbara",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 996,
+    "food_meal_avg": 18,
+    "transport_monthly": 111,
+    "grocery_basket": 57,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Santa%20Barbara",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Santa%20Barbara",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Santa%20Barbara",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Santa%20Barbara"
+    }
+  },
+  {
+    "city": "Sacramento",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 642,
+    "food_meal_avg": 16,
+    "transport_monthly": 95,
+    "grocery_basket": 59,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Sacramento",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Sacramento",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Sacramento",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Sacramento"
+    }
+  },
+  {
+    "city": "Strasbourg",
+    "country": "France",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 307,
+    "food_meal_avg": 14,
+    "transport_monthly": 75,
+    "grocery_basket": 51,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Strasbourg",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Strasbourg",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Strasbourg",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Strasbourg"
+    }
+  },
+  {
+    "city": "Genoa",
+    "country": "Italy",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 267,
+    "food_meal_avg": 14,
+    "transport_monthly": 73,
+    "grocery_basket": 49,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Genoa",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Genoa",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Genoa",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Genoa"
+    }
+  },
+  {
+    "city": "Gent",
+    "country": "Belgium",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 344,
+    "food_meal_avg": 16,
+    "transport_monthly": 76,
+    "grocery_basket": 45,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Gent",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Gent",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Gent",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Gent"
+    }
+  },
+  {
+    "city": "Perth",
+    "country": "Australia",
+    "currency": "AUD",
+    "rent_or_kost_monthly": 737,
+    "food_meal_avg": 24,
+    "transport_monthly": 134,
+    "grocery_basket": 84,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Perth",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Perth",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Perth",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Perth"
+    }
+  },
+  {
+    "city": "Antwerp",
+    "country": "Belgium",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 339,
+    "food_meal_avg": 16,
+    "transport_monthly": 76,
+    "grocery_basket": 48,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Antwerp",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Antwerp",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Antwerp",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Antwerp"
+    }
+  },
+  {
+    "city": "Portland",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 735,
+    "food_meal_avg": 14,
+    "transport_monthly": 99,
+    "grocery_basket": 59,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Portland",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Portland",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Portland",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Portland"
+    }
+  },
+  {
+    "city": "West Palm Beach",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 611,
+    "food_meal_avg": 17,
+    "transport_monthly": 94,
+    "grocery_basket": 60,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/West%20Palm%20Beach",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/West%20Palm%20Beach",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/West%20Palm%20Beach",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/West%20Palm%20Beach"
+    }
+  },
+  {
+    "city": "Hong Kong",
+    "country": "Hong Kong",
+    "currency": "HKD",
+    "rent_or_kost_monthly": 7500,
+    "food_meal_avg": 65,
+    "transport_monthly": 500,
+    "grocery_basket": 450,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Hong%20Kong",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Hong%20Kong",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Hong%20Kong",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Hong%20Kong"
+    }
+  },
+  {
+    "city": "Innsbruck",
+    "country": "Austria",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 409,
+    "food_meal_avg": 13,
+    "transport_monthly": 79,
+    "grocery_basket": 48,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Innsbruck",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Innsbruck",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Innsbruck",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Innsbruck"
+    }
+  },
+  {
+    "city": "Leuven",
+    "country": "Belgium",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 374,
+    "food_meal_avg": 15,
+    "transport_monthly": 78,
+    "grocery_basket": 47,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Leuven",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Leuven",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Leuven",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Leuven"
+    }
+  },
+  {
+    "city": "Leiden",
+    "country": "Netherlands",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 451,
+    "food_meal_avg": 16,
+    "transport_monthly": 81,
+    "grocery_basket": 44,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Leiden",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Leiden",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Leiden",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Leiden"
+    }
+  },
+  {
+    "city": "Osaka",
+    "aliases": [
+      "Osaka-shi",
+      "Kansai"
+    ],
+    "country": "Japan",
+    "iso2": "JP",
+    "currency": "JPY",
+    "rent_or_kost_monthly": 58000,
+    "food_meal_avg": 850,
+    "transport_monthly": 9000,
+    "grocery_basket": 5200,
+    "sources": {
+      "rent_url": "https://suumo.jp/osaka",
+      "food_url": "https://tabelog.com/osaka",
+      "transport_url": "https://subway.osakametro.co.jp",
+      "grocery_url": "https://life-corp.jp",
+      "community_note": "Osaka Metro commuter pass ¥7,500-¥11,000, 1K apartment in Fukushima/Juso/Tennoji ¥45k-¥70k, Okonomiyaki/Kushikatsu/Teishoku ¥650-¥950."
+    }
+  },
+  {
+    "city": "Melbourne",
+    "aliases": [
+      "VIC",
+      "Fitzroy",
+      "Brunswick",
+      "Carlton"
+    ],
+    "country": "Australia",
+    "iso2": "AU",
+    "currency": "AUD",
+    "rent_or_kost_monthly": 1150,
+    "food_meal_avg": 18,
+    "transport_monthly": 160,
+    "grocery_basket": 80,
+    "sources": {
+      "rent_url": "https://flatmates.com.au/melbourne",
+      "food_url": "https://broadsheet.com.au/melbourne",
+      "transport_url": "https://ptv.vic.gov.au/tickets/myki",
+      "grocery_url": "https://coles.com.au",
+      "community_note": "myki 28-365 day pass ~A$160/mo, Room in Brunswick/Footscray/Richmond A$950-A$1,400, Cafe/laneway lunch A$14-A$21."
+    }
+  },
+  {
+    "city": "Bath",
+    "country": "United Kingdom",
+    "currency": "GBP",
+    "rent_or_kost_monthly": 396,
+    "food_meal_avg": 13,
+    "transport_monthly": 70,
+    "grocery_basket": 41,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Bath",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Bath",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Bath",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Bath"
+    }
+  },
+  {
+    "city": "Everett",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 630,
+    "food_meal_avg": 15,
+    "transport_monthly": 95,
+    "grocery_basket": 62,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Everett",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Everett",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Everett",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Everett"
+    }
+  },
+  {
+    "city": "Saskatoon",
+    "country": "Canada",
+    "currency": "CAD",
+    "rent_or_kost_monthly": 516,
+    "food_meal_avg": 18,
+    "transport_monthly": 113,
+    "grocery_basket": 84,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Saskatoon",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Saskatoon",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Saskatoon",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Saskatoon"
+    }
+  },
+  {
+    "city": "Tacoma",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 560,
+    "food_meal_avg": 14,
+    "transport_monthly": 91,
+    "grocery_basket": 61,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Tacoma",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Tacoma",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Tacoma",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Tacoma"
+    }
+  },
+  {
+    "city": "Rotterdam",
+    "aliases": [
+      "Zuid-Holland"
+    ],
+    "country": "Netherlands",
+    "iso2": "NL",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 680,
+    "food_meal_avg": 14,
+    "transport_monthly": 80,
+    "grocery_basket": 48,
+    "sources": {
+      "rent_url": "https://kamernet.nl/huren/kamer-rotterdam",
+      "food_url": "https://rotterdamtouristinformation.com",
+      "transport_url": "https://ret.nl",
+      "grocery_url": "https://jumbo.com",
+      "community_note": "RET monthly transit pass €80, Room in Kralingen/Blijdorp/Feijenoord €550-€850, Casual lunch menu €11-€16."
+    }
+  },
+  {
+    "city": "Montpellier",
+    "country": "France",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 331,
+    "food_meal_avg": 13,
+    "transport_monthly": 76,
+    "grocery_basket": 49,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Montpellier",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Montpellier",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Montpellier",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Montpellier"
+    }
+  },
+  {
+    "city": "St. John's",
+    "country": "Canada",
+    "currency": "CAD",
+    "rent_or_kost_monthly": 430,
+    "food_meal_avg": 22,
+    "transport_monthly": 109,
+    "grocery_basket": 81,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/St.%20John's",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/St.%20John's",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/St.%20John's",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/St.%20John's"
+    }
+  },
+  {
+    "city": "Milan",
+    "country": "Italy",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 780,
+    "food_meal_avg": 16,
+    "transport_monthly": 39,
+    "grocery_basket": 48,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Milan",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Milan",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Milan",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Milan"
+    }
+  },
+  {
+    "city": "Maastricht",
+    "country": "Netherlands",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 428,
+    "food_meal_avg": 13,
+    "transport_monthly": 80,
+    "grocery_basket": 47,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Maastricht",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Maastricht",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Maastricht",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Maastricht"
+    }
+  },
+  {
+    "city": "Baltimore",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 622,
+    "food_meal_avg": 15,
+    "transport_monthly": 94,
+    "grocery_basket": 58,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Baltimore",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Baltimore",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Baltimore",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Baltimore"
+    }
+  },
+  {
+    "city": "Munich",
+    "aliases": [
+      "München",
+      "Bayern",
+      "Bavaria"
+    ],
+    "country": "Germany",
+    "iso2": "DE",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 850,
+    "food_meal_avg": 15,
+    "transport_monthly": 49,
+    "grocery_basket": 52,
+    "sources": {
+      "rent_url": "https://wg-gesucht.de/muenchen",
+      "food_url": "https://muenchen.de/gastronomie",
+      "transport_url": "https://mvg.de/deutschlandticket",
+      "grocery_url": "https://edeka.de",
+      "community_note": "Deutschlandticket €49/mo, WG room in Schwabing/Giesing/Sendling €700-€980, Wirtshaus/lunch meal €12-€17."
+    }
+  },
+  {
+    "city": "Espoo",
+    "country": "Finland",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 420,
+    "food_meal_avg": 17,
+    "transport_monthly": 80,
+    "grocery_basket": 46,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Espoo",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Espoo",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Espoo",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Espoo"
+    }
+  },
+  {
+    "city": "New Orleans",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 598,
+    "food_meal_avg": 17,
+    "transport_monthly": 93,
+    "grocery_basket": 57,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/New%20Orleans",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/New%20Orleans",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/New%20Orleans",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/New%20Orleans"
+    }
+  },
+  {
+    "city": "Galway",
+    "country": "Ireland",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 454,
+    "food_meal_avg": 14,
+    "transport_monthly": 81,
+    "grocery_basket": 48,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Galway",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Galway",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Galway",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Galway"
+    }
+  },
+  {
+    "city": "Cork",
+    "country": "Ireland",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 501,
+    "food_meal_avg": 14,
+    "transport_monthly": 84,
+    "grocery_basket": 45,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Cork",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Cork",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Cork",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Cork"
+    }
+  },
+  {
+    "city": "Padova",
+    "country": "Italy",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 290,
+    "food_meal_avg": 13,
+    "transport_monthly": 74,
+    "grocery_basket": 47,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Padova",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Padova",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Padova",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Padova"
+    }
+  },
+  {
+    "city": "Haifa",
+    "country": "Israel",
+    "currency": "ILS",
+    "rent_or_kost_monthly": 1045,
+    "food_meal_avg": 64,
+    "transport_monthly": 292,
+    "grocery_basket": 174,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Haifa",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Haifa",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Haifa",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Haifa"
+    }
+  },
+  {
+    "city": "Charlotte",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 604,
+    "food_meal_avg": 15,
+    "transport_monthly": 93,
+    "grocery_basket": 59,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Charlotte",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Charlotte",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Charlotte",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Charlotte"
+    }
+  },
+  {
+    "city": "Burlington",
+    "country": "Canada",
+    "currency": "CAD",
+    "rent_or_kost_monthly": 639,
+    "food_meal_avg": 20,
+    "transport_monthly": 119,
+    "grocery_basket": 75,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Burlington",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Burlington",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Burlington",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Burlington"
+    }
+  },
+  {
+    "city": "Aberdeen",
+    "country": "United Kingdom",
+    "currency": "GBP",
+    "rent_or_kost_monthly": 320,
+    "food_meal_avg": 14,
+    "transport_monthly": 67,
+    "grocery_basket": 38,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Aberdeen",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Aberdeen",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Aberdeen",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Aberdeen"
+    }
+  },
+  {
+    "city": "Dusseldorf",
+    "country": "Germany",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 438,
+    "food_meal_avg": 12,
+    "transport_monthly": 81,
+    "grocery_basket": 42,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Dusseldorf",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Dusseldorf",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Dusseldorf",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Dusseldorf"
+    }
+  },
+  {
+    "city": "Minneapolis",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 670,
+    "food_meal_avg": 15,
+    "transport_monthly": 96,
+    "grocery_basket": 58,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Minneapolis",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Minneapolis",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Minneapolis",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Minneapolis"
+    }
+  },
+  {
+    "city": "Adelaide",
+    "country": "Australia",
+    "currency": "AUD",
+    "rent_or_kost_monthly": 705,
+    "food_meal_avg": 21,
+    "transport_monthly": 132,
+    "grocery_basket": 87,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Adelaide",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Adelaide",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Adelaide",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Adelaide"
+    }
+  },
+  {
+    "city": "Eindhoven",
+    "country": "Netherlands",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 455,
+    "food_meal_avg": 15,
+    "transport_monthly": 81,
+    "grocery_basket": 44,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Eindhoven",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Eindhoven",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Eindhoven",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Eindhoven"
+    }
+  },
+  {
+    "city": "Cambridge",
+    "country": "United Kingdom",
+    "currency": "GBP",
+    "rent_or_kost_monthly": 502,
+    "food_meal_avg": 14,
+    "transport_monthly": 75,
+    "grocery_basket": 37,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Cambridge",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Cambridge",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Cambridge",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Cambridge"
+    }
+  },
+  {
+    "city": "Oxford",
+    "country": "United Kingdom",
+    "currency": "GBP",
+    "rent_or_kost_monthly": 559,
+    "food_meal_avg": 12,
+    "transport_monthly": 78,
+    "grocery_basket": 35,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Oxford",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Oxford",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Oxford",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Oxford"
+    }
+  },
+  {
+    "city": "Darwin",
+    "country": "Australia",
+    "currency": "AUD",
+    "rent_or_kost_monthly": 784,
+    "food_meal_avg": 24,
+    "transport_monthly": 136,
+    "grocery_basket": 84,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Darwin",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Darwin",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Darwin",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Darwin"
+    }
+  },
+  {
+    "city": "Eugene",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 441,
+    "food_meal_avg": 14,
+    "transport_monthly": 86,
+    "grocery_basket": 67,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Eugene",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Eugene",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Eugene",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Eugene"
+    }
+  },
+  {
+    "city": "Nantes",
+    "country": "France",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 291,
+    "food_meal_avg": 13,
+    "transport_monthly": 74,
+    "grocery_basket": 49,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Nantes",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Nantes",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Nantes",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Nantes"
+    }
+  },
+  {
+    "city": "Groningen",
+    "country": "Netherlands",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 385,
+    "food_meal_avg": 15,
+    "transport_monthly": 78,
+    "grocery_basket": 46,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Groningen",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Groningen",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Groningen",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Groningen"
+    }
+  },
+  {
+    "city": "San Diego",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 885,
+    "food_meal_avg": 16,
+    "transport_monthly": 106,
+    "grocery_basket": 54,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/San%20Diego",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/San%20Diego",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/San%20Diego",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/San%20Diego"
+    }
+  },
+  {
+    "city": "Ramat Gan",
+    "country": "Israel",
+    "currency": "ILS",
+    "rent_or_kost_monthly": 1791,
+    "food_meal_avg": 59,
+    "transport_monthly": 326,
+    "grocery_basket": 171,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Ramat%20Gan",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Ramat%20Gan",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Ramat%20Gan",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Ramat%20Gan"
+    }
+  },
+  {
+    "city": "Hamburg",
+    "aliases": [
+      "Freie und Hansestadt Hamburg"
+    ],
+    "country": "Germany",
+    "iso2": "DE",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 680,
+    "food_meal_avg": 13,
+    "transport_monthly": 49,
+    "grocery_basket": 46,
+    "sources": {
+      "rent_url": "https://wg-gesucht.de/hamburg",
+      "food_url": "https://hamburg.de/gastronomie",
+      "transport_url": "https://hvv.de/deutschlandticket",
+      "grocery_url": "https://lidl.de",
+      "community_note": "HVV Deutschlandticket €49/mo, WG room in Altona/Barmbek/Wandsbek €560-€800, Sit-down lunch €10-€15."
+    }
+  },
+  {
+    "city": "Bellingham",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 495,
+    "food_meal_avg": 14,
+    "transport_monthly": 89,
+    "grocery_basket": 59,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Bellingham",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Bellingham",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Bellingham",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Bellingham"
+    }
+  },
+  {
+    "city": "Atlanta",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 680,
+    "food_meal_avg": 15,
+    "transport_monthly": 97,
+    "grocery_basket": 57,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Atlanta",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Atlanta",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Atlanta",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Atlanta"
+    }
+  },
+  {
+    "city": "Denver",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 784,
+    "food_meal_avg": 15,
+    "transport_monthly": 102,
+    "grocery_basket": 58,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Denver",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Denver",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Denver",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Denver"
+    }
+  },
+  {
+    "city": "Saint Paul",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 656,
+    "food_meal_avg": 15,
+    "transport_monthly": 96,
+    "grocery_basket": 60,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Saint%20Paul",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Saint%20Paul",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Saint%20Paul",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Saint%20Paul"
+    }
+  },
+  {
+    "city": "Hamilton",
+    "country": "New Zealand",
+    "currency": "NZD",
+    "rent_or_kost_monthly": 550,
+    "food_meal_avg": 24,
+    "transport_monthly": 133,
+    "grocery_basket": 85,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Hamilton",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Hamilton",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Hamilton",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Hamilton"
+    }
+  },
+  {
+    "city": "Birmingham",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 493,
+    "food_meal_avg": 14,
+    "transport_monthly": 88,
+    "grocery_basket": 59,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Birmingham",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Birmingham",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Birmingham",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Birmingham"
+    }
+  },
+  {
+    "city": "Frankfurt",
+    "aliases": [
+      "Frankfurt am Main",
+      "Hessen"
+    ],
+    "country": "Germany",
+    "iso2": "DE",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 740,
+    "food_meal_avg": 14,
+    "transport_monthly": 49,
+    "grocery_basket": 48,
+    "sources": {
+      "rent_url": "https://wg-gesucht.de/frankfurt-am-main",
+      "food_url": "https://journal-frankfurt.de",
+      "transport_url": "https://rmv.de/deutschlandticket",
+      "grocery_url": "https://rewe.de",
+      "community_note": "Deutschlandticket €49/mo, WG room in Bornheim/Bockenheim/Sachsenhausen €600-€850, Casual dining meal €11-€16."
+    }
+  },
+  {
+    "city": "Wellington",
+    "country": "New Zealand",
+    "currency": "NZD",
+    "rent_or_kost_monthly": 944,
+    "food_meal_avg": 21,
+    "transport_monthly": 151,
+    "grocery_basket": 89,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Wellington",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Wellington",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Wellington",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Wellington"
+    }
+  },
+  {
+    "city": "Asheville",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 539,
+    "food_meal_avg": 14,
+    "transport_monthly": 91,
+    "grocery_basket": 61,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Asheville",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Asheville",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Asheville",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Asheville"
+    }
+  },
+  {
+    "city": "Trieste",
+    "country": "Italy",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 262,
+    "food_meal_avg": 13,
+    "transport_monthly": 73,
+    "grocery_basket": 51,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Trieste",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Trieste",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Trieste",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Trieste"
+    }
+  },
+  {
+    "city": "Fort Myers",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 485,
+    "food_meal_avg": 16,
+    "transport_monthly": 88,
+    "grocery_basket": 58,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Fort%20Myers",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Fort%20Myers",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Fort%20Myers",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Fort%20Myers"
+    }
+  },
+  {
+    "city": "Newcastle",
+    "country": "Australia",
+    "currency": "AUD",
+    "rent_or_kost_monthly": 829,
+    "food_meal_avg": 24,
+    "transport_monthly": 138,
+    "grocery_basket": 82,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Newcastle",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Newcastle",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Newcastle",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Newcastle"
+    }
+  },
+  {
+    "city": "Portsmouth",
+    "country": "United Kingdom",
+    "currency": "GBP",
+    "rent_or_kost_monthly": 360,
+    "food_meal_avg": 14,
+    "transport_monthly": 69,
+    "grocery_basket": 35,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Portsmouth",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Portsmouth",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Portsmouth",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Portsmouth"
+    }
+  },
+  {
+    "city": "Halifax",
+    "country": "Canada",
+    "currency": "CAD",
+    "rent_or_kost_monthly": 553,
+    "food_meal_avg": 17,
+    "transport_monthly": 115,
+    "grocery_basket": 84,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Halifax",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Halifax",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Halifax",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Halifax"
+    }
+  },
+  {
+    "city": "Vienna",
+    "country": "Austria",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 640,
+    "food_meal_avg": 13,
+    "transport_monthly": 33,
+    "grocery_basket": 45,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Vienna",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Vienna",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Vienna",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Vienna"
+    }
+  },
+  {
+    "city": "Heidelberg",
+    "country": "Germany",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 447,
+    "food_meal_avg": 12,
+    "transport_monthly": 81,
+    "grocery_basket": 42,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Heidelberg",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Heidelberg",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Heidelberg",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Heidelberg"
+    }
+  },
+  {
+    "city": "Indianapolis",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 505,
+    "food_meal_avg": 14,
+    "transport_monthly": 89,
+    "grocery_basket": 57,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Indianapolis",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Indianapolis",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Indianapolis",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Indianapolis"
+    }
+  },
+  {
+    "city": "Edinburgh",
+    "aliases": [
+      "City of Edinburgh"
+    ],
+    "country": "United Kingdom",
+    "iso2": "GB",
+    "currency": "GBP",
+    "rent_or_kost_monthly": 680,
+    "food_meal_avg": 14,
+    "transport_monthly": 72,
+    "grocery_basket": 38,
+    "sources": {
+      "rent_url": "https://spareroom.co.uk/edinburgh",
+      "food_url": "https://theskinny.co.uk/food-and-drink",
+      "transport_url": "https://lothianbuses.co.uk",
+      "grocery_url": "https://tesco.com",
+      "community_note": "Lothian Buses Ridacard 4-week pass £72, Room in Leith/Gorgie/Newington £550-£800, Cafe/pub lunch £11-£16."
+    }
+  },
+  {
+    "city": "Jacksonville",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 455,
+    "food_meal_avg": 14,
+    "transport_monthly": 87,
+    "grocery_basket": 59,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Jacksonville",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Jacksonville",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Jacksonville",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Jacksonville"
+    }
+  },
+  {
+    "city": "Buffalo",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 425,
+    "food_meal_avg": 15,
+    "transport_monthly": 85,
+    "grocery_basket": 53,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Buffalo",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Buffalo",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Buffalo",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Buffalo"
+    }
+  },
+  {
+    "city": "Olympia",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 586,
+    "food_meal_avg": 16,
+    "transport_monthly": 93,
+    "grocery_basket": 51,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Olympia",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Olympia",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Olympia",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Olympia"
+    }
+  },
+  {
+    "city": "Saint Petersburg",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 589,
+    "food_meal_avg": 15,
+    "transport_monthly": 93,
+    "grocery_basket": 56,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Saint%20Petersburg",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Saint%20Petersburg",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Saint%20Petersburg",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Saint%20Petersburg"
+    }
+  },
+  {
+    "city": "Austin",
+    "aliases": [
+      "ATX",
+      "Austin TX"
+    ],
+    "country": "United States",
+    "iso2": "US",
+    "currency": "USD",
+    "rent_or_kost_monthly": 980,
+    "food_meal_avg": 15,
+    "transport_monthly": 41.25,
+    "grocery_basket": 70,
+    "sources": {
+      "rent_url": "https://zillow.com/austin-tx/rentals",
+      "food_url": "https://austin.eater.com",
+      "transport_url": "https://capmetro.org/fares",
+      "grocery_url": "https://heb.com",
+      "community_note": "CapMetro 31-Day Local Pass $41.25, Room in Riverside/North Loop/Mueller $800-$1,250, Tacos/BBQ/sit-down lunch $12-$18."
+    }
+  },
+  {
+    "city": "Brisbane",
+    "country": "Australia",
+    "currency": "AUD",
+    "rent_or_kost_monthly": 1100,
+    "food_meal_avg": 18,
+    "transport_monthly": 160,
+    "grocery_basket": 80,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Brisbane",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Brisbane",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Brisbane",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Brisbane"
+    }
+  },
+  {
+    "city": "Male",
+    "country": "Maldives",
+    "currency": "USD",
+    "rent_or_kost_monthly": 463,
+    "food_meal_avg": 8,
+    "transport_monthly": 87,
+    "grocery_basket": 61,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Male",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Male",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Male",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Male"
+    }
+  },
+  {
+    "city": "Sliema",
+    "country": "Malta",
+    "currency": "USD",
+    "rent_or_kost_monthly": 518,
+    "food_meal_avg": 16,
+    "transport_monthly": 90,
+    "grocery_basket": 47,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Sliema",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Sliema",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Sliema",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Sliema"
+    }
+  },
+  {
+    "city": "Rochester",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 447,
+    "food_meal_avg": 14,
+    "transport_monthly": 86,
+    "grocery_basket": 59,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Rochester",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Rochester",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Rochester",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Rochester"
+    }
+  },
+  {
+    "city": "Christchurch",
+    "country": "New Zealand",
+    "currency": "NZD",
+    "rent_or_kost_monthly": 625,
+    "food_meal_avg": 23,
+    "transport_monthly": 137,
+    "grocery_basket": 85,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Christchurch",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Christchurch",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Christchurch",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Christchurch"
+    }
+  },
+  {
+    "city": "Toronto",
+    "aliases": [
+      "GTA",
+      "Downtown Toronto",
+      "North York",
+      "Scarborough"
+    ],
+    "country": "Canada",
+    "iso2": "CA",
+    "currency": "CAD",
+    "rent_or_kost_monthly": 1100,
+    "food_meal_avg": 20,
+    "transport_monthly": 156,
+    "grocery_basket": 80,
+    "sources": {
+      "rent_url": "https://padmapper.com/apartments/toronto-on",
+      "food_url": "https://blogto.com/eat_drink",
+      "transport_url": "https://ttc.ca/fares-and-passes",
+      "grocery_url": "https://nofrills.ca",
+      "community_note": "Verified from TTC: Monthly Pass is C$156! Room in shared flat (Midtown, Danforth, High Park) C$900-C$1,350, Casual lunch meal C$16-C$24."
+    }
+  },
+  {
+    "city": "Orlando",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 557,
+    "food_meal_avg": 14,
+    "transport_monthly": 91,
+    "grocery_basket": 58,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Orlando",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Orlando",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Orlando",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Orlando"
+    }
+  },
+  {
+    "city": "Dunedin",
+    "country": "New Zealand",
+    "currency": "NZD",
+    "rent_or_kost_monthly": 519,
+    "food_meal_avg": 21,
+    "transport_monthly": 132,
+    "grocery_basket": 85,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Dunedin",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Dunedin",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Dunedin",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Dunedin"
+    }
+  },
+  {
+    "city": "Turku",
+    "country": "Finland",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 295,
+    "food_meal_avg": 15,
+    "transport_monthly": 74,
+    "grocery_basket": 42,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Turku",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Turku",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Turku",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Turku"
+    }
+  },
+  {
+    "city": "Plymouth",
+    "country": "United Kingdom",
+    "currency": "GBP",
+    "rent_or_kost_monthly": 233,
+    "food_meal_avg": 11,
+    "transport_monthly": 63,
+    "grocery_basket": 39,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Plymouth",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Plymouth",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Plymouth",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Plymouth"
+    }
+  },
+  {
+    "city": "Swindon",
+    "country": "United Kingdom",
+    "currency": "GBP",
+    "rent_or_kost_monthly": 337,
+    "food_meal_avg": 13,
+    "transport_monthly": 68,
+    "grocery_basket": 33,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Swindon",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Swindon",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Swindon",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Swindon"
+    }
+  },
+  {
+    "city": "Canberra",
+    "country": "Australia",
+    "currency": "AUD",
+    "rent_or_kost_monthly": 895,
+    "food_meal_avg": 21,
+    "transport_monthly": 141,
+    "grocery_basket": 82,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Canberra",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Canberra",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Canberra",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Canberra"
+    }
+  },
+  {
+    "city": "Manchester",
+    "aliases": [
+      "Greater Manchester",
+      "Salford"
+    ],
+    "country": "United Kingdom",
+    "iso2": "GB",
+    "currency": "GBP",
+    "rent_or_kost_monthly": 620,
+    "food_meal_avg": 13,
+    "transport_monthly": 85,
+    "grocery_basket": 36,
+    "sources": {
+      "rent_url": "https://spareroom.co.uk/manchester",
+      "food_url": "https://manchestersfinest.com",
+      "transport_url": "https://tfgm.com",
+      "grocery_url": "https://sainsburys.co.uk",
+      "community_note": "Bee Network bus & tram pass £85/mo, Room in Fallowfield/Rusholme/Salford £480-£720, Casual sit-down dining £10-£16."
+    }
+  },
+  {
+    "city": "Peoria",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 370,
+    "food_meal_avg": 13,
+    "transport_monthly": 83,
+    "grocery_basket": 58,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Peoria",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Peoria",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Peoria",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Peoria"
+    }
+  },
+  {
+    "city": "Gothenburg",
+    "country": "Sweden",
+    "currency": "SEK",
+    "rent_or_kost_monthly": 4465,
+    "food_meal_avg": 159,
+    "transport_monthly": 896,
+    "grocery_basket": 538,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Gothenburg",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Gothenburg",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Gothenburg",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Gothenburg"
+    }
+  },
+  {
+    "city": "Cleveland",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 409,
+    "food_meal_avg": 14,
+    "transport_monthly": 85,
+    "grocery_basket": 53,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Cleveland",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Cleveland",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Cleveland",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Cleveland"
+    }
+  },
+  {
+    "city": "Vancouver",
+    "aliases": [
+      "Metro Vancouver",
+      "Burnaby",
+      "Richmond BC"
+    ],
+    "country": "Canada",
+    "iso2": "CA",
+    "currency": "CAD",
+    "rent_or_kost_monthly": 1200,
+    "food_meal_avg": 21,
+    "transport_monthly": 108,
+    "grocery_basket": 82,
+    "sources": {
+      "rent_url": "https://padmapper.com/apartments/vancouver-bc",
+      "food_url": "https://vancitybuzz.com/food",
+      "transport_url": "https://translink.ca/fares-and-passes",
+      "grocery_url": "https://saveonfoods.com",
+      "community_note": "TransLink 1-Zone Monthly Pass C$108, Room in Kitsilano/Commercial Dr/Burnaby C$950-C$1,450, Casual ramen/sushi/diner lunch C$17-C$25."
+    }
+  },
+  {
+    "city": "Limerick",
+    "country": "Ireland",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 375,
+    "food_meal_avg": 12,
+    "transport_monthly": 78,
+    "grocery_basket": 48,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Limerick",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Limerick",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Limerick",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Limerick"
+    }
+  },
+  {
+    "city": "Bristol",
+    "country": "United Kingdom",
+    "currency": "GBP",
+    "rent_or_kost_monthly": 418,
+    "food_meal_avg": 14,
+    "transport_monthly": 71,
+    "grocery_basket": 35,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Bristol",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Bristol",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Bristol",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Bristol"
+    }
+  },
+  {
+    "city": "Brighton",
+    "country": "United Kingdom",
+    "currency": "GBP",
+    "rent_or_kost_monthly": 486,
+    "food_meal_avg": 12,
+    "transport_monthly": 74,
+    "grocery_basket": 36,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Brighton",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Brighton",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Brighton",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Brighton"
+    }
+  },
+  {
+    "city": "Bologna",
+    "country": "Italy",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 321,
+    "food_meal_avg": 14,
+    "transport_monthly": 75,
+    "grocery_basket": 43,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Bologna",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Bologna",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Bologna",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Bologna"
+    }
+  },
+  {
+    "city": "York",
+    "country": "United Kingdom",
+    "currency": "GBP",
+    "rent_or_kost_monthly": 331,
+    "food_meal_avg": 12,
+    "transport_monthly": 67,
+    "grocery_basket": 38,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/York",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/York",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/York",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/York"
+    }
+  },
+  {
+    "city": "Karlsruhe",
+    "country": "Germany",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 290,
+    "food_meal_avg": 14,
+    "transport_monthly": 74,
+    "grocery_basket": 41,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Karlsruhe",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Karlsruhe",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Karlsruhe",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Karlsruhe"
+    }
+  },
+  {
+    "city": "Raleigh",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 525,
+    "food_meal_avg": 13,
+    "transport_monthly": 90,
+    "grocery_basket": 61,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Raleigh",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Raleigh",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Raleigh",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Raleigh"
+    }
+  },
+  {
+    "city": "Bonn",
+    "country": "Germany",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 364,
+    "food_meal_avg": 12,
+    "transport_monthly": 77,
+    "grocery_basket": 41,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Bonn",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Bonn",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Bonn",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Bonn"
+    }
+  },
+  {
+    "city": "Hobart",
+    "country": "Australia",
+    "currency": "AUD",
+    "rent_or_kost_monthly": 616,
+    "food_meal_avg": 23,
+    "transport_monthly": 128,
+    "grocery_basket": 84,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Hobart",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Hobart",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Hobart",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Hobart"
+    }
+  },
+  {
+    "city": "Arlington",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 449,
+    "food_meal_avg": 13,
+    "transport_monthly": 86,
+    "grocery_basket": 55,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Arlington",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Arlington",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Arlington",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Arlington"
+    }
+  },
+  {
+    "city": "Rome",
+    "country": "Italy",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 620,
+    "food_meal_avg": 14,
+    "transport_monthly": 35,
+    "grocery_basket": 44,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Rome",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Rome",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Rome",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Rome"
+    }
+  },
+  {
+    "city": "Saint Louis",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 427,
+    "food_meal_avg": 14,
+    "transport_monthly": 85,
+    "grocery_basket": 55,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Saint%20Louis",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Saint%20Louis",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Saint%20Louis",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Saint%20Louis"
+    }
+  },
+  {
+    "city": "Bremen",
+    "country": "Germany",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 292,
+    "food_meal_avg": 12,
+    "transport_monthly": 74,
+    "grocery_basket": 42,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Bremen",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Bremen",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Bremen",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Bremen"
+    }
+  },
+  {
+    "city": "Calgary",
+    "country": "Canada",
+    "currency": "CAD",
+    "rent_or_kost_monthly": 589,
+    "food_meal_avg": 20,
+    "transport_monthly": 117,
+    "grocery_basket": 70,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Calgary",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Calgary",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Calgary",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Calgary"
+    }
+  },
+  {
+    "city": "Milwaukee",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 516,
+    "food_meal_avg": 14,
+    "transport_monthly": 89,
+    "grocery_basket": 54,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Milwaukee",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Milwaukee",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Milwaukee",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Milwaukee"
+    }
+  },
+  {
+    "city": "Brampton",
+    "country": "Canada",
+    "currency": "CAD",
+    "rent_or_kost_monthly": 570,
+    "food_meal_avg": 16,
+    "transport_monthly": 116,
+    "grocery_basket": 79,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Brampton",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Brampton",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Brampton",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Brampton"
+    }
+  },
+  {
+    "city": "Nashville",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 713,
+    "food_meal_avg": 15,
+    "transport_monthly": 98,
+    "grocery_basket": 54,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Nashville",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Nashville",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Nashville",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Nashville"
+    }
+  },
+  {
+    "city": "Uppsala",
+    "country": "Sweden",
+    "currency": "SEK",
+    "rent_or_kost_monthly": 3872,
+    "food_meal_avg": 160,
+    "transport_monthly": 869,
+    "grocery_basket": 519,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Uppsala",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Uppsala",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Uppsala",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Uppsala"
+    }
+  },
+  {
+    "city": "Tampa",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 573,
+    "food_meal_avg": 15,
+    "transport_monthly": 92,
+    "grocery_basket": 56,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Tampa",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Tampa",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Tampa",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Tampa"
+    }
+  },
+  {
+    "city": "Regina",
+    "country": "Canada",
+    "currency": "CAD",
+    "rent_or_kost_monthly": 552,
+    "food_meal_avg": 16,
+    "transport_monthly": 115,
+    "grocery_basket": 77,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Regina",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Regina",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Regina",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Regina"
+    }
+  },
+  {
+    "city": "Mannheim",
+    "country": "Germany",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 296,
+    "food_meal_avg": 12,
+    "transport_monthly": 74,
+    "grocery_basket": 41,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Mannheim",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Mannheim",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Mannheim",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Mannheim"
+    }
+  },
+  {
+    "city": "Leeds",
+    "country": "United Kingdom",
+    "currency": "GBP",
+    "rent_or_kost_monthly": 321,
+    "food_meal_avg": 13,
+    "transport_monthly": 67,
+    "grocery_basket": 36,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Leeds",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Leeds",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Leeds",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Leeds"
+    }
+  },
+  {
+    "city": "Virginia Beach",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 520,
+    "food_meal_avg": 14,
+    "transport_monthly": 90,
+    "grocery_basket": 53,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Virginia%20Beach",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Virginia%20Beach",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Virginia%20Beach",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Virginia%20Beach"
+    }
+  },
+  {
+    "city": "Berlin",
+    "aliases": [
+      "Berlin-Brandenburg",
+      "Neukölln",
+      "Kreuzberg",
+      "Friedrichshain"
+    ],
+    "country": "Germany",
+    "iso2": "DE",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 650,
+    "food_meal_avg": 12,
+    "transport_monthly": 49,
+    "grocery_basket": 45,
+    "sources": {
+      "rent_url": "https://wg-gesucht.de/berlin",
+      "food_url": "https://tip-berlin.de/essen-trinken",
+      "transport_url": "https://bvg.de/deutschlandticket",
+      "grocery_url": "https://lidl.de",
+      "community_note": "Verified from BVG & WG-Gesucht: Deutschlandticket gives unlimited nationwide regional transit for €49/month! Warm WG room in Neukölln/Wedding/Lichtenberg €550-€750, Sit-down Döner/Pho/Kiez lunch €9-€14."
+    }
+  },
+  {
+    "city": "Lille",
+    "country": "France",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 307,
+    "food_meal_avg": 12,
+    "transport_monthly": 75,
+    "grocery_basket": 41,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Lille",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Lille",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Lille",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Lille"
+    }
+  },
+  {
+    "city": "Syracuse",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 487,
+    "food_meal_avg": 14,
+    "transport_monthly": 88,
+    "grocery_basket": 54,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Syracuse",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Syracuse",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Syracuse",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Syracuse"
+    }
+  },
+  {
+    "city": "Stuttgart",
+    "country": "Germany",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 444,
+    "food_meal_avg": 12,
+    "transport_monthly": 81,
+    "grocery_basket": 38,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Stuttgart",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Stuttgart",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Stuttgart",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Stuttgart"
+    }
+  },
+  {
+    "city": "Coquitlam",
+    "country": "Canada",
+    "currency": "CAD",
+    "rent_or_kost_monthly": 691,
+    "food_meal_avg": 16,
+    "transport_monthly": 121,
+    "grocery_basket": 76,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Coquitlam",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Coquitlam",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Coquitlam",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Coquitlam"
+    }
+  },
+  {
+    "city": "Red Deer",
+    "country": "Canada",
+    "currency": "CAD",
+    "rent_or_kost_monthly": 465,
+    "food_meal_avg": 18,
+    "transport_monthly": 111,
+    "grocery_basket": 64,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Red%20Deer",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Red%20Deer",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Red%20Deer",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Red%20Deer"
+    }
+  },
+  {
+    "city": "Cologne",
+    "country": "Germany",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 395,
+    "food_meal_avg": 12,
+    "transport_monthly": 79,
+    "grocery_basket": 40,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Cologne",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Cologne",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Cologne",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Cologne"
+    }
+  },
+  {
+    "city": "Aachen",
+    "country": "Germany",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 304,
+    "food_meal_avg": 11,
+    "transport_monthly": 75,
+    "grocery_basket": 41,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Aachen",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Aachen",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Aachen",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Aachen"
+    }
+  },
+  {
+    "city": "Tallahassee",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 384,
+    "food_meal_avg": 12,
+    "transport_monthly": 83,
+    "grocery_basket": 61,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Tallahassee",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Tallahassee",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Tallahassee",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Tallahassee"
+    }
+  },
+  {
+    "city": "Bakersfield",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 420,
+    "food_meal_avg": 14,
+    "transport_monthly": 85,
+    "grocery_basket": 54,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Bakersfield",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Bakersfield",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Bakersfield",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Bakersfield"
+    }
+  },
+  {
+    "city": "Ann Arbor",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 690,
+    "food_meal_avg": 12,
+    "transport_monthly": 97,
+    "grocery_basket": 52,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Ann%20Arbor",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Ann%20Arbor",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Ann%20Arbor",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Ann%20Arbor"
+    }
+  },
+  {
+    "city": "Nottingham",
+    "country": "United Kingdom",
+    "currency": "GBP",
+    "rent_or_kost_monthly": 271,
+    "food_meal_avg": 11,
+    "transport_monthly": 64,
+    "grocery_basket": 36,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Nottingham",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Nottingham",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Nottingham",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Nottingham"
+    }
+  },
+  {
+    "city": "Edmonton",
+    "country": "Canada",
+    "currency": "CAD",
+    "rent_or_kost_monthly": 576,
+    "food_meal_avg": 19,
+    "transport_monthly": 116,
+    "grocery_basket": 70,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Edmonton",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Edmonton",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Edmonton",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Edmonton"
+    }
+  },
+  {
+    "city": "Las Vegas",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 428,
+    "food_meal_avg": 14,
+    "transport_monthly": 86,
+    "grocery_basket": 51,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Las%20Vegas",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Las%20Vegas",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Las%20Vegas",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Las%20Vegas"
+    }
+  },
+  {
+    "city": "Columbus",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 535,
+    "food_meal_avg": 13,
+    "transport_monthly": 90,
+    "grocery_basket": 50,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Columbus",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Columbus",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Columbus",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Columbus"
+    }
+  },
+  {
+    "city": "Turin",
+    "country": "Italy",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 280,
+    "food_meal_avg": 13,
+    "transport_monthly": 73,
+    "grocery_basket": 41,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Turin",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Turin",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Turin",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Turin"
+    }
+  },
+  {
+    "city": "Spokane",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 411,
+    "food_meal_avg": 14,
+    "transport_monthly": 85,
+    "grocery_basket": 50,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Spokane",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Spokane",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Spokane",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Spokane"
+    }
+  },
+  {
+    "city": "Kelowna",
+    "country": "Canada",
+    "currency": "CAD",
+    "rent_or_kost_monthly": 652,
+    "food_meal_avg": 17,
+    "transport_monthly": 119,
+    "grocery_basket": 72,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Kelowna",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Kelowna",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Kelowna",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Kelowna"
+    }
+  },
+  {
+    "city": "Exeter",
+    "country": "United Kingdom",
+    "currency": "GBP",
+    "rent_or_kost_monthly": 338,
+    "food_meal_avg": 12,
+    "transport_monthly": 68,
+    "grocery_basket": 32,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Exeter",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Exeter",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Exeter",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Exeter"
+    }
+  },
+  {
+    "city": "Glasgow",
+    "country": "United Kingdom",
+    "currency": "GBP",
+    "rent_or_kost_monthly": 315,
+    "food_meal_avg": 12,
+    "transport_monthly": 66,
+    "grocery_basket": 35,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Glasgow",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Glasgow",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Glasgow",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Glasgow"
+    }
+  },
+  {
+    "city": "Memphis",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 385,
+    "food_meal_avg": 14,
+    "transport_monthly": 84,
+    "grocery_basket": 50,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Memphis",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Memphis",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Memphis",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Memphis"
+    }
+  },
+  {
+    "city": "Kingston",
+    "country": "Canada",
+    "currency": "CAD",
+    "rent_or_kost_monthly": 530,
+    "food_meal_avg": 16,
+    "transport_monthly": 114,
+    "grocery_basket": 75,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Kingston",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Kingston",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Kingston",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Kingston"
+    }
+  },
+  {
+    "city": "Nuremberg",
+    "country": "Germany",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 321,
+    "food_meal_avg": 12,
+    "transport_monthly": 75,
+    "grocery_basket": 39,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Nuremberg",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Nuremberg",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Nuremberg",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Nuremberg"
+    }
+  },
+  {
+    "city": "Coventry",
+    "country": "United Kingdom",
+    "currency": "GBP",
+    "rent_or_kost_monthly": 308,
+    "food_meal_avg": 11,
+    "transport_monthly": 66,
+    "grocery_basket": 35,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Coventry",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Coventry",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Coventry",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Coventry"
+    }
+  },
+  {
+    "city": "Columbia",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 402,
+    "food_meal_avg": 13,
+    "transport_monthly": 84,
+    "grocery_basket": 56,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Columbia",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Columbia",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Columbia",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Columbia"
+    }
+  },
+  {
+    "city": "Victoria",
+    "country": "Canada",
+    "currency": "CAD",
+    "rent_or_kost_monthly": 751,
+    "food_meal_avg": 16,
+    "transport_monthly": 124,
+    "grocery_basket": 75,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Victoria",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Victoria",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Victoria",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Victoria"
+    }
+  },
+  {
+    "city": "Malmo",
+    "country": "Sweden",
+    "currency": "SEK",
+    "rent_or_kost_monthly": 3972,
+    "food_meal_avg": 152,
+    "transport_monthly": 874,
+    "grocery_basket": 505,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Malmo",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Malmo",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Malmo",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Malmo"
+    }
+  },
+  {
+    "city": "Salem",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 419,
+    "food_meal_avg": 13,
+    "transport_monthly": 85,
+    "grocery_basket": 52,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Salem",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Salem",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Salem",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Salem"
+    }
+  },
+  {
+    "city": "Leipzig",
+    "country": "Germany",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 267,
+    "food_meal_avg": 11,
+    "transport_monthly": 73,
+    "grocery_basket": 39,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Leipzig",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Leipzig",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Leipzig",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Leipzig"
+    }
+  },
+  {
+    "city": "Dresden",
+    "country": "Germany",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 289,
+    "food_meal_avg": 10,
+    "transport_monthly": 74,
+    "grocery_basket": 40,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Dresden",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Dresden",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Dresden",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Dresden"
+    }
+  },
+  {
+    "city": "Fort Wayne",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 315,
+    "food_meal_avg": 13,
+    "transport_monthly": 80,
+    "grocery_basket": 60,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Fort%20Wayne",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Fort%20Wayne",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Fort%20Wayne",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Fort%20Wayne"
+    }
+  },
+  {
+    "city": "Dayton",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 319,
+    "food_meal_avg": 13,
+    "transport_monthly": 81,
+    "grocery_basket": 53,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Dayton",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Dayton",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Dayton",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Dayton"
+    }
+  },
+  {
+    "city": "San Juan",
+    "country": "Puerto Rico",
+    "currency": "USD",
+    "rent_or_kost_monthly": 354,
+    "food_meal_avg": 11,
+    "transport_monthly": 82,
+    "grocery_basket": 50,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/San%20Juan",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/San%20Juan",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/San%20Juan",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/San%20Juan"
+    }
+  },
+  {
+    "city": "Taipei",
+    "country": "Taiwan",
+    "currency": "TWD",
+    "rent_or_kost_monthly": 14000,
+    "food_meal_avg": 130,
+    "transport_monthly": 1200,
+    "grocery_basket": 1400,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Taipei",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Taipei",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Taipei",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Taipei"
+    }
+  },
+  {
+    "city": "Kansas City",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 443,
+    "food_meal_avg": 14,
+    "transport_monthly": 86,
+    "grocery_basket": 50,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Kansas%20City",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Kansas%20City",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Kansas%20City",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Kansas%20City"
+    }
+  },
+  {
+    "city": "Leicester",
+    "country": "United Kingdom",
+    "currency": "GBP",
+    "rent_or_kost_monthly": 257,
+    "food_meal_avg": 11,
+    "transport_monthly": 64,
+    "grocery_basket": 34,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Leicester",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Leicester",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Leicester",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Leicester"
+    }
+  },
+  {
+    "city": "Oshawa",
+    "country": "Canada",
+    "currency": "CAD",
+    "rent_or_kost_monthly": 540,
+    "food_meal_avg": 19,
+    "transport_monthly": 114,
+    "grocery_basket": 65,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Oshawa",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Oshawa",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Oshawa",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Oshawa"
+    }
+  },
+  {
+    "city": "Nanaimo",
+    "country": "Canada",
+    "currency": "CAD",
+    "rent_or_kost_monthly": 479,
+    "food_meal_avg": 16,
+    "transport_monthly": 112,
+    "grocery_basket": 79,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Nanaimo",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Nanaimo",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Nanaimo",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Nanaimo"
+    }
+  },
+  {
+    "city": "Fort Worth",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 515,
+    "food_meal_avg": 14,
+    "transport_monthly": 89,
+    "grocery_basket": 48,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Fort%20Worth",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Fort%20Worth",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Fort%20Worth",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Fort%20Worth"
+    }
+  },
+  {
+    "city": "Palma de Mallorca",
+    "country": "Spain",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 362,
+    "food_meal_avg": 12,
+    "transport_monthly": 77,
+    "grocery_basket": 40,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Palma%20de%20Mallorca",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Palma%20de%20Mallorca",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Palma%20de%20Mallorca",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Palma%20de%20Mallorca"
+    }
+  },
+  {
+    "city": "Mississauga",
+    "country": "Canada",
+    "currency": "CAD",
+    "rent_or_kost_monthly": 706,
+    "food_meal_avg": 16,
+    "transport_monthly": 122,
+    "grocery_basket": 67,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Mississauga",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Mississauga",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Mississauga",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Mississauga"
+    }
+  },
+  {
+    "city": "Quebec City",
+    "country": "Canada",
+    "currency": "CAD",
+    "rent_or_kost_monthly": 317,
+    "food_meal_avg": 16,
+    "transport_monthly": 104,
+    "grocery_basket": 73,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Quebec%20City",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Quebec%20City",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Quebec%20City",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Quebec%20City"
+    }
+  },
+  {
+    "city": "Norwich",
+    "country": "United Kingdom",
+    "currency": "GBP",
+    "rent_or_kost_monthly": 271,
+    "food_meal_avg": 12,
+    "transport_monthly": 64,
+    "grocery_basket": 33,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Norwich",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Norwich",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Norwich",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Norwich"
+    }
+  },
+  {
+    "city": "Burnaby",
+    "country": "Canada",
+    "currency": "CAD",
+    "rent_or_kost_monthly": 808,
+    "food_meal_avg": 16,
+    "transport_monthly": 127,
+    "grocery_basket": 68,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Burnaby",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Burnaby",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Burnaby",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Burnaby"
+    }
+  },
+  {
+    "city": "Fayetteville",
+    "country": "United States",
+    "currency": "USD",
+    "rent_or_kost_monthly": 376,
+    "food_meal_avg": 13,
+    "transport_monthly": 83,
+    "grocery_basket": 52,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Fayetteville",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Fayetteville",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Fayetteville",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Fayetteville"
+    }
+  },
+  {
+    "city": "Naples",
+    "country": "Italy",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 245,
+    "food_meal_avg": 11,
+    "transport_monthly": 72,
+    "grocery_basket": 44,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Naples",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Naples",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Naples",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Naples"
+    }
+  },
+  {
+    "city": "Derby",
+    "country": "United Kingdom",
+    "currency": "GBP",
+    "rent_or_kost_monthly": 226,
+    "food_meal_avg": 11,
+    "transport_monthly": 62,
+    "grocery_basket": 34,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Derby",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Derby",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Derby",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Derby"
+    }
+  },
+  {
+    "city": "Marseille",
+    "aliases": [
+      "Bouches-du-Rhône"
+    ],
+    "country": "France",
+    "iso2": "FR",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 500,
+    "food_meal_avg": 12,
+    "transport_monthly": 40,
+    "grocery_basket": 40,
+    "sources": {
+      "rent_url": "https://leboncoin.fr/locations/marseille",
+      "food_url": "https://marseille-tourisme.com",
+      "transport_url": "https://rtm.fr",
+      "grocery_url": "https://lidl.fr",
+      "community_note": "RTM Pass Permanent €40/mo, Studio in 5e/6e/La Plaine €420-€600, Couscous/Bistro sit-down meal €10-€14."
+    }
+  },
+  {
+    "city": "Kingston",
+    "country": "Jamaica",
+    "currency": "USD",
+    "rent_or_kost_monthly": 230,
+    "food_meal_avg": 8,
+    "transport_monthly": 76,
+    "grocery_basket": 55,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Kingston",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Kingston",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Kingston",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Kingston"
+    }
+  },
+  {
+    "city": "Jakarta",
+    "aliases": [
+      "DKI Jakarta",
+      "Batavia",
+      "Jkt"
+    ],
+    "country": "Indonesia",
+    "iso2": "ID",
+    "currency": "IDR",
+    "rent_or_kost_monthly": 2000000,
+    "food_meal_avg": 30000,
+    "transport_monthly": 250000,
+    "grocery_basket": 250000,
+    "sources": {
+      "rent_url": "https://mamikos.com/kost-jakarta",
+      "food_url": "https://pergikuliner.com/kuliner/jakarta",
+      "transport_url": "https://transjakarta.co.id",
+      "grocery_url": "https://sayurbox.com/jakarta",
+      "community_note": "Verified from Mamikos & TikTok Jakarta living guides: Kost standard AC Rp 1.6M-2.8M, Warteg/Padang Rp 20k-35k, TransJakarta Rp 3,500/trip."
+    }
+  },
+  {
+    "city": "Yogyakarta",
+    "aliases": [
+      "Jogja",
+      "Yogya",
+      "Daerah Istimewa Yogyakarta",
+      "DIY"
+    ],
+    "country": "Indonesia",
+    "iso2": "ID",
+    "currency": "IDR",
+    "rent_or_kost_monthly": 850000,
+    "food_meal_avg": 16000,
+    "transport_monthly": 120000,
+    "grocery_basket": 140000,
+    "sources": {
+      "rent_url": "https://mamikos.com/kost-jogja",
+      "food_url": "https://pergikuliner.com/jogja",
+      "transport_url": "https://dishub.jogjaprov.go.id/trans-jogja",
+      "grocery_url": "https://superindo.co.id",
+      "community_note": "Verified from Twitter/X Jogja cost threads: Student kost in Sleman/Depok Rp 650k-1.1M, Burjo/Gudeg/Nasi Sayur Rp 12k-20k, Trans Jogja Rp 3,600/trip."
+    }
+  },
+  {
+    "city": "Bandung",
+    "aliases": [
+      "Kota Bandung",
+      "Bdg",
+      "Paris van Java"
+    ],
+    "country": "Indonesia",
+    "iso2": "ID",
+    "currency": "IDR",
+    "rent_or_kost_monthly": 1450000,
+    "food_meal_avg": 22000,
+    "transport_monthly": 180000,
+    "grocery_basket": 190000,
+    "sources": {
+      "rent_url": "https://mamikos.com/kost-bandung",
+      "food_url": "https://pergikuliner.com/bandung",
+      "transport_url": "https://transport.bandung.go.id",
+      "grocery_url": "https://sayurbox.com",
+      "community_note": "Verified from Mamikos & Instagram Bandung guides: Dago/Dipatiukur kost Rp 1.2M-2.2M, Buahbatu/Cibiru Rp 800k-1.4M, Warteg/Batagor/Timbel Rp 18k-28k."
+    }
+  },
+  {
+    "city": "Surabaya",
+    "aliases": [
+      "Kota Surabaya",
+      "Sby"
+    ],
+    "country": "Indonesia",
+    "iso2": "ID",
+    "currency": "IDR",
+    "rent_or_kost_monthly": 1300000,
+    "food_meal_avg": 20000,
+    "transport_monthly": 170000,
+    "grocery_basket": 180000,
+    "sources": {
+      "rent_url": "https://mamikos.com/kost-surabaya",
+      "food_url": "https://pergikuliner.com/surabaya",
+      "transport_url": "https://dishub.surabaya.go.id/suroboyobus",
+      "grocery_url": "https://superindo.co.id",
+      "community_note": "Verified from Suroboyo Bus & Mamikos: Gubeng/Sukolilo kost Rp 900k-1.8M, Rawon/Pecel Rp 18k-26k, Suroboyo Bus/Trans Semanggi Rp 5,000."
+    }
+  },
+  {
+    "city": "Denpasar",
+    "aliases": [
+      "Bali",
+      "Badung",
+      "Canggu",
+      "Kuta",
+      "Sanur",
+      "Ubud"
+    ],
+    "country": "Indonesia",
+    "iso2": "ID",
+    "currency": "IDR",
+    "rent_or_kost_monthly": 2200000,
+    "food_meal_avg": 28000,
+    "transport_monthly": 320000,
+    "grocery_basket": 260000,
+    "sources": {
+      "rent_url": "https://mamikos.com/kost-bali",
+      "food_url": "https://tripadvisor.com/restaurants-bali",
+      "transport_url": "https://temanbus.com/bali",
+      "grocery_url": "https://tiarabali.com",
+      "community_note": "Verified from Reddit r/bali & Threads: Local kost in Denpasar Rp 1.2M-2.2M, Canggu/Seminyak guesthouse Rp 3.5M-7M, Warung Nasi Campur Rp 22k-38k."
+    }
+  },
+  {
+    "city": "Medan",
+    "aliases": [
+      "Kota Medan"
+    ],
+    "country": "Indonesia",
+    "iso2": "ID",
+    "currency": "IDR",
+    "rent_or_kost_monthly": 1200000,
+    "food_meal_avg": 22000,
+    "transport_monthly": 160000,
+    "grocery_basket": 180000,
+    "sources": {
+      "rent_url": "https://mamikos.com/kost-medan",
+      "food_url": "https://pergikuliner.com/medan",
+      "transport_url": "https://temanbus.com/medan",
+      "grocery_url": "https://superindo.co.id",
+      "community_note": "Trans Metro Deli Teman Bus Rp 4,300, Kost in USU/Padang Bulan Rp 800k-1.5M, Mie Balap/Bihun Bebek/Nasi Gurih Rp 18k-28k."
+    }
+  },
+  {
+    "city": "Bangkok",
+    "aliases": [
+      "Krung Thep",
+      "BKK",
+      "Sukhumvit",
+      "Ari",
+      "Ladprao"
+    ],
+    "country": "Thailand",
+    "iso2": "TH",
+    "currency": "THB",
+    "rent_or_kost_monthly": 8500,
+    "food_meal_avg": 75,
+    "transport_monthly": 1100,
+    "grocery_basket": 850,
+    "sources": {
+      "rent_url": "https://ddproperty.com/condo-bangkok",
+      "food_url": "https://wongnai.com/bangkok",
+      "transport_url": "https://bts.co.th",
+      "grocery_url": "https://lotuss.com",
+      "community_note": "Verified from DDProperty & Wongnai: Studio condo near BTS (On Nut, Udom Suk, Bang Sue) ฿6.5k-฿10.5k, Pad Thai/Krapao/Khao Man Gai ฿55-฿90, BTS 30-day SmartPass ~฿1,100."
+    }
+  },
+  {
+    "city": "Chiang Mai",
+    "aliases": [
+      "Nimman",
+      "Old City Chiang Mai"
+    ],
+    "country": "Thailand",
+    "iso2": "TH",
+    "currency": "THB",
+    "rent_or_kost_monthly": 5500,
+    "food_meal_avg": 50,
+    "transport_monthly": 750,
+    "grocery_basket": 650,
+    "sources": {
+      "rent_url": "https://ddproperty.com/condo-chiang-mai",
+      "food_url": "https://wongnai.com/chiang-mai",
+      "transport_url": "https://transit-chiangmai.com",
+      "grocery_url": "https://bigc.co.th",
+      "community_note": "Verified from Reddit r/chiangmai & digital nomad threads: Studio condo in Santitham / Chang Phueak ฿4.5k-฿7.5k, Khao Soi/street meals ฿40-฿65, Songthaew/Scooter rental ฿600-฿900."
+    }
+  },
+  {
+    "city": "Phuket",
+    "aliases": [
+      "Phuket Town",
+      "Patong",
+      "Rawai"
+    ],
+    "country": "Thailand",
+    "iso2": "TH",
+    "currency": "THB",
+    "rent_or_kost_monthly": 9000,
+    "food_meal_avg": 90,
+    "transport_monthly": 1400,
+    "grocery_basket": 950,
+    "sources": {
+      "rent_url": "https://ddproperty.com/condo-phuket",
+      "food_url": "https://wongnai.com/phuket",
+      "transport_url": "https://phuketsmartbus.com",
+      "grocery_url": "https://lotuss.com",
+      "community_note": "Phuket Smart Bus & Songthaew, Studio in Phuket Town/Kathu ฿6.5k-฿11k, Seafood/Thai sit-down meal ฿75-฿120."
+    }
+  },
+  {
+    "city": "Kuala Lumpur",
+    "aliases": [
+      "KL",
+      "Klang Valley",
+      "Petaling Jaya",
+      "Bangsar"
+    ],
+    "country": "Malaysia",
+    "iso2": "MY",
+    "currency": "MYR",
+    "rent_or_kost_monthly": 950,
+    "food_meal_avg": 14,
+    "transport_monthly": 50,
+    "grocery_basket": 110,
+    "sources": {
+      "rent_url": "https://ibilik.my/rooms/kuala_lumpur",
+      "food_url": "https://eatdrinkkl.blogspot.com",
+      "transport_url": "https://myrapid.com.my/passess-fares/my50",
+      "grocery_url": "https://jaya-grocer.com",
+      "community_note": "Verified from RapidKL: My50 unlimited RapidKL LRT/MRT/Monorail/Bus pass is exactly RM50/month! Common room in condo near LRT RM750-RM1,200, Nasi Lemak/Mamak/Kopitiam RM10-RM18."
+    }
+  },
+  {
+    "city": "Penang",
+    "aliases": [
+      "George Town",
+      "Pulau Pinang"
+    ],
+    "country": "Malaysia",
+    "iso2": "MY",
+    "currency": "MYR",
+    "rent_or_kost_monthly": 750,
+    "food_meal_avg": 12,
+    "transport_monthly": 50,
+    "grocery_basket": 95,
+    "sources": {
+      "rent_url": "https://ibilik.my/rooms/penang",
+      "food_url": "https://penangfoodie.com",
+      "transport_url": "https://myrapid.com.my/bus/rapid-penang",
+      "grocery_url": "https://lotuss.com.my",
+      "community_note": "Mutiara Pass (Rapid Penang unlimited bus) RM50/mo, Room in Bayan Lepas/Gelugor/Jelutong RM550-RM900, Char Kway Teow/Hokkien Mee/Nasi Kandar RM8-RM15."
+    }
+  },
+  {
+    "city": "Ho Chi Minh City",
+    "aliases": [
+      "Saigon",
+      "HCMC",
+      "TPHCM"
+    ],
+    "country": "Vietnam",
+    "iso2": "VN",
+    "currency": "VND",
+    "rent_or_kost_monthly": 5800000,
+    "food_meal_avg": 45000,
+    "transport_monthly": 350000,
+    "grocery_basket": 450000,
+    "sources": {
+      "rent_url": "https://chotot.com/thue-phong-tro-tp-ho-chi-minh",
+      "food_url": "https://foody.vn/ho-chi-minh",
+      "transport_url": "https://buyttphcm.com.vn",
+      "grocery_url": "https://co-opmart.com.vn",
+      "community_note": "Verified from Cho Tot & Foody: Studio/room in Binh Thanh/District 7/Phu Nhuan 4.5M-7.5M VND, Com Tam/Pho/Bun Bo Hue 35k-55k VND, Monthly bus pass / Grab 300k-500k VND."
+    }
+  },
+  {
+    "city": "Hanoi",
+    "aliases": [
+      "Ha Noi",
+      "Tay Ho",
+      "Cau Giay"
+    ],
+    "country": "Vietnam",
+    "iso2": "VN",
+    "currency": "VND",
+    "rent_or_kost_monthly": 5200000,
+    "food_meal_avg": 40000,
+    "transport_monthly": 300000,
+    "grocery_basket": 420000,
+    "sources": {
+      "rent_url": "https://chotot.com/thue-phong-tro-ha-noi",
+      "food_url": "https://foody.vn/ha-noi",
+      "transport_url": "https://timbus.vn",
+      "grocery_url": "https://vinmart.co",
+      "community_note": "Hanoi Metro Line 2A pass & bus 200k-350k VND, Studio/room in Cau Giay/Dong Da/Hai Ba Trung 3.8M-6.8M VND, Bun Cha/Pho/Banh Mi 30k-50k VND."
+    }
+  },
+  {
+    "city": "Da Nang",
+    "aliases": [
+      "Danang"
+    ],
+    "country": "Vietnam",
+    "iso2": "VN",
+    "currency": "VND",
+    "rent_or_kost_monthly": 4200000,
+    "food_meal_avg": 35000,
+    "transport_monthly": 250000,
+    "grocery_basket": 380000,
+    "sources": {
+      "rent_url": "https://chotot.com/thue-phong-tro-da-nang",
+      "food_url": "https://foody.vn/da-nang",
+      "transport_url": "https://danangbus.vn",
+      "grocery_url": "https://lottemart.com.vn",
+      "community_note": "DanaBus monthly pass 180k-250k VND, Studio near My Khe or Hai Chau 3.2M-5.5M VND, Mi Quang/Bun Cha Ca/Com Ga 28k-42k VND."
+    }
+  },
+  {
+    "city": "Manila",
+    "aliases": [
+      "Metro Manila",
+      "Makati",
+      "BGC",
+      "Quezon City",
+      "Taguig"
+    ],
+    "country": "Philippines",
+    "iso2": "PH",
+    "currency": "PHP",
+    "rent_or_kost_monthly": 12500,
+    "food_meal_avg": 180,
+    "transport_monthly": 1200,
+    "grocery_basket": 1400,
+    "sources": {
+      "rent_url": "https://rentpad.com.ph/manila",
+      "food_url": "https://zomato.com/manila",
+      "transport_url": "https://dotr.gov.ph",
+      "grocery_url": "https://smmarkets.ph",
+      "community_note": "MRT/LRT & Beep card ~1,200 PHP/mo, Studio / condo-sharing in Mandaluyong/Makati fringe 9,500-16,000 PHP, Karinderya / Inasal / Fast casual 140-240 PHP."
+    }
+  },
+  {
+    "city": "Cebu",
+    "country": "Philippines",
+    "currency": "PHP",
+    "rent_or_kost_monthly": 10000,
+    "food_meal_avg": 160,
+    "transport_monthly": 1000,
+    "grocery_basket": 1300,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Cebu",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Cebu",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Cebu",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Cebu"
+    }
+  },
+  {
+    "city": "Kyoto",
+    "aliases": [
+      "Kyoto-shi"
+    ],
+    "country": "Japan",
+    "iso2": "JP",
+    "currency": "JPY",
+    "rent_or_kost_monthly": 54000,
+    "food_meal_avg": 850,
+    "transport_monthly": 8500,
+    "grocery_basket": 5000,
+    "sources": {
+      "rent_url": "https://suumo.jp/kyoto",
+      "food_url": "https://tabelog.com/kyoto",
+      "transport_url": "https://city.kyoto.lg.jp/kotsu",
+      "grocery_url": "https://fresco-super.co.jp",
+      "community_note": "1K student/resident room near Kyoto Univ / Sakyo-ku ¥42k-¥65k, Subway & bus monthly pass ¥8k-¥10k, Teishoku ¥700-¥950."
+    }
+  },
+  {
+    "city": "Busan",
+    "aliases": [
+      "Busan Metropolitan City",
+      "Haeundae",
+      "Seomyeon"
+    ],
+    "country": "South Korea",
+    "iso2": "KR",
+    "currency": "KRW",
+    "rent_or_kost_monthly": 450000,
+    "food_meal_avg": 7800,
+    "transport_monthly": 55000,
+    "grocery_basket": 48000,
+    "sources": {
+      "rent_url": "https://dabangapp.com/busan",
+      "food_url": "https://mangoplate.com/busan",
+      "transport_url": "https://humetro.busan.kr",
+      "grocery_url": "https://homeplus.co.kr",
+      "community_note": "Dongbaekjeon transit pass & Busan Metro ₩55,000, One-room in Geumjeong/Sasang/Busanjin ₩350k-₩520k, Dwaeji Gukbap/Milmyeon ₩7,000-₩9,000."
+    }
+  },
+  {
+    "city": "Mumbai",
+    "aliases": [
+      "Bombay",
+      "MMR",
+      "Andheri",
+      "Bandra"
+    ],
+    "country": "India",
+    "iso2": "IN",
+    "currency": "INR",
+    "rent_or_kost_monthly": 22000,
+    "food_meal_avg": 220,
+    "transport_monthly": 1000,
+    "grocery_basket": 1300,
+    "sources": {
+      "rent_url": "https://nobroker.in/mumbai",
+      "food_url": "https://zomato.com/mumbai",
+      "transport_url": "https://wr.indianrailways.gov.in",
+      "grocery_url": "https://bigbasket.com",
+      "community_note": "Local train first class monthly season ticket + Metro ₹800-₹1,400, 1BHK/Room in Andheri West / Goregaon / Thane ₹16k-₹28k, Thali / Dosa / Vada Pav ₹150-₹280."
+    }
+  },
+  {
+    "city": "Delhi",
+    "aliases": [
+      "New Delhi",
+      "NCR",
+      "Gurugram",
+      "Noida"
+    ],
+    "country": "India",
+    "iso2": "IN",
+    "currency": "INR",
+    "rent_or_kost_monthly": 15000,
+    "food_meal_avg": 190,
+    "transport_monthly": 1400,
+    "grocery_basket": 1150,
+    "sources": {
+      "rent_url": "https://nobroker.in/delhi",
+      "food_url": "https://zomato.com/ncr",
+      "transport_url": "https://delhimetrorail.com",
+      "grocery_url": "https://blinkit.com",
+      "community_note": "Delhi Metro smart card ~₹1,400/mo, 1BHK in Saket/Lajpat Nagar/Noida ₹11k-₹20k, Chole Bhature/Thali/Paratha ₹130-₹240."
+    }
+  },
+  {
+    "city": "Bengaluru",
+    "aliases": [
+      "Bangalore",
+      "Koramangala",
+      "Indiranagar",
+      "HSR Layout"
+    ],
+    "country": "India",
+    "iso2": "IN",
+    "currency": "INR",
+    "rent_or_kost_monthly": 16000,
+    "food_meal_avg": 180,
+    "transport_monthly": 1500,
+    "grocery_basket": 1200,
+    "sources": {
+      "rent_url": "https://nobroker.in/bangalore",
+      "food_url": "https://zomato.com/bangalore",
+      "transport_url": "https://mybmtc.karnataka.gov.in",
+      "grocery_url": "https://blinkit.com",
+      "community_note": "BMTC Vajra gold monthly bus pass ₹1,500-₹2,000, 1BHK in HSR/BTM/Marathahalli ₹12k-₹22k, South Indian Thali/Dosa/Briyani ₹120-₹220."
+    }
+  },
+  {
+    "city": "Madrid",
+    "aliases": [
+      "Comunidad de Madrid",
+      "Malasaña",
+      "Chamberí",
+      "Lavapiés"
+    ],
+    "country": "Spain",
+    "iso2": "ES",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 560,
+    "food_meal_avg": 12,
+    "transport_monthly": 21.8,
+    "grocery_basket": 40,
+    "sources": {
+      "rent_url": "https://idealista.com/alquiler-habitacion/madrid",
+      "food_url": "https://madridsecreto.co",
+      "transport_url": "https://crtm.es",
+      "grocery_url": "https://mercadona.es",
+      "community_note": "Verified from CRTM & Idealista: Abono Transportes Zone A is subsidized at €21.80/month! Room in shared apartment €450-€680, Menú del día (2-course + drink) €10.50-€14."
+    }
+  },
+  {
+    "city": "Barcelona",
+    "aliases": [
+      "Catalonia",
+      "Catalunya",
+      "Gràcia",
+      "Eixample"
+    ],
+    "country": "Spain",
+    "iso2": "ES",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 620,
+    "food_meal_avg": 13,
+    "transport_monthly": 21.35,
+    "grocery_basket": 42,
+    "sources": {
+      "rent_url": "https://idealista.com/alquiler-habitacion/barcelona",
+      "food_url": "https://barcelonasecreta.com",
+      "transport_url": "https://tmb.cat/en/barcelona-fares-metro-bus/single-and-integrated/t-usual",
+      "grocery_url": "https://mercadona.es",
+      "community_note": "Verified from TMB: T-Usual unlimited monthly pass is €21.35! Room in Gràcia/Sants/Poblenou €520-€750, Menú del migdia €11-€15."
+    }
+  },
+  {
+    "city": "Valencia",
+    "aliases": [
+      "Comunitat Valenciana",
+      "Ruzafa"
+    ],
+    "country": "Spain",
+    "iso2": "ES",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 440,
+    "food_meal_avg": 10.5,
+    "transport_monthly": 14.85,
+    "grocery_basket": 36,
+    "sources": {
+      "rent_url": "https://idealista.com/alquiler-habitacion/valencia",
+      "food_url": "https://valenciasecreta.com",
+      "transport_url": "https://metrovalencia.es",
+      "grocery_url": "https://mercadona.es",
+      "community_note": "Suma Mensual pass €14.85 (under discount), Room in Benimaclet/Ruzafa/El Carmen €350-€520, Paella / Menú del día €9.50-€13."
+    }
+  },
+  {
+    "city": "Lisbon",
+    "country": "Portugal",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 620,
+    "food_meal_avg": 11,
+    "transport_monthly": 40,
+    "grocery_basket": 38,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Lisbon",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Lisbon",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Lisbon",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Lisbon"
+    }
+  },
+  {
+    "city": "Porto",
+    "country": "Portugal",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 480,
+    "food_meal_avg": 9.5,
+    "transport_monthly": 30,
+    "grocery_basket": 35,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Porto",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Porto",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Porto",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Porto"
+    }
+  },
+  {
+    "city": "Warsaw",
+    "country": "Poland",
+    "currency": "PLN",
+    "rent_or_kost_monthly": 2400,
+    "food_meal_avg": 35,
+    "transport_monthly": 110,
+    "grocery_basket": 140,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Warsaw",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Warsaw",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Warsaw",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Warsaw"
+    }
+  },
+  {
+    "city": "Prague",
+    "country": "Czech Republic",
+    "currency": "CZK",
+    "rent_or_kost_monthly": 16500,
+    "food_meal_avg": 200,
+    "transport_monthly": 550,
+    "grocery_basket": 1100,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Prague",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Prague",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Prague",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Prague"
+    }
+  },
+  {
+    "city": "Budapest",
+    "country": "Hungary",
+    "currency": "HUF",
+    "rent_or_kost_monthly": 180000,
+    "food_meal_avg": 3500,
+    "transport_monthly": 9500,
+    "grocery_basket": 14000,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Budapest",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Budapest",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Budapest",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Budapest"
+    }
+  },
+  {
+    "city": "Athens",
+    "country": "Greece",
+    "currency": "EUR",
+    "rent_or_kost_monthly": 450,
+    "food_meal_avg": 12,
+    "transport_monthly": 30,
+    "grocery_basket": 38,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Athens",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Athens",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Athens",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Athens"
+    }
+  },
+  {
+    "city": "Istanbul",
+    "country": "Turkey",
+    "currency": "TRY",
+    "rent_or_kost_monthly": 16000,
+    "food_meal_avg": 250,
+    "transport_monthly": 1200,
+    "grocery_basket": 1100,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Istanbul",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Istanbul",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Istanbul",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Istanbul"
+    }
+  },
+  {
+    "city": "Montreal",
+    "aliases": [
+      "Montréal",
+      "Plateau",
+      "Mile End"
+    ],
+    "country": "Canada",
+    "iso2": "CA",
+    "currency": "CAD",
+    "rent_or_kost_monthly": 750,
+    "food_meal_avg": 17,
+    "transport_monthly": 97,
+    "grocery_basket": 70,
+    "sources": {
+      "rent_url": "https://kijiji.ca/montreal/rooms",
+      "food_url": "https://montreal.eater.com",
+      "transport_url": "https://stm.info/en/info/fares/transit-fares",
+      "grocery_url": "https://superc.ca",
+      "community_note": "STM Monthly pass C$97, Room in Plateau/Mile End/Rosemont/Verdun C$600-C$900, Poutine/bistro/lunch menu C$14-C$20."
+    }
+  },
+  {
+    "city": "Mexico City",
+    "aliases": [
+      "CDMX",
+      "Ciudad de Mexico",
+      "Roma",
+      "Condesa",
+      "Coyoacan"
+    ],
+    "country": "Mexico",
+    "iso2": "MX",
+    "currency": "MXN",
+    "rent_or_kost_monthly": 7500,
+    "food_meal_avg": 130,
+    "transport_monthly": 350,
+    "grocery_basket": 650,
+    "sources": {
+      "rent_url": "https://inmuebles24.com/departamentos-en-renta-en-df-cdmx.html",
+      "food_url": "https://chilango.com/comida",
+      "transport_url": "https://metro.cdmx.gob.mx",
+      "grocery_url": "https://chedraui.com.mx",
+      "community_note": "Verified from CDMX Metro: Metro ticket 5 MXN ($0.30) & Metrobus 6 MXN (~350 MXN/mo), Room in Narvarte/Del Valle/San Rafael 5.5k-9k MXN, Comida corrida sit-down 3-course lunch 90-150 MXN."
+    }
+  },
+  {
+    "city": "Guadalajara",
+    "country": "Mexico",
+    "currency": "MXN",
+    "rent_or_kost_monthly": 6500,
+    "food_meal_avg": 120,
+    "transport_monthly": 320,
+    "grocery_basket": 650,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Guadalajara",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Guadalajara",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Guadalajara",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Guadalajara"
+    }
+  },
+  {
+    "city": "São Paulo",
+    "aliases": [
+      "SP",
+      "Sampa",
+      "Pinheiros",
+      "Vila Mariana"
+    ],
+    "country": "Brazil",
+    "iso2": "BR",
+    "currency": "BRL",
+    "rent_or_kost_monthly": 1700,
+    "food_meal_avg": 32,
+    "transport_monthly": 213.8,
+    "grocery_basket": 160,
+    "sources": {
+      "rent_url": "https://quintoandar.com.br/alugar/imovel/sao-paulo-sp-brasil",
+      "food_url": "https://vejasp.abril.com.br/comer-e-beber",
+      "transport_url": "https://sptrans.com.br/bilhete-unico",
+      "grocery_url": "https://paodeacucar.com",
+      "community_note": "Bilhete Único Mensal pass 213.80 BRL, Quarto/Kitnet in Vila Mariana/Santana/Butantã 1,300-2,200 BRL, Prato Feito (PF) sit-down lunch 24-38 BRL."
+    }
+  },
+  {
+    "city": "Rio de Janeiro",
+    "country": "Brazil",
+    "currency": "BRL",
+    "rent_or_kost_monthly": 1700,
+    "food_meal_avg": 32,
+    "transport_monthly": 210,
+    "grocery_basket": 170,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Rio%20de%20Janeiro",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Rio%20de%20Janeiro",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Rio%20de%20Janeiro",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Rio%20de%20Janeiro"
+    }
+  },
+  {
+    "city": "Buenos Aires",
+    "aliases": [
+      "CABA",
+      "Palermo",
+      "Recoleta",
+      "San Telmo"
+    ],
+    "country": "Argentina",
+    "iso2": "AR",
+    "currency": "ARS",
+    "rent_or_kost_monthly": 320000,
+    "food_meal_avg": 6500,
+    "transport_monthly": 16000,
+    "grocery_basket": 28000,
+    "sources": {
+      "rent_url": "https://zonaprop.com.ar/departamentos-alquiler-capital-federal.html",
+      "food_url": "https://guiaoleo.com.ar",
+      "transport_url": "https://argentina.gob.ar/sube",
+      "grocery_url": "https://coto.com.ar",
+      "community_note": "SUBE card Subte/Colectivo ~16k ARS/mo, Room in Almagro/Caballito/Villa Crespo 240k-400k ARS, Menú ejecutivo con bebida 5k-8.5k ARS."
+    }
+  },
+  {
+    "city": "Santiago",
+    "country": "Chile",
+    "currency": "CLP",
+    "rent_or_kost_monthly": 380000,
+    "food_meal_avg": 7500,
+    "transport_monthly": 38000,
+    "grocery_basket": 35000,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Santiago",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Santiago",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Santiago",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Santiago"
+    }
+  },
+  {
+    "city": "Bogota",
+    "aliases": [
+      "Bogotá",
+      "Chapinero",
+      "Teusaquillo"
+    ],
+    "country": "Colombia",
+    "iso2": "CO",
+    "currency": "COP",
+    "rent_or_kost_monthly": 950000,
+    "food_meal_avg": 16000,
+    "transport_monthly": 140000,
+    "grocery_basket": 110000,
+    "sources": {
+      "rent_url": "https://fincaraiz.com.co/arriendo/apartamentos/bogota",
+      "food_url": "https://degusta.com.co/bogota",
+      "transport_url": "https://transmilenio.gov.co",
+      "grocery_url": "https://exito.com",
+      "community_note": "TransMilenio / SITP card 140k COP/mo, Room/Apartaestudio in Chapinero/Teusaquillo 750k-1.3M COP, Almuerzo corriente (sopa, seco, jugo) 13k-20k COP."
+    }
+  },
+  {
+    "city": "Medellin",
+    "aliases": [
+      "Medellín",
+      "Poblado",
+      "Laureles",
+      "Envigado"
+    ],
+    "country": "Colombia",
+    "iso2": "CO",
+    "currency": "COP",
+    "rent_or_kost_monthly": 1100000,
+    "food_meal_avg": 18000,
+    "transport_monthly": 130000,
+    "grocery_basket": 115000,
+    "sources": {
+      "rent_url": "https://fincaraiz.com.co/arriendo/apartamentos/medellin",
+      "food_url": "https://degusta.com.co/medellin",
+      "transport_url": "https://metrodemedellin.gov.co",
+      "grocery_url": "https://carulla.com",
+      "community_note": "Tarjeta Cívica Metro de Medellín 130k COP/mo, Room in Laureles/Estadio/Belen 850k-1.5M COP, Bandeja Paisa/Executive lunch 14k-22k COP."
+    }
+  },
+  {
+    "city": "Lima",
+    "country": "Peru",
+    "currency": "PEN",
+    "rent_or_kost_monthly": 1200,
+    "food_meal_avg": 18,
+    "transport_monthly": 120,
+    "grocery_basket": 110,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Lima",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Lima",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Lima",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Lima"
+    }
+  },
+  {
+    "city": "Dubai",
+    "aliases": [
+      "DXB",
+      "Dubai Marina",
+      "Deira",
+      "JLT"
+    ],
+    "country": "United Arab Emirates",
+    "iso2": "AE",
+    "currency": "AED",
+    "rent_or_kost_monthly": 3200,
+    "food_meal_avg": 42,
+    "transport_monthly": 280,
+    "grocery_basket": 220,
+    "sources": {
+      "rent_url": "https://dubizzle.com/dubai/rooms-for-rent",
+      "food_url": "https://zomato.com/dubai",
+      "transport_url": "https://rta.ae/wps/portal/rta/ae/public-transport/nol/fares",
+      "grocery_url": "https://carrefouruae.com",
+      "community_note": "Verified from RTA Dubai: Nol 7-Day / 30-Day pass 230-350 AED, Master room in shared apartment (Barsha, JLT, Silicon Oasis) 2.4k-4.2k AED, Casual Arabic/Indian lunch 30-55 AED."
+    }
+  },
+  {
+    "city": "Riyadh",
+    "aliases": [
+      "Al Riyadh"
+    ],
+    "country": "Saudi Arabia",
+    "iso2": "SA",
+    "currency": "SAR",
+    "rent_or_kost_monthly": 2400,
+    "food_meal_avg": 32,
+    "transport_monthly": 180,
+    "grocery_basket": 200,
+    "sources": {
+      "rent_url": "https://sa.aqar.fm/riyadh",
+      "food_url": "https://hungerstation.com",
+      "transport_url": "https://riyadhbus.sa",
+      "grocery_url": "https://danube.sa",
+      "community_note": "Riyadh Bus monthly pass 180 SAR, Room/Studio in Al Malaz/Al Olaya fringe 1.8k-3.2k SAR, Kabsa/Shawarma/sit-down lunch 25-45 SAR."
+    }
+  },
+  {
+    "city": "Cairo",
+    "aliases": [
+      "Al Qahirah",
+      "Maadi",
+      "Zamalek",
+      "Nasr City"
+    ],
+    "country": "Egypt",
+    "iso2": "EG",
+    "currency": "EGP",
+    "rent_or_kost_monthly": 5200,
+    "food_meal_avg": 110,
+    "transport_monthly": 320,
+    "grocery_basket": 500,
+    "sources": {
+      "rent_url": "https://propertyfinder.eg/en/rent/apartments-for-rent-cairo.html",
+      "food_url": "https://elmenus.com/cairo",
+      "transport_url": "https://cairometro.gov.eg",
+      "grocery_url": "https://spinneys-egypt.com",
+      "community_note": "Cairo Metro monthly subscription 280-400 EGP, Room in Maadi/Dokki/Nasr City 3.8k-7.5k EGP, Koshary/Grill/sit-down meal 75-150 EGP."
+    }
+  },
+  {
+    "city": "Cape Town",
+    "aliases": [
+      "Mother City",
+      "Observatory",
+      "Sea Point"
+    ],
+    "country": "South Africa",
+    "iso2": "ZA",
+    "currency": "ZAR",
+    "rent_or_kost_monthly": 6200,
+    "food_meal_avg": 135,
+    "transport_monthly": 720,
+    "grocery_basket": 620,
+    "sources": {
+      "rent_url": "https://property24.com/to-rent/cape-town/western-cape/432",
+      "food_url": "https://eatout.co.za/city/cape-town",
+      "transport_url": "https://myciti.org.za",
+      "grocery_url": "https://woolworths.co.za",
+      "community_note": "MyCiTi monthly bus fare ~720 ZAR, Room in Observatory/Woodstock/Rondebosch 4.8k-7.8k ZAR, Cafe/bistro lunch 110-170 ZAR."
+    }
+  },
+  {
+    "city": "Johannesburg",
+    "country": "South Africa",
+    "currency": "ZAR",
+    "rent_or_kost_monthly": 5500,
+    "food_meal_avg": 130,
+    "transport_monthly": 700,
+    "grocery_basket": 600,
+    "sources": {
+      "rent_url": "https://www.numbeo.com/cost-of-living/in/Johannesburg",
+      "food_url": "https://www.numbeo.com/cost-of-living/in/Johannesburg",
+      "transport_url": "https://www.numbeo.com/cost-of-living/in/Johannesburg",
+      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Johannesburg"
+    }
+  },
+  {
+    "city": "Nairobi",
+    "aliases": [
+      "Kilimani",
+      "Westlands",
+      "Ngara"
+    ],
+    "country": "Kenya",
+    "iso2": "KE",
+    "currency": "KES",
+    "rent_or_kost_monthly": 26000,
+    "food_meal_avg": 500,
+    "transport_monthly": 3600,
+    "grocery_basket": 3000,
+    "sources": {
+      "rent_url": "https://buyrentkenya.com/flats-apartments-for-rent/nairobi",
+      "food_url": "https://eatout.co.ke/nairobi",
+      "transport_url": "https://matatupass.co.ke",
+      "grocery_url": "https://naivas.co.ke",
+      "community_note": "Matatu / Bus fare ~3,600 KES/mo, Bedsitter / 1-bed in Ngara/Parklands/South B 18k-34k KES, Nyama Choma / Ugali / Sit-down meal 380-680 KES."
+    }
+  },
+  {
+    "city": "Semarang",
+    "aliases": [
+      "Kota Semarang"
+    ],
+    "country": "Indonesia",
+    "iso2": "ID",
+    "currency": "IDR",
+    "rent_or_kost_monthly": 950000,
+    "food_meal_avg": 17000,
+    "transport_monthly": 130000,
+    "grocery_basket": 150000,
+    "sources": {
+      "rent_url": "https://mamikos.com/kost-semarang",
+      "food_url": "https://pergikuliner.com/semarang",
+      "transport_url": "https://transsemarang.semarangkota.go.id",
+      "grocery_url": "https://superindo.co.id",
+      "community_note": "Trans Semarang bus pass Rp 3,500/trip, Tembalang/Undip & Pleburan kost Rp 700k-1.4M, Nasi Ayam/Lumpia/Soto Rp 14k-22k."
+    }
+  },
+  {
+    "city": "Malang",
+    "aliases": [
+      "Kota Malang"
+    ],
+    "country": "Indonesia",
+    "iso2": "ID",
+    "currency": "IDR",
+    "rent_or_kost_monthly": 800000,
+    "food_meal_avg": 15000,
+    "transport_monthly": 120000,
+    "grocery_basket": 135000,
+    "sources": {
+      "rent_url": "https://mamikos.com/kost-malang",
+      "food_url": "https://pergikuliner.com/malang",
+      "transport_url": "https://dishub.malangkota.go.id",
+      "grocery_url": "https://superindo.co.id",
+      "community_note": "UB / Suhat student kost Rp 600k-1.2M, Bakso Malang/Cwie Mie/Warung Rp 12k-20k."
+    }
+  },
+  {
+    "city": "Makassar",
+    "aliases": [
+      "Ujung Pandang"
+    ],
+    "country": "Indonesia",
+    "iso2": "ID",
+    "currency": "IDR",
+    "rent_or_kost_monthly": 1100000,
+    "food_meal_avg": 22000,
+    "transport_monthly": 160000,
+    "grocery_basket": 180000,
+    "sources": {
+      "rent_url": "https://mamikos.com/kost-makassar",
+      "food_url": "https://pergikuliner.com/makassar",
+      "transport_url": "https://temanbus.com/makassar",
+      "grocery_url": "https://superindo.co.id",
+      "community_note": "Teman Bus Trans Mamminasata Rp 4,600, Kost in Tamalanrea/Unhas Rp 750k-1.5M, Coto/Pallubasa/Konro Rp 18k-30k."
+    }
+  },
+  {
+    "city": "Fukuoka",
+    "aliases": [
+      "Hakata",
+      "Fukuoka-shi"
+    ],
+    "country": "Japan",
+    "iso2": "JP",
+    "currency": "JPY",
+    "rent_or_kost_monthly": 46000,
+    "food_meal_avg": 750,
+    "transport_monthly": 8000,
+    "grocery_basket": 4600,
+    "sources": {
+      "rent_url": "https://suumo.jp/fukuoka",
+      "food_url": "https://tabelog.com/fukuoka",
+      "transport_url": "https://subway.city.fukuoka.lg.jp",
+      "grocery_url": "https://sunny-super.co.jp",
+      "community_note": "Fukuoka Subway monthly pass ¥7,200, 1K in Tenjin/Hakata/Nishijin ¥38k-¥58k, Tonkotsu Ramen / Udon meal ¥550-¥850."
+    }
+  },
+  {
+    "city": "Sapporo",
+    "aliases": [
+      "Sapporo-shi",
+      "Hokkaido"
+    ],
+    "country": "Japan",
+    "iso2": "JP",
+    "currency": "JPY",
+    "rent_or_kost_monthly": 44000,
+    "food_meal_avg": 780,
+    "transport_monthly": 8200,
+    "grocery_basket": 4700,
+    "sources": {
+      "rent_url": "https://suumo.jp/sapporo",
+      "food_url": "https://tabelog.com/sapporo",
+      "transport_url": "https://city.sapporo.jp/st",
+      "grocery_url": "https://aeon-hokkaido.jp",
+      "community_note": "Sapporo Subway commuter pass ¥7,800, 1K in Kita-ku / Shiroishi ¥36k-¥52k, Miso Ramen / Soup Curry lunch ¥650-¥900."
+    }
+  },
+  {
+    "city": "Incheon",
+    "aliases": [
+      "Incheon Metropolitan City",
+      "Songdo"
+    ],
+    "country": "South Korea",
+    "iso2": "KR",
+    "currency": "KRW",
+    "rent_or_kost_monthly": 480000,
+    "food_meal_avg": 8200,
+    "transport_monthly": 60000,
+    "grocery_basket": 50000,
+    "sources": {
+      "rent_url": "https://dabangapp.com/incheon",
+      "food_url": "https://mangoplate.com/incheon",
+      "transport_url": "https://ictr.or.kr",
+      "grocery_url": "https://emart.com",
+      "community_note": "Incheon I-Pass / Metro ₩60,000, One-room in Bupyeong/Michuhol ₩380k-₩560k, Kalguksu/Jjajangmyeon/Sundubu ₩7,500-₩9,500."
+    }
+  },
+  {
+    "city": "Cebu City",
+    "aliases": [
+      "Cebu",
+      "IT Park Cebu"
+    ],
+    "country": "Philippines",
+    "iso2": "PH",
+    "currency": "PHP",
+    "rent_or_kost_monthly": 9500,
+    "food_meal_avg": 150,
+    "transport_monthly": 950,
+    "grocery_basket": 1200,
+    "sources": {
+      "rent_url": "https://rentpad.com.ph/cebu",
+      "food_url": "https://zomato.com/cebu",
+      "transport_url": "https://mybus.ph",
+      "grocery_url": "https://gaisano.ph",
+      "community_note": "MyBus & Jeepney transit, Studio in Lahug/IT Park fringe 7.5k-12.5k PHP, Puso/Lechon/Carenderia meal 110-190 PHP."
+    }
+  },
+  {
+    "city": "Hyderabad",
+    "aliases": [
+      "Cyberabad",
+      "Gachibowli",
+      "Hitec City"
+    ],
+    "country": "India",
+    "iso2": "IN",
+    "currency": "INR",
+    "rent_or_kost_monthly": 13000,
+    "food_meal_avg": 170,
+    "transport_monthly": 1200,
+    "grocery_basket": 1100,
+    "sources": {
+      "rent_url": "https://nobroker.in/hyderabad",
+      "food_url": "https://zomato.com/hyderabad",
+      "transport_url": "https://ltmetro.com",
+      "grocery_url": "https://bigbasket.com",
+      "community_note": "Hyderabad Metro pass ~₹1,200, 1BHK in Kondapur/Madhapur/Kukatpally ₹10k-₹18k, Hyderabadi Biryani/Meals ₹120-₹220."
+    }
+  },
+  {
+    "city": "Birmingham",
+    "aliases": [
+      "West Midlands"
+    ],
+    "country": "United Kingdom",
+    "iso2": "GB",
+    "currency": "GBP",
+    "rent_or_kost_monthly": 520,
+    "food_meal_avg": 12,
+    "transport_monthly": 75,
+    "grocery_basket": 35,
+    "sources": {
+      "rent_url": "https://spareroom.co.uk/birmingham",
+      "food_url": "https://visitbirmingham.com",
+      "transport_url": "https://tfwm.org.uk",
+      "grocery_url": "https://asda.com",
+      "community_note": "Swift regional bus/tram pass £75/mo, Room in Selly Oak/Moseley/Edgbaston £440-£650, Balti/pub/lunch menu £9.50-£14."
+    }
+  }
+]

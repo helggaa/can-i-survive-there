@@ -1,0 +1,1930 @@
+[
+  {
+    "id": "country-af",
+    "iso_code": "AF",
+    "iso3": "AFG",
+    "name": "Afghanistan",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-al",
+    "iso_code": "AL",
+    "iso3": "ALB",
+    "name": "Albania",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-dz",
+    "iso_code": "DZ",
+    "iso3": "DZA",
+    "name": "Algeria",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-as",
+    "iso_code": "AS",
+    "iso3": "ASM",
+    "name": "American Samoa",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-ad",
+    "iso_code": "AD",
+    "iso3": "AND",
+    "name": "Andorra",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-ao",
+    "iso_code": "AO",
+    "iso3": "AGO",
+    "name": "Angola",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-ai",
+    "iso_code": "AI",
+    "iso3": "AIA",
+    "name": "Anguilla",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-ag",
+    "iso_code": "AG",
+    "iso3": "ATG",
+    "name": "Antigua and Barbuda",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-ar",
+    "iso_code": "AR",
+    "iso3": "ARG",
+    "name": "Argentina",
+    "currency_code": "ARS",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-am",
+    "iso_code": "AM",
+    "iso3": "ARM",
+    "name": "Armenia",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-aw",
+    "iso_code": "AW",
+    "iso3": "ABW",
+    "name": "Aruba",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-au",
+    "iso_code": "AU",
+    "iso3": "AUS",
+    "name": "Australia",
+    "currency_code": "AUD",
+    "gni_per_capita_ppp": 60000
+  },
+  {
+    "id": "country-at",
+    "iso_code": "AT",
+    "iso3": "AUT",
+    "name": "Austria",
+    "currency_code": "EUR",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-az",
+    "iso_code": "AZ",
+    "iso3": "AZE",
+    "name": "Azerbaijan",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-bs",
+    "iso_code": "BS",
+    "iso3": "BHS",
+    "name": "Bahamas, The",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-bh",
+    "iso_code": "BH",
+    "iso3": "BHR",
+    "name": "Bahrain",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-bd",
+    "iso_code": "BD",
+    "iso3": "BGD",
+    "name": "Bangladesh",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-bb",
+    "iso_code": "BB",
+    "iso3": "BRB",
+    "name": "Barbados",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-by",
+    "iso_code": "BY",
+    "iso3": "BLR",
+    "name": "Belarus",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-be",
+    "iso_code": "BE",
+    "iso3": "BEL",
+    "name": "Belgium",
+    "currency_code": "EUR",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-bz",
+    "iso_code": "BZ",
+    "iso3": "BLZ",
+    "name": "Belize",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-bj",
+    "iso_code": "BJ",
+    "iso3": "BEN",
+    "name": "Benin",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-bm",
+    "iso_code": "BM",
+    "iso3": "BMU",
+    "name": "Bermuda",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-bt",
+    "iso_code": "BT",
+    "iso3": "BTN",
+    "name": "Bhutan",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-bo",
+    "iso_code": "BO",
+    "iso3": "BOL",
+    "name": "Bolivia",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-bq",
+    "iso_code": "BQ",
+    "iso3": "BES",
+    "name": "Bonaire, Sint Eustatius, and Saba",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-ba",
+    "iso_code": "BA",
+    "iso3": "BIH",
+    "name": "Bosnia and Herzegovina",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-bw",
+    "iso_code": "BW",
+    "iso3": "BWA",
+    "name": "Botswana",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-br",
+    "iso_code": "BR",
+    "iso3": "BRA",
+    "name": "Brazil",
+    "currency_code": "BRL",
+    "gni_per_capita_ppp": 90000
+  },
+  {
+    "id": "country-bn",
+    "iso_code": "BN",
+    "iso3": "BRN",
+    "name": "Brunei",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-bg",
+    "iso_code": "BG",
+    "iso3": "BGR",
+    "name": "Bulgaria",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-bf",
+    "iso_code": "BF",
+    "iso3": "BFA",
+    "name": "Burkina Faso",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-mm",
+    "iso_code": "MM",
+    "iso3": "MMR",
+    "name": "Burma",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-bi",
+    "iso_code": "BI",
+    "iso3": "BDI",
+    "name": "Burundi",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-cv",
+    "iso_code": "CV",
+    "iso3": "CPV",
+    "name": "Cabo Verde",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-kh",
+    "iso_code": "KH",
+    "iso3": "KHM",
+    "name": "Cambodia",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-cm",
+    "iso_code": "CM",
+    "iso3": "CMR",
+    "name": "Cameroon",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-ca",
+    "iso_code": "CA",
+    "iso3": "CAN",
+    "name": "Canada",
+    "currency_code": "CAD",
+    "gni_per_capita_ppp": 58000
+  },
+  {
+    "id": "country-ky",
+    "iso_code": "KY",
+    "iso3": "CYM",
+    "name": "Cayman Islands",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-cf",
+    "iso_code": "CF",
+    "iso3": "CAF",
+    "name": "Central African Republic",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-td",
+    "iso_code": "TD",
+    "iso3": "TCD",
+    "name": "Chad",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-cl",
+    "iso_code": "CL",
+    "iso3": "CHL",
+    "name": "Chile",
+    "currency_code": "CLP",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-cn",
+    "iso_code": "CN",
+    "iso3": "CHN",
+    "name": "China",
+    "currency_code": "CNY",
+    "gni_per_capita_ppp": 145000
+  },
+  {
+    "id": "country-cx",
+    "iso_code": "CX",
+    "iso3": "CXR",
+    "name": "Christmas Island",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-co",
+    "iso_code": "CO",
+    "iso3": "COL",
+    "name": "Colombia",
+    "currency_code": "COP",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-km",
+    "iso_code": "KM",
+    "iso3": "COM",
+    "name": "Comoros",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-cg",
+    "iso_code": "CG",
+    "iso3": "COG",
+    "name": "Congo (Brazzaville)",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-cd",
+    "iso_code": "CD",
+    "iso3": "COD",
+    "name": "Congo (Kinshasa)",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-ck",
+    "iso_code": "CK",
+    "iso3": "COK",
+    "name": "Cook Islands",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-cr",
+    "iso_code": "CR",
+    "iso3": "CRI",
+    "name": "Costa Rica",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-ci",
+    "iso_code": "CI",
+    "iso3": "CIV",
+    "name": "Côte d’Ivoire",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-hr",
+    "iso_code": "HR",
+    "iso3": "HRV",
+    "name": "Croatia",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-cu",
+    "iso_code": "CU",
+    "iso3": "CUB",
+    "name": "Cuba",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-cw",
+    "iso_code": "CW",
+    "iso3": "CUW",
+    "name": "Curaçao",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-cy",
+    "iso_code": "CY",
+    "iso3": "CYP",
+    "name": "Cyprus",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-cz",
+    "iso_code": "CZ",
+    "iso3": "CZE",
+    "name": "Czechia",
+    "currency_code": "CZK",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-dk",
+    "iso_code": "DK",
+    "iso3": "DNK",
+    "name": "Denmark",
+    "currency_code": "DKK",
+    "gni_per_capita_ppp": 480000
+  },
+  {
+    "id": "country-dj",
+    "iso_code": "DJ",
+    "iso3": "DJI",
+    "name": "Djibouti",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-dm",
+    "iso_code": "DM",
+    "iso3": "DMA",
+    "name": "Dominica",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-do",
+    "iso_code": "DO",
+    "iso3": "DOM",
+    "name": "Dominican Republic",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-ec",
+    "iso_code": "EC",
+    "iso3": "ECU",
+    "name": "Ecuador",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-eg",
+    "iso_code": "EG",
+    "iso3": "EGY",
+    "name": "Egypt",
+    "currency_code": "EGP",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-sv",
+    "iso_code": "SV",
+    "iso3": "SLV",
+    "name": "El Salvador",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-gq",
+    "iso_code": "GQ",
+    "iso3": "GNQ",
+    "name": "Equatorial Guinea",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-er",
+    "iso_code": "ER",
+    "iso3": "ERI",
+    "name": "Eritrea",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-ee",
+    "iso_code": "EE",
+    "iso3": "EST",
+    "name": "Estonia",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-sz",
+    "iso_code": "SZ",
+    "iso3": "SWZ",
+    "name": "Eswatini",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-et",
+    "iso_code": "ET",
+    "iso3": "ETH",
+    "name": "Ethiopia",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-fk",
+    "iso_code": "FK",
+    "iso3": "FLK",
+    "name": "Falkland Islands (Islas Malvinas)",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-fo",
+    "iso_code": "FO",
+    "iso3": "FRO",
+    "name": "Faroe Islands",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-fj",
+    "iso_code": "FJ",
+    "iso3": "FJI",
+    "name": "Fiji",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-fi",
+    "iso_code": "FI",
+    "iso3": "FIN",
+    "name": "Finland",
+    "currency_code": "EUR",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-fr",
+    "iso_code": "FR",
+    "iso3": "FRA",
+    "name": "France",
+    "currency_code": "EUR",
+    "gni_per_capita_ppp": 54000
+  },
+  {
+    "id": "country-gf",
+    "iso_code": "GF",
+    "iso3": "GUF",
+    "name": "French Guiana",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-pf",
+    "iso_code": "PF",
+    "iso3": "PYF",
+    "name": "French Polynesia",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-ga",
+    "iso_code": "GA",
+    "iso3": "GAB",
+    "name": "Gabon",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-gm",
+    "iso_code": "GM",
+    "iso3": "GMB",
+    "name": "Gambia, The",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-xg",
+    "iso_code": "XG",
+    "iso3": "XGZ",
+    "name": "Gaza Strip",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-ge",
+    "iso_code": "GE",
+    "iso3": "GEO",
+    "name": "Georgia",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-de",
+    "iso_code": "DE",
+    "iso3": "DEU",
+    "name": "Germany",
+    "currency_code": "EUR",
+    "gni_per_capita_ppp": 62000
+  },
+  {
+    "id": "country-gh",
+    "iso_code": "GH",
+    "iso3": "GHA",
+    "name": "Ghana",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-gi",
+    "iso_code": "GI",
+    "iso3": "GIB",
+    "name": "Gibraltar",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-gr",
+    "iso_code": "GR",
+    "iso3": "GRC",
+    "name": "Greece",
+    "currency_code": "EUR",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-gl",
+    "iso_code": "GL",
+    "iso3": "GRL",
+    "name": "Greenland",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-gd",
+    "iso_code": "GD",
+    "iso3": "GRD",
+    "name": "Grenada",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-gp",
+    "iso_code": "GP",
+    "iso3": "GLP",
+    "name": "Guadeloupe",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-gu",
+    "iso_code": "GU",
+    "iso3": "GUM",
+    "name": "Guam",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-gt",
+    "iso_code": "GT",
+    "iso3": "GTM",
+    "name": "Guatemala",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-gg",
+    "iso_code": "GG",
+    "iso3": "GGY",
+    "name": "Guernsey",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-gn",
+    "iso_code": "GN",
+    "iso3": "GIN",
+    "name": "Guinea",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-gw",
+    "iso_code": "GW",
+    "iso3": "GNB",
+    "name": "Guinea-Bissau",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-gy",
+    "iso_code": "GY",
+    "iso3": "GUY",
+    "name": "Guyana",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-ht",
+    "iso_code": "HT",
+    "iso3": "HTI",
+    "name": "Haiti",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-hn",
+    "iso_code": "HN",
+    "iso3": "HND",
+    "name": "Honduras",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-hk",
+    "iso_code": "HK",
+    "iso3": "HKG",
+    "name": "Hong Kong",
+    "currency_code": "HKD",
+    "gni_per_capita_ppp": 550000
+  },
+  {
+    "id": "country-hu",
+    "iso_code": "HU",
+    "iso3": "HUN",
+    "name": "Hungary",
+    "currency_code": "HUF",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-is",
+    "iso_code": "IS",
+    "iso3": "ISL",
+    "name": "Iceland",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-in",
+    "iso_code": "IN",
+    "iso3": "IND",
+    "name": "India",
+    "currency_code": "INR",
+    "gni_per_capita_ppp": 750000
+  },
+  {
+    "id": "country-id",
+    "iso_code": "ID",
+    "iso3": "IDN",
+    "name": "Indonesia",
+    "currency_code": "IDR",
+    "gni_per_capita_ppp": 230000000
+  },
+  {
+    "id": "country-ir",
+    "iso_code": "IR",
+    "iso3": "IRN",
+    "name": "Iran",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-iq",
+    "iso_code": "IQ",
+    "iso3": "IRQ",
+    "name": "Iraq",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-ie",
+    "iso_code": "IE",
+    "iso3": "IRL",
+    "name": "Ireland",
+    "currency_code": "EUR",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-im",
+    "iso_code": "IM",
+    "iso3": "IMN",
+    "name": "Isle of Man",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-il",
+    "iso_code": "IL",
+    "iso3": "ISR",
+    "name": "Israel",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-it",
+    "iso_code": "IT",
+    "iso3": "ITA",
+    "name": "Italy",
+    "currency_code": "EUR",
+    "gni_per_capita_ppp": 48000
+  },
+  {
+    "id": "country-jm",
+    "iso_code": "JM",
+    "iso3": "JAM",
+    "name": "Jamaica",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-jp",
+    "iso_code": "JP",
+    "iso3": "JPN",
+    "name": "Japan",
+    "currency_code": "JPY",
+    "gni_per_capita_ppp": 6800000
+  },
+  {
+    "id": "country-je",
+    "iso_code": "JE",
+    "iso3": "JEY",
+    "name": "Jersey",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-jo",
+    "iso_code": "JO",
+    "iso3": "JOR",
+    "name": "Jordan",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-kz",
+    "iso_code": "KZ",
+    "iso3": "KAZ",
+    "name": "Kazakhstan",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-ke",
+    "iso_code": "KE",
+    "iso3": "KEN",
+    "name": "Kenya",
+    "currency_code": "KES",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-ki",
+    "iso_code": "KI",
+    "iso3": "KIR",
+    "name": "Kiribati",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-kp",
+    "iso_code": "KP",
+    "iso3": "PRK",
+    "name": "Korea, North",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-kr",
+    "iso_code": "KR",
+    "iso3": "KOR",
+    "name": "Korea, South",
+    "currency_code": "KRW",
+    "gni_per_capita_ppp": 50000000
+  },
+  {
+    "id": "country-xk",
+    "iso_code": "XK",
+    "iso3": "XKS",
+    "name": "Kosovo",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-kw",
+    "iso_code": "KW",
+    "iso3": "KWT",
+    "name": "Kuwait",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-kg",
+    "iso_code": "KG",
+    "iso3": "KGZ",
+    "name": "Kyrgyzstan",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-la",
+    "iso_code": "LA",
+    "iso3": "LAO",
+    "name": "Laos",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-lv",
+    "iso_code": "LV",
+    "iso3": "LVA",
+    "name": "Latvia",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-lb",
+    "iso_code": "LB",
+    "iso3": "LBN",
+    "name": "Lebanon",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-ls",
+    "iso_code": "LS",
+    "iso3": "LSO",
+    "name": "Lesotho",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-lr",
+    "iso_code": "LR",
+    "iso3": "LBR",
+    "name": "Liberia",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-ly",
+    "iso_code": "LY",
+    "iso3": "LBY",
+    "name": "Libya",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-li",
+    "iso_code": "LI",
+    "iso3": "LIE",
+    "name": "Liechtenstein",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-lt",
+    "iso_code": "LT",
+    "iso3": "LTU",
+    "name": "Lithuania",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-lu",
+    "iso_code": "LU",
+    "iso3": "LUX",
+    "name": "Luxembourg",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-mo",
+    "iso_code": "MO",
+    "iso3": "MAC",
+    "name": "Macau",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-mg",
+    "iso_code": "MG",
+    "iso3": "MDG",
+    "name": "Madagascar",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-mw",
+    "iso_code": "MW",
+    "iso3": "MWI",
+    "name": "Malawi",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-my",
+    "iso_code": "MY",
+    "iso3": "MYS",
+    "name": "Malaysia",
+    "currency_code": "MYR",
+    "gni_per_capita_ppp": 145000
+  },
+  {
+    "id": "country-mv",
+    "iso_code": "MV",
+    "iso3": "MDV",
+    "name": "Maldives",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-ml",
+    "iso_code": "ML",
+    "iso3": "MLI",
+    "name": "Mali",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-mt",
+    "iso_code": "MT",
+    "iso3": "MLT",
+    "name": "Malta",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-mh",
+    "iso_code": "MH",
+    "iso3": "MHL",
+    "name": "Marshall Islands",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-mq",
+    "iso_code": "MQ",
+    "iso3": "MTQ",
+    "name": "Martinique",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-mr",
+    "iso_code": "MR",
+    "iso3": "MRT",
+    "name": "Mauritania",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-mu",
+    "iso_code": "MU",
+    "iso3": "MUS",
+    "name": "Mauritius",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-yt",
+    "iso_code": "YT",
+    "iso3": "MYT",
+    "name": "Mayotte",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-mx",
+    "iso_code": "MX",
+    "iso3": "MEX",
+    "name": "Mexico",
+    "currency_code": "MXN",
+    "gni_per_capita_ppp": 450000
+  },
+  {
+    "id": "country-fm",
+    "iso_code": "FM",
+    "iso3": "FSM",
+    "name": "Micronesia, Federated States of",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-md",
+    "iso_code": "MD",
+    "iso3": "MDA",
+    "name": "Moldova",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-mc",
+    "iso_code": "MC",
+    "iso3": "MCO",
+    "name": "Monaco",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-mn",
+    "iso_code": "MN",
+    "iso3": "MNG",
+    "name": "Mongolia",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-me",
+    "iso_code": "ME",
+    "iso3": "MNE",
+    "name": "Montenegro",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-ms",
+    "iso_code": "MS",
+    "iso3": "MSR",
+    "name": "Montserrat",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-ma",
+    "iso_code": "MA",
+    "iso3": "MAR",
+    "name": "Morocco",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-mz",
+    "iso_code": "MZ",
+    "iso3": "MOZ",
+    "name": "Mozambique",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-na",
+    "iso_code": "NA",
+    "iso3": "NAM",
+    "name": "Namibia",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-nr",
+    "iso_code": "NR",
+    "iso3": "NRU",
+    "name": "Nauru",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-np",
+    "iso_code": "NP",
+    "iso3": "NPL",
+    "name": "Nepal",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-nl",
+    "iso_code": "NL",
+    "iso3": "NLD",
+    "name": "Netherlands",
+    "currency_code": "EUR",
+    "gni_per_capita_ppp": 66000
+  },
+  {
+    "id": "country-nc",
+    "iso_code": "NC",
+    "iso3": "NCL",
+    "name": "New Caledonia",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-nz",
+    "iso_code": "NZ",
+    "iso3": "NZL",
+    "name": "New Zealand",
+    "currency_code": "NZD",
+    "gni_per_capita_ppp": 52000
+  },
+  {
+    "id": "country-ni",
+    "iso_code": "NI",
+    "iso3": "NIC",
+    "name": "Nicaragua",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-ne",
+    "iso_code": "NE",
+    "iso3": "NER",
+    "name": "Niger",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-ng",
+    "iso_code": "NG",
+    "iso3": "NGA",
+    "name": "Nigeria",
+    "currency_code": "NGN",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-nu",
+    "iso_code": "NU",
+    "iso3": "NIU",
+    "name": "Niue",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-nf",
+    "iso_code": "NF",
+    "iso3": "NFK",
+    "name": "Norfolk Island",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-mk",
+    "iso_code": "MK",
+    "iso3": "MKD",
+    "name": "North Macedonia",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-mp",
+    "iso_code": "MP",
+    "iso3": "MNP",
+    "name": "Northern Mariana Islands",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-no",
+    "iso_code": "NO",
+    "iso3": "NOR",
+    "name": "Norway",
+    "currency_code": "NOK",
+    "gni_per_capita_ppp": 750000
+  },
+  {
+    "id": "country-om",
+    "iso_code": "OM",
+    "iso3": "OMN",
+    "name": "Oman",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-pk",
+    "iso_code": "PK",
+    "iso3": "PAK",
+    "name": "Pakistan",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-pw",
+    "iso_code": "PW",
+    "iso3": "PLW",
+    "name": "Palau",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-pa",
+    "iso_code": "PA",
+    "iso3": "PAN",
+    "name": "Panama",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-pg",
+    "iso_code": "PG",
+    "iso3": "PNG",
+    "name": "Papua New Guinea",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-py",
+    "iso_code": "PY",
+    "iso3": "PRY",
+    "name": "Paraguay",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-pe",
+    "iso_code": "PE",
+    "iso3": "PER",
+    "name": "Peru",
+    "currency_code": "PEN",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-ph",
+    "iso_code": "PH",
+    "iso3": "PHL",
+    "name": "Philippines",
+    "currency_code": "PHP",
+    "gni_per_capita_ppp": 600000
+  },
+  {
+    "id": "country-pn",
+    "iso_code": "PN",
+    "iso3": "PCN",
+    "name": "Pitcairn Islands",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-pl",
+    "iso_code": "PL",
+    "iso3": "POL",
+    "name": "Poland",
+    "currency_code": "PLN",
+    "gni_per_capita_ppp": 175000
+  },
+  {
+    "id": "country-pt",
+    "iso_code": "PT",
+    "iso3": "PRT",
+    "name": "Portugal",
+    "currency_code": "EUR",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-pr",
+    "iso_code": "PR",
+    "iso3": "PRI",
+    "name": "Puerto Rico",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-qa",
+    "iso_code": "QA",
+    "iso3": "QAT",
+    "name": "Qatar",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-re",
+    "iso_code": "RE",
+    "iso3": "REU",
+    "name": "Reunion",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-ro",
+    "iso_code": "RO",
+    "iso3": "ROU",
+    "name": "Romania",
+    "currency_code": "RON",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-ru",
+    "iso_code": "RU",
+    "iso3": "RUS",
+    "name": "Russia",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-rw",
+    "iso_code": "RW",
+    "iso3": "RWA",
+    "name": "Rwanda",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-bl",
+    "iso_code": "BL",
+    "iso3": "BLM",
+    "name": "Saint Barthelemy",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-sh",
+    "iso_code": "SH",
+    "iso3": "SHN",
+    "name": "Saint Helena, Ascension, and Tristan da Cunha",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-kn",
+    "iso_code": "KN",
+    "iso3": "KNA",
+    "name": "Saint Kitts and Nevis",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-lc",
+    "iso_code": "LC",
+    "iso3": "LCA",
+    "name": "Saint Lucia",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-mf",
+    "iso_code": "MF",
+    "iso3": "MAF",
+    "name": "Saint Martin",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-pm",
+    "iso_code": "PM",
+    "iso3": "SPM",
+    "name": "Saint Pierre and Miquelon",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-vc",
+    "iso_code": "VC",
+    "iso3": "VCT",
+    "name": "Saint Vincent and the Grenadines",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-ws",
+    "iso_code": "WS",
+    "iso3": "WSM",
+    "name": "Samoa",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-sm",
+    "iso_code": "SM",
+    "iso3": "SMR",
+    "name": "San Marino",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-st",
+    "iso_code": "ST",
+    "iso3": "STP",
+    "name": "Sao Tome and Principe",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-sa",
+    "iso_code": "SA",
+    "iso3": "SAU",
+    "name": "Saudi Arabia",
+    "currency_code": "SAR",
+    "gni_per_capita_ppp": 210000
+  },
+  {
+    "id": "country-sn",
+    "iso_code": "SN",
+    "iso3": "SEN",
+    "name": "Senegal",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-rs",
+    "iso_code": "RS",
+    "iso3": "SRB",
+    "name": "Serbia",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-sc",
+    "iso_code": "SC",
+    "iso3": "SYC",
+    "name": "Seychelles",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-sl",
+    "iso_code": "SL",
+    "iso3": "SLE",
+    "name": "Sierra Leone",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-sg",
+    "iso_code": "SG",
+    "iso3": "SGP",
+    "name": "Singapore",
+    "currency_code": "SGD",
+    "gni_per_capita_ppp": 110000
+  },
+  {
+    "id": "country-sx",
+    "iso_code": "SX",
+    "iso3": "SXM",
+    "name": "Sint Maarten",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-sk",
+    "iso_code": "SK",
+    "iso3": "SVK",
+    "name": "Slovakia",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-si",
+    "iso_code": "SI",
+    "iso3": "SVN",
+    "name": "Slovenia",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-sb",
+    "iso_code": "SB",
+    "iso3": "SLB",
+    "name": "Solomon Islands",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-so",
+    "iso_code": "SO",
+    "iso3": "SOM",
+    "name": "Somalia",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-za",
+    "iso_code": "ZA",
+    "iso3": "ZAF",
+    "name": "South Africa",
+    "currency_code": "ZAR",
+    "gni_per_capita_ppp": 280000
+  },
+  {
+    "id": "country-gs",
+    "iso_code": "GS",
+    "iso3": "SGS",
+    "name": "South Georgia and South Sandwich Islands",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-ss",
+    "iso_code": "SS",
+    "iso3": "SSD",
+    "name": "South Sudan",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-es",
+    "iso_code": "ES",
+    "iso3": "ESP",
+    "name": "Spain",
+    "currency_code": "EUR",
+    "gni_per_capita_ppp": 46000
+  },
+  {
+    "id": "country-lk",
+    "iso_code": "LK",
+    "iso3": "LKA",
+    "name": "Sri Lanka",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-sd",
+    "iso_code": "SD",
+    "iso3": "SDN",
+    "name": "Sudan",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-sr",
+    "iso_code": "SR",
+    "iso3": "SUR",
+    "name": "Suriname",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-xr",
+    "iso_code": "XR",
+    "iso3": "XSV",
+    "name": "Svalbard",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-se",
+    "iso_code": "SE",
+    "iso3": "SWE",
+    "name": "Sweden",
+    "currency_code": "SEK",
+    "gni_per_capita_ppp": 620000
+  },
+  {
+    "id": "country-ch",
+    "iso_code": "CH",
+    "iso3": "CHE",
+    "name": "Switzerland",
+    "currency_code": "CHF",
+    "gni_per_capita_ppp": 85000
+  },
+  {
+    "id": "country-sy",
+    "iso_code": "SY",
+    "iso3": "SYR",
+    "name": "Syria",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-tw",
+    "iso_code": "TW",
+    "iso3": "TWN",
+    "name": "Taiwan",
+    "currency_code": "TWD",
+    "gni_per_capita_ppp": 1900000
+  },
+  {
+    "id": "country-tj",
+    "iso_code": "TJ",
+    "iso3": "TJK",
+    "name": "Tajikistan",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-tz",
+    "iso_code": "TZ",
+    "iso3": "TZA",
+    "name": "Tanzania",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-th",
+    "iso_code": "TH",
+    "iso3": "THA",
+    "name": "Thailand",
+    "currency_code": "THB",
+    "gni_per_capita_ppp": 750000
+  },
+  {
+    "id": "country-tl",
+    "iso_code": "TL",
+    "iso3": "TLS",
+    "name": "Timor-Leste",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-tg",
+    "iso_code": "TG",
+    "iso3": "TGO",
+    "name": "Togo",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-to",
+    "iso_code": "TO",
+    "iso3": "TON",
+    "name": "Tonga",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-tt",
+    "iso_code": "TT",
+    "iso3": "TTO",
+    "name": "Trinidad and Tobago",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-tn",
+    "iso_code": "TN",
+    "iso3": "TUN",
+    "name": "Tunisia",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-tr",
+    "iso_code": "TR",
+    "iso3": "TUR",
+    "name": "Turkey",
+    "currency_code": "TRY",
+    "gni_per_capita_ppp": 1100000
+  },
+  {
+    "id": "country-tm",
+    "iso_code": "TM",
+    "iso3": "TKM",
+    "name": "Turkmenistan",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-tc",
+    "iso_code": "TC",
+    "iso3": "TCA",
+    "name": "Turks and Caicos Islands",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-tv",
+    "iso_code": "TV",
+    "iso3": "TUV",
+    "name": "Tuvalu",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-vi",
+    "iso_code": "VI",
+    "iso3": "VIR",
+    "name": "U.S. Virgin Islands",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-ug",
+    "iso_code": "UG",
+    "iso3": "UGA",
+    "name": "Uganda",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-ua",
+    "iso_code": "UA",
+    "iso3": "UKR",
+    "name": "Ukraine",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-ae",
+    "iso_code": "AE",
+    "iso3": "ARE",
+    "name": "United Arab Emirates",
+    "currency_code": "AED",
+    "gni_per_capita_ppp": 290000
+  },
+  {
+    "id": "country-gb",
+    "iso_code": "GB",
+    "iso3": "GBR",
+    "name": "United Kingdom",
+    "currency_code": "GBP",
+    "gni_per_capita_ppp": 52000
+  },
+  {
+    "id": "country-us",
+    "iso_code": "US",
+    "iso3": "USA",
+    "name": "United States",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 76000
+  },
+  {
+    "id": "country-uy",
+    "iso_code": "UY",
+    "iso3": "URY",
+    "name": "Uruguay",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-uz",
+    "iso_code": "UZ",
+    "iso3": "UZB",
+    "name": "Uzbekistan",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-vu",
+    "iso_code": "VU",
+    "iso3": "VUT",
+    "name": "Vanuatu",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-va",
+    "iso_code": "VA",
+    "iso3": "VAT",
+    "name": "Vatican City",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-ve",
+    "iso_code": "VE",
+    "iso3": "VEN",
+    "name": "Venezuela",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-vn",
+    "iso_code": "VN",
+    "iso3": "VNM",
+    "name": "Vietnam",
+    "currency_code": "VND",
+    "gni_per_capita_ppp": 340000000
+  },
+  {
+    "id": "country-vg",
+    "iso_code": "VG",
+    "iso3": "VGB",
+    "name": "Virgin Islands, British",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-wf",
+    "iso_code": "WF",
+    "iso3": "WLF",
+    "name": "Wallis and Futuna",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-xw",
+    "iso_code": "XW",
+    "iso3": "XWB",
+    "name": "West Bank",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-ye",
+    "iso_code": "YE",
+    "iso3": "YEM",
+    "name": "Yemen",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-zm",
+    "iso_code": "ZM",
+    "iso3": "ZMB",
+    "name": "Zambia",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  },
+  {
+    "id": "country-zw",
+    "iso_code": "ZW",
+    "iso3": "ZWE",
+    "name": "Zimbabwe",
+    "currency_code": "USD",
+    "gni_per_capita_ppp": 50000
+  }
+]
