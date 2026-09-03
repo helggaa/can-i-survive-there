@@ -6,6 +6,7 @@ import type { ICountry, ICity } from 'country-state-city';
 import type { City, Country } from '../types/database.types';
 import { db } from './database';
 import { searchAddress } from './geocoding';
+import GLOBAL_COST_DB from '../data/global-cost-database.json';
 
 export interface GlobalCityItem {
   id: string;
@@ -82,7 +83,7 @@ for (const c of allCscCountries) {
 }
 
 /**
- * Searches across 150,000+ cities globally with fast prefix matching and live OSM fallback.
+ * Searches across 150,000+ cities globally with fast prefix matching, verified cost DB aliases, and live OSM fallback.
  */
 export async function searchGlobalCities(
   query: string,
@@ -96,8 +97,37 @@ export async function searchGlobalCities(
   const results: GlobalCityItem[] = [];
   const seenKeys = new Set<string>();
 
-  // 1. Fast search through Country-State-City database
   const allCities: ICity[] = CSC_City.getAllCities();
+
+  // 0. High-priority search in verified global cost database (including aliases like Jogja, Saigon, NYC, KL, SF, CDMX)
+  for (const gc of (GLOBAL_COST_DB as any[])) {
+    const isCityMatch = gc.city.toLowerCase().startsWith(clean);
+    const isAliasMatch = gc.aliases && gc.aliases.some((a: string) => a.toLowerCase().startsWith(clean) || a.toLowerCase() === clean);
+    if (isCityMatch || isAliasMatch) {
+      const countryObj = gc.iso2 ? countryByIso.get(gc.iso2) : undefined;
+      const countryName = gc.country || countryObj?.name || 'Unknown';
+      const key = `${gc.city.toLowerCase()}-${gc.iso2 || countryName.toLowerCase()}`;
+      if (!seenKeys.has(key)) {
+        const cscMatch = allCities.find(
+          (c) => c.name.toLowerCase() === gc.city.toLowerCase() && (!gc.iso2 || c.countryCode === gc.iso2)
+        );
+        seenKeys.add(key);
+        results.push({
+          id: `city-vdb-${(gc.iso2 || 'xx').toLowerCase()}-${gc.city.toLowerCase().replace(/[^a-z0-9]/g, '')}`,
+          name: gc.city,
+          nameAscii: gc.city,
+          country: countryName,
+          iso2: gc.iso2 || cscMatch?.countryCode || 'XX',
+          stateCode: cscMatch?.stateCode,
+          adminName: cscMatch?.stateCode || '',
+          lat: cscMatch ? parseFloat(cscMatch.latitude || '0') : 0,
+          lng: cscMatch ? parseFloat(cscMatch.longitude || '0') : 0,
+          currencyCode: gc.currency || countryObj?.currency || 'USD',
+        });
+        if (results.length >= limit) break;
+      }
+    }
+  }
 
   // Prefix match first
   for (const c of allCities) {

@@ -42,25 +42,57 @@ const globalCostList: GlobalCostCityEntry[] = GLOBAL_COST_DB as GlobalCostCityEn
  */
 export function findMatchedCostCity(cityName: string, countryIso?: string): GlobalCostCityEntry | undefined {
   const clean = cityName.toLowerCase().trim();
+  const targetIso = countryIso ? countryIso.toUpperCase().trim() : undefined;
 
-  // 1. Exact match or alias match
+  // 1. Exact match with same country ISO (Highest accuracy)
+  if (targetIso) {
+    for (const c of globalCostList) {
+      const cIso = ((c as any).iso2 || '').toUpperCase();
+      if (cIso === targetIso && c.city.toLowerCase() === clean) {
+        return c;
+      }
+      if (cIso === targetIso && c.aliases && c.aliases.some((a) => a.toLowerCase() === clean)) {
+        return c;
+      }
+    }
+  }
+
+  // 2. Exact match or alias match across entire global database
   for (const c of globalCostList) {
     if (c.city.toLowerCase() === clean) return c;
-    if (c.aliases && c.aliases.some((a) => a.toLowerCase() === clean || clean.includes(a.toLowerCase()))) {
+    if (c.aliases && c.aliases.some((a) => a.toLowerCase() === clean)) {
       return c;
     }
   }
 
-  // 2. Substring match
+  // 3. Substring match within same country ISO
+  if (targetIso) {
+    for (const c of globalCostList) {
+      const cIso = ((c as any).iso2 || '').toUpperCase();
+      if (cIso === targetIso) {
+        if (clean.includes(c.city.toLowerCase()) || c.city.toLowerCase().includes(clean)) {
+          return c;
+        }
+        if (c.aliases && c.aliases.some((a) => clean.includes(a.toLowerCase()) || a.toLowerCase().includes(clean))) {
+          return c;
+        }
+      }
+    }
+  }
+
+  // 4. Substring match across all countries
   for (const c of globalCostList) {
     if (clean.includes(c.city.toLowerCase()) || c.city.toLowerCase().includes(clean)) {
       return c;
     }
+    if (c.aliases && c.aliases.some((a) => clean.includes(a.toLowerCase()) || a.toLowerCase().includes(clean))) {
+      return c;
+    }
   }
 
-  // 3. Match by country if single primary city
-  if (countryIso) {
-    const countryMatches = globalCostList.filter((c) => (c as any).iso2 === countryIso);
+  // 5. Country primary city fallback
+  if (targetIso) {
+    const countryMatches = globalCostList.filter((c) => ((c as any).iso2 || '').toUpperCase() === targetIso);
     if (countryMatches.length > 0) {
       return countryMatches[0];
     }
