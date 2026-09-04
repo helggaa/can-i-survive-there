@@ -1,6 +1,8 @@
 // src/services/geocoding.ts
 // Geocoding service using OpenStreetMap Nominatim with local caching and offline fallbacks
 
+import { Country as CSC_Country } from 'country-state-city';
+
 export interface GeocodeResult {
   lat: number;
   lng: number;
@@ -24,6 +26,17 @@ const COUNTRY_CURRENCY_MAP: Record<string, string> = {
   TH: 'THB',
   AU: 'AUD',
 };
+
+// Populate comprehensive ISO -> currency mappings from country-state-city
+try {
+  for (const c of CSC_Country.getAllCountries()) {
+    if (c.isoCode && c.currency) {
+      COUNTRY_CURRENCY_MAP[c.isoCode.toUpperCase()] = c.currency.toUpperCase();
+    }
+  }
+} catch {
+  // fallback map remains active
+}
 
 // In-memory geocoding cache
 const geocodeCache = new Map<string, GeocodeResult[]>();
@@ -133,6 +146,7 @@ export async function searchAddress(query: string): Promise<GeocodeResult[]> {
     const response = await fetch(url, {
       headers: {
         'Accept-Language': 'en',
+        'User-Agent': 'CanISurviveThere/1.0 (https://github.com/helggaa/can-i-survive-there)',
       },
     });
 
@@ -175,16 +189,6 @@ export async function searchAddress(query: string): Promise<GeocodeResult[]> {
     if (normalized.includes('yogya')) {
       return [KNOWN_LOCATIONS['malioboro']];
     }
-    return [
-      {
-        lat: -6.2088,
-        lng: 106.8456,
-        displayName: `${query} (Resolved centroid)`,
-        city: 'Jakarta',
-        country: 'Indonesia',
-        countryCode: 'ID',
-        currencyCode: 'IDR',
-      },
-    ];
+    return [];
   }
 }

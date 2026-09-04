@@ -76,3 +76,34 @@ CREATE POLICY "Deny anon updates to area_metric_values"
     ON area_metric_values FOR UPDATE
     TO anon
     USING (false);
+
+CREATE POLICY "Deny anon deletes to countries"
+    ON countries FOR DELETE
+    TO anon
+    USING (false);
+
+CREATE POLICY "Deny anon deletes to cities"
+    ON cities FOR DELETE
+    TO anon
+    USING (false);
+
+CREATE POLICY "Deny anon deletes to areas"
+    ON areas FOR DELETE
+    TO anon
+    USING (false);
+
+CREATE POLICY "Deny anon deletes to metrics"
+    ON metrics FOR DELETE
+    TO anon
+    USING (false);
+
+CREATE POLICY "Deny anon deletes to area_metric_values"
+    ON area_metric_values FOR DELETE
+    TO anon
+    USING (false);
+
+CREATE POLICY "Deny anon deletes to submissions"
+    ON submissions FOR DELETE
+    TO anon
+    USING (false);
+

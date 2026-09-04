@@ -481,7 +481,7 @@ export const SEED_COUNTRIES: Country[] = [
     iso_code: 'PE',
     name: 'Peru',
     currency_code: 'PEN',
-    gni_per_capita_ppp: 54000,
+    gni_per_capita_ppp: 60000,
     created_at: new Date().toISOString(),
   },
 ];
@@ -1019,7 +1019,7 @@ export const SEED_CITIES: City[] = [
     created_at: new Date().toISOString(),
   },
   {
-    id: 'city-paris-42',
+    id: 'city-paris-fr',
     country_id: 'country-fr',
     name: 'Paris',
     lat: 48.8566,
@@ -1091,7 +1091,7 @@ export const SEED_CITIES: City[] = [
     created_at: new Date().toISOString(),
   },
   {
-    id: 'city-madrid-48',
+    id: 'city-madrid-es',
     country_id: 'country-es',
     name: 'Madrid',
     lat: 40.4168,
@@ -1235,7 +1235,7 @@ export const SEED_CITIES: City[] = [
     created_at: new Date().toISOString(),
   },
   {
-    id: 'city-sydney-60',
+    id: 'city-sydney-au',
     country_id: 'country-au',
     name: 'Sydney',
     lat: -33.8688,
@@ -1283,7 +1283,7 @@ export const SEED_CITIES: City[] = [
     created_at: new Date().toISOString(),
   },
   {
-    id: 'city-dubai-64',
+    id: 'city-dubai-ae',
     country_id: 'country-ae',
     name: 'Dubai',
     lat: 25.2048,

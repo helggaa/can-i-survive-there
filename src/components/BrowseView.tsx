@@ -119,7 +119,8 @@ export const BrowseView: React.FC<BrowseViewProps> = ({ onNavigatePersonalized }
 
       const country = db.countries.find((co) => co.id === city.country_id)!;
 
-      if (city.bootstrap_status === 'not_started') {
+      const existingAreas = await db.getCityAreasWithExpenses(selectedCityId);
+      if (city.bootstrap_status === 'not_started' || existingAreas.length === 0) {
         setIsBootstrapping(true);
         setIsLoading(false);
         const discovered = await discoverCityAreas(city, country);
@@ -134,8 +135,7 @@ export const BrowseView: React.FC<BrowseViewProps> = ({ onNavigatePersonalized }
         bootstrapPipeline.bootstrapCity(city, country, discovered);
       } else {
         setIsBootstrapping(false);
-        const areaList = await db.getCityAreasWithExpenses(selectedCityId);
-        setAreas(sortBrowseMode(areaList));
+        setAreas(sortBrowseMode(existingAreas));
         setIsLoading(false);
       }
     }

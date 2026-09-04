@@ -2,12 +2,12 @@
 // Cost-of-Living Recommender Data Model & Types per 02-data-model-schema.md
 
 export type ConfidenceLevel = 'estimated' | 'low' | 'medium' | 'high';
-export type BootstrapStatus = 'not_started' | 'baseline_only' | 'enriched';
+export type BootstrapStatus = 'not_started' | 'unbootstrapped' | 'discovering' | 'enriched' | 'ready' | 'baseline_only';
 export type MetricCategory = 'housing' | 'transport' | 'food' | 'other';
-export type SubmissionStatus = 'pending' | 'accepted' | 'flagged';
+export type SubmissionStatus = 'pending' | 'accepted' | 'rejected' | 'flagged';
 export type HousingType = 'dorm' | 'kos' | 'apartment' | 'shared_house';
 export type CommuteMode = 'walk' | 'transit' | 'drive' | 'bike';
-export type AreaSource = 'osm' | 'manual' | 'crowdsourced';
+export type AreaSource = 'osm' | 'manual' | 'curated' | 'crowdsourced';
 export type SourceType = 'listing_site' | 'aggregator' | 'news_article' | 'government_data' | 'agent_bootstrap' | 'user_fact';
 
 export interface Country {

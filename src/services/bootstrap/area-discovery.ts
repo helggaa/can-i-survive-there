@@ -373,6 +373,24 @@ const BUILTIN_DISTRICTS: Record<
     { name: 'Perdizes / Barra Funda', latOffset: 0.035, lngOffset: -0.045 },
     { name: 'Tatuapé (Zona Leste)', latOffset: 0.015, lngOffset: 0.065 },
   ],
+  'ho chi minh': [
+    { name: 'District 1 (Ben Nghe)', latOffset: 0.005, lngOffset: 0.008 },
+    { name: 'District 7 (Phu My Hung)', latOffset: -0.045, lngOffset: 0.025 },
+    { name: 'Binh Thanh', latOffset: 0.035, lngOffset: 0.015 },
+    { name: 'District 2 (Thao Dien)', latOffset: 0.025, lngOffset: 0.045 },
+  ],
+  'george town': [
+    { name: 'Georgetown Heritage (Chulia / Armenian)', latOffset: 0.005, lngOffset: 0.005 },
+    { name: 'Gurney Drive / Pulau Tikus', latOffset: 0.025, lngOffset: -0.015 },
+    { name: 'Bayan Lepas (FTZ Tech Hub)', latOffset: -0.095, lngOffset: 0.015 },
+    { name: 'Tanjung Tokong', latOffset: 0.045, lngOffset: -0.025 },
+  ],
+  cebu: [
+    { name: 'Cebu IT Park (Lahug)', latOffset: 0.025, lngOffset: -0.015 },
+    { name: 'Cebu Business Park (Ayala)', latOffset: 0.015, lngOffset: 0.005 },
+    { name: 'Mabolo', latOffset: 0.005, lngOffset: 0.025 },
+    { name: 'Banilad', latOffset: 0.045, lngOffset: -0.005 },
+  ],
 };
 
 export async function discoverCityAreas(city: City, _country: Country): Promise<Area[]> {
@@ -381,8 +399,22 @@ export async function discoverCityAreas(city: City, _country: Country): Promise<
     return existing;
   }
 
-  const normalizedCity = city.name.toLowerCase().trim();
-  const template = BUILTIN_DISTRICTS[normalizedCity];
+  const rawCity = city.name.toLowerCase().trim();
+  const aliasMap: Record<string, string> = {
+    'bali (denpasar & badung)': 'denpasar',
+    'denpasar & badung': 'denpasar',
+    'bali': 'denpasar',
+    'surakarta (solo)': 'surakarta',
+    'solo': 'surakarta',
+    'ho chi minh city': 'ho chi minh',
+    'saigon': 'ho chi minh',
+    'george town (penang)': 'george town',
+    'penang': 'george town',
+    'georgetown': 'george town',
+    'cebu city': 'cebu',
+  };
+  const normalizedCity = aliasMap[rawCity] || rawCity;
+  const template = BUILTIN_DISTRICTS[normalizedCity] || BUILTIN_DISTRICTS[rawCity];
 
   const createdAreas: Area[] = [];
 

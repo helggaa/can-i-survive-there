@@ -19,6 +19,7 @@ import { AreaExpenseCard } from './AreaExpenseCard';
 import { formatCurrency } from '../utils/formatters';
 import { SubmitFactModal } from './SubmitFactModal';
 import { discoverCityAreas } from '../services/bootstrap/area-discovery';
+import { bootstrapPipeline } from '../services/bootstrap/worker-pool';
 import { getOrRegisterGlobalCity } from '../services/city-search';
 
 interface PersonalizedViewProps {
@@ -108,8 +109,9 @@ export const PersonalizedView: React.FC<PersonalizedViewProps> = ({ onBackToBrow
       const country = db.countries.find((c) => c.id === matchedCity!.country_id) || db.countries[0];
       let areaBreakdowns = await db.getCityAreasWithExpenses(matchedCity.id);
 
-      if (areaBreakdowns.length === 0) {
-        await discoverCityAreas(matchedCity, country);
+      if (areaBreakdowns.length === 0 || areaBreakdowns.every((a) => a.total_monthly_cost === 0)) {
+        const discovered = await discoverCityAreas(matchedCity, country);
+        await bootstrapPipeline.bootstrapCity(matchedCity, country, discovered);
         areaBreakdowns = await db.getCityAreasWithExpenses(matchedCity.id);
       }
 

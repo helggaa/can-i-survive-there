@@ -12,7 +12,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Hamilton",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Hamilton",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Hamilton"
-    }
+    },
+    "iso2": "BM"
   },
   {
     "city": "Zurich",
@@ -50,7 +51,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Basel",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Basel",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Basel"
-    }
+    },
+    "iso2": "CH"
   },
   {
     "city": "Lausanne",
@@ -65,7 +67,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Lausanne",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Lausanne",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Lausanne"
-    }
+    },
+    "iso2": "CH"
   },
   {
     "city": "Bern",
@@ -80,7 +83,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Bern",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Bern",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Bern"
-    }
+    },
+    "iso2": "CH"
   },
   {
     "city": "Geneva",
@@ -95,7 +99,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Geneva",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Geneva",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Geneva"
-    }
+    },
+    "iso2": "CH"
   },
   {
     "city": "Reykjavik",
@@ -110,7 +115,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Reykjavik",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Reykjavik",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Reykjavik"
-    }
+    },
+    "iso2": "IS"
   },
   {
     "city": "Lugano",
@@ -125,7 +131,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Lugano",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Lugano",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Lugano"
-    }
+    },
+    "iso2": "CH"
   },
   {
     "city": "Stavanger",
@@ -140,7 +147,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Stavanger",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Stavanger",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Stavanger"
-    }
+    },
+    "iso2": "NO"
   },
   {
     "city": "Oslo",
@@ -155,7 +163,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Oslo",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Oslo",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Oslo"
-    }
+    },
+    "iso2": "NO"
   },
   {
     "city": "Bergen",
@@ -170,7 +179,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Bergen",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Bergen",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Bergen"
-    }
+    },
+    "iso2": "NO"
   },
   {
     "city": "New York",
@@ -211,7 +221,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Trondheim",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Trondheim",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Trondheim"
-    }
+    },
+    "iso2": "NO"
   },
   {
     "city": "San Francisco",
@@ -250,7 +261,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Honolulu",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Honolulu",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Honolulu"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Anchorage",
@@ -265,7 +277,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Anchorage",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Anchorage",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Anchorage"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Brooklyn",
@@ -280,7 +293,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Brooklyn",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Brooklyn",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Brooklyn"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Washington",
@@ -295,7 +309,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Washington",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Washington",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Washington"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Santa Rosa",
@@ -310,7 +325,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Santa%20Rosa",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Santa%20Rosa",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Santa%20Rosa"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Copenhagen",
@@ -325,7 +341,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Copenhagen",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Copenhagen",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Copenhagen"
-    }
+    },
+    "iso2": "DK"
   },
   {
     "city": "Charleston",
@@ -340,7 +357,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Charleston",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Charleston",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Charleston"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Luxembourg",
@@ -355,7 +373,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Luxembourg",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Luxembourg",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Luxembourg"
-    }
+    },
+    "iso2": "LU"
   },
   {
     "city": "Bellevue",
@@ -370,7 +389,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Bellevue",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Bellevue",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Bellevue"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Seattle",
@@ -457,7 +477,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Odense",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Odense",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Odense"
-    }
+    },
+    "iso2": "DK"
   },
   {
     "city": "Berkeley",
@@ -472,7 +493,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Berkeley",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Berkeley",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Berkeley"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Jersey City",
@@ -487,7 +509,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Jersey%20City",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Jersey%20City",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Jersey%20City"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Aalborg",
@@ -502,7 +525,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Aalborg",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Aalborg",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Aalborg"
-    }
+    },
+    "iso2": "DK"
   },
   {
     "city": "Amsterdam",
@@ -566,7 +590,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Arhus",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Arhus",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Arhus"
-    }
+    },
+    "iso2": "DK"
   },
   {
     "city": "London",
@@ -606,7 +631,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Oakland",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Oakland",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Oakland"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Helsinki",
@@ -621,7 +647,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Helsinki",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Helsinki",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Helsinki"
-    }
+    },
+    "iso2": "FI"
   },
   {
     "city": "Boston",
@@ -636,7 +663,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Boston",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Boston",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Boston"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Singapore",
@@ -672,7 +700,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Dublin",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Dublin",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Dublin"
-    }
+    },
+    "iso2": "IE"
   },
   {
     "city": "Sydney",
@@ -710,7 +739,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Hartford",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Hartford",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Hartford"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Albany",
@@ -725,7 +755,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Albany",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Albany",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Albany"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Philadelphia",
@@ -740,7 +771,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Philadelphia",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Philadelphia",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Philadelphia"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Tampere",
@@ -755,7 +787,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Tampere",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Tampere",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Tampere"
-    }
+    },
+    "iso2": "FI"
   },
   {
     "city": "Milton Keynes",
@@ -770,7 +803,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Milton%20Keynes",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Milton%20Keynes",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Milton%20Keynes"
-    }
+    },
+    "iso2": "GB"
   },
   {
     "city": "Grenoble",
@@ -785,7 +819,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Grenoble",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Grenoble",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Grenoble"
-    }
+    },
+    "iso2": "FR"
   },
   {
     "city": "Irvine",
@@ -800,7 +835,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Irvine",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Irvine",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Irvine"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Lyon",
@@ -837,7 +873,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Long%20Beach",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Long%20Beach",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Long%20Beach"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Linz",
@@ -852,7 +889,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Linz",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Linz",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Linz"
-    }
+    },
+    "iso2": "AT"
   },
   {
     "city": "Los Angeles",
@@ -891,7 +929,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Tel%20Aviv-Yafo",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Tel%20Aviv-Yafo",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Tel%20Aviv-Yafo"
-    }
+    },
+    "iso2": "IL"
   },
   {
     "city": "Barrie",
@@ -906,7 +945,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Barrie",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Barrie",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Barrie"
-    }
+    },
+    "iso2": "CA"
   },
   {
     "city": "Chicago",
@@ -944,7 +984,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Stockholm",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Stockholm",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Stockholm"
-    }
+    },
+    "iso2": "SE"
   },
   {
     "city": "Florence",
@@ -959,7 +1000,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Florence",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Florence",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Florence"
-    }
+    },
+    "iso2": "IT"
   },
   {
     "city": "Boulder",
@@ -974,7 +1016,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Boulder",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Boulder",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Boulder"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "The Hague (Den Haag)",
@@ -989,7 +1032,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/The%20Hague%20(Den%20Haag)",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/The%20Hague%20(Den%20Haag)",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/The%20Hague%20(Den%20Haag)"
-    }
+    },
+    "iso2": "NL"
   },
   {
     "city": "Reading",
@@ -1004,7 +1048,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Reading",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Reading",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Reading"
-    }
+    },
+    "iso2": "GB"
   },
   {
     "city": "Auckland",
@@ -1041,7 +1086,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Jerusalem",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Jerusalem",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Jerusalem"
-    }
+    },
+    "iso2": "IL"
   },
   {
     "city": "Bordeaux",
@@ -1056,7 +1102,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Bordeaux",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Bordeaux",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Bordeaux"
-    }
+    },
+    "iso2": "FR"
   },
   {
     "city": "Utrecht",
@@ -1071,7 +1118,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Utrecht",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Utrecht",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Utrecht"
-    }
+    },
+    "iso2": "NL"
   },
   {
     "city": "Toulouse",
@@ -1086,7 +1134,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Toulouse",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Toulouse",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Toulouse"
-    }
+    },
+    "iso2": "FR"
   },
   {
     "city": "San Jose",
@@ -1101,7 +1150,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/San%20Jose",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/San%20Jose",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/San%20Jose"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Burlington",
@@ -1116,7 +1166,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Burlington",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Burlington",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Burlington"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Pittsburgh",
@@ -1131,7 +1182,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Pittsburgh",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Pittsburgh",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Pittsburgh"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Nice",
@@ -1146,7 +1198,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Nice",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Nice",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Nice"
-    }
+    },
+    "iso2": "FR"
   },
   {
     "city": "Miami",
@@ -1161,7 +1214,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Miami",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Miami",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Miami"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Brussels",
@@ -1176,7 +1230,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Brussels",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Brussels",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Brussels"
-    }
+    },
+    "iso2": "BE"
   },
   {
     "city": "Graz",
@@ -1191,7 +1246,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Graz",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Graz",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Graz"
-    }
+    },
+    "iso2": "AT"
   },
   {
     "city": "Santa Barbara",
@@ -1206,7 +1262,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Santa%20Barbara",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Santa%20Barbara",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Santa%20Barbara"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Sacramento",
@@ -1221,7 +1278,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Sacramento",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Sacramento",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Sacramento"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Strasbourg",
@@ -1236,7 +1294,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Strasbourg",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Strasbourg",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Strasbourg"
-    }
+    },
+    "iso2": "FR"
   },
   {
     "city": "Genoa",
@@ -1251,7 +1310,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Genoa",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Genoa",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Genoa"
-    }
+    },
+    "iso2": "IT"
   },
   {
     "city": "Gent",
@@ -1266,7 +1326,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Gent",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Gent",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Gent"
-    }
+    },
+    "iso2": "BE"
   },
   {
     "city": "Perth",
@@ -1281,7 +1342,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Perth",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Perth",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Perth"
-    }
+    },
+    "iso2": "AU"
   },
   {
     "city": "Antwerp",
@@ -1296,7 +1358,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Antwerp",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Antwerp",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Antwerp"
-    }
+    },
+    "iso2": "BE"
   },
   {
     "city": "Portland",
@@ -1311,7 +1374,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Portland",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Portland",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Portland"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "West Palm Beach",
@@ -1326,7 +1390,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/West%20Palm%20Beach",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/West%20Palm%20Beach",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/West%20Palm%20Beach"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Hong Kong",
@@ -1364,7 +1429,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Innsbruck",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Innsbruck",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Innsbruck"
-    }
+    },
+    "iso2": "AT"
   },
   {
     "city": "Leuven",
@@ -1379,7 +1445,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Leuven",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Leuven",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Leuven"
-    }
+    },
+    "iso2": "BE"
   },
   {
     "city": "Leiden",
@@ -1394,7 +1461,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Leiden",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Leiden",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Leiden"
-    }
+    },
+    "iso2": "NL"
   },
   {
     "city": "Osaka",
@@ -1455,7 +1523,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Bath",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Bath",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Bath"
-    }
+    },
+    "iso2": "GB"
   },
   {
     "city": "Everett",
@@ -1470,7 +1539,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Everett",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Everett",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Everett"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Saskatoon",
@@ -1485,7 +1555,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Saskatoon",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Saskatoon",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Saskatoon"
-    }
+    },
+    "iso2": "CA"
   },
   {
     "city": "Tacoma",
@@ -1500,7 +1571,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Tacoma",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Tacoma",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Tacoma"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Rotterdam",
@@ -1535,7 +1607,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Montpellier",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Montpellier",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Montpellier"
-    }
+    },
+    "iso2": "FR"
   },
   {
     "city": "St. John's",
@@ -1550,7 +1623,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/St.%20John's",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/St.%20John's",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/St.%20John's"
-    }
+    },
+    "iso2": "CA"
   },
   {
     "city": "Milan",
@@ -1589,7 +1663,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Maastricht",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Maastricht",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Maastricht"
-    }
+    },
+    "iso2": "NL"
   },
   {
     "city": "Baltimore",
@@ -1604,7 +1679,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Baltimore",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Baltimore",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Baltimore"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Munich",
@@ -1642,7 +1718,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Espoo",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Espoo",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Espoo"
-    }
+    },
+    "iso2": "FI"
   },
   {
     "city": "New Orleans",
@@ -1657,7 +1734,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/New%20Orleans",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/New%20Orleans",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/New%20Orleans"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Galway",
@@ -1672,7 +1750,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Galway",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Galway",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Galway"
-    }
+    },
+    "iso2": "IE"
   },
   {
     "city": "Cork",
@@ -1687,7 +1766,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Cork",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Cork",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Cork"
-    }
+    },
+    "iso2": "IE"
   },
   {
     "city": "Padova",
@@ -1702,7 +1782,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Padova",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Padova",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Padova"
-    }
+    },
+    "iso2": "IT"
   },
   {
     "city": "Haifa",
@@ -1717,7 +1798,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Haifa",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Haifa",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Haifa"
-    }
+    },
+    "iso2": "IL"
   },
   {
     "city": "Charlotte",
@@ -1732,7 +1814,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Charlotte",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Charlotte",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Charlotte"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Burlington",
@@ -1747,7 +1830,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Burlington",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Burlington",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Burlington"
-    }
+    },
+    "iso2": "CA"
   },
   {
     "city": "Aberdeen",
@@ -1762,7 +1846,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Aberdeen",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Aberdeen",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Aberdeen"
-    }
+    },
+    "iso2": "GB"
   },
   {
     "city": "Dusseldorf",
@@ -1777,7 +1862,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Dusseldorf",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Dusseldorf",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Dusseldorf"
-    }
+    },
+    "iso2": "DE"
   },
   {
     "city": "Minneapolis",
@@ -1792,7 +1878,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Minneapolis",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Minneapolis",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Minneapolis"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Adelaide",
@@ -1807,7 +1894,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Adelaide",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Adelaide",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Adelaide"
-    }
+    },
+    "iso2": "AU"
   },
   {
     "city": "Eindhoven",
@@ -1822,7 +1910,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Eindhoven",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Eindhoven",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Eindhoven"
-    }
+    },
+    "iso2": "NL"
   },
   {
     "city": "Cambridge",
@@ -1837,7 +1926,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Cambridge",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Cambridge",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Cambridge"
-    }
+    },
+    "iso2": "GB"
   },
   {
     "city": "Oxford",
@@ -1852,7 +1942,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Oxford",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Oxford",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Oxford"
-    }
+    },
+    "iso2": "GB"
   },
   {
     "city": "Darwin",
@@ -1867,7 +1958,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Darwin",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Darwin",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Darwin"
-    }
+    },
+    "iso2": "AU"
   },
   {
     "city": "Eugene",
@@ -1882,7 +1974,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Eugene",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Eugene",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Eugene"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Nantes",
@@ -1897,7 +1990,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Nantes",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Nantes",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Nantes"
-    }
+    },
+    "iso2": "FR"
   },
   {
     "city": "Groningen",
@@ -1912,7 +2006,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Groningen",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Groningen",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Groningen"
-    }
+    },
+    "iso2": "NL"
   },
   {
     "city": "San Diego",
@@ -1927,7 +2022,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/San%20Diego",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/San%20Diego",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/San%20Diego"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Ramat Gan",
@@ -1942,7 +2038,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Ramat%20Gan",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Ramat%20Gan",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Ramat%20Gan"
-    }
+    },
+    "iso2": "IL"
   },
   {
     "city": "Hamburg",
@@ -1977,7 +2074,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Bellingham",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Bellingham",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Bellingham"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Atlanta",
@@ -1992,7 +2090,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Atlanta",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Atlanta",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Atlanta"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Denver",
@@ -2007,7 +2106,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Denver",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Denver",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Denver"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Saint Paul",
@@ -2022,7 +2122,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Saint%20Paul",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Saint%20Paul",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Saint%20Paul"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Hamilton",
@@ -2037,7 +2138,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Hamilton",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Hamilton",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Hamilton"
-    }
+    },
+    "iso2": "NZ"
   },
   {
     "city": "Birmingham",
@@ -2052,7 +2154,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Birmingham",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Birmingham",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Birmingham"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Frankfurt",
@@ -2090,7 +2193,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Wellington",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Wellington",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Wellington"
-    }
+    },
+    "iso2": "NZ"
   },
   {
     "city": "Asheville",
@@ -2105,7 +2209,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Asheville",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Asheville",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Asheville"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Trieste",
@@ -2120,7 +2225,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Trieste",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Trieste",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Trieste"
-    }
+    },
+    "iso2": "IT"
   },
   {
     "city": "Fort Myers",
@@ -2135,7 +2241,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Fort%20Myers",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Fort%20Myers",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Fort%20Myers"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Newcastle",
@@ -2150,7 +2257,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Newcastle",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Newcastle",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Newcastle"
-    }
+    },
+    "iso2": "AU"
   },
   {
     "city": "Portsmouth",
@@ -2165,7 +2273,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Portsmouth",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Portsmouth",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Portsmouth"
-    }
+    },
+    "iso2": "GB"
   },
   {
     "city": "Halifax",
@@ -2180,7 +2289,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Halifax",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Halifax",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Halifax"
-    }
+    },
+    "iso2": "CA"
   },
   {
     "city": "Vienna",
@@ -2218,7 +2328,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Heidelberg",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Heidelberg",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Heidelberg"
-    }
+    },
+    "iso2": "DE"
   },
   {
     "city": "Indianapolis",
@@ -2233,7 +2344,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Indianapolis",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Indianapolis",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Indianapolis"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Edinburgh",
@@ -2270,7 +2382,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Jacksonville",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Jacksonville",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Jacksonville"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Buffalo",
@@ -2285,7 +2398,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Buffalo",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Buffalo",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Buffalo"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Olympia",
@@ -2300,7 +2414,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Olympia",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Olympia",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Olympia"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Saint Petersburg",
@@ -2315,7 +2430,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Saint%20Petersburg",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Saint%20Petersburg",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Saint%20Petersburg"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Austin",
@@ -2352,7 +2468,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Brisbane",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Brisbane",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Brisbane"
-    }
+    },
+    "iso2": "AU"
   },
   {
     "city": "Male",
@@ -2367,7 +2484,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Male",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Male",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Male"
-    }
+    },
+    "iso2": "MV"
   },
   {
     "city": "Sliema",
@@ -2382,7 +2500,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Sliema",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Sliema",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Sliema"
-    }
+    },
+    "iso2": "MT"
   },
   {
     "city": "Rochester",
@@ -2397,7 +2516,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Rochester",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Rochester",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Rochester"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Christchurch",
@@ -2412,7 +2532,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Christchurch",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Christchurch",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Christchurch"
-    }
+    },
+    "iso2": "NZ"
   },
   {
     "city": "Toronto",
@@ -2451,7 +2572,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Orlando",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Orlando",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Orlando"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Dunedin",
@@ -2466,7 +2588,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Dunedin",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Dunedin",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Dunedin"
-    }
+    },
+    "iso2": "NZ"
   },
   {
     "city": "Turku",
@@ -2481,7 +2604,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Turku",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Turku",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Turku"
-    }
+    },
+    "iso2": "FI"
   },
   {
     "city": "Plymouth",
@@ -2496,7 +2620,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Plymouth",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Plymouth",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Plymouth"
-    }
+    },
+    "iso2": "GB"
   },
   {
     "city": "Swindon",
@@ -2511,7 +2636,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Swindon",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Swindon",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Swindon"
-    }
+    },
+    "iso2": "GB"
   },
   {
     "city": "Canberra",
@@ -2526,7 +2652,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Canberra",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Canberra",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Canberra"
-    }
+    },
+    "iso2": "AU"
   },
   {
     "city": "Manchester",
@@ -2564,7 +2691,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Peoria",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Peoria",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Peoria"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Gothenburg",
@@ -2579,7 +2707,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Gothenburg",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Gothenburg",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Gothenburg"
-    }
+    },
+    "iso2": "SE"
   },
   {
     "city": "Cleveland",
@@ -2594,7 +2723,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Cleveland",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Cleveland",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Cleveland"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Vancouver",
@@ -2631,7 +2761,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Limerick",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Limerick",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Limerick"
-    }
+    },
+    "iso2": "IE"
   },
   {
     "city": "Bristol",
@@ -2646,7 +2777,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Bristol",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Bristol",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Bristol"
-    }
+    },
+    "iso2": "GB"
   },
   {
     "city": "Brighton",
@@ -2661,7 +2793,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Brighton",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Brighton",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Brighton"
-    }
+    },
+    "iso2": "GB"
   },
   {
     "city": "Bologna",
@@ -2676,7 +2809,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Bologna",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Bologna",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Bologna"
-    }
+    },
+    "iso2": "IT"
   },
   {
     "city": "York",
@@ -2691,7 +2825,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/York",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/York",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/York"
-    }
+    },
+    "iso2": "GB"
   },
   {
     "city": "Karlsruhe",
@@ -2706,7 +2841,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Karlsruhe",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Karlsruhe",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Karlsruhe"
-    }
+    },
+    "iso2": "DE"
   },
   {
     "city": "Raleigh",
@@ -2721,7 +2857,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Raleigh",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Raleigh",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Raleigh"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Bonn",
@@ -2736,7 +2873,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Bonn",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Bonn",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Bonn"
-    }
+    },
+    "iso2": "DE"
   },
   {
     "city": "Hobart",
@@ -2751,7 +2889,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Hobart",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Hobart",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Hobart"
-    }
+    },
+    "iso2": "AU"
   },
   {
     "city": "Arlington",
@@ -2766,7 +2905,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Arlington",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Arlington",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Arlington"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Rome",
@@ -2805,7 +2945,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Saint%20Louis",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Saint%20Louis",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Saint%20Louis"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Bremen",
@@ -2820,7 +2961,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Bremen",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Bremen",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Bremen"
-    }
+    },
+    "iso2": "DE"
   },
   {
     "city": "Calgary",
@@ -2835,7 +2977,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Calgary",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Calgary",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Calgary"
-    }
+    },
+    "iso2": "CA"
   },
   {
     "city": "Milwaukee",
@@ -2850,7 +2993,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Milwaukee",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Milwaukee",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Milwaukee"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Brampton",
@@ -2865,7 +3009,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Brampton",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Brampton",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Brampton"
-    }
+    },
+    "iso2": "CA"
   },
   {
     "city": "Nashville",
@@ -2880,7 +3025,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Nashville",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Nashville",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Nashville"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Uppsala",
@@ -2895,7 +3041,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Uppsala",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Uppsala",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Uppsala"
-    }
+    },
+    "iso2": "SE"
   },
   {
     "city": "Tampa",
@@ -2910,7 +3057,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Tampa",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Tampa",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Tampa"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Regina",
@@ -2925,7 +3073,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Regina",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Regina",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Regina"
-    }
+    },
+    "iso2": "CA"
   },
   {
     "city": "Mannheim",
@@ -2940,7 +3089,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Mannheim",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Mannheim",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Mannheim"
-    }
+    },
+    "iso2": "DE"
   },
   {
     "city": "Leeds",
@@ -2955,7 +3105,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Leeds",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Leeds",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Leeds"
-    }
+    },
+    "iso2": "GB"
   },
   {
     "city": "Virginia Beach",
@@ -2970,7 +3121,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Virginia%20Beach",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Virginia%20Beach",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Virginia%20Beach"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Berlin",
@@ -3009,7 +3161,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Lille",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Lille",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Lille"
-    }
+    },
+    "iso2": "FR"
   },
   {
     "city": "Syracuse",
@@ -3024,7 +3177,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Syracuse",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Syracuse",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Syracuse"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Stuttgart",
@@ -3039,7 +3193,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Stuttgart",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Stuttgart",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Stuttgart"
-    }
+    },
+    "iso2": "DE"
   },
   {
     "city": "Coquitlam",
@@ -3054,7 +3209,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Coquitlam",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Coquitlam",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Coquitlam"
-    }
+    },
+    "iso2": "CA"
   },
   {
     "city": "Red Deer",
@@ -3069,7 +3225,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Red%20Deer",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Red%20Deer",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Red%20Deer"
-    }
+    },
+    "iso2": "CA"
   },
   {
     "city": "Cologne",
@@ -3084,7 +3241,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Cologne",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Cologne",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Cologne"
-    }
+    },
+    "iso2": "DE"
   },
   {
     "city": "Aachen",
@@ -3099,7 +3257,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Aachen",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Aachen",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Aachen"
-    }
+    },
+    "iso2": "DE"
   },
   {
     "city": "Tallahassee",
@@ -3114,7 +3273,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Tallahassee",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Tallahassee",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Tallahassee"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Bakersfield",
@@ -3129,7 +3289,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Bakersfield",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Bakersfield",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Bakersfield"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Ann Arbor",
@@ -3144,7 +3305,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Ann%20Arbor",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Ann%20Arbor",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Ann%20Arbor"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Nottingham",
@@ -3159,7 +3321,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Nottingham",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Nottingham",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Nottingham"
-    }
+    },
+    "iso2": "GB"
   },
   {
     "city": "Edmonton",
@@ -3174,7 +3337,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Edmonton",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Edmonton",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Edmonton"
-    }
+    },
+    "iso2": "CA"
   },
   {
     "city": "Las Vegas",
@@ -3189,7 +3353,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Las%20Vegas",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Las%20Vegas",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Las%20Vegas"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Columbus",
@@ -3204,7 +3369,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Columbus",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Columbus",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Columbus"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Turin",
@@ -3219,7 +3385,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Turin",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Turin",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Turin"
-    }
+    },
+    "iso2": "IT"
   },
   {
     "city": "Spokane",
@@ -3234,7 +3401,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Spokane",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Spokane",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Spokane"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Kelowna",
@@ -3249,7 +3417,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Kelowna",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Kelowna",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Kelowna"
-    }
+    },
+    "iso2": "CA"
   },
   {
     "city": "Exeter",
@@ -3264,7 +3433,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Exeter",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Exeter",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Exeter"
-    }
+    },
+    "iso2": "GB"
   },
   {
     "city": "Glasgow",
@@ -3279,7 +3449,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Glasgow",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Glasgow",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Glasgow"
-    }
+    },
+    "iso2": "GB"
   },
   {
     "city": "Memphis",
@@ -3294,7 +3465,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Memphis",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Memphis",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Memphis"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Kingston",
@@ -3309,7 +3481,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Kingston",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Kingston",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Kingston"
-    }
+    },
+    "iso2": "CA"
   },
   {
     "city": "Nuremberg",
@@ -3324,7 +3497,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Nuremberg",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Nuremberg",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Nuremberg"
-    }
+    },
+    "iso2": "DE"
   },
   {
     "city": "Coventry",
@@ -3339,7 +3513,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Coventry",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Coventry",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Coventry"
-    }
+    },
+    "iso2": "GB"
   },
   {
     "city": "Columbia",
@@ -3354,7 +3529,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Columbia",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Columbia",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Columbia"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Victoria",
@@ -3369,7 +3545,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Victoria",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Victoria",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Victoria"
-    }
+    },
+    "iso2": "CA"
   },
   {
     "city": "Malmo",
@@ -3384,7 +3561,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Malmo",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Malmo",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Malmo"
-    }
+    },
+    "iso2": "SE"
   },
   {
     "city": "Salem",
@@ -3399,7 +3577,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Salem",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Salem",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Salem"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Leipzig",
@@ -3414,7 +3593,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Leipzig",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Leipzig",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Leipzig"
-    }
+    },
+    "iso2": "DE"
   },
   {
     "city": "Dresden",
@@ -3429,7 +3609,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Dresden",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Dresden",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Dresden"
-    }
+    },
+    "iso2": "DE"
   },
   {
     "city": "Fort Wayne",
@@ -3444,7 +3625,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Fort%20Wayne",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Fort%20Wayne",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Fort%20Wayne"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Dayton",
@@ -3459,7 +3641,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Dayton",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Dayton",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Dayton"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "San Juan",
@@ -3474,7 +3657,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/San%20Juan",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/San%20Juan",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/San%20Juan"
-    }
+    },
+    "iso2": "PR"
   },
   {
     "city": "Taipei",
@@ -3512,7 +3696,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Kansas%20City",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Kansas%20City",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Kansas%20City"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Leicester",
@@ -3527,7 +3712,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Leicester",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Leicester",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Leicester"
-    }
+    },
+    "iso2": "GB"
   },
   {
     "city": "Oshawa",
@@ -3542,7 +3728,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Oshawa",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Oshawa",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Oshawa"
-    }
+    },
+    "iso2": "CA"
   },
   {
     "city": "Nanaimo",
@@ -3557,7 +3744,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Nanaimo",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Nanaimo",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Nanaimo"
-    }
+    },
+    "iso2": "CA"
   },
   {
     "city": "Fort Worth",
@@ -3572,7 +3760,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Fort%20Worth",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Fort%20Worth",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Fort%20Worth"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Palma de Mallorca",
@@ -3587,7 +3776,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Palma%20de%20Mallorca",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Palma%20de%20Mallorca",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Palma%20de%20Mallorca"
-    }
+    },
+    "iso2": "ES"
   },
   {
     "city": "Mississauga",
@@ -3602,7 +3792,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Mississauga",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Mississauga",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Mississauga"
-    }
+    },
+    "iso2": "CA"
   },
   {
     "city": "Quebec City",
@@ -3617,7 +3808,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Quebec%20City",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Quebec%20City",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Quebec%20City"
-    }
+    },
+    "iso2": "CA"
   },
   {
     "city": "Norwich",
@@ -3632,7 +3824,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Norwich",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Norwich",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Norwich"
-    }
+    },
+    "iso2": "GB"
   },
   {
     "city": "Burnaby",
@@ -3647,7 +3840,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Burnaby",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Burnaby",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Burnaby"
-    }
+    },
+    "iso2": "CA"
   },
   {
     "city": "Fayetteville",
@@ -3662,7 +3856,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Fayetteville",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Fayetteville",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Fayetteville"
-    }
+    },
+    "iso2": "US"
   },
   {
     "city": "Naples",
@@ -3677,7 +3872,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Naples",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Naples",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Naples"
-    }
+    },
+    "iso2": "IT"
   },
   {
     "city": "Derby",
@@ -3692,7 +3888,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Derby",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Derby",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Derby"
-    }
+    },
+    "iso2": "GB"
   },
   {
     "city": "Marseille",
@@ -3727,7 +3924,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Kingston",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Kingston",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Kingston"
-    }
+    },
+    "iso2": "JM"
   },
   {
     "city": "Jakarta",
@@ -4094,7 +4292,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Cebu",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Cebu",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Cebu"
-    }
+    },
+    "iso2": "PH"
   },
   {
     "city": "Kyoto",
@@ -4408,7 +4607,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Athens",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Athens",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Athens"
-    }
+    },
+    "iso2": "GR"
   },
   {
     "city": "Istanbul",
@@ -4423,7 +4623,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Istanbul",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Istanbul",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Istanbul"
-    }
+    },
+    "iso2": "TR"
   },
   {
     "city": "Montreal",
@@ -4485,7 +4686,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Guadalajara",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Guadalajara",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Guadalajara"
-    }
+    },
+    "iso2": "MX"
   },
   {
     "city": "São Paulo",
@@ -4524,7 +4726,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Rio%20de%20Janeiro",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Rio%20de%20Janeiro",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Rio%20de%20Janeiro"
-    }
+    },
+    "iso2": "BR"
   },
   {
     "city": "Buenos Aires",
@@ -4628,7 +4831,7 @@
       "Jesús María"
     ],
     "country": "Peru",
-    "iso2": "PEN",
+    "iso2": "PE",
     "currency": "PEN",
     "rent_or_kost_monthly": 1050,
     "food_meal_avg": 16,
@@ -4746,7 +4949,8 @@
       "food_url": "https://www.numbeo.com/cost-of-living/in/Johannesburg",
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Johannesburg",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Johannesburg"
-    }
+    },
+    "iso2": "ZA"
   },
   {
     "city": "Nairobi",
@@ -5015,27 +5219,6 @@
       "transport_url": "https://shmetro.com",
       "grocery_url": "https://hema.com",
       "community_note": "Room in shared flat in Minhang/Baoshan/Pudong outer ¥2.8k-¥4.2k, Shanghai Metro ¥4-¥7/trip, Casual noodles/fast dining ¥28-¥45."
-    }
-  },
-  {
-    "city": "Seoul",
-    "aliases": [
-      "Seoul",
-      "Seoul"
-    ],
-    "country": "Korea, South",
-    "iso2": "KR",
-    "currency": "KRW",
-    "rent_or_kost_monthly": 1256250,
-    "food_meal_avg": 23450,
-    "transport_monthly": 108875,
-    "grocery_basket": 92125,
-    "sources": {
-      "rent_url": "https://www.numbeo.com/cost-of-living/in/Seoul",
-      "food_url": "https://www.numbeo.com/cost-of-living/in/Seoul",
-      "transport_url": "https://www.numbeo.com/cost-of-living/in/Seoul",
-      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Seoul",
-      "community_note": "Calculated baseline for Seoul, Korea, South (Population: 23,016,000) based on regional economic benchmarks."
     }
   },
   {
@@ -6856,27 +7039,6 @@
     }
   },
   {
-    "city": "Busan",
-    "aliases": [
-      "Busan",
-      "Busan"
-    ],
-    "country": "Korea, South",
-    "iso2": "KR",
-    "currency": "KRW",
-    "rent_or_kost_monthly": 1125600,
-    "food_meal_avg": 21011,
-    "transport_monthly": 97552,
-    "grocery_basket": 82544,
-    "sources": {
-      "rent_url": "https://www.numbeo.com/cost-of-living/in/Busan",
-      "food_url": "https://www.numbeo.com/cost-of-living/in/Busan",
-      "transport_url": "https://www.numbeo.com/cost-of-living/in/Busan",
-      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Busan",
-      "community_note": "Calculated baseline for Busan, Korea, South (Population: 3,453,198) based on regional economic benchmarks."
-    }
-  },
-  {
     "city": "Lucknow",
     "aliases": [
       "Lucknow",
@@ -7126,27 +7288,6 @@
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Taizhou",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Taizhou",
       "community_note": "Calculated baseline for Taizhou, China (Population: 3,071,179) based on regional economic benchmarks."
-    }
-  },
-  {
-    "city": "Incheon",
-    "aliases": [
-      "Incheon",
-      "Incheon"
-    ],
-    "country": "Korea, South",
-    "iso2": "KR",
-    "currency": "KRW",
-    "rent_or_kost_monthly": 1125600,
-    "food_meal_avg": 21011,
-    "transport_monthly": 97552,
-    "grocery_basket": 82544,
-    "sources": {
-      "rent_url": "https://www.numbeo.com/cost-of-living/in/Incheon",
-      "food_url": "https://www.numbeo.com/cost-of-living/in/Incheon",
-      "transport_url": "https://www.numbeo.com/cost-of-living/in/Incheon",
-      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Incheon",
-      "community_note": "Calculated baseline for Incheon, Korea, South (Population: 3,049,315) based on regional economic benchmarks."
     }
   },
   {
@@ -28185,27 +28326,6 @@
     }
   },
   {
-    "city": "Prague",
-    "aliases": [
-      "Prague",
-      "Praha"
-    ],
-    "country": "Czechia",
-    "iso2": "CZ",
-    "currency": "CZK",
-    "rent_or_kost_monthly": 12064,
-    "food_meal_avg": 255,
-    "transport_monthly": 812,
-    "grocery_basket": 974,
-    "sources": {
-      "rent_url": "https://www.numbeo.com/cost-of-living/in/Prague",
-      "food_url": "https://www.numbeo.com/cost-of-living/in/Prague",
-      "transport_url": "https://www.numbeo.com/cost-of-living/in/Prague",
-      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Prague",
-      "community_note": "Calculated baseline for Prague, Czechia based on national PPP calibration and local authority benchmarks."
-    }
-  },
-  {
     "city": "Ulaanbaatar",
     "aliases": [
       "Ulaanbaatar",
@@ -31795,8 +31915,8 @@
     "aliases": [
       "Gaza"
     ],
-    "country": "Gaza Strip",
-    "iso2": "XG",
+    "country": "Palestine",
+    "iso2": "PS",
     "currency": "USD",
     "rent_or_kost_monthly": 160,
     "food_meal_avg": 3,
@@ -41660,26 +41780,6 @@
     }
   },
   {
-    "city": "Brazzaville",
-    "aliases": [
-      "Brazzaville"
-    ],
-    "country": "Congo",
-    "iso2": "CG",
-    "currency": "XAF",
-    "rent_or_kost_monthly": 96800,
-    "food_meal_avg": 1513,
-    "transport_monthly": 8470,
-    "grocery_basket": 10890,
-    "sources": {
-      "rent_url": "https://www.numbeo.com/cost-of-living/in/Brazzaville",
-      "food_url": "https://www.numbeo.com/cost-of-living/in/Brazzaville",
-      "transport_url": "https://www.numbeo.com/cost-of-living/in/Brazzaville",
-      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Brazzaville",
-      "community_note": "Calculated baseline for Brazzaville, Congo based on national PPP calibration and local authority benchmarks."
-    }
-  },
-  {
     "city": "Djambala",
     "aliases": [
       "Djambala"
@@ -42120,26 +42220,6 @@
     }
   },
   {
-    "city": "Bukavu",
-    "aliases": [
-      "Bukavu"
-    ],
-    "country": "Democratic Republic of the Congo",
-    "iso2": "CD",
-    "currency": "CDF",
-    "rent_or_kost_monthly": 160,
-    "food_meal_avg": 3,
-    "transport_monthly": 14,
-    "grocery_basket": 18,
-    "sources": {
-      "rent_url": "https://www.numbeo.com/cost-of-living/in/Bukavu",
-      "food_url": "https://www.numbeo.com/cost-of-living/in/Bukavu",
-      "transport_url": "https://www.numbeo.com/cost-of-living/in/Bukavu",
-      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Bukavu",
-      "community_note": "Calculated baseline for Bukavu, Democratic Republic of the Congo based on national PPP calibration and local authority benchmarks."
-    }
-  },
-  {
     "city": "Abangares",
     "aliases": [
       "Abangares"
@@ -42377,46 +42457,6 @@
       "transport_url": "https://www.numbeo.com/cost-of-living/in/Abengourou",
       "grocery_url": "https://www.numbeo.com/cost-of-living/in/Abengourou",
       "community_note": "Calculated baseline for Abengourou, Cote D'Ivoire (Ivory Coast) based on national PPP calibration and local authority benchmarks."
-    }
-  },
-  {
-    "city": "Abidjan",
-    "aliases": [
-      "Abidjan"
-    ],
-    "country": "Cote D'Ivoire (Ivory Coast)",
-    "iso2": "CI",
-    "currency": "XOF",
-    "rent_or_kost_monthly": 96800,
-    "food_meal_avg": 1513,
-    "transport_monthly": 8470,
-    "grocery_basket": 10890,
-    "sources": {
-      "rent_url": "https://www.numbeo.com/cost-of-living/in/Abidjan",
-      "food_url": "https://www.numbeo.com/cost-of-living/in/Abidjan",
-      "transport_url": "https://www.numbeo.com/cost-of-living/in/Abidjan",
-      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Abidjan",
-      "community_note": "Calculated baseline for Abidjan, Cote D'Ivoire (Ivory Coast) based on national PPP calibration and local authority benchmarks."
-    }
-  },
-  {
-    "city": "Abobo",
-    "aliases": [
-      "Abobo"
-    ],
-    "country": "Cote D'Ivoire (Ivory Coast)",
-    "iso2": "CI",
-    "currency": "XOF",
-    "rent_or_kost_monthly": 96800,
-    "food_meal_avg": 1513,
-    "transport_monthly": 8470,
-    "grocery_basket": 10890,
-    "sources": {
-      "rent_url": "https://www.numbeo.com/cost-of-living/in/Abobo",
-      "food_url": "https://www.numbeo.com/cost-of-living/in/Abobo",
-      "transport_url": "https://www.numbeo.com/cost-of-living/in/Abobo",
-      "grocery_url": "https://www.numbeo.com/cost-of-living/in/Abobo",
-      "community_note": "Calculated baseline for Abobo, Cote D'Ivoire (Ivory Coast) based on national PPP calibration and local authority benchmarks."
     }
   },
   {

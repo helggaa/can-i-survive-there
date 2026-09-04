@@ -24,6 +24,7 @@ import {
   SEED_AREAS,
   INITIAL_AREA_METRIC_RECORDS,
 } from '../data/seed-data';
+import GLOBAL_COST_DATASET from '../data/global-cost-dataset.json';
 
 function generateUUID(): string {
   if (typeof crypto !== 'undefined' && crypto.randomUUID) {
@@ -106,13 +107,121 @@ export class AppDatabase {
         });
       }
     }
+
+    // Ingest curated global cost dataset for flagship international hubs (Paris, Madrid, Sydney, Dubai, Singapore, Jakarta)
+    for (const item of GLOBAL_COST_DATASET as any[]) {
+      const city = this.cities.find(
+        (c) =>
+          c.id === item.cityId ||
+          (c.name.toLowerCase() === item.cityName.toLowerCase() &&
+            c.id.toLowerCase().includes(item.iso2.toLowerCase()))
+      );
+      if (!city) continue;
+
+      city.bootstrap_status = 'enriched';
+      city.data_confidence = 'high';
+
+      for (const n of item.neighborhoods || []) {
+        let area: Area | undefined = this.areas.find(
+          (a) => a.city_id === city.id && a.name.toLowerCase() === n.name.toLowerCase()
+        );
+        if (!area) {
+          const newArea: Area = {
+            id: `area-${item.iso2.toLowerCase()}-${n.name.toLowerCase().replace(/[^a-z0-9]/g, '')}`,
+            city_id: city.id,
+            name: n.name,
+            lat: Number((city.lat + (n.latOffset || 0)).toFixed(4)),
+            lng: Number((city.lng + (n.lngOffset || 0)).toFixed(4)),
+            source: 'manual',
+            created_at: new Date().toISOString(),
+          };
+          this.areas.push(newArea);
+          area = newArea;
+        }
+        const activeArea: Area = area;
+
+        const metricsToLoad: Array<{ key: string; src: any }> = [
+          { key: 'rent_or_kost_monthly', src: n.sources?.rent },
+          { key: 'food_meal_avg', src: n.sources?.food },
+          { key: 'transport_monthly', src: n.sources?.transport },
+          { key: 'grocery_basket', src: n.sources?.grocery },
+        ];
+
+        for (const mData of metricsToLoad) {
+          if (!mData.src || !mData.src.value) continue;
+          const metric = this.metrics.find((m) => m.key === mData.key);
+          if (!metric) continue;
+
+          const existing = this.areaMetricValues.find(
+            (v) => v.area_id === activeArea.id && v.metric_id === metric.id
+          );
+          if (!existing) {
+            this.submissions.push({
+              id: generateUUID(),
+              area_id: activeArea.id,
+              metric_id: metric.id,
+              value: mData.src.value,
+              note: mData.src.note || `Curated benchmark from ${mData.src.url}`,
+              evidence_url: mData.src.url,
+              source_type: 'agent_bootstrap',
+              agent_confidence: 'high',
+              observed_at: new Date().toISOString().split('T')[0],
+              created_at: new Date().toISOString(),
+              status: 'accepted',
+            });
+
+            this.areaMetricValues.push({
+              id: generateUUID(),
+              area_id: activeArea.id,
+              metric_id: metric.id,
+              value: mData.src.value,
+              confidence: 'high',
+              sample_size: 15,
+              computed_at: new Date().toISOString(),
+              metric,
+            });
+          }
+        }
+      }
+    }
+
+    // Set seeded cities with 0 areas to 'not_started' so cold-start bootstrap can run on demand
+    for (const city of this.cities) {
+      const hasAreas = this.areas.some((a) => a.city_id === city.id);
+      if (!hasAreas) {
+        city.bootstrap_status = 'not_started';
+        city.data_confidence = 'low';
+      }
+    }
   }
 
   public async getCountries(): Promise<Country[]> {
+    if (this.supabase) {
+      try {
+        const { data, error } = await this.supabase.from('countries').select('*');
+        if (!error && data && data.length > 0) {
+          return data as Country[];
+        }
+      } catch (e) {
+        console.warn('Supabase getCountries query failed, fallback to local store:', e);
+      }
+    }
     return this.countries;
   }
 
   public async getCities(): Promise<(City & { country: Country })[]> {
+    if (this.supabase) {
+      try {
+        const { data, error } = await this.supabase
+          .from('cities')
+          .select('*, country:countries(*)');
+        if (!error && data && data.length > 0) {
+          return data as (City & { country: Country })[];
+        }
+      } catch (e) {
+        console.warn('Supabase getCities query failed, fallback to local store:', e);
+      }
+    }
     return this.cities.map((city) => {
       const country = this.countries.find((c) => c.id === city.country_id)!;
       return { ...city, country };
@@ -120,10 +229,38 @@ export class AppDatabase {
   }
 
   public async getAreaById(areaId: string): Promise<Area | undefined> {
+    if (this.supabase) {
+      try {
+        const { data, error } = await this.supabase
+          .from('areas')
+          .select('*')
+          .eq('id', areaId)
+          .maybeSingle();
+        if (!error && data) {
+          return data as Area;
+        }
+      } catch (e) {
+        console.warn('Supabase getAreaById query failed, fallback to local store:', e);
+      }
+    }
     return this.areas.find((a) => a.id === areaId);
   }
 
   public async getAreaSubmissions(areaId: string): Promise<(Submission & { metric?: Metric })[]> {
+    if (this.supabase) {
+      try {
+        const { data, error } = await this.supabase
+          .from('submissions')
+          .select('*, metric:metrics(*)')
+          .eq('area_id', areaId)
+          .order('created_at', { ascending: false });
+        if (!error && data && data.length > 0) {
+          return data as (Submission & { metric?: Metric })[];
+        }
+      } catch (e) {
+        console.warn('Supabase getAreaSubmissions query failed, fallback to local store:', e);
+      }
+    }
     return this.submissions
       .filter((s) => s.area_id === areaId)
       .map((sub) => {
@@ -134,6 +271,113 @@ export class AppDatabase {
   }
 
   public async getCityAreasWithExpenses(cityId: string): Promise<AreaExpenseBreakdown[]> {
+    if (this.supabase) {
+      try {
+        const { data: areasData, error: aErr } = await this.supabase
+          .from('areas')
+          .select('*, city:cities(*, country:countries(*))')
+          .eq('city_id', cityId);
+
+        if (!aErr && areasData && areasData.length > 0) {
+          const areaIds = areasData.map((a: any) => a.id);
+          const { data: amvData, error: mErr } = await this.supabase
+            .from('area_metric_values')
+            .select('*, metric:metrics(*)')
+            .in('area_id', areaIds);
+
+          if (!mErr && amvData) {
+            const results: AreaExpenseBreakdown[] = [];
+            for (const area of areasData) {
+              const city = area.city;
+              const country = city?.country;
+              if (!city || !country) continue;
+
+              const metricValuesMap: Record<string, { value: number; confidence: ConfidenceLevel; sample_size: number }> = {};
+              const areaValues = amvData.filter((v: any) => v.area_id === area.id);
+
+              let rent_or_kost_monthly = 0;
+              let food_meal_avg = 0;
+              let transport_monthly = 0;
+              let grocery_basket = 0;
+              let minConfidence: ConfidenceLevel = 'high';
+              let totalSampleSize = 0;
+
+              const confidenceRank: Record<ConfidenceLevel, number> = {
+                high: 4,
+                medium: 3,
+                low: 2,
+                estimated: 1,
+              };
+
+              for (const val of areaValues) {
+                const metric = val.metric;
+                if (metric) {
+                  metricValuesMap[metric.key] = {
+                    value: Number(val.value),
+                    confidence: val.confidence,
+                    sample_size: val.sample_size,
+                  };
+                  totalSampleSize += val.sample_size;
+
+                  if (confidenceRank[val.confidence as ConfidenceLevel] < confidenceRank[minConfidence]) {
+                    minConfidence = val.confidence as ConfidenceLevel;
+                  }
+
+                  if (metric.key === 'rent_or_kost_monthly' || metric.key === 'rent_monthly') {
+                    rent_or_kost_monthly = Number(val.value);
+                  } else if (metric.key === 'food_meal_avg') {
+                    food_meal_avg = Number(val.value);
+                  } else if (metric.key === 'transport_monthly') {
+                    transport_monthly = Number(val.value);
+                  } else if (metric.key === 'grocery_basket') {
+                    grocery_basket = Number(val.value);
+                  }
+                }
+              }
+
+              if (areaValues.length === 0) {
+                minConfidence = 'estimated';
+              }
+
+              const costBreakdown = calculateTotalCost({
+                rent_or_kost_monthly,
+                food_meal_avg,
+                transport_monthly,
+                grocery_basket,
+              });
+
+              results.push({
+                area: {
+                  id: area.id,
+                  city_id: area.city_id,
+                  name: area.name,
+                  lat: area.lat,
+                  lng: area.lng,
+                  source: area.source,
+                  created_at: area.created_at,
+                },
+                city,
+                country,
+                rent_or_kost_monthly: costBreakdown.rent_or_kost_monthly,
+                food_meal_avg: costBreakdown.food_meal_avg,
+                food_cost_monthly: costBreakdown.food_cost_monthly,
+                transport_monthly: costBreakdown.transport_monthly,
+                grocery_monthly: costBreakdown.grocery_monthly,
+                total_monthly_cost: costBreakdown.total_monthly_cost,
+                confidence: minConfidence,
+                sample_size: totalSampleSize,
+                metric_values: metricValuesMap,
+              });
+            }
+
+            if (results.length > 0) return results;
+          }
+        }
+      } catch (e) {
+        console.warn('Supabase getCityAreasWithExpenses query failed, fallback to local store:', e);
+      }
+    }
+
     const city = this.cities.find((c) => c.id === cityId);
     if (!city) return [];
 
@@ -144,6 +388,7 @@ export class AppDatabase {
     const results: AreaExpenseBreakdown[] = [];
 
     for (const area of cityAreas) {
+
       const metricValuesMap: Record<string, { value: number; confidence: ConfidenceLevel; sample_size: number }> = {};
       const areaValues = this.areaMetricValues.filter((v) => v.area_id === area.id);
 
@@ -222,6 +467,10 @@ export class AppDatabase {
     const city = area ? this.cities.find((c) => c.id === area.city_id) : undefined;
     const country = city ? this.countries.find((co) => co.id === city.country_id) : undefined;
 
+    if (!input.currency_code && country) {
+      input.currency_code = country.currency_code;
+    }
+
     const targetMetric = this.metrics.find(
       (m) => m.key === input.metric_key || (input.metric_key === 'rent_monthly' && m.key === 'rent_or_kost_monthly')
     );
@@ -260,6 +509,25 @@ export class AppDatabase {
 
     this.submissions.push(newSubmission);
 
+    if (this.supabase) {
+      try {
+        await this.supabase.from('submissions').insert({
+          id: insertedId,
+          area_id: newSubmission.area_id,
+          metric_id: newSubmission.metric_id,
+          value: newSubmission.value,
+          note: newSubmission.note,
+          evidence_url: newSubmission.evidence_url,
+          source_type: newSubmission.source_type,
+          agent_confidence: newSubmission.agent_confidence,
+          observed_at: newSubmission.observed_at,
+          status: 'accepted',
+        });
+      } catch (e) {
+        console.warn('Supabase submission insert failed, saved to local store:', e);
+      }
+    }
+
     return {
       success: true,
       inserted_id: insertedId,
@@ -274,9 +542,14 @@ export class AppDatabase {
     evidence_url?: string;
     submitted_by?: string;
   }): Promise<InsertAreaMetricResult> {
-    const metric = this.metrics.find((m) => m.key === input.metric_key);
+    const normalizedKey = input.metric_key === 'rent_monthly' ? 'rent_or_kost_monthly' : input.metric_key;
+    const metric = this.metrics.find((m) => m.key === normalizedKey);
     if (!metric) {
       return { success: false, reason: `Unknown metric key: ${input.metric_key}` };
+    }
+
+    if (isNaN(input.value) || input.value <= 0) {
+      return { success: false, reason: 'Value must be strictly positive (greater than 0).' };
     }
 
     const insertedId = generateUUID();
@@ -285,14 +558,35 @@ export class AppDatabase {
       area_id: input.area_id,
       metric_id: metric.id,
       value: input.value,
-      note: input.note,
+      note: input.note || 'User submitted community observation',
       evidence_url: input.evidence_url,
-      submitted_by: input.submitted_by,
+      submitted_by: input.submitted_by || 'community_user',
       source_type: 'user_fact',
+      agent_confidence: 'medium',
       observed_at: new Date().toISOString().split('T')[0],
       created_at: new Date().toISOString(),
-      status: 'pending',
+      status: 'accepted',
     });
+
+    if (this.supabase) {
+      try {
+        await this.supabase.from('submissions').insert({
+          id: insertedId,
+          area_id: input.area_id,
+          metric_id: metric.id,
+          value: input.value,
+          note: input.note || 'User submitted community observation',
+          evidence_url: input.evidence_url,
+          submitted_by: input.submitted_by || 'community_user',
+          source_type: 'user_fact',
+          agent_confidence: 'medium',
+          observed_at: new Date().toISOString().split('T')[0],
+          status: 'accepted',
+        });
+      } catch (e) {
+        console.warn('Supabase submitUserFact insert failed, saved to local store:', e);
+      }
+    }
 
     return { success: true, inserted_id: insertedId };
   }
@@ -300,6 +594,15 @@ export class AppDatabase {
   public async recomputeAreaMetrics(areaId: string): Promise<{ success: boolean; area_id: string }> {
     const area = this.areas.find((a) => a.id === areaId);
     if (!area) return { success: false, area_id: areaId };
+
+    if (this.supabase) {
+      try {
+        await this.supabase.rpc('recompute_area_metrics', { p_area_id: areaId });
+      } catch (e) {
+        console.warn('Supabase recompute_area_metrics RPC failed, fell back to local recompute:', e);
+      }
+    }
+
 
     for (const metric of this.metrics) {
       const subs = this.submissions.filter(

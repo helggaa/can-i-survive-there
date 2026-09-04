@@ -13,6 +13,9 @@ SET gni_per_capita_ppp = EXCLUDED.gni_per_capita_ppp;
 -- Insert Additional Global Cities
 INSERT INTO cities (id, country_id, name, lat, lng, bootstrap_status, bootstrap_source, data_confidence)
 VALUES
+  ('city-jakarta-01', 'c1111111-1111-1111-1111-111111111111', 'Jakarta', -6.2088, 106.8456, 'enriched', 'curated_facts', 'high'),
+  ('city-yogyakarta-02', 'c1111111-1111-1111-1111-111111111111', 'Yogyakarta', -7.7956, 110.3695, 'enriched', 'curated_facts', 'high'),
+  ('city-tokyo-03', 'c2222222-2222-2222-2222-222222222222', 'Tokyo', 35.6762, 139.6503, 'enriched', 'curated_facts', 'high'),
   ('city-bandung-04', 'c1111111-1111-1111-1111-111111111111', 'Bandung', -6.9175, 107.6191, 'enriched', 'curated_facts', 'medium'),
   ('city-surabaya-06', 'c1111111-1111-1111-1111-111111111111', 'Surabaya', -7.2575, 112.7521, 'enriched', 'curated_facts', 'medium'),
   ('city-bali-07', 'c1111111-1111-1111-1111-111111111111', 'Bali (Denpasar & Badung)', -8.6705, 115.2126, 'enriched', 'curated_facts', 'high'),

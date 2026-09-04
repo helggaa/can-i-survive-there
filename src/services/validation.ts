@@ -90,7 +90,7 @@ export function validateAreaMetricInput(
 
   // Rule 4: Currency code must match country.currency_code
   const expectedCurrency = context.country.currency_code.toUpperCase().trim();
-  const providedCurrency = (input.currency_code || '').toUpperCase().trim();
+  const providedCurrency = (input.currency_code ? input.currency_code.toUpperCase().trim() : expectedCurrency);
   if (providedCurrency !== expectedCurrency) {
     return {
       valid: false,

@@ -1,41 +1,87 @@
 // src/App.tsx
 // Main Application Container
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import { Navbar } from './components/Navbar';
 import { LandingView } from './components/LandingView';
 import { BrowseView } from './components/BrowseView';
 import { PersonalizedView } from './components/PersonalizedView';
 
+type ViewMode = 'landing' | 'browse' | 'personalized';
+
+function getViewFromHash(): ViewMode {
+  const clean = window.location.hash.replace(/^#\/?/, '').toLowerCase().trim();
+  if (clean === 'browse') return 'browse';
+  if (clean === 'personalized') return 'personalized';
+  return 'landing';
+}
+
 export function App() {
-  const [currentView, setCurrentView] = useState<'landing' | 'browse' | 'personalized'>('landing');
+  const [currentView, setCurrentView] = useState<ViewMode>(getViewFromHash);
+
+  // Sync hash changes from browser back/forward buttons
+  useEffect(() => {
+    const handleHashChange = () => {
+      const targetView = getViewFromHash();
+      setCurrentView(targetView);
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  const navigateTo = (view: ViewMode) => {
+    const hash = view === 'landing' ? '' : `#/${view}`;
+    if (window.location.hash !== hash) {
+      if (view === 'landing') {
+        history.pushState(null, '', window.location.pathname);
+      } else {
+        window.location.hash = hash;
+      }
+    }
+
+    const updateDom = () => {
+      setCurrentView(view);
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    };
+
+    // Use native View Transitions API if supported
+    if (typeof document !== 'undefined' && 'startViewTransition' in document) {
+      (document as any).startViewTransition(updateDom);
+    } else {
+      updateDom();
+    }
+  };
 
   return (
     <div className="app-layout">
       {/* Sticky Header */}
-      <Navbar currentView={currentView} onSelectView={setCurrentView} />
+      <Navbar currentView={currentView} onSelectView={navigateTo} />
 
       {/* Main Viewport */}
       <main className="main-content">
-        {currentView === 'landing' && (
-          <LandingView
-            onSelectBrowse={() => setCurrentView('browse')}
-            onSelectPersonalized={() => setCurrentView('personalized')}
-          />
-        )}
+        <div key={currentView} className="view-container">
+          {currentView === 'landing' && (
+            <LandingView
+              onSelectBrowse={() => navigateTo('browse')}
+              onSelectPersonalized={() => navigateTo('personalized')}
+            />
+          )}
 
-        {currentView === 'browse' && (
-          <BrowseView
-            onNavigatePersonalized={() => setCurrentView('personalized')}
-          />
-        )}
+          {currentView === 'browse' && (
+            <BrowseView
+              onNavigatePersonalized={() => navigateTo('personalized')}
+            />
+          )}
 
-        {currentView === 'personalized' && (
-          <PersonalizedView
-            onBackToBrowse={() => setCurrentView('browse')}
-          />
-        )}
+          {currentView === 'personalized' && (
+            <PersonalizedView
+              onBackToBrowse={() => navigateTo('browse')}
+            />
+          )}
+        </div>
       </main>
 
       {/* Footer */}

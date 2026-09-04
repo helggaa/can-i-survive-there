@@ -4,7 +4,7 @@
 -- Function: insert_area_metric
 -- Enforces all 8 validation rules per 04-bootstrap-agent-spec.md
 CREATE OR REPLACE FUNCTION insert_area_metric(
-    p_area_id UUID,
+    p_area_id TEXT,
     p_metric_key TEXT,
     p_value NUMERIC,
     p_currency_code TEXT,
@@ -19,17 +19,17 @@ LANGUAGE plpgsql
 SECURITY DEFINER
 AS $$
 DECLARE
-    v_city_id UUID;
-    v_country_id UUID;
+    v_city_id TEXT;
+    v_country_id TEXT;
     v_expected_currency TEXT;
     v_gni_ppp NUMERIC;
     v_normalized_metric_key TEXT;
-    v_metric_id UUID;
+    v_metric_id TEXT;
     v_monthly_gni_ppp NUMERIC;
     v_min_bound NUMERIC;
     v_max_bound NUMERIC;
     v_recent_submission_count INT;
-    v_inserted_id UUID;
+    v_inserted_id TEXT;
 BEGIN
     -- 1. Area existence and city/country linkage
     SELECT a.city_id, c.country_id, co.currency_code, co.gni_per_capita_ppp
@@ -157,14 +157,14 @@ $$;
 
 -- Function: recompute_area_metrics
 -- Recomputes median values, sets confidence ratings, and updates city data_confidence
-CREATE OR REPLACE FUNCTION recompute_area_metrics(p_area_id UUID)
+CREATE OR REPLACE FUNCTION recompute_area_metrics(p_area_id TEXT)
 RETURNS JSONB
 LANGUAGE plpgsql
 SECURITY DEFINER
 AS $$
 DECLARE
     v_metric RECORD;
-    v_city_id UUID;
+    v_city_id TEXT;
     v_sample_size INT;
     v_median_value NUMERIC;
     v_confidence TEXT;
