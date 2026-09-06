@@ -29,9 +29,11 @@ interface AreaExpenseCardProps {
   isPersonalized?: boolean;
   salary?: number;
   onOpenSubmitFact: (area: AreaExpenseBreakdown) => void;
+  onOpenFeedback?: (area: AreaExpenseBreakdown) => void;
 }
 
 import { formatCurrency } from '../utils/formatters';
+import { useCurrency } from '../context/CurrencyContext';
 
 export const AreaExpenseCard: React.FC<AreaExpenseCardProps> = ({
   data,
@@ -39,6 +41,7 @@ export const AreaExpenseCard: React.FC<AreaExpenseCardProps> = ({
   isPersonalized = false,
   salary,
   onOpenSubmitFact,
+  onOpenFeedback,
 }) => {
   const [isExpanded, setIsExpanded] = useState<boolean>(rank === 1);
   const [showFactsDrawer, setShowFactsDrawer] = useState<boolean>(false);
@@ -47,7 +50,14 @@ export const AreaExpenseCard: React.FC<AreaExpenseCardProps> = ({
     data.commute?.mode || 'drive'
   );
 
+  const { formatPrice } = useCurrency();
   const currency = data.country?.currency_code || 'IDR';
+  const formattedTotal = formatPrice(data.total_monthly_cost, currency);
+  const formattedRent = formatPrice(data.rent_or_kost_monthly, currency);
+  const formattedFood = formatPrice(data.food_cost_monthly, currency);
+  const formattedMeal = formatPrice(data.food_meal_avg, currency);
+  const formattedTransport = formatPrice(data.transport_monthly, currency);
+  const formattedGrocery = formatPrice(data.grocery_monthly, currency);
   const affordabilityPct =
     salary && salary > 0 ? Math.round((data.total_monthly_cost / salary) * 100) : null;
   const isUnaffordable = affordabilityPct !== null && affordabilityPct >= 100;
@@ -79,7 +89,7 @@ export const AreaExpenseCard: React.FC<AreaExpenseCardProps> = ({
 
   return (
     <div
-      className="area-card"
+      className="area-card fade-in-card"
       style={
         isUnaffordable
           ? { borderColor: 'rgba(239, 68, 68, 0.4)', background: 'rgba(239, 68, 68, 0.04)' }
@@ -156,8 +166,19 @@ export const AreaExpenseCard: React.FC<AreaExpenseCardProps> = ({
           <div className="total-cost-display">
             <div className="cost-label">Est. Living Cost</div>
             <div className="cost-amount">
-              {formatCurrency(data.total_monthly_cost, currency)}
-              <span className="cost-currency">/mo</span>
+              {data.total_monthly_cost > 0 ? (
+                <>
+                  <span>{formattedTotal.primary}</span>
+                  <span className="cost-currency">/mo</span>
+                  {formattedTotal.isConverted && (
+                    <span style={{ fontSize: '0.725rem', color: 'var(--text-muted)', marginLeft: '0.35rem', fontWeight: 400 }}>
+                      {formattedTotal.secondary}
+                    </span>
+                  )}
+                </>
+              ) : (
+                <div className="skeleton" style={{ width: 85, height: 20, display: 'inline-block' }} />
+              )}
             </div>
           </div>
 
@@ -189,8 +210,13 @@ export const AreaExpenseCard: React.FC<AreaExpenseCardProps> = ({
                 )}
               </div>
               <div className="metric-value">
-                {formatCurrency(data.rent_or_kost_monthly, currency)}
+                <span>{formattedRent.primary}</span>
                 <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>/mo</span>
+                {formattedRent.isConverted && (
+                  <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginLeft: '0.35rem' }}>
+                    {formattedRent.secondary}
+                  </span>
+                )}
               </div>
               <div className="metric-note">Single room or shared kost average</div>
             </div>
@@ -210,11 +236,16 @@ export const AreaExpenseCard: React.FC<AreaExpenseCardProps> = ({
                 )}
               </div>
               <div className="metric-value">
-                {formatCurrency(data.food_cost_monthly, currency)}
+                <span>{formattedFood.primary}</span>
                 <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>/mo</span>
+                {formattedFood.isConverted && (
+                  <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginLeft: '0.35rem' }}>
+                    {formattedFood.secondary}
+                  </span>
+                )}
               </div>
               <div className="metric-note disclaimer">
-                ~{formatCurrency(data.food_meal_avg, currency)}/meal (20 meals/mo)
+                ~{formattedMeal.primary}/meal (20 meals/mo)
                 <br />
                 <span style={{ color: 'var(--text-muted)', fontSize: '0.7rem' }}>
                   *Sit-down meals only — excludes snacks & drinks
@@ -237,8 +268,13 @@ export const AreaExpenseCard: React.FC<AreaExpenseCardProps> = ({
                 )}
               </div>
               <div className="metric-value">
-                {formatCurrency(data.transport_monthly, currency)}
+                <span>{formattedTransport.primary}</span>
                 <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>/mo</span>
+                {formattedTransport.isConverted && (
+                  <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginLeft: '0.35rem' }}>
+                    {formattedTransport.secondary}
+                  </span>
+                )}
               </div>
               <div className="metric-note">Transit passes / local daily commute</div>
             </div>
@@ -258,8 +294,13 @@ export const AreaExpenseCard: React.FC<AreaExpenseCardProps> = ({
                 )}
               </div>
               <div className="metric-value">
-                {formatCurrency(data.grocery_monthly, currency)}
+                <span>{formattedGrocery.primary}</span>
                 <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>/mo</span>
+                {formattedGrocery.isConverted && (
+                  <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginLeft: '0.35rem' }}>
+                    {formattedGrocery.secondary}
+                  </span>
+                )}
               </div>
               <div className="metric-note">Weekly essentials calculated monthly</div>
             </div>
@@ -409,7 +450,7 @@ export const AreaExpenseCard: React.FC<AreaExpenseCardProps> = ({
                           <span>
                             Source: <strong style={{ color: 'var(--text-secondary)' }}>{sub.source_type}</strong> · Observed {sub.observed_at}
                           </span>
-                          {sub.evidence_url && (
+                          {sub.evidence_url && (sub.evidence_url.startsWith('http://') || sub.evidence_url.startsWith('https://')) && (
                             <a
                               href={sub.evidence_url}
                               target="_blank"
@@ -448,20 +489,44 @@ export const AreaExpenseCard: React.FC<AreaExpenseCardProps> = ({
               <CheckCircle2 size={14} color="#10b981" />
               <span>
                 Total living cost:{' '}
-                <strong>{formatCurrency(data.total_monthly_cost, currency)}/month</strong>
+                <strong>{formattedTotal.primary}/month</strong>
+                {formattedTotal.isConverted && (
+                  <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginLeft: '0.25rem' }}>
+                    {formattedTotal.secondary}
+                  </span>
+                )}
               </span>
             </div>
 
-            <button
-              className="fact-submit-btn"
-              onClick={(e) => {
-                e.stopPropagation();
-                onOpenSubmitFact(data);
-              }}
-            >
-              <PlusCircle size={14} />
-              <span>Submit a fact for {data.area.name}</span>
-            </button>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+              <button
+                className="fact-submit-btn"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onOpenSubmitFact(data);
+                }}
+              >
+                <PlusCircle size={14} />
+                <span>Submit fact</span>
+              </button>
+
+              {onOpenFeedback && (
+                <button
+                  className="fact-submit-btn"
+                  style={{
+                    background: 'rgba(6, 182, 212, 0.1)',
+                    borderColor: 'rgba(6, 182, 212, 0.3)',
+                    color: 'var(--accent-secondary)',
+                  }}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onOpenFeedback(data);
+                  }}
+                >
+                  <span>Report update</span>
+                </button>
+              )}
+            </div>
           </div>
         </div>
       )}

@@ -14,6 +14,8 @@ import type {
   InsertAreaMetricResult,
   AreaExpenseBreakdown,
   ConfidenceLevel,
+  UserFeedback,
+  SubmitFeedbackInput,
 } from '../types/database.types';
 import { validateAreaMetricInput } from './validation';
 import { calculateTotalCost } from './scoring';
@@ -46,6 +48,7 @@ export class AppDatabase {
   public metrics: Metric[] = [];
   public areaMetricValues: AreaMetricValue[] = [];
   public submissions: Submission[] = [];
+  public feedback: UserFeedback[] = [];
 
   constructor() {
     this.initSupabaseClient();
@@ -193,6 +196,62 @@ export class AppDatabase {
         city.data_confidence = 'low';
       }
     }
+
+    this.loadLocalCustomData();
+  }
+
+  public saveLocalCustomData() {
+    if (typeof window === 'undefined' || !window.localStorage) return;
+    try {
+      const seedCityIds = new Set(SEED_CITIES.map((c) => c.id));
+      const customCities = this.cities.filter((c) => !seedCityIds.has(c.id));
+      const seedAreaIds = new Set(SEED_AREAS.map((a) => a.id));
+      const customAreas = this.areas.filter((a) => !seedAreaIds.has(a.id));
+      const customMetrics = this.areaMetricValues.filter((v) => !seedAreaIds.has(v.area_id));
+
+      localStorage.setItem('cist_custom_cities', JSON.stringify(customCities));
+      localStorage.setItem('cist_custom_areas', JSON.stringify(customAreas));
+      localStorage.setItem('cist_custom_metrics', JSON.stringify(customMetrics));
+    } catch {
+      // quota or security exception
+    }
+  }
+
+  public loadLocalCustomData() {
+    if (typeof window === 'undefined' || !window.localStorage) return;
+    try {
+      const rawCities = localStorage.getItem('cist_custom_cities');
+      if (rawCities) {
+        const cities: City[] = JSON.parse(rawCities);
+        for (const c of cities) {
+          if (!this.cities.some((item) => item.id === c.id)) {
+            this.cities.push(c);
+          }
+        }
+      }
+
+      const rawAreas = localStorage.getItem('cist_custom_areas');
+      if (rawAreas) {
+        const areas: Area[] = JSON.parse(rawAreas);
+        for (const a of areas) {
+          if (!this.areas.some((item) => item.id === a.id)) {
+            this.areas.push(a);
+          }
+        }
+      }
+
+      const rawMetrics = localStorage.getItem('cist_custom_metrics');
+      if (rawMetrics) {
+        const metrics: AreaMetricValue[] = JSON.parse(rawMetrics);
+        for (const m of metrics) {
+          if (!this.areaMetricValues.some((item) => item.id === m.id)) {
+            this.areaMetricValues.push(m);
+          }
+        }
+      }
+    } catch {
+      // ignore
+    }
   }
 
   public async getCountries(): Promise<Country[]> {
@@ -200,7 +259,14 @@ export class AppDatabase {
       try {
         const { data, error } = await this.supabase.from('countries').select('*');
         if (!error && data && data.length > 0) {
-          return data as Country[];
+          const map = new Map<string, Country>();
+          for (const c of this.countries) {
+            map.set(c.iso_code, c);
+          }
+          for (const c of data as Country[]) {
+            map.set(c.iso_code, c);
+          }
+          return Array.from(map.values());
         }
       } catch (e) {
         console.warn('Supabase getCountries query failed, fallback to local store:', e);
@@ -210,22 +276,31 @@ export class AppDatabase {
   }
 
   public async getCities(): Promise<(City & { country: Country })[]> {
+    const localList = this.cities.map((city) => {
+      const country = this.countries.find((c) => c.id === city.country_id)!;
+      return { ...city, country };
+    });
+
     if (this.supabase) {
       try {
         const { data, error } = await this.supabase
           .from('cities')
           .select('*, country:countries(*)');
         if (!error && data && data.length > 0) {
-          return data as (City & { country: Country })[];
+          const map = new Map<string, City & { country: Country }>();
+          for (const c of localList) {
+            map.set(c.id, c);
+          }
+          for (const c of data as (City & { country: Country })[]) {
+            map.set(c.id, c);
+          }
+          return Array.from(map.values());
         }
       } catch (e) {
         console.warn('Supabase getCities query failed, fallback to local store:', e);
       }
     }
-    return this.cities.map((city) => {
-      const country = this.countries.find((c) => c.id === city.country_id)!;
-      return { ...city, country };
-    });
+    return localList;
   }
 
   public async getAreaById(areaId: string): Promise<Area | undefined> {
@@ -511,18 +586,32 @@ export class AppDatabase {
 
     if (this.supabase) {
       try {
-        await this.supabase.from('submissions').insert({
-          id: insertedId,
-          area_id: newSubmission.area_id,
-          metric_id: newSubmission.metric_id,
-          value: newSubmission.value,
-          note: newSubmission.note,
-          evidence_url: newSubmission.evidence_url,
-          source_type: newSubmission.source_type,
-          agent_confidence: newSubmission.agent_confidence,
-          observed_at: newSubmission.observed_at,
-          status: 'accepted',
+        const { error: rpcErr } = await this.supabase.rpc('insert_area_metric', {
+          p_area_id: newSubmission.area_id,
+          p_metric_key: input.metric_key,
+          p_value: newSubmission.value,
+          p_currency_code: input.currency_code || country?.currency_code,
+          p_source_url: newSubmission.evidence_url,
+          p_source_type: newSubmission.source_type,
+          p_observed_at: newSubmission.observed_at,
+          p_agent_confidence: newSubmission.agent_confidence,
+          p_note: newSubmission.note,
         });
+
+        if (rpcErr) {
+          await this.supabase.from('submissions').insert({
+            id: insertedId,
+            area_id: newSubmission.area_id,
+            metric_id: newSubmission.metric_id,
+            value: newSubmission.value,
+            note: newSubmission.note,
+            evidence_url: newSubmission.evidence_url,
+            source_type: newSubmission.source_type,
+            agent_confidence: newSubmission.agent_confidence,
+            observed_at: newSubmission.observed_at,
+            status: 'accepted',
+          });
+        }
       } catch (e) {
         console.warn('Supabase submission insert failed, saved to local store:', e);
       }
@@ -552,6 +641,42 @@ export class AppDatabase {
       return { success: false, reason: 'Value must be strictly positive (greater than 0).' };
     }
 
+    const area = this.areas.find((a) => a.id === input.area_id);
+    const city = area ? this.cities.find((c) => c.id === area.city_id) : undefined;
+    const country = city ? this.countries.find((co) => co.id === city.country_id) : undefined;
+
+    const recentCount = this.submissions.filter(
+      (s) => s.area_id === input.area_id && s.metric_id === metric.id
+    ).length;
+
+    const sourceUrl =
+      input.evidence_url && (input.evidence_url.startsWith('http://') || input.evidence_url.startsWith('https://'))
+        ? input.evidence_url
+        : 'https://can-i-survive-there.org/community-fact';
+
+    const validation = validateAreaMetricInput(
+      {
+        area_id: input.area_id,
+        metric_key: normalizedKey,
+        value: input.value,
+        currency_code: country?.currency_code,
+        source_url: sourceUrl,
+        source_type: 'user_fact',
+        agent_confidence: 'medium',
+        note: input.note,
+      },
+      {
+        area,
+        country,
+        validMetrics: this.metrics,
+        recentSubmissionsCount: recentCount,
+      }
+    );
+
+    if (!validation.valid) {
+      return { success: false, reason: validation.reason };
+    }
+
     const insertedId = generateUUID();
     this.submissions.push({
       id: insertedId,
@@ -559,7 +684,7 @@ export class AppDatabase {
       metric_id: metric.id,
       value: input.value,
       note: input.note || 'User submitted community observation',
-      evidence_url: input.evidence_url,
+      evidence_url: sourceUrl,
       submitted_by: input.submitted_by || 'community_user',
       source_type: 'user_fact',
       agent_confidence: 'medium',
@@ -576,7 +701,7 @@ export class AppDatabase {
           metric_id: metric.id,
           value: input.value,
           note: input.note || 'User submitted community observation',
-          evidence_url: input.evidence_url,
+          evidence_url: sourceUrl,
           submitted_by: input.submitted_by || 'community_user',
           source_type: 'user_fact',
           agent_confidence: 'medium',
@@ -663,7 +788,75 @@ export class AppDatabase {
       city.last_refreshed_at = new Date().toISOString();
     }
 
+    this.saveLocalCustomData();
+
     return { success: true, area_id: areaId };
+  }
+
+  public async submitFeedback(input: SubmitFeedbackInput): Promise<{ success: boolean; id?: string; reason?: string }> {
+    const feedbackId = generateUUID();
+    const sanitizedUrl =
+      input.evidence_url && (input.evidence_url.startsWith('http://') || input.evidence_url.startsWith('https://'))
+        ? input.evidence_url.trim()
+        : null;
+
+    const newFeedback: UserFeedback = {
+      id: feedbackId,
+      city_id: input.city_id || null,
+      area_id: input.area_id || null,
+      city_name: input.city_name,
+      feedback_type: input.feedback_type,
+      message: input.message,
+      suggested_value: input.suggested_value || null,
+      currency_code: input.currency_code || null,
+      evidence_url: sanitizedUrl,
+      status: 'new',
+      created_at: new Date().toISOString(),
+    };
+
+    this.feedback.push(newFeedback);
+
+    if (this.supabase) {
+      try {
+        await this.supabase.from('user_feedback').insert({
+          id: feedbackId,
+          city_id: newFeedback.city_id,
+          area_id: newFeedback.area_id,
+          city_name: newFeedback.city_name,
+          feedback_type: newFeedback.feedback_type,
+          message: newFeedback.message,
+          suggested_value: newFeedback.suggested_value,
+          currency_code: newFeedback.currency_code,
+          evidence_url: newFeedback.evidence_url,
+          status: 'new',
+        });
+      } catch (e) {
+        console.warn('Supabase user_feedback insert failed, saved to local store:', e);
+      }
+    }
+
+    return { success: true, id: feedbackId };
+  }
+
+  public async getFeedback(cityName?: string): Promise<UserFeedback[]> {
+    if (this.supabase) {
+      try {
+        let q = this.supabase.from('user_feedback').select('*');
+        if (cityName) {
+          q = q.ilike('city_name', cityName);
+        }
+        const { data, error } = await q.order('created_at', { ascending: false });
+        if (!error && data) {
+          return data as UserFeedback[];
+        }
+      } catch (e) {
+        console.warn('Supabase getFeedback query failed, fallback to local store:', e);
+      }
+    }
+    if (cityName) {
+      return this.feedback.filter((f) => f.city_name.toLowerCase() === cityName.toLowerCase());
+    }
+    return this.feedback;
   }
 }
 

@@ -28,7 +28,7 @@ export interface City {
   bootstrap_status: BootstrapStatus;
   bootstrap_source?: string;
   last_refreshed_at?: string;
-  data_confidence: 'low' | 'medium' | 'high';
+  data_confidence: ConfidenceLevel;
   created_at: string;
 }
 
@@ -113,7 +113,7 @@ export interface InsertAreaMetricInput {
   area_id: string;
   metric_key: string;
   value: number;
-  currency_code: string;
+  currency_code?: string;
   source_url: string;
   source_type?: 'listing_site' | 'aggregator' | 'news_article' | 'government_data' | 'agent_bootstrap' | 'user_fact';
   observed_at?: string;
@@ -162,3 +162,32 @@ export interface AreaExpenseBreakdown {
     is_affordable: boolean;
   };
 }
+
+export type FeedbackType = 'cost_correction' | 'new_city_request' | 'new_area_request' | 'general_feedback';
+export type FeedbackStatus = 'new' | 'investigating' | 'researched' | 'resolved' | 'dismissed';
+
+export interface UserFeedback {
+  id: string;
+  city_id?: string | null;
+  area_id?: string | null;
+  city_name: string;
+  feedback_type: FeedbackType;
+  message: string;
+  suggested_value?: number | null;
+  currency_code?: string | null;
+  evidence_url?: string | null;
+  status: FeedbackStatus;
+  created_at: string;
+}
+
+export interface SubmitFeedbackInput {
+  city_id?: string | null;
+  area_id?: string | null;
+  city_name: string;
+  feedback_type: FeedbackType;
+  message: string;
+  suggested_value?: number | null;
+  currency_code?: string | null;
+  evidence_url?: string | null;
+}
+

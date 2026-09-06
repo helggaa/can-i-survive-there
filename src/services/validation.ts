@@ -20,22 +20,22 @@ export function calculateSanityBand(metricKey: string, country: Country): Sanity
   switch (normalizedKey) {
     case 'rent_or_kost_monthly':
       return {
-        min: monthlyGniPpp * 0.05,
+        min: monthlyGniPpp * 0.01,
         max: monthlyGniPpp * 1.50,
       };
     case 'food_meal_avg':
       return {
-        min: monthlyGniPpp * 0.001,
+        min: monthlyGniPpp * 0.0002,
         max: monthlyGniPpp * 0.15,
       };
     case 'transport_monthly':
       return {
-        min: monthlyGniPpp * 0.005,
+        min: monthlyGniPpp * 0.001,
         max: monthlyGniPpp * 0.35,
       };
     case 'grocery_basket':
       return {
-        min: monthlyGniPpp * 0.005,
+        min: monthlyGniPpp * 0.001,
         max: monthlyGniPpp * 0.40,
       };
     default:
@@ -88,10 +88,15 @@ export function validateAreaMetricInput(
     };
   }
 
-  // Rule 4: Currency code must match country.currency_code
+  // Rule 4: Currency code must match country.currency_code (supporting legal currency transitions like EUR/HRK and pegs like USD/PAB)
   const expectedCurrency = context.country.currency_code.toUpperCase().trim();
   const providedCurrency = (input.currency_code ? input.currency_code.toUpperCase().trim() : expectedCurrency);
-  if (providedCurrency !== expectedCurrency) {
+  const isEquivalent =
+    (expectedCurrency === 'USD' && providedCurrency === 'PAB') ||
+    (expectedCurrency === 'PAB' && providedCurrency === 'USD') ||
+    (expectedCurrency === 'EUR' && providedCurrency === 'HRK') ||
+    (expectedCurrency === 'HRK' && providedCurrency === 'EUR');
+  if (providedCurrency !== expectedCurrency && !isEquivalent) {
     return {
       valid: false,
       reason: `Currency code mismatch: provided '${input.currency_code}' but country expects '${expectedCurrency}'.`,

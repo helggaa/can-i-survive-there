@@ -1,7 +1,6 @@
 // src/services/city-search.ts
 // Comprehensive Global City & Country Search Service (150,000+ Cities across 250 Countries)
 
-import { Country as CSC_Country, City as CSC_City } from 'country-state-city';
 import type { ICountry, ICity } from 'country-state-city';
 import type { City, Country } from '../types/database.types';
 import { db } from './database';
@@ -11,7 +10,7 @@ import GLOBAL_COST_DB from '../data/global-cost-database.json';
 export interface GlobalCityItem {
   id: string;
   name: string;
-  nameAscii: string;
+  nameAscii?: string;
   country: string;
   iso2: string;
   iso3?: string;
@@ -76,10 +75,40 @@ const GNI_PPP_MAP: Record<string, number> = {
   KE: 680000,
 };
 
-const allCscCountries = CSC_Country.getAllCountries();
+let cscModulePromise: Promise<typeof import('country-state-city')> | null = null;
 const countryByIso = new Map<string, ICountry>();
-for (const c of allCscCountries) {
-  countryByIso.set(c.isoCode, c);
+let cachedAllCities: ICity[] | null = null;
+let cachedCscIndex: Map<string, ICity> | null = null;
+
+export async function ensureCscData(): Promise<{
+  countryByIso: Map<string, ICountry>;
+  allCities: ICity[];
+  cityIndex: Map<string, ICity>;
+}> {
+  if (!cscModulePromise) {
+    cscModulePromise = import('country-state-city');
+  }
+  const { Country: CSC_Country, City: CSC_City } = await cscModulePromise;
+
+  if (countryByIso.size === 0) {
+    const allCscCountries = CSC_Country.getAllCountries();
+    for (const c of allCscCountries) {
+      countryByIso.set(c.isoCode, c);
+    }
+  }
+
+  if (!cachedAllCities || !cachedCscIndex) {
+    cachedAllCities = CSC_City.getAllCities();
+    cachedCscIndex = new Map();
+    for (const c of cachedAllCities) {
+      const k = `${c.name.toLowerCase()}:${c.countryCode}`;
+      if (!cachedCscIndex.has(k)) {
+        cachedCscIndex.set(k, c);
+      }
+    }
+  }
+
+  return { countryByIso, allCities: cachedAllCities, cityIndex: cachedCscIndex };
 }
 
 /**
@@ -97,7 +126,7 @@ export async function searchGlobalCities(
   const results: GlobalCityItem[] = [];
   const seenKeys = new Set<string>();
 
-  const allCities: ICity[] = CSC_City.getAllCities();
+  const { countryByIso, allCities, cityIndex } = await ensureCscData();
 
   // 0. High-priority search in verified global cost database (including aliases like Jogja, Saigon, NYC, KL, SF, CDMX)
   for (const gc of (GLOBAL_COST_DB as any[])) {
@@ -108,9 +137,7 @@ export async function searchGlobalCities(
       const countryName = gc.country || countryObj?.name || 'Unknown';
       const key = `${gc.city.toLowerCase()}-${gc.iso2 || countryName.toLowerCase()}`;
       if (!seenKeys.has(key)) {
-        const cscMatch = allCities.find(
-          (c) => c.name.toLowerCase() === gc.city.toLowerCase() && (!gc.iso2 || c.countryCode === gc.iso2)
-        );
+        const cscMatch = gc.iso2 ? cityIndex.get(`${gc.city.toLowerCase()}:${gc.iso2}`) : undefined;
         seenKeys.add(key);
         results.push({
           id: `city-vdb-${(gc.iso2 || 'xx').toLowerCase()}-${gc.city.toLowerCase().replace(/[^a-z0-9]/g, '')}`,
@@ -222,7 +249,16 @@ export function getOrRegisterGlobalCity(item: GlobalCityItem): City & { country:
   let country = db.countries.find((c) => c.iso_code === item.iso2);
   if (!country) {
     const cscCountry = countryByIso.get(item.iso2);
-    const gniPpp = GNI_PPP_MAP[item.iso2] || 50000;
+    let gniPpp = GNI_PPP_MAP[item.iso2];
+    if (!gniPpp) {
+      // Look up authentic cost database benchmarks for this country to deduce the local currency GNI PPP scale!
+      const sample = (GLOBAL_COST_DB as any[]).find((c) => c.iso2 === item.iso2);
+      if (sample && sample.rent_or_kost_monthly) {
+        gniPpp = Math.round(sample.rent_or_kost_monthly * 60);
+      } else {
+        gniPpp = 50000;
+      }
+    }
     const newCountry: Country = {
       id: `c-${item.iso2.toLowerCase()}-${Date.now().toString(36)}`,
       iso_code: item.iso2,
@@ -254,6 +290,43 @@ export function getOrRegisterGlobalCity(item: GlobalCityItem): City & { country:
     };
     db.cities.push(newCity);
     city = newCity;
+    db.saveLocalCustomData();
+  }
+
+  if (db.supabase) {
+    const finalCountry = country;
+    const finalCity = city;
+    (async () => {
+      try {
+        await db.supabase!.from('countries').upsert(
+          {
+            id: finalCountry.id,
+            iso_code: finalCountry.iso_code,
+            name: finalCountry.name,
+            currency_code: finalCountry.currency_code,
+            gni_per_capita_ppp: finalCountry.gni_per_capita_ppp,
+          },
+          { onConflict: 'iso_code', ignoreDuplicates: true }
+        );
+
+        if (finalCity) {
+          await db.supabase!.from('cities').upsert(
+            {
+              id: finalCity.id,
+              country_id: finalCountry.id,
+              name: finalCity.name,
+              lat: finalCity.lat,
+              lng: finalCity.lng,
+              bootstrap_status: finalCity.bootstrap_status,
+              data_confidence: finalCity.data_confidence,
+            },
+            { onConflict: 'id', ignoreDuplicates: true }
+          );
+        }
+      } catch (e) {
+        console.warn('Supabase country/city upsert failed:', e);
+      }
+    })();
   }
 
   return { ...city, country };

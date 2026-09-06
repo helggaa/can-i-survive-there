@@ -143,12 +143,12 @@ export async function searchAddress(query: string): Promise<GeocodeResult[]> {
       query
     )}&format=json&addressdetails=1&limit=5`;
 
-    const response = await fetch(url, {
-      headers: {
-        'Accept-Language': 'en',
-        'User-Agent': 'CanISurviveThere/1.0 (https://github.com/helggaa/can-i-survive-there)',
-      },
-    });
+    const headers: Record<string, string> = { 'Accept-Language': 'en' };
+    if (typeof window === 'undefined') {
+      headers['User-Agent'] = 'CanISurviveThere/1.0 (https://github.com/helggaa/can-i-survive-there)';
+    }
+
+    const response = await fetch(url, { headers });
 
     if (!response.ok) {
       throw new Error(`Nominatim error: ${response.status}`);

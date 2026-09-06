@@ -5,6 +5,7 @@ import React from 'react';
 import { Sparkles, Loader2, CheckCircle2 } from 'lucide-react';
 import type { City, AreaExpenseBreakdown } from '../types/database.types';
 import { AreaExpenseCard } from './AreaExpenseCard';
+import { AreaCardSkeleton } from './AreaCardSkeleton';
 
 interface ColdStartViewProps {
   city: City;
@@ -27,7 +28,9 @@ export const ColdStartView: React.FC<ColdStartViewProps> = ({
   salary,
   onOpenSubmitFact,
 }) => {
-  const pendingCount = Math.max(0, totalAreasCount - readyAreas.length);
+  // Strict non-zero cost invariant: only areas with computed expenses are considered ready
+  const completedAreas = readyAreas.filter((a) => a.total_monthly_cost > 0);
+  const pendingCount = Math.max(0, totalAreasCount - completedAreas.length);
 
   return (
     <div className="cold-start-container">
@@ -45,7 +48,7 @@ export const ColdStartView: React.FC<ColdStartViewProps> = ({
         <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '1rem' }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--accent-secondary)', fontSize: '0.8125rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em' }}>
-              {!isComplete ? (
+              {!isComplete && completedAreas.length < totalAreasCount ? (
                 <>
                   <Loader2 size={15} className="spin" style={{ animation: 'spin 1.2s linear infinite' }} />
                   <span>First-time research in progress for {city.name}</span>
@@ -58,10 +61,12 @@ export const ColdStartView: React.FC<ColdStartViewProps> = ({
               )}
             </div>
             <h2 style={{ fontSize: '1.35rem', marginTop: '0.35rem' }}>
-              {!isComplete ? `Building live cost dataset for ${city.name}…` : `All neighborhoods ready in ${city.name}`}
+              {!isComplete && completedAreas.length < totalAreasCount
+                ? `Building live cost dataset for ${city.name}…`
+                : `All neighborhoods ready in ${city.name}`}
             </h2>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', marginTop: '0.25rem' }}>
-              {!isComplete
+              {!isComplete && completedAreas.length < totalAreasCount
                 ? 'Gathering and cross-checking room rents, sit-down meals, and transport passes in parallel.'
                 : 'Dataset enriched with cross-checked figures. You can interact with any area below.'}
             </p>
@@ -80,12 +85,12 @@ export const ColdStartView: React.FC<ColdStartViewProps> = ({
               textAlign: 'center',
             }}
           >
-            {readyAreas.length} of {totalAreasCount} areas ready
+            {completedAreas.length} of {totalAreasCount} areas ready
           </div>
         </div>
 
         {/* Active research indicator */}
-        {!isComplete && activeAreaName && (
+        {!isComplete && activeAreaName && completedAreas.length < totalAreasCount && (
           <div
             style={{
               marginTop: '1rem',
@@ -108,7 +113,7 @@ export const ColdStartView: React.FC<ColdStartViewProps> = ({
               }}
             />
             <span>
-              Checking <strong>{activeAreaName}</strong> housing & food data…
+              Currently computing <strong>{activeAreaName}</strong> housing & food data…
             </span>
           </div>
         )}
@@ -116,7 +121,7 @@ export const ColdStartView: React.FC<ColdStartViewProps> = ({
 
       {/* Ready Areas List */}
       <div className="area-cards-list">
-        {readyAreas.map((areaData, index) => (
+        {completedAreas.map((areaData, index) => (
           <div key={areaData.area.id} style={{ position: 'relative' }}>
             {index === 0 && (
               <div
@@ -148,29 +153,21 @@ export const ColdStartView: React.FC<ColdStartViewProps> = ({
           </div>
         ))}
 
-        {/* Skeleton Placeholders for Pending Areas */}
-        {!isComplete &&
-          Array.from({ length: Math.min(3, pendingCount) }).map((_, i) => (
-            <div
-              key={`skeleton-${i}`}
-              className="area-card"
-              style={{ padding: '1.5rem', opacity: 0.7 - i * 0.15 }}
-            >
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                  <div className="skeleton" style={{ width: 32, height: 32, borderRadius: 8 }} />
-                  <div>
-                    <div className="skeleton" style={{ width: 150, height: 20, marginBottom: 6 }} />
-                    <div className="skeleton" style={{ width: 90, height: 14 }} />
-                  </div>
-                </div>
-                <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                  <div className="skeleton" style={{ width: 110, height: 26 }} />
-                  <div className="skeleton" style={{ width: 80, height: 22, borderRadius: 12 }} />
-                </div>
-              </div>
-            </div>
-          ))}
+        {/* High-Fidelity Skeleton Placeholders for Pending Areas */}
+        {pendingCount > 0 &&
+          Array.from({ length: pendingCount }).map((_, i) => {
+            const isFirstPending = i === 0;
+            const skeletonRank = completedAreas.length + i + 1;
+            return (
+              <AreaCardSkeleton
+                key={`pending-skeleton-${skeletonRank}`}
+                rank={skeletonRank}
+                activeAreaName={isFirstPending ? activeAreaName : undefined}
+                statusText={isFirstPending ? 'In progress' : 'Queued'}
+                isResearching={isFirstPending}
+              />
+            );
+          })}
       </div>
 
       {/* Honest Status Footer (03-ux-screens.md Section 6) */}

@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS submissions (
     metric_id TEXT NOT NULL REFERENCES metrics(id) ON DELETE CASCADE,
     value NUMERIC NOT NULL CHECK (value > 0),
     note TEXT DEFAULT NULL,
-    submitted_by TEXT REFERENCES users(id) ON DELETE SET NULL,
+    submitted_by TEXT DEFAULT 'system',
     evidence_url TEXT DEFAULT NULL,
     source_type TEXT NOT NULL DEFAULT 'user_fact',
     agent_confidence TEXT DEFAULT NULL CHECK (agent_confidence IS NULL OR agent_confidence IN ('estimated', 'low', 'medium', 'high')),

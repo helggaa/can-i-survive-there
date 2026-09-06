@@ -3,6 +3,7 @@
 
 import React from 'react';
 import { Compass } from 'lucide-react';
+import { CurrencySelector } from './CurrencySelector';
 
 interface NavbarProps {
   currentView: 'landing' | 'browse' | 'personalized';
@@ -20,26 +21,30 @@ export const Navbar: React.FC<NavbarProps> = ({ currentView, onSelectView }) => 
           <span>Can I Survive There?</span>
         </div>
 
-        <nav className="nav-links">
-          <button
-            className={`nav-btn ${currentView === 'landing' ? 'active' : ''}`}
-            onClick={() => onSelectView('landing')}
-          >
-            Home
-          </button>
-          <button
-            className={`nav-btn ${currentView === 'browse' ? 'active' : ''}`}
-            onClick={() => onSelectView('browse')}
-          >
-            Browse Cities
-          </button>
-          <button
-            className={`nav-btn ${currentView === 'personalized' ? 'active' : ''}`}
-            onClick={() => onSelectView('personalized')}
-          >
-            Personalized Match
-          </button>
-        </nav>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <CurrencySelector />
+
+          <nav className="nav-links">
+            <button
+              className={`nav-btn ${currentView === 'landing' ? 'active' : ''}`}
+              onClick={() => onSelectView('landing')}
+            >
+              Home
+            </button>
+            <button
+              className={`nav-btn ${currentView === 'browse' ? 'active' : ''}`}
+              onClick={() => onSelectView('browse')}
+            >
+              Browse Cities
+            </button>
+            <button
+              className={`nav-btn ${currentView === 'personalized' ? 'active' : ''}`}
+              onClick={() => onSelectView('personalized')}
+            >
+              Personalized Match
+            </button>
+          </nav>
+        </div>
       </div>
     </header>
   );

@@ -4,7 +4,7 @@
     "iso_code": "AF",
     "iso3": "AFG",
     "name": "Afghanistan",
-    "currency_code": "USD",
+    "currency_code": "AFN",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -12,7 +12,7 @@
     "iso_code": "AL",
     "iso3": "ALB",
     "name": "Albania",
-    "currency_code": "USD",
+    "currency_code": "ALL",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -20,7 +20,7 @@
     "iso_code": "DZ",
     "iso3": "DZA",
     "name": "Algeria",
-    "currency_code": "USD",
+    "currency_code": "DZD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -36,7 +36,7 @@
     "iso_code": "AD",
     "iso3": "AND",
     "name": "Andorra",
-    "currency_code": "USD",
+    "currency_code": "EUR",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -44,7 +44,7 @@
     "iso_code": "AO",
     "iso3": "AGO",
     "name": "Angola",
-    "currency_code": "USD",
+    "currency_code": "AOA",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -52,7 +52,7 @@
     "iso_code": "AI",
     "iso3": "AIA",
     "name": "Anguilla",
-    "currency_code": "USD",
+    "currency_code": "XCD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -60,7 +60,7 @@
     "iso_code": "AG",
     "iso3": "ATG",
     "name": "Antigua and Barbuda",
-    "currency_code": "USD",
+    "currency_code": "XCD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -76,7 +76,7 @@
     "iso_code": "AM",
     "iso3": "ARM",
     "name": "Armenia",
-    "currency_code": "USD",
+    "currency_code": "AMD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -84,7 +84,7 @@
     "iso_code": "AW",
     "iso3": "ABW",
     "name": "Aruba",
-    "currency_code": "USD",
+    "currency_code": "AWG",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -108,7 +108,7 @@
     "iso_code": "AZ",
     "iso3": "AZE",
     "name": "Azerbaijan",
-    "currency_code": "USD",
+    "currency_code": "AZN",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -116,7 +116,7 @@
     "iso_code": "BS",
     "iso3": "BHS",
     "name": "Bahamas, The",
-    "currency_code": "USD",
+    "currency_code": "BSD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -124,7 +124,7 @@
     "iso_code": "BH",
     "iso3": "BHR",
     "name": "Bahrain",
-    "currency_code": "USD",
+    "currency_code": "BHD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -132,7 +132,7 @@
     "iso_code": "BD",
     "iso3": "BGD",
     "name": "Bangladesh",
-    "currency_code": "USD",
+    "currency_code": "BDT",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -140,7 +140,7 @@
     "iso_code": "BB",
     "iso3": "BRB",
     "name": "Barbados",
-    "currency_code": "USD",
+    "currency_code": "BBD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -148,7 +148,7 @@
     "iso_code": "BY",
     "iso3": "BLR",
     "name": "Belarus",
-    "currency_code": "USD",
+    "currency_code": "BYN",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -164,7 +164,7 @@
     "iso_code": "BZ",
     "iso3": "BLZ",
     "name": "Belize",
-    "currency_code": "USD",
+    "currency_code": "BZD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -172,7 +172,7 @@
     "iso_code": "BJ",
     "iso3": "BEN",
     "name": "Benin",
-    "currency_code": "USD",
+    "currency_code": "XOF",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -180,7 +180,7 @@
     "iso_code": "BM",
     "iso3": "BMU",
     "name": "Bermuda",
-    "currency_code": "USD",
+    "currency_code": "BMD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -188,7 +188,7 @@
     "iso_code": "BT",
     "iso3": "BTN",
     "name": "Bhutan",
-    "currency_code": "USD",
+    "currency_code": "BTN",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -196,7 +196,7 @@
     "iso_code": "BO",
     "iso3": "BOL",
     "name": "Bolivia",
-    "currency_code": "USD",
+    "currency_code": "BOB",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -212,7 +212,7 @@
     "iso_code": "BA",
     "iso3": "BIH",
     "name": "Bosnia and Herzegovina",
-    "currency_code": "USD",
+    "currency_code": "BAM",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -220,7 +220,7 @@
     "iso_code": "BW",
     "iso3": "BWA",
     "name": "Botswana",
-    "currency_code": "USD",
+    "currency_code": "BWP",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -236,7 +236,7 @@
     "iso_code": "BN",
     "iso3": "BRN",
     "name": "Brunei",
-    "currency_code": "USD",
+    "currency_code": "BND",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -244,7 +244,7 @@
     "iso_code": "BG",
     "iso3": "BGR",
     "name": "Bulgaria",
-    "currency_code": "USD",
+    "currency_code": "BGN",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -252,7 +252,7 @@
     "iso_code": "BF",
     "iso3": "BFA",
     "name": "Burkina Faso",
-    "currency_code": "USD",
+    "currency_code": "XOF",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -260,7 +260,7 @@
     "iso_code": "MM",
     "iso3": "MMR",
     "name": "Burma",
-    "currency_code": "USD",
+    "currency_code": "MMK",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -268,7 +268,7 @@
     "iso_code": "BI",
     "iso3": "BDI",
     "name": "Burundi",
-    "currency_code": "USD",
+    "currency_code": "BIF",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -276,7 +276,7 @@
     "iso_code": "CV",
     "iso3": "CPV",
     "name": "Cabo Verde",
-    "currency_code": "USD",
+    "currency_code": "CVE",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -284,7 +284,7 @@
     "iso_code": "KH",
     "iso3": "KHM",
     "name": "Cambodia",
-    "currency_code": "USD",
+    "currency_code": "KHR",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -292,7 +292,7 @@
     "iso_code": "CM",
     "iso3": "CMR",
     "name": "Cameroon",
-    "currency_code": "USD",
+    "currency_code": "XAF",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -308,7 +308,7 @@
     "iso_code": "KY",
     "iso3": "CYM",
     "name": "Cayman Islands",
-    "currency_code": "USD",
+    "currency_code": "KYD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -316,7 +316,7 @@
     "iso_code": "CF",
     "iso3": "CAF",
     "name": "Central African Republic",
-    "currency_code": "USD",
+    "currency_code": "XAF",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -324,7 +324,7 @@
     "iso_code": "TD",
     "iso3": "TCD",
     "name": "Chad",
-    "currency_code": "USD",
+    "currency_code": "XAF",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -348,7 +348,7 @@
     "iso_code": "CX",
     "iso3": "CXR",
     "name": "Christmas Island",
-    "currency_code": "USD",
+    "currency_code": "AUD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -364,7 +364,7 @@
     "iso_code": "KM",
     "iso3": "COM",
     "name": "Comoros",
-    "currency_code": "USD",
+    "currency_code": "KMF",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -372,7 +372,7 @@
     "iso_code": "CG",
     "iso3": "COG",
     "name": "Congo (Brazzaville)",
-    "currency_code": "USD",
+    "currency_code": "XAF",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -380,7 +380,7 @@
     "iso_code": "CD",
     "iso3": "COD",
     "name": "Congo (Kinshasa)",
-    "currency_code": "USD",
+    "currency_code": "CDF",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -388,7 +388,7 @@
     "iso_code": "CK",
     "iso3": "COK",
     "name": "Cook Islands",
-    "currency_code": "USD",
+    "currency_code": "NZD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -396,7 +396,7 @@
     "iso_code": "CR",
     "iso3": "CRI",
     "name": "Costa Rica",
-    "currency_code": "USD",
+    "currency_code": "CRC",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -404,7 +404,7 @@
     "iso_code": "CI",
     "iso3": "CIV",
     "name": "Côte d’Ivoire",
-    "currency_code": "USD",
+    "currency_code": "XOF",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -412,7 +412,7 @@
     "iso_code": "HR",
     "iso3": "HRV",
     "name": "Croatia",
-    "currency_code": "USD",
+    "currency_code": "HRK",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -420,7 +420,7 @@
     "iso_code": "CU",
     "iso3": "CUB",
     "name": "Cuba",
-    "currency_code": "USD",
+    "currency_code": "CUP",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -428,7 +428,7 @@
     "iso_code": "CW",
     "iso3": "CUW",
     "name": "Curaçao",
-    "currency_code": "USD",
+    "currency_code": "ANG",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -436,7 +436,7 @@
     "iso_code": "CY",
     "iso3": "CYP",
     "name": "Cyprus",
-    "currency_code": "USD",
+    "currency_code": "EUR",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -460,7 +460,7 @@
     "iso_code": "DJ",
     "iso3": "DJI",
     "name": "Djibouti",
-    "currency_code": "USD",
+    "currency_code": "DJF",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -468,7 +468,7 @@
     "iso_code": "DM",
     "iso3": "DMA",
     "name": "Dominica",
-    "currency_code": "USD",
+    "currency_code": "XCD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -476,7 +476,7 @@
     "iso_code": "DO",
     "iso3": "DOM",
     "name": "Dominican Republic",
-    "currency_code": "USD",
+    "currency_code": "DOP",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -508,7 +508,7 @@
     "iso_code": "GQ",
     "iso3": "GNQ",
     "name": "Equatorial Guinea",
-    "currency_code": "USD",
+    "currency_code": "XAF",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -516,7 +516,7 @@
     "iso_code": "ER",
     "iso3": "ERI",
     "name": "Eritrea",
-    "currency_code": "USD",
+    "currency_code": "ERN",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -524,7 +524,7 @@
     "iso_code": "EE",
     "iso3": "EST",
     "name": "Estonia",
-    "currency_code": "USD",
+    "currency_code": "EUR",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -532,7 +532,7 @@
     "iso_code": "SZ",
     "iso3": "SWZ",
     "name": "Eswatini",
-    "currency_code": "USD",
+    "currency_code": "SZL",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -540,7 +540,7 @@
     "iso_code": "ET",
     "iso3": "ETH",
     "name": "Ethiopia",
-    "currency_code": "USD",
+    "currency_code": "ETB",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -548,7 +548,7 @@
     "iso_code": "FK",
     "iso3": "FLK",
     "name": "Falkland Islands (Islas Malvinas)",
-    "currency_code": "USD",
+    "currency_code": "FKP",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -556,7 +556,7 @@
     "iso_code": "FO",
     "iso3": "FRO",
     "name": "Faroe Islands",
-    "currency_code": "USD",
+    "currency_code": "DKK",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -564,7 +564,7 @@
     "iso_code": "FJ",
     "iso3": "FJI",
     "name": "Fiji",
-    "currency_code": "USD",
+    "currency_code": "FJD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -588,7 +588,7 @@
     "iso_code": "GF",
     "iso3": "GUF",
     "name": "French Guiana",
-    "currency_code": "USD",
+    "currency_code": "EUR",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -596,7 +596,7 @@
     "iso_code": "PF",
     "iso3": "PYF",
     "name": "French Polynesia",
-    "currency_code": "USD",
+    "currency_code": "XPF",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -604,7 +604,7 @@
     "iso_code": "GA",
     "iso3": "GAB",
     "name": "Gabon",
-    "currency_code": "USD",
+    "currency_code": "XAF",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -612,7 +612,7 @@
     "iso_code": "GM",
     "iso3": "GMB",
     "name": "Gambia, The",
-    "currency_code": "USD",
+    "currency_code": "GMD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -628,7 +628,7 @@
     "iso_code": "GE",
     "iso3": "GEO",
     "name": "Georgia",
-    "currency_code": "USD",
+    "currency_code": "GEL",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -644,7 +644,7 @@
     "iso_code": "GH",
     "iso3": "GHA",
     "name": "Ghana",
-    "currency_code": "USD",
+    "currency_code": "GHS",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -652,7 +652,7 @@
     "iso_code": "GI",
     "iso3": "GIB",
     "name": "Gibraltar",
-    "currency_code": "USD",
+    "currency_code": "GIP",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -668,7 +668,7 @@
     "iso_code": "GL",
     "iso3": "GRL",
     "name": "Greenland",
-    "currency_code": "USD",
+    "currency_code": "DKK",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -676,7 +676,7 @@
     "iso_code": "GD",
     "iso3": "GRD",
     "name": "Grenada",
-    "currency_code": "USD",
+    "currency_code": "XCD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -684,7 +684,7 @@
     "iso_code": "GP",
     "iso3": "GLP",
     "name": "Guadeloupe",
-    "currency_code": "USD",
+    "currency_code": "EUR",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -700,7 +700,7 @@
     "iso_code": "GT",
     "iso3": "GTM",
     "name": "Guatemala",
-    "currency_code": "USD",
+    "currency_code": "GTQ",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -708,7 +708,7 @@
     "iso_code": "GG",
     "iso3": "GGY",
     "name": "Guernsey",
-    "currency_code": "USD",
+    "currency_code": "GBP",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -716,7 +716,7 @@
     "iso_code": "GN",
     "iso3": "GIN",
     "name": "Guinea",
-    "currency_code": "USD",
+    "currency_code": "GNF",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -724,7 +724,7 @@
     "iso_code": "GW",
     "iso3": "GNB",
     "name": "Guinea-Bissau",
-    "currency_code": "USD",
+    "currency_code": "XOF",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -732,7 +732,7 @@
     "iso_code": "GY",
     "iso3": "GUY",
     "name": "Guyana",
-    "currency_code": "USD",
+    "currency_code": "GYD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -740,7 +740,7 @@
     "iso_code": "HT",
     "iso3": "HTI",
     "name": "Haiti",
-    "currency_code": "USD",
+    "currency_code": "HTG",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -748,7 +748,7 @@
     "iso_code": "HN",
     "iso3": "HND",
     "name": "Honduras",
-    "currency_code": "USD",
+    "currency_code": "HNL",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -772,7 +772,7 @@
     "iso_code": "IS",
     "iso3": "ISL",
     "name": "Iceland",
-    "currency_code": "USD",
+    "currency_code": "ISK",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -796,7 +796,7 @@
     "iso_code": "IR",
     "iso3": "IRN",
     "name": "Iran",
-    "currency_code": "USD",
+    "currency_code": "IRR",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -804,7 +804,7 @@
     "iso_code": "IQ",
     "iso3": "IRQ",
     "name": "Iraq",
-    "currency_code": "USD",
+    "currency_code": "IQD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -820,7 +820,7 @@
     "iso_code": "IM",
     "iso3": "IMN",
     "name": "Isle of Man",
-    "currency_code": "USD",
+    "currency_code": "GBP",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -828,7 +828,7 @@
     "iso_code": "IL",
     "iso3": "ISR",
     "name": "Israel",
-    "currency_code": "USD",
+    "currency_code": "ILS",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -844,7 +844,7 @@
     "iso_code": "JM",
     "iso3": "JAM",
     "name": "Jamaica",
-    "currency_code": "USD",
+    "currency_code": "JMD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -860,7 +860,7 @@
     "iso_code": "JE",
     "iso3": "JEY",
     "name": "Jersey",
-    "currency_code": "USD",
+    "currency_code": "GBP",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -868,7 +868,7 @@
     "iso_code": "JO",
     "iso3": "JOR",
     "name": "Jordan",
-    "currency_code": "USD",
+    "currency_code": "JOD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -876,7 +876,7 @@
     "iso_code": "KZ",
     "iso3": "KAZ",
     "name": "Kazakhstan",
-    "currency_code": "USD",
+    "currency_code": "KZT",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -892,7 +892,7 @@
     "iso_code": "KI",
     "iso3": "KIR",
     "name": "Kiribati",
-    "currency_code": "USD",
+    "currency_code": "AUD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -900,7 +900,7 @@
     "iso_code": "KP",
     "iso3": "PRK",
     "name": "Korea, North",
-    "currency_code": "USD",
+    "currency_code": "KPW",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -916,7 +916,7 @@
     "iso_code": "XK",
     "iso3": "XKS",
     "name": "Kosovo",
-    "currency_code": "USD",
+    "currency_code": "EUR",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -924,7 +924,7 @@
     "iso_code": "KW",
     "iso3": "KWT",
     "name": "Kuwait",
-    "currency_code": "USD",
+    "currency_code": "KWD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -932,7 +932,7 @@
     "iso_code": "KG",
     "iso3": "KGZ",
     "name": "Kyrgyzstan",
-    "currency_code": "USD",
+    "currency_code": "KGS",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -940,7 +940,7 @@
     "iso_code": "LA",
     "iso3": "LAO",
     "name": "Laos",
-    "currency_code": "USD",
+    "currency_code": "LAK",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -948,7 +948,7 @@
     "iso_code": "LV",
     "iso3": "LVA",
     "name": "Latvia",
-    "currency_code": "USD",
+    "currency_code": "EUR",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -956,7 +956,7 @@
     "iso_code": "LB",
     "iso3": "LBN",
     "name": "Lebanon",
-    "currency_code": "USD",
+    "currency_code": "LBP",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -964,7 +964,7 @@
     "iso_code": "LS",
     "iso3": "LSO",
     "name": "Lesotho",
-    "currency_code": "USD",
+    "currency_code": "LSL",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -972,7 +972,7 @@
     "iso_code": "LR",
     "iso3": "LBR",
     "name": "Liberia",
-    "currency_code": "USD",
+    "currency_code": "LRD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -980,7 +980,7 @@
     "iso_code": "LY",
     "iso3": "LBY",
     "name": "Libya",
-    "currency_code": "USD",
+    "currency_code": "LYD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -988,7 +988,7 @@
     "iso_code": "LI",
     "iso3": "LIE",
     "name": "Liechtenstein",
-    "currency_code": "USD",
+    "currency_code": "CHF",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -996,7 +996,7 @@
     "iso_code": "LT",
     "iso3": "LTU",
     "name": "Lithuania",
-    "currency_code": "USD",
+    "currency_code": "EUR",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1004,7 +1004,7 @@
     "iso_code": "LU",
     "iso3": "LUX",
     "name": "Luxembourg",
-    "currency_code": "USD",
+    "currency_code": "EUR",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1012,7 +1012,7 @@
     "iso_code": "MO",
     "iso3": "MAC",
     "name": "Macau",
-    "currency_code": "USD",
+    "currency_code": "MOP",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1020,7 +1020,7 @@
     "iso_code": "MG",
     "iso3": "MDG",
     "name": "Madagascar",
-    "currency_code": "USD",
+    "currency_code": "MGA",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1028,7 +1028,7 @@
     "iso_code": "MW",
     "iso3": "MWI",
     "name": "Malawi",
-    "currency_code": "USD",
+    "currency_code": "MWK",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1044,7 +1044,7 @@
     "iso_code": "MV",
     "iso3": "MDV",
     "name": "Maldives",
-    "currency_code": "USD",
+    "currency_code": "MVR",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1052,7 +1052,7 @@
     "iso_code": "ML",
     "iso3": "MLI",
     "name": "Mali",
-    "currency_code": "USD",
+    "currency_code": "XOF",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1060,7 +1060,7 @@
     "iso_code": "MT",
     "iso3": "MLT",
     "name": "Malta",
-    "currency_code": "USD",
+    "currency_code": "EUR",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1076,7 +1076,7 @@
     "iso_code": "MQ",
     "iso3": "MTQ",
     "name": "Martinique",
-    "currency_code": "USD",
+    "currency_code": "EUR",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1084,7 +1084,7 @@
     "iso_code": "MR",
     "iso3": "MRT",
     "name": "Mauritania",
-    "currency_code": "USD",
+    "currency_code": "MRO",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1092,7 +1092,7 @@
     "iso_code": "MU",
     "iso3": "MUS",
     "name": "Mauritius",
-    "currency_code": "USD",
+    "currency_code": "MUR",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1100,7 +1100,7 @@
     "iso_code": "YT",
     "iso3": "MYT",
     "name": "Mayotte",
-    "currency_code": "USD",
+    "currency_code": "EUR",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1124,7 +1124,7 @@
     "iso_code": "MD",
     "iso3": "MDA",
     "name": "Moldova",
-    "currency_code": "USD",
+    "currency_code": "MDL",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1132,7 +1132,7 @@
     "iso_code": "MC",
     "iso3": "MCO",
     "name": "Monaco",
-    "currency_code": "USD",
+    "currency_code": "EUR",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1140,7 +1140,7 @@
     "iso_code": "MN",
     "iso3": "MNG",
     "name": "Mongolia",
-    "currency_code": "USD",
+    "currency_code": "MNT",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1148,7 +1148,7 @@
     "iso_code": "ME",
     "iso3": "MNE",
     "name": "Montenegro",
-    "currency_code": "USD",
+    "currency_code": "EUR",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1156,7 +1156,7 @@
     "iso_code": "MS",
     "iso3": "MSR",
     "name": "Montserrat",
-    "currency_code": "USD",
+    "currency_code": "XCD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1164,7 +1164,7 @@
     "iso_code": "MA",
     "iso3": "MAR",
     "name": "Morocco",
-    "currency_code": "USD",
+    "currency_code": "MAD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1172,7 +1172,7 @@
     "iso_code": "MZ",
     "iso3": "MOZ",
     "name": "Mozambique",
-    "currency_code": "USD",
+    "currency_code": "MZN",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1180,7 +1180,7 @@
     "iso_code": "NA",
     "iso3": "NAM",
     "name": "Namibia",
-    "currency_code": "USD",
+    "currency_code": "NAD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1188,7 +1188,7 @@
     "iso_code": "NR",
     "iso3": "NRU",
     "name": "Nauru",
-    "currency_code": "USD",
+    "currency_code": "AUD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1196,7 +1196,7 @@
     "iso_code": "NP",
     "iso3": "NPL",
     "name": "Nepal",
-    "currency_code": "USD",
+    "currency_code": "NPR",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1212,7 +1212,7 @@
     "iso_code": "NC",
     "iso3": "NCL",
     "name": "New Caledonia",
-    "currency_code": "USD",
+    "currency_code": "XPF",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1228,7 +1228,7 @@
     "iso_code": "NI",
     "iso3": "NIC",
     "name": "Nicaragua",
-    "currency_code": "USD",
+    "currency_code": "NIO",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1236,7 +1236,7 @@
     "iso_code": "NE",
     "iso3": "NER",
     "name": "Niger",
-    "currency_code": "USD",
+    "currency_code": "XOF",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1252,7 +1252,7 @@
     "iso_code": "NU",
     "iso3": "NIU",
     "name": "Niue",
-    "currency_code": "USD",
+    "currency_code": "NZD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1260,7 +1260,7 @@
     "iso_code": "NF",
     "iso3": "NFK",
     "name": "Norfolk Island",
-    "currency_code": "USD",
+    "currency_code": "AUD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1268,7 +1268,7 @@
     "iso_code": "MK",
     "iso3": "MKD",
     "name": "North Macedonia",
-    "currency_code": "USD",
+    "currency_code": "MKD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1292,7 +1292,7 @@
     "iso_code": "OM",
     "iso3": "OMN",
     "name": "Oman",
-    "currency_code": "USD",
+    "currency_code": "OMR",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1300,7 +1300,7 @@
     "iso_code": "PK",
     "iso3": "PAK",
     "name": "Pakistan",
-    "currency_code": "USD",
+    "currency_code": "PKR",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1316,7 +1316,7 @@
     "iso_code": "PA",
     "iso3": "PAN",
     "name": "Panama",
-    "currency_code": "USD",
+    "currency_code": "PAB",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1324,7 +1324,7 @@
     "iso_code": "PG",
     "iso3": "PNG",
     "name": "Papua New Guinea",
-    "currency_code": "USD",
+    "currency_code": "PGK",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1332,7 +1332,7 @@
     "iso_code": "PY",
     "iso3": "PRY",
     "name": "Paraguay",
-    "currency_code": "USD",
+    "currency_code": "PYG",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1356,7 +1356,7 @@
     "iso_code": "PN",
     "iso3": "PCN",
     "name": "Pitcairn Islands",
-    "currency_code": "USD",
+    "currency_code": "NZD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1388,7 +1388,7 @@
     "iso_code": "QA",
     "iso3": "QAT",
     "name": "Qatar",
-    "currency_code": "USD",
+    "currency_code": "QAR",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1396,7 +1396,7 @@
     "iso_code": "RE",
     "iso3": "REU",
     "name": "Reunion",
-    "currency_code": "USD",
+    "currency_code": "EUR",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1412,7 +1412,7 @@
     "iso_code": "RU",
     "iso3": "RUS",
     "name": "Russia",
-    "currency_code": "USD",
+    "currency_code": "RUB",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1420,7 +1420,7 @@
     "iso_code": "RW",
     "iso3": "RWA",
     "name": "Rwanda",
-    "currency_code": "USD",
+    "currency_code": "RWF",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1428,7 +1428,7 @@
     "iso_code": "BL",
     "iso3": "BLM",
     "name": "Saint Barthelemy",
-    "currency_code": "USD",
+    "currency_code": "EUR",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1436,7 +1436,7 @@
     "iso_code": "SH",
     "iso3": "SHN",
     "name": "Saint Helena, Ascension, and Tristan da Cunha",
-    "currency_code": "USD",
+    "currency_code": "SHP",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1444,7 +1444,7 @@
     "iso_code": "KN",
     "iso3": "KNA",
     "name": "Saint Kitts and Nevis",
-    "currency_code": "USD",
+    "currency_code": "XCD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1452,7 +1452,7 @@
     "iso_code": "LC",
     "iso3": "LCA",
     "name": "Saint Lucia",
-    "currency_code": "USD",
+    "currency_code": "XCD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1460,7 +1460,7 @@
     "iso_code": "MF",
     "iso3": "MAF",
     "name": "Saint Martin",
-    "currency_code": "USD",
+    "currency_code": "EUR",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1468,7 +1468,7 @@
     "iso_code": "PM",
     "iso3": "SPM",
     "name": "Saint Pierre and Miquelon",
-    "currency_code": "USD",
+    "currency_code": "EUR",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1476,7 +1476,7 @@
     "iso_code": "VC",
     "iso3": "VCT",
     "name": "Saint Vincent and the Grenadines",
-    "currency_code": "USD",
+    "currency_code": "XCD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1484,7 +1484,7 @@
     "iso_code": "WS",
     "iso3": "WSM",
     "name": "Samoa",
-    "currency_code": "USD",
+    "currency_code": "WST",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1492,7 +1492,7 @@
     "iso_code": "SM",
     "iso3": "SMR",
     "name": "San Marino",
-    "currency_code": "USD",
+    "currency_code": "EUR",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1500,7 +1500,7 @@
     "iso_code": "ST",
     "iso3": "STP",
     "name": "Sao Tome and Principe",
-    "currency_code": "USD",
+    "currency_code": "STD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1516,7 +1516,7 @@
     "iso_code": "SN",
     "iso3": "SEN",
     "name": "Senegal",
-    "currency_code": "USD",
+    "currency_code": "XOF",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1524,7 +1524,7 @@
     "iso_code": "RS",
     "iso3": "SRB",
     "name": "Serbia",
-    "currency_code": "USD",
+    "currency_code": "RSD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1532,7 +1532,7 @@
     "iso_code": "SC",
     "iso3": "SYC",
     "name": "Seychelles",
-    "currency_code": "USD",
+    "currency_code": "SCR",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1540,7 +1540,7 @@
     "iso_code": "SL",
     "iso3": "SLE",
     "name": "Sierra Leone",
-    "currency_code": "USD",
+    "currency_code": "SLL",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1556,7 +1556,7 @@
     "iso_code": "SX",
     "iso3": "SXM",
     "name": "Sint Maarten",
-    "currency_code": "USD",
+    "currency_code": "ANG",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1564,7 +1564,7 @@
     "iso_code": "SK",
     "iso3": "SVK",
     "name": "Slovakia",
-    "currency_code": "USD",
+    "currency_code": "EUR",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1572,7 +1572,7 @@
     "iso_code": "SI",
     "iso3": "SVN",
     "name": "Slovenia",
-    "currency_code": "USD",
+    "currency_code": "EUR",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1580,7 +1580,7 @@
     "iso_code": "SB",
     "iso3": "SLB",
     "name": "Solomon Islands",
-    "currency_code": "USD",
+    "currency_code": "SBD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1588,7 +1588,7 @@
     "iso_code": "SO",
     "iso3": "SOM",
     "name": "Somalia",
-    "currency_code": "USD",
+    "currency_code": "SOS",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1604,7 +1604,7 @@
     "iso_code": "GS",
     "iso3": "SGS",
     "name": "South Georgia and South Sandwich Islands",
-    "currency_code": "USD",
+    "currency_code": "GBP",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1612,7 +1612,7 @@
     "iso_code": "SS",
     "iso3": "SSD",
     "name": "South Sudan",
-    "currency_code": "USD",
+    "currency_code": "SSP",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1628,7 +1628,7 @@
     "iso_code": "LK",
     "iso3": "LKA",
     "name": "Sri Lanka",
-    "currency_code": "USD",
+    "currency_code": "LKR",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1636,7 +1636,7 @@
     "iso_code": "SD",
     "iso3": "SDN",
     "name": "Sudan",
-    "currency_code": "USD",
+    "currency_code": "SDG",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1644,7 +1644,7 @@
     "iso_code": "SR",
     "iso3": "SUR",
     "name": "Suriname",
-    "currency_code": "USD",
+    "currency_code": "SRD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1676,7 +1676,7 @@
     "iso_code": "SY",
     "iso3": "SYR",
     "name": "Syria",
-    "currency_code": "USD",
+    "currency_code": "SYP",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1692,7 +1692,7 @@
     "iso_code": "TJ",
     "iso3": "TJK",
     "name": "Tajikistan",
-    "currency_code": "USD",
+    "currency_code": "TJS",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1700,7 +1700,7 @@
     "iso_code": "TZ",
     "iso3": "TZA",
     "name": "Tanzania",
-    "currency_code": "USD",
+    "currency_code": "TZS",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1724,7 +1724,7 @@
     "iso_code": "TG",
     "iso3": "TGO",
     "name": "Togo",
-    "currency_code": "USD",
+    "currency_code": "XOF",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1732,7 +1732,7 @@
     "iso_code": "TO",
     "iso3": "TON",
     "name": "Tonga",
-    "currency_code": "USD",
+    "currency_code": "TOP",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1740,7 +1740,7 @@
     "iso_code": "TT",
     "iso3": "TTO",
     "name": "Trinidad and Tobago",
-    "currency_code": "USD",
+    "currency_code": "TTD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1748,7 +1748,7 @@
     "iso_code": "TN",
     "iso3": "TUN",
     "name": "Tunisia",
-    "currency_code": "USD",
+    "currency_code": "TND",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1764,7 +1764,7 @@
     "iso_code": "TM",
     "iso3": "TKM",
     "name": "Turkmenistan",
-    "currency_code": "USD",
+    "currency_code": "TMT",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1780,7 +1780,7 @@
     "iso_code": "TV",
     "iso3": "TUV",
     "name": "Tuvalu",
-    "currency_code": "USD",
+    "currency_code": "AUD",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1796,7 +1796,7 @@
     "iso_code": "UG",
     "iso3": "UGA",
     "name": "Uganda",
-    "currency_code": "USD",
+    "currency_code": "UGX",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1804,7 +1804,7 @@
     "iso_code": "UA",
     "iso3": "UKR",
     "name": "Ukraine",
-    "currency_code": "USD",
+    "currency_code": "UAH",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1836,7 +1836,7 @@
     "iso_code": "UY",
     "iso3": "URY",
     "name": "Uruguay",
-    "currency_code": "USD",
+    "currency_code": "UYU",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1844,7 +1844,7 @@
     "iso_code": "UZ",
     "iso3": "UZB",
     "name": "Uzbekistan",
-    "currency_code": "USD",
+    "currency_code": "UZS",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1852,7 +1852,7 @@
     "iso_code": "VU",
     "iso3": "VUT",
     "name": "Vanuatu",
-    "currency_code": "USD",
+    "currency_code": "VUV",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1860,7 +1860,7 @@
     "iso_code": "VA",
     "iso3": "VAT",
     "name": "Vatican City",
-    "currency_code": "USD",
+    "currency_code": "EUR",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1868,7 +1868,7 @@
     "iso_code": "VE",
     "iso3": "VEN",
     "name": "Venezuela",
-    "currency_code": "USD",
+    "currency_code": "VEF",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1892,7 +1892,7 @@
     "iso_code": "WF",
     "iso3": "WLF",
     "name": "Wallis and Futuna",
-    "currency_code": "USD",
+    "currency_code": "XPF",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1908,7 +1908,7 @@
     "iso_code": "YE",
     "iso3": "YEM",
     "name": "Yemen",
-    "currency_code": "USD",
+    "currency_code": "YER",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1916,7 +1916,7 @@
     "iso_code": "ZM",
     "iso3": "ZMB",
     "name": "Zambia",
-    "currency_code": "USD",
+    "currency_code": "ZMW",
     "gni_per_capita_ppp": 50000
   },
   {
@@ -1924,7 +1924,7 @@
     "iso_code": "ZW",
     "iso3": "ZWE",
     "name": "Zimbabwe",
-    "currency_code": "USD",
+    "currency_code": "ZWL",
     "gni_per_capita_ppp": 50000
   }
 ]

@@ -115,10 +115,15 @@ export function calculateAreaScore(
   const commute_score = calculateCommuteScore(commuteDurationMin);
   const confidence_weight = getConfidenceWeight(confidence);
 
-  const final_score =
+  const raw_score =
     weights.w_cost * cost_score +
     weights.w_commute * commute_score +
     weights.w_confidence * confidence_weight;
+
+  // If cost exceeds salary (affordability_ratio >= 1.0), apply a steep affordability penalty
+  // so an unaffordable location cannot outrank an affordable one simply due to proximity
+  const penalty = affordability_ratio >= 1.0 ? 1 / (1 + (affordability_ratio - 1) * 3) : 1.0;
+  const final_score = raw_score * penalty;
 
   return {
     affordability_ratio: Number(affordability_ratio.toFixed(3)),

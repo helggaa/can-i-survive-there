@@ -16,8 +16,10 @@ import { calculateAreaScore, sortPersonalizedMode } from '../services/scoring';
 import { searchAddress, type GeocodeResult } from '../services/geocoding';
 import { calculateCommute } from '../services/routing';
 import { AreaExpenseCard } from './AreaExpenseCard';
+import { AreaCardSkeleton } from './AreaCardSkeleton';
 import { formatCurrency } from '../utils/formatters';
 import { SubmitFactModal } from './SubmitFactModal';
+import { FeedbackModal } from './FeedbackModal';
 import { discoverCityAreas } from '../services/bootstrap/area-discovery';
 import { bootstrapPipeline } from '../services/bootstrap/worker-pool';
 import { getOrRegisterGlobalCity } from '../services/city-search';
@@ -44,6 +46,11 @@ export const PersonalizedView: React.FC<PersonalizedViewProps> = ({ onBackToBrow
   const [rankedResults, setRankedResults] = useState<AreaExpenseBreakdown[]>([]);
   const [hasCalculated, setHasCalculated] = useState<boolean>(false);
   const [activeSubmitModalArea, setActiveSubmitModalArea] = useState<AreaExpenseBreakdown | null>(null);
+
+  // Feedback modal state
+  const [isFeedbackModalOpen, setIsFeedbackModalOpen] = useState<boolean>(false);
+  const [feedbackCityName, setFeedbackCityName] = useState<string>('');
+  const [feedbackArea, setFeedbackArea] = useState<{ id?: string; name?: string } | null>(null);
 
   const debounceTimerRef = useRef<any>(null);
 
@@ -89,10 +96,11 @@ export const PersonalizedView: React.FC<PersonalizedViewProps> = ({ onBackToBrow
 
       // If not in database, dynamically register it
       if (!matchedCity && selectedGeocode) {
+        const fallbackName = selectedGeocode.city || selectedGeocode.displayName.split(',')[0];
         matchedCity = getOrRegisterGlobalCity({
-          id: `city-geo-${selectedGeocode.countryCode.toLowerCase()}-${(selectedGeocode.city || 'city').toLowerCase().replace(/[^a-z0-9]/g, '')}`,
-          name: selectedGeocode.city || workplaceQuery.split(',')[0],
-          nameAscii: selectedGeocode.city || workplaceQuery.split(',')[0],
+          id: `city-geo-${selectedGeocode.countryCode.toLowerCase()}-${fallbackName.toLowerCase().replace(/[^a-z0-9]/g, '')}`,
+          name: fallbackName,
+          nameAscii: fallbackName,
           country: selectedGeocode.country,
           iso2: selectedGeocode.countryCode,
           lat: selectedGeocode.lat,
@@ -152,10 +160,13 @@ export const PersonalizedView: React.FC<PersonalizedViewProps> = ({ onBackToBrow
     } finally {
       setIsCalculating(false);
     }
-  }, [salaryInput, selectedGeocode, workplaceQuery]);
+  }, [salaryInput, selectedGeocode]);
 
   useEffect(() => {
-    handleRunCalculation();
+    const timer = setTimeout(() => {
+      handleRunCalculation();
+    }, 0);
+    return () => clearTimeout(timer);
   }, [handleRunCalculation]);
 
   const currencyCode = selectedGeocode?.currencyCode || 'IDR';
@@ -321,22 +332,13 @@ export const PersonalizedView: React.FC<PersonalizedViewProps> = ({ onBackToBrow
       {/* Progressive Skeleton Loader or Ranked Cards */}
       {isCalculating ? (
         <div className="area-cards-list">
-          {[1, 2, 3].map((i) => (
-            <div key={i} className="area-card" style={{ padding: '1.5rem' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                  <div className="skeleton" style={{ width: 32, height: 32, borderRadius: 8 }} />
-                  <div>
-                    <div className="skeleton" style={{ width: 160, height: 22, marginBottom: 6 }} />
-                    <div className="skeleton" style={{ width: 100, height: 14 }} />
-                  </div>
-                </div>
-                <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                  <div className="skeleton" style={{ width: 120, height: 26 }} />
-                  <div className="skeleton" style={{ width: 90, height: 22, borderRadius: 12 }} />
-                </div>
-              </div>
-            </div>
+          {[1, 2, 3, 4].map((i) => (
+            <AreaCardSkeleton
+              key={`personalized-skeleton-${i}`}
+              rank={i}
+              statusText={i === 1 ? 'Routing & scoring…' : 'Calculating commute…'}
+              isResearching={i === 1}
+            />
           ))}
         </div>
       ) : rankedResults.length > 0 ? (
@@ -369,6 +371,11 @@ export const PersonalizedView: React.FC<PersonalizedViewProps> = ({ onBackToBrow
                 isPersonalized={true}
                 salary={numericSalary}
                 onOpenSubmitFact={(area) => setActiveSubmitModalArea(area)}
+                onOpenFeedback={(area) => {
+                  setFeedbackCityName(selectedGeocode?.city || '');
+                  setFeedbackArea({ id: area.area.id, name: area.area.name });
+                  setIsFeedbackModalOpen(true);
+                }}
               />
             </div>
           ))}
@@ -389,6 +396,15 @@ export const PersonalizedView: React.FC<PersonalizedViewProps> = ({ onBackToBrow
         isOpen={!!activeSubmitModalArea}
         onClose={() => setActiveSubmitModalArea(null)}
         onSubmitted={handleRunCalculation}
+      />
+
+      {/* Community Feedback & Research Request Modal */}
+      <FeedbackModal
+        isOpen={isFeedbackModalOpen}
+        onClose={() => setIsFeedbackModalOpen(false)}
+        initialCityName={feedbackCityName}
+        initialAreaName={feedbackArea?.name}
+        areaId={feedbackArea?.id}
       />
     </div>
   );

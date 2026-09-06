@@ -9,7 +9,9 @@ import { sortBrowseMode } from '../services/scoring';
 import { AreaExpenseCard } from './AreaExpenseCard';
 import { BridgeAffordance } from './BridgeAffordance';
 import { SubmitFactModal } from './SubmitFactModal';
+import { FeedbackModal } from './FeedbackModal';
 import { ColdStartView } from './ColdStartView';
+import { AreaCardSkeleton } from './AreaCardSkeleton';
 import { discoverCityAreas } from '../services/bootstrap/area-discovery';
 import { bootstrapPipeline, type BootstrapProgressEvent } from '../services/bootstrap/worker-pool';
 import { searchGlobalCities, getOrRegisterGlobalCity, type GlobalCityItem } from '../services/city-search';
@@ -29,21 +31,25 @@ export const BrowseView: React.FC<BrowseViewProps> = ({ onNavigatePersonalized }
   // Global search input & suggestions
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [suggestions, setSuggestions] = useState<GlobalCityItem[]>([]);
+  const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState<number>(-1);
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
   const searchContainerRef = useRef<HTMLDivElement>(null);
+
+  // Community feedback & research request modal state
+  const [isFeedbackModalOpen, setIsFeedbackModalOpen] = useState<boolean>(false);
+  const [feedbackCityName, setFeedbackCityName] = useState<string>('');
+  const [feedbackArea, setFeedbackArea] = useState<{ id?: string; name?: string } | null>(null);
 
   // Cold-start progress state
   const [isBootstrapping, setIsBootstrapping] = useState<boolean>(false);
   const [bootstrapProgress, setBootstrapProgress] = useState<BootstrapProgressEvent | null>(null);
 
   // Load available cities
-  const reloadCityList = useCallback(async () => {
-    const cityList = await db.getCities();
-    setCities(cityList);
-    if (!selectedCityId && cityList.length > 0) {
-      setSelectedCityId(cityList[0].id);
-    }
-  }, [selectedCityId]);
+  const reloadCityList = useCallback(() => {
+    db.getCities().then((cityList) => {
+      setCities(cityList);
+    });
+  }, []);
 
   useEffect(() => {
     reloadCityList();
@@ -54,6 +60,7 @@ export const BrowseView: React.FC<BrowseViewProps> = ({ onNavigatePersonalized }
   // Handle global search input
   const handleSearchChange = (val: string) => {
     setSearchQuery(val);
+    setSelectedSuggestionIndex(-1);
     if (searchTimerRef.current) {
       clearTimeout(searchTimerRef.current);
     }
@@ -70,12 +77,40 @@ export const BrowseView: React.FC<BrowseViewProps> = ({ onNavigatePersonalized }
     }
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (!isSearchOpen || suggestions.length === 0) {
+      if (e.key === 'ArrowDown' && suggestions.length > 0) {
+        setIsSearchOpen(true);
+      }
+      return;
+    }
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      setSelectedSuggestionIndex((prev) => (prev < suggestions.length - 1 ? prev + 1 : 0));
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      setSelectedSuggestionIndex((prev) => (prev > 0 ? prev - 1 : suggestions.length - 1));
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      if (selectedSuggestionIndex >= 0 && selectedSuggestionIndex < suggestions.length) {
+        handleSelectGlobalCity(suggestions[selectedSuggestionIndex]);
+      } else if (suggestions.length > 0) {
+        handleSelectGlobalCity(suggestions[0]);
+      }
+    } else if (e.key === 'Escape') {
+      e.preventDefault();
+      setIsSearchOpen(false);
+    }
+  };
+
   const handleSelectGlobalCity = async (item: GlobalCityItem) => {
     const registered = getOrRegisterGlobalCity(item);
     await reloadCityList();
     setSelectedCityId(registered.id);
     setSearchQuery('');
     setSuggestions([]);
+    setSelectedSuggestionIndex(-1);
     setIsSearchOpen(false);
   };
 
@@ -96,10 +131,13 @@ export const BrowseView: React.FC<BrowseViewProps> = ({ onNavigatePersonalized }
       if (event.cityId === selectedCityId) {
         setBootstrapProgress(event);
         db.getCityAreasWithExpenses(selectedCityId).then((list) => {
-          setAreas(sortBrowseMode(list));
+          // Strict non-zero filter: only push computed areas to state to prevent 0 living cost flash
+          const readyList = list.filter((a) => a.total_monthly_cost > 0);
+          setAreas(sortBrowseMode(readyList));
         });
         if (event.isComplete) {
           setIsBootstrapping(false);
+          setIsLoading(false);
         }
       }
     };
@@ -112,15 +150,26 @@ export const BrowseView: React.FC<BrowseViewProps> = ({ onNavigatePersonalized }
   useEffect(() => {
     async function checkAndLoadCityData() {
       if (!selectedCityId) return;
+      // Immediately reset state to prevent stale data or 0-cost blinking
+      setAreas([]);
       setIsLoading(true);
 
-      const city = db.cities.find((c) => c.id === selectedCityId);
-      if (!city) return;
+      const city = cities.find((c) => c.id === selectedCityId) || db.cities.find((c) => c.id === selectedCityId);
+      if (!city) {
+        setIsLoading(false);
+        return;
+      }
 
-      const country = db.countries.find((co) => co.id === city.country_id)!;
+      const country = (city as any).country || db.countries.find((co) => co.id === city.country_id);
+      if (!country) {
+        setIsLoading(false);
+        return;
+      }
 
       const existingAreas = await db.getCityAreasWithExpenses(selectedCityId);
-      if (city.bootstrap_status === 'not_started' || existingAreas.length === 0) {
+      const validExisting = existingAreas.filter((a) => a.total_monthly_cost > 0);
+
+      if (city.bootstrap_status === 'not_started' || existingAreas.length === 0 || validExisting.length === 0) {
         setIsBootstrapping(true);
         setIsLoading(false);
         const discovered = await discoverCityAreas(city, country);
@@ -135,13 +184,13 @@ export const BrowseView: React.FC<BrowseViewProps> = ({ onNavigatePersonalized }
         bootstrapPipeline.bootstrapCity(city, country, discovered);
       } else {
         setIsBootstrapping(false);
-        setAreas(sortBrowseMode(existingAreas));
+        setAreas(sortBrowseMode(validExisting));
         setIsLoading(false);
       }
     }
 
     checkAndLoadCityData();
-  }, [selectedCityId]);
+  }, [selectedCityId, cities]);
 
   const selectedCity = cities.find((c) => c.id === selectedCityId) || cities[0];
 
@@ -177,6 +226,7 @@ export const BrowseView: React.FC<BrowseViewProps> = ({ onNavigatePersonalized }
                 placeholder="Search any city globally (e.g. Bangkok, Seoul, Paris, Sydney, São Paulo, Da Nang)..."
                 value={searchQuery}
                 onChange={(e) => handleSearchChange(e.target.value)}
+                onKeyDown={handleKeyDown}
                 onFocus={() => {
                   if (suggestions.length > 0) setIsSearchOpen(true);
                 }}
@@ -201,37 +251,78 @@ export const BrowseView: React.FC<BrowseViewProps> = ({ onNavigatePersonalized }
                   overflowY: 'auto',
                 }}
               >
-                {suggestions.map((item) => (
-                  <div
-                    key={item.id}
-                    onClick={() => handleSelectGlobalCity(item)}
-                    style={{
-                      padding: '0.75rem 1.15rem',
-                      fontSize: '0.875rem',
-                      borderBottom: '1px solid var(--border-subtle)',
-                      cursor: 'pointer',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      gap: '0.5rem',
-                    }}
-                    onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--bg-tertiary)')}
-                    onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
-                  >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <Globe size={15} color="var(--accent-secondary)" />
-                      <div>
-                        <strong style={{ color: 'var(--text-white)' }}>{item.name}</strong>
-                        <span style={{ color: 'var(--text-secondary)', marginLeft: '0.35rem' }}>
-                          {item.adminName ? `${item.adminName}, ` : ''}{item.country} ({item.iso2})
-                        </span>
+                {suggestions.map((item, idx) => {
+                  const isHighlighted = idx === selectedSuggestionIndex;
+                  return (
+                    <div
+                      key={item.id}
+                      onClick={() => handleSelectGlobalCity(item)}
+                      style={{
+                        padding: '0.75rem 1.15rem',
+                        fontSize: '0.875rem',
+                        borderBottom: '1px solid var(--border-subtle)',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        gap: '0.5rem',
+                        background: isHighlighted ? 'var(--bg-tertiary)' : 'transparent',
+                        borderLeft: isHighlighted ? '3px solid var(--accent-primary)' : '3px solid transparent',
+                      }}
+                      onMouseEnter={() => setSelectedSuggestionIndex(idx)}
+                    >
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        <Globe size={15} color="var(--accent-secondary)" />
+                        <div>
+                          <strong style={{ color: 'var(--text-white)' }}>{item.name}</strong>
+                          <span style={{ color: 'var(--text-secondary)', marginLeft: '0.35rem' }}>
+                            {item.adminName ? `${item.adminName}, ` : ''}{item.country} ({item.iso2})
+                          </span>
+                        </div>
                       </div>
+                      <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+                        {item.population ? `Pop: ${(item.population / 1000000).toFixed(1)}M` : item.iso2}
+                      </span>
                     </div>
-                    <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-                      {item.population ? `Pop: ${(item.population / 1000000).toFixed(1)}M` : item.iso2}
-                    </span>
-                  </div>
-                ))}
+                  );
+                })}
+              </div>
+            )}
+
+            {/* No match prompt */}
+            {isSearchOpen && suggestions.length === 0 && searchQuery.trim().length >= 2 && (
+              <div
+                style={{
+                  position: 'absolute',
+                  top: '100%',
+                  left: 0,
+                  right: 0,
+                  zIndex: 40,
+                  marginTop: 6,
+                  background: 'var(--bg-secondary)',
+                  border: '1px solid var(--border-medium)',
+                  borderRadius: 'var(--radius-md)',
+                  boxShadow: 'var(--shadow-lg)',
+                  padding: '1.25rem',
+                  textAlign: 'center',
+                }}
+              >
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', marginBottom: '0.75rem' }}>
+                  No indexed city found for &quot;<strong>{searchQuery}</strong>&quot;.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setFeedbackCityName(searchQuery);
+                    setFeedbackArea(null);
+                    setIsFeedbackModalOpen(true);
+                    setIsSearchOpen(false);
+                  }}
+                  className="btn btn-primary"
+                  style={{ fontSize: '0.75rem', padding: '0.4rem 0.85rem' }}
+                >
+                  ✨ Request Automated Research for &quot;{searchQuery}&quot;
+                </button>
               </div>
             )}
           </div>
@@ -290,6 +381,22 @@ export const BrowseView: React.FC<BrowseViewProps> = ({ onNavigatePersonalized }
             >
               Apartment Focus
             </button>
+            <button
+              className="filter-chip"
+              style={{
+                marginLeft: 'auto',
+                background: 'rgba(6, 182, 212, 0.08)',
+                borderColor: 'rgba(6, 182, 212, 0.25)',
+                color: 'var(--accent-secondary)',
+              }}
+              onClick={() => {
+                setFeedbackCityName(selectedCity?.name || '');
+                setFeedbackArea(null);
+                setIsFeedbackModalOpen(true);
+              }}
+            >
+              💬 Feedback / Request Research
+            </button>
           </div>
         </div>
       </div>
@@ -320,22 +427,8 @@ export const BrowseView: React.FC<BrowseViewProps> = ({ onNavigatePersonalized }
           {/* Skeleton or Loaded Cards */}
           {isLoading ? (
             <div className="area-cards-list">
-              {[1, 2, 3].map((i) => (
-                <div key={i} className="area-card" style={{ padding: '1.5rem' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                      <div className="skeleton" style={{ width: 32, height: 32, borderRadius: 8 }} />
-                      <div>
-                        <div className="skeleton" style={{ width: 140, height: 20, marginBottom: 6 }} />
-                        <div className="skeleton" style={{ width: 90, height: 14 }} />
-                      </div>
-                    </div>
-                    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                      <div className="skeleton" style={{ width: 110, height: 26 }} />
-                      <div className="skeleton" style={{ width: 80, height: 22, borderRadius: 12 }} />
-                    </div>
-                  </div>
-                </div>
+              {[1, 2, 3, 4].map((i) => (
+                <AreaCardSkeleton key={`browse-skeleton-${i}`} rank={i} />
               ))}
             </div>
           ) : areas.length > 0 ? (
@@ -346,6 +439,11 @@ export const BrowseView: React.FC<BrowseViewProps> = ({ onNavigatePersonalized }
                   data={areaData}
                   rank={index + 1}
                   onOpenSubmitFact={(area) => setActiveSubmitModalArea(area)}
+                  onOpenFeedback={(area) => {
+                    setFeedbackCityName(selectedCity?.name || '');
+                    setFeedbackArea({ id: area.area.id, name: area.area.name });
+                    setIsFeedbackModalOpen(true);
+                  }}
                 />
               ))}
             </div>
@@ -353,9 +451,21 @@ export const BrowseView: React.FC<BrowseViewProps> = ({ onNavigatePersonalized }
             <div style={{ padding: '3rem 1.5rem', textAlign: 'center', background: 'var(--bg-card)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-subtle)' }}>
               <Building2 size={40} color="var(--text-muted)" style={{ margin: '0 auto 1rem' }} />
               <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>No data for this city yet</h3>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', maxWidth: 400, margin: '0 auto' }}>
-                This city hasn't been researched yet. You can submit the first fact or request a research run.
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', maxWidth: 400, margin: '0 auto 1.25rem' }}>
+                This city hasn&apos;t been researched yet. You can submit the first fact or request an automated research run.
               </p>
+              <button
+                type="button"
+                onClick={() => {
+                  setFeedbackCityName(selectedCity?.name || '');
+                  setFeedbackArea(null);
+                  setIsFeedbackModalOpen(true);
+                }}
+                className="btn btn-primary"
+                style={{ fontSize: '0.85rem', padding: '0.5rem 1.2rem' }}
+              >
+                ✨ Request Automated Research
+              </button>
             </div>
           )}
         </>
@@ -375,6 +485,19 @@ export const BrowseView: React.FC<BrowseViewProps> = ({ onNavigatePersonalized }
         isOpen={!!activeSubmitModalArea}
         onClose={() => setActiveSubmitModalArea(null)}
         onSubmitted={handleDataReload}
+      />
+
+      {/* Feedback & Automated Research Request Modal */}
+      <FeedbackModal
+        isOpen={isFeedbackModalOpen}
+        onClose={() => setIsFeedbackModalOpen(false)}
+        initialCityName={feedbackCityName}
+        initialAreaName={feedbackArea?.name}
+        cityId={selectedCityId}
+        areaId={feedbackArea?.id}
+        onFeedbackSubmitted={() => {
+          reloadCityList();
+        }}
       />
     </div>
   );

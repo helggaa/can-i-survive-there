@@ -6,10 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "test": "tsx scripts/test-phase0.ts && tsx scripts/test-phase2.ts && tsx scripts/test-phase3.ts",
+    "test": "tsx scripts/test-phase0.ts && tsx scripts/test-phase2.ts && tsx scripts/test-phase3.ts && tsx scripts/test-random-cities-flow.ts",
     "test:phase0": "tsx scripts/test-phase0.ts",
     "test:phase2": "tsx scripts/test-phase2.ts",
     "test:phase3": "tsx scripts/test-phase3.ts",
+    "test:random-cities": "tsx scripts/test-random-cities-flow.ts",
     "lint": "oxlint",
     "preview": "vite preview"
   },

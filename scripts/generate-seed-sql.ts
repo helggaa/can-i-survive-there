@@ -30,9 +30,6 @@ function sqlNum(val: number | null | undefined): string {
   return val.toString();
 }
 
-function sqlBool(val: boolean | null | undefined): string {
-  return val ? 'TRUE' : 'FALSE';
-}
 
 console.log('--- Generating Seed SQL Scripts ---');
 
@@ -133,7 +130,7 @@ coreSqlLines.push(
 );
 
 const amvValues: string[] = [];
-INITIAL_AREA_METRIC_RECORDS.forEach((rec, i) => {
+INITIAL_AREA_METRIC_RECORDS.forEach((rec) => {
   const metricId = metricKeyToId.get(rec.metric_key);
   if (!metricId) return;
   const amvId = `amv-${rec.area_id.replace('area-', '')}-${rec.metric_key.replace(/_/g, '-')}`;
@@ -295,10 +292,6 @@ const globalAreas: any[] = [];
 const globalAmvs: any[] = [];
 const globalSubmissions: any[] = [];
 
-const existingCityIds = new Set(SEED_CITIES.map((c) => c.id));
-const existingCityKeys = new Set(
-  SEED_CITIES.map((c) => `${c.name.toLowerCase()}:${c.country_id}`)
-);
 
 const rentMetricId = 'a1111111-1111-1111-1111-111111111111';
 const foodMetricId = 'a2222222-2222-2222-2222-222222222222';
@@ -311,7 +304,6 @@ for (const entry of globalDb) {
   if (!countryId) continue;
 
   const citySlug = entry.city.toLowerCase().replace(/[^a-z0-9]/g, '');
-  const cityKey = `${entry.city.toLowerCase()}:${countryId}`;
 
   // Find coordinates
   const cscCity = cscCityMap.get(`${iso}:${entry.city.toLowerCase()}`);

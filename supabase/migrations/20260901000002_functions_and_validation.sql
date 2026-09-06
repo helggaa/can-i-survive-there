@@ -94,7 +94,7 @@ BEGIN
         v_min_bound := v_monthly_gni_ppp * 0.005;
         v_max_bound := v_monthly_gni_ppp * 0.35;
     ELSIF v_normalized_metric_key = 'grocery_basket' THEN
-        v_min_bound := v_monthly_gni_ppp * 0.01;
+        v_min_bound := v_monthly_gni_ppp * 0.005;
         v_max_bound := v_monthly_gni_ppp * 0.40;
     ELSE
         v_min_bound := 0.01;

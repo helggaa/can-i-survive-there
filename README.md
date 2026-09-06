@@ -13,12 +13,14 @@
 ## ✨ Features
 
 - **🌐 153,765+ Global Cities & Towns**: Search and explore cost-of-living breakdowns across 250 sovereign countries and territories with instant prefix matching and OpenStreetMap Nominatim fallback.
+- **💱 Global Multi-Currency Conversion Engine**: Switch between `USD ($)`, `EUR (€)`, `IDR (Rp)`, `JPY (¥)`, `GBP (£)`, `SGD (S$)`, `AUD (A$)`, or `Native Currency` with instant conversion and dual primary/secondary price indicators.
+- **💬 Community Feedback & Automated City Research**: Request automated AI research for missing cities, report cost corrections, or suggest new districts via a glassmorphic feedback modal backed by PostgreSQL RLS.
 - **📊 287+ Pre-Warmed Verified Metropolitan Hubs**: Verified benchmarks across Americas, Europe, Asia, Africa, Middle East, and Oceania with authentic evidence URLs (*Mamikos, SUUMO, Tabelog, SpareRoom, TfL, BVG, LeBonCoin, Navigo, Idealista, StreetEasy, Flatmates.com.au, Dubizzle, Cho Tot, etc.*).
 - **🚆 Real Official Transit Passes**: Reflects exact monthly tariffs like Germany's *Deutschlandticket* (€49/mo), Malaysia's *RapidKL My50* (RM50/mo), Spain's *Abono Transportes* (€21.80/mo), London *TfL* (£165/mo), NYC *MTA* ($132/mo), and Seoul *Climate Card* (₩65k/mo).
 - **🧭 Commute-Aware Personalized Mode**: Calculates multi-mode travel times (*Driving, Cycling, Walking, Public Transit*) with a 100m grid commute cache and scores areas based on salary affordability (50%), commute duration (35%), and data confidence (15%).
 - **🤖 Autonomous Cold-Start City Bootstrap**: When researching any unindexed town or district, a bounded parallel worker pool dynamically discovers OSM centroid boundaries and populates validated metrics via mathematical GNI PPP sanity bands.
 - **🛡️ Honest & Transparent Confidence Badges**: Displays confidence metrics (`High`, `Medium`, `Low`, `Estimated`) with an expandable *"Verified Facts & Supporting Sources"* inspector for each area.
-- **⚡ Zero Paid APIs / Privacy First**: 100% powered by open-source OpenStreetMap technologies (OSRM, Nominatim, Overpass) without collecting tracking data or third-party cookies.
+- **⚡ Privacy-First & Offline Resilient**: Zero tracking, zero third-party cookies, and automatic browser `localStorage` synchronization so custom researched cities survive reloads offline. Critical initial bundle size optimized to ~372 kB via dynamic code-splitting.
 
 ---
 
@@ -83,17 +85,21 @@ Open `http://localhost:5173/` in your browser.
 
 ## 🧪 Testing & Verification
 
-Run the full automated test suite (168 unit and integration tests):
+Run the full automated test suite including the mandatory **50–100 Randomized Cities Flow Verification** ([docs/04-testing-specification.md](docs/04-testing-specification.md)):
 
 ```bash
-# Run all test suites
+# Run all test suites (including 50-100 random cities flow verification)
 npm test
 
-# Run individual test phases
-npm run test:phase0   # Schema, validation rules & staging isolation (42 tests)
-npm run test:phase2   # Geocoding, OSRM routing & multi-factor scoring (21 tests)
-npm run test:phase3   # Agent bootstrap pipeline & bounded worker pool (105 tests)
+# Run individual test suites
+npm run test:random-cities # Tests 50-100 randomized cities per run across global regions
+npm run test:phase0        # Schema, validation rules & staging isolation (42 tests)
+npm run test:phase2        # Geocoding, OSRM routing & multi-factor scoring (21 tests)
+npm run test:phase3        # Agent bootstrap pipeline & bounded worker pool (105 tests)
 ```
+
+> **Mandatory Browser / Flow Testing Rule**:
+> Every browser automated test or flow verification run must test a randomized batch of 50 to 100 cities per execution to guarantee robust coverage across all 250 countries and eliminate zero-cost UI flashes. See [04-testing-specification.md](docs/04-testing-specification.md) for full requirements.
 
 ### Production Build
 
@@ -105,9 +111,11 @@ npm run build
 
 ## 🔒 Security & Data Integrity
 
-- **Staging Isolation**: Direct writes to computed `area_metric_values` are strictly prohibited. All external inputs pass through `insert_area_metric` staging logs.
-- **Dynamic PPP Sanity Bands**: Value inputs are dynamically bounds-checked against World Bank GNI per capita PPP limits to eliminate troll data.
-- **Zero Secret Exposure**: Fully functional in-memory repository by default with zero bundled secret keys.
+- **Row Level Security (RLS) Enforcement**: All PostgreSQL tables enforce Row Level Security. Anonymous public clients are strictly restricted: updates and deletes on reference tables (`countries`, `cities`, `areas`, `metrics`, `area_metric_values`) and user tables (`user_feedback`, `submissions`) are denied.
+- **Staging Isolation & Validation**: Direct writes to computed `area_metric_values` are strictly prohibited. All crowdsourced and AI inputs pass through `insert_area_metric` staging logs with 8-rule validation.
+- **Evidence URL Sanitization**: All evidence and feedback link fields validate against malicious protocols, strictly permitting only verified `http://` and `https://` URLs with `rel="noopener noreferrer"`.
+- **Dynamic PPP Sanity Bands**: Numeric inputs are dynamically bounds-checked against World Bank GNI per capita PPP limits to eliminate troll data.
+- **Zero Secret Exposure**: Fully functional in-memory repository by default with zero bundled secret keys. Service role keys and secrets are never committed or exposed on the client.
 
 ---
 

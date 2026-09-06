@@ -91,6 +91,12 @@ const BUILTIN_DISTRICTS: Record<
     { name: 'Wan Chai / Causeway Bay', latOffset: -0.042, lngOffset: 0.01 },
     { name: 'Sha Tin', latOffset: 0.095, lngOffset: 0.045 },
   ],
+  singapore: [
+    { name: 'Kallang / Geylang', latOffset: -0.0406, lngOffset: 0.0518 },
+    { name: 'Jurong East', latOffset: -0.0192, lngOffset: -0.0762 },
+    { name: 'Tampines', latOffset: -0.0025, lngOffset: 0.1246 },
+    { name: 'Woodlands / Marsiling', latOffset: 0.0861, lngOffset: -0.0307 },
+  ],
   'kuala lumpur': [
     { name: 'Bukit Bintang / KLCC', latOffset: 0.015, lngOffset: 0.025 },
     { name: 'Bangsar / Mid Valley', latOffset: -0.025, lngOffset: -0.015 },
@@ -395,7 +401,7 @@ const BUILTIN_DISTRICTS: Record<
 
 export async function discoverCityAreas(city: City, _country: Country): Promise<Area[]> {
   const existing = db.areas.filter((a) => a.city_id === city.id);
-  if (existing.length > 0) {
+  if (existing.length >= 4) {
     return existing;
   }
 
@@ -417,9 +423,11 @@ export async function discoverCityAreas(city: City, _country: Country): Promise<
   const template = BUILTIN_DISTRICTS[normalizedCity] || BUILTIN_DISTRICTS[rawCity];
 
   const createdAreas: Area[] = [];
+  const existingNames = new Set(existing.map((a) => a.name.toLowerCase().trim()));
 
   if (template && template.length > 0) {
     for (const dist of template) {
+      if (existingNames.has(dist.name.toLowerCase().trim())) continue;
       const newArea: Area = {
         id: `area-${normalizedCity}-${dist.name.toLowerCase().replace(/[^a-z0-9]/g, '')}`,
         city_id: city.id,
@@ -431,8 +439,12 @@ export async function discoverCityAreas(city: City, _country: Country): Promise<
       };
       db.areas.push(newArea);
       createdAreas.push(newArea);
+      existingNames.add(dist.name.toLowerCase().trim());
+      if (existing.length + createdAreas.length >= 4) break;
     }
-  } else {
+  }
+
+  if (existing.length + createdAreas.length < 4) {
     // Generate standard geometric quadrants / neighborhoods around city centroid
     const quadrants = [
       { name: `${city.name} Central / Downtown`, latOffset: 0.0, lngOffset: 0.0 },
@@ -443,6 +455,7 @@ export async function discoverCityAreas(city: City, _country: Country): Promise<
     ];
 
     for (const quad of quadrants) {
+      if (existingNames.has(quad.name.toLowerCase().trim())) continue;
       const newArea: Area = {
         id: generateUUID(),
         city_id: city.id,
@@ -454,8 +467,45 @@ export async function discoverCityAreas(city: City, _country: Country): Promise<
       };
       db.areas.push(newArea);
       createdAreas.push(newArea);
+      existingNames.add(quad.name.toLowerCase().trim());
+      if (existing.length + createdAreas.length >= 4) break;
     }
   }
 
-  return createdAreas;
+  if (db.supabase && createdAreas.length > 0) {
+    try {
+      await db.supabase.from('cities').upsert(
+        {
+          id: city.id,
+          country_id: city.country_id,
+          name: city.name,
+          lat: city.lat,
+          lng: city.lng,
+          bootstrap_status: city.bootstrap_status,
+          data_confidence: city.data_confidence,
+        },
+        { onConflict: 'id', ignoreDuplicates: true }
+      );
+
+      await db.supabase.from('areas').upsert(
+        createdAreas.map((a) => ({
+          id: a.id,
+          city_id: a.city_id,
+          name: a.name,
+          lat: a.lat,
+          lng: a.lng,
+          source: a.source,
+        })),
+        { onConflict: 'id', ignoreDuplicates: true }
+      );
+    } catch (e) {
+      console.warn('Supabase areas/city upsert failed, stored in local store:', e);
+    }
+  }
+
+  if (createdAreas.length > 0) {
+    db.saveLocalCustomData();
+  }
+
+  return [...existing, ...createdAreas];
 }

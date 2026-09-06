@@ -50,6 +50,22 @@ CREATE POLICY "Allow public submissions for validation"
     ON submissions FOR INSERT
     WITH CHECK (true);
 
+CREATE POLICY "Allow public registration for countries"
+    ON countries FOR INSERT
+    WITH CHECK (true);
+
+CREATE POLICY "Allow public registration for cities"
+    ON cities FOR INSERT
+    WITH CHECK (true);
+
+CREATE POLICY "Allow public discovery for areas"
+    ON areas FOR INSERT
+    WITH CHECK (true);
+
+CREATE POLICY "Allow public caching for commute_cache"
+    ON commute_cache FOR INSERT
+    WITH CHECK (true);
+
 -- Prevent unauthorized updates or deletions by public anon roles
 -- Only service_role or authenticated administrators may mutate reference tables
 CREATE POLICY "Deny anon updates to countries"

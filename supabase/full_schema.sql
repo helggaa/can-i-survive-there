@@ -119,6 +119,20 @@ CREATE TABLE IF NOT EXISTS commute_cache (
     CONSTRAINT uq_commute_cache UNIQUE (origin_lat, origin_lng, area_id, mode)
 );
 
+CREATE TABLE IF NOT EXISTS user_feedback (
+    id TEXT PRIMARY KEY DEFAULT gen_random_uuid()::text,
+    city_id TEXT REFERENCES cities(id) ON DELETE SET NULL,
+    area_id TEXT REFERENCES areas(id) ON DELETE SET NULL,
+    city_name TEXT NOT NULL,
+    feedback_type TEXT NOT NULL CHECK (feedback_type IN ('cost_correction', 'new_city_request', 'new_area_request', 'general_feedback')),
+    message TEXT NOT NULL,
+    suggested_value NUMERIC DEFAULT NULL,
+    currency_code TEXT DEFAULT NULL,
+    evidence_url TEXT DEFAULT NULL,
+    status TEXT NOT NULL DEFAULT 'new' CHECK (status IN ('new', 'investigating', 'researched', 'resolved', 'dismissed')),
+    created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
 -- INDEXES
 CREATE INDEX IF NOT EXISTS idx_cities_country_id ON cities(country_id);
 CREATE INDEX IF NOT EXISTS idx_areas_city_id ON areas(city_id);
@@ -126,6 +140,8 @@ CREATE INDEX IF NOT EXISTS idx_area_metric_values_area_id ON area_metric_values(
 CREATE INDEX IF NOT EXISTS idx_submissions_area_metric ON submissions(area_id, metric_id);
 CREATE INDEX IF NOT EXISTS idx_submissions_status ON submissions(status);
 CREATE INDEX IF NOT EXISTS idx_commute_cache_coords ON commute_cache(origin_lat, origin_lng, area_id);
+CREATE INDEX IF NOT EXISTS idx_user_feedback_city_id ON user_feedback(city_id);
+CREATE INDEX IF NOT EXISTS idx_user_feedback_status ON user_feedback(status);
 
 -- ROW LEVEL SECURITY
 ALTER TABLE countries ENABLE ROW LEVEL SECURITY;
@@ -136,6 +152,7 @@ ALTER TABLE area_metric_values ENABLE ROW LEVEL SECURITY;
 ALTER TABLE submissions ENABLE ROW LEVEL SECURITY;
 ALTER TABLE housing_listings ENABLE ROW LEVEL SECURITY;
 ALTER TABLE commute_cache ENABLE ROW LEVEL SECURITY;
+ALTER TABLE user_feedback ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Public read access for countries" ON countries FOR SELECT USING (true);
 CREATE POLICY "Public read access for cities" ON cities FOR SELECT USING (true);
@@ -145,13 +162,21 @@ CREATE POLICY "Public read access for area_metric_values" ON area_metric_values 
 CREATE POLICY "Public read access for housing_listings" ON housing_listings FOR SELECT USING (true);
 CREATE POLICY "Public read access for commute_cache" ON commute_cache FOR SELECT USING (true);
 CREATE POLICY "Public read access for accepted submissions" ON submissions FOR SELECT USING (status = 'accepted');
+CREATE POLICY "Public read access for user_feedback" ON user_feedback FOR SELECT USING (true);
 
 CREATE POLICY "Allow public submissions for validation" ON submissions FOR INSERT WITH CHECK (true);
+CREATE POLICY "Allow public registration for countries" ON countries FOR INSERT WITH CHECK (true);
+CREATE POLICY "Allow public registration for cities" ON cities FOR INSERT WITH CHECK (true);
+CREATE POLICY "Allow public discovery for areas" ON areas FOR INSERT WITH CHECK (true);
+CREATE POLICY "Allow public caching for commute_cache" ON commute_cache FOR INSERT WITH CHECK (true);
+CREATE POLICY "Allow public insert for user_feedback" ON user_feedback FOR INSERT WITH CHECK (true);
+
 CREATE POLICY "Deny anon updates to countries" ON countries FOR UPDATE TO anon USING (false);
 CREATE POLICY "Deny anon updates to cities" ON cities FOR UPDATE TO anon USING (false);
 CREATE POLICY "Deny anon updates to areas" ON areas FOR UPDATE TO anon USING (false);
 CREATE POLICY "Deny anon updates to metrics" ON metrics FOR UPDATE TO anon USING (false);
 CREATE POLICY "Deny anon updates to area_metric_values" ON area_metric_values FOR UPDATE TO anon USING (false);
+CREATE POLICY "Deny anon updates to user_feedback" ON user_feedback FOR UPDATE TO anon USING (false);
 
 CREATE POLICY "Deny anon deletes to countries" ON countries FOR DELETE TO anon USING (false);
 CREATE POLICY "Deny anon deletes to cities" ON cities FOR DELETE TO anon USING (false);
@@ -159,6 +184,7 @@ CREATE POLICY "Deny anon deletes to areas" ON areas FOR DELETE TO anon USING (fa
 CREATE POLICY "Deny anon deletes to metrics" ON metrics FOR DELETE TO anon USING (false);
 CREATE POLICY "Deny anon deletes to area_metric_values" ON area_metric_values FOR DELETE TO anon USING (false);
 CREATE POLICY "Deny anon deletes to submissions" ON submissions FOR DELETE TO anon USING (false);
+CREATE POLICY "Deny anon deletes to user_feedback" ON user_feedback FOR DELETE TO anon USING (false);
 
 
 -- CORE REFERENCE METRICS SEED
@@ -264,7 +290,7 @@ BEGIN
         v_min_bound := v_monthly_gni_ppp * 0.005;
         v_max_bound := v_monthly_gni_ppp * 0.35;
     ELSIF v_normalized_metric_key = 'grocery_basket' THEN
-        v_min_bound := v_monthly_gni_ppp * 0.01;
+        v_min_bound := v_monthly_gni_ppp * 0.005;
         v_max_bound := v_monthly_gni_ppp * 0.40;
     ELSE
         v_min_bound := 0.01;

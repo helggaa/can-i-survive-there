@@ -1815,21 +1815,25 @@ export const SEED_AREAS: Area[] = [
   { id: 'area-hcm-d1', city_id: 'city-hcm-09', name: 'District 1 (Ben Nghe)', lat: 10.7769, lng: 106.7009, source: 'manual', created_at: new Date().toISOString() },
   { id: 'area-hcm-d7', city_id: 'city-hcm-09', name: 'District 7 (Phu My Hung)', lat: 10.7324, lng: 106.7156, source: 'manual', created_at: new Date().toISOString() },
   { id: 'area-hcm-binhthanh', city_id: 'city-hcm-09', name: 'Binh Thanh', lat: 10.8105, lng: 106.7091, source: 'manual', created_at: new Date().toISOString() },
+  { id: 'area-hcm-d2', city_id: 'city-hcm-09', name: 'District 2 (Thao Dien)', lat: 10.8037, lng: 106.7327, source: 'manual', created_at: new Date().toISOString() },
 
   // --- Singapore Areas ---
   { id: 'area-sg-kallang', city_id: 'city-singapore-10', name: 'Kallang / Geylang', lat: 1.3115, lng: 103.8716, source: 'manual', created_at: new Date().toISOString() },
   { id: 'area-sg-jurong', city_id: 'city-singapore-10', name: 'Jurong East', lat: 1.3329, lng: 103.7436, source: 'manual', created_at: new Date().toISOString() },
   { id: 'area-sg-tampines', city_id: 'city-singapore-10', name: 'Tampines', lat: 1.3496, lng: 103.9444, source: 'manual', created_at: new Date().toISOString() },
+  { id: 'area-sg-woodlands', city_id: 'city-singapore-10', name: 'Woodlands / Marsiling', lat: 1.4382, lng: 103.7891, source: 'manual', created_at: new Date().toISOString() },
 
   // --- Berlin Areas ---
   { id: 'area-berlin-kreuzberg', city_id: 'city-berlin-11', name: 'Kreuzberg', lat: 52.4986, lng: 13.4069, source: 'manual', created_at: new Date().toISOString() },
   { id: 'area-berlin-neukoelln', city_id: 'city-berlin-11', name: 'Neukölln', lat: 52.4812, lng: 13.4352, source: 'manual', created_at: new Date().toISOString() },
   { id: 'area-berlin-wedding', city_id: 'city-berlin-11', name: 'Wedding', lat: 52.5503, lng: 13.3592, source: 'manual', created_at: new Date().toISOString() },
+  { id: 'area-berlin-friedrichshain', city_id: 'city-berlin-11', name: 'Friedrichshain', lat: 52.5158, lng: 13.4542, source: 'manual', created_at: new Date().toISOString() },
 
   // --- London Areas ---
   { id: 'area-london-camden', city_id: 'city-london-12', name: 'Camden', lat: 51.5455, lng: -0.1415, source: 'manual', created_at: new Date().toISOString() },
   { id: 'area-london-stratford', city_id: 'city-london-12', name: 'Stratford', lat: 51.5431, lng: -0.0017, source: 'manual', created_at: new Date().toISOString() },
   { id: 'area-london-croydon', city_id: 'city-london-12', name: 'Croydon', lat: 51.3762, lng: -0.0982, source: 'manual', created_at: new Date().toISOString() },
+  { id: 'area-london-brixton', city_id: 'city-london-12', name: 'Brixton', lat: 51.4613, lng: -0.1156, source: 'manual', created_at: new Date().toISOString() },
 ];
 
 export const INITIAL_AREA_METRIC_RECORDS = [
