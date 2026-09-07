@@ -1,5 +1,5 @@
 // src/App.tsx
-// Main Application Container
+// Main Application Container with UI/UX Pro Max Cyber-Fintech Design System
 
 import { useState, useEffect } from 'react';
 import './App.css';
@@ -7,6 +7,8 @@ import { Navbar } from './components/Navbar';
 import { LandingView } from './components/LandingView';
 import { BrowseView } from './components/BrowseView';
 import { PersonalizedView } from './components/PersonalizedView';
+import { CurrencyProvider } from './context/CurrencyContext';
+import { ThemeProvider } from './context/ThemeContext';
 
 type ViewMode = 'landing' | 'browse' | 'personalized';
 
@@ -17,10 +19,9 @@ function getViewFromHash(): ViewMode {
   return 'landing';
 }
 
-import { CurrencyProvider } from './context/CurrencyContext';
-
 export function App() {
   const [currentView, setCurrentView] = useState<ViewMode>(getViewFromHash);
+  const [browseCityId, setBrowseCityId] = useState<string>('city-jakarta-01');
 
   // Sync hash changes from browser back/forward buttons
   useEffect(() => {
@@ -58,48 +59,57 @@ export function App() {
   };
 
   return (
-    <CurrencyProvider>
-      <div className="app-layout">
-        {/* Sticky Header */}
-        <Navbar currentView={currentView} onSelectView={navigateTo} />
+    <ThemeProvider>
+      <CurrencyProvider>
+        <div className="app-layout">
+          {/* Floating Navigation Header */}
+          <Navbar currentView={currentView} onSelectView={navigateTo} />
 
-        {/* Main Viewport */}
-        <main className="main-content">
-          <div key={currentView} className="view-container">
-            {currentView === 'landing' && (
-              <LandingView
-                onSelectBrowse={() => navigateTo('browse')}
-                onSelectPersonalized={() => navigateTo('personalized')}
-              />
-            )}
+          {/* Main Viewport */}
+          <main className="main-content">
+            <div key={currentView} className="view-container">
+              {currentView === 'landing' && (
+                <LandingView
+                  onSelectBrowse={(cityId) => {
+                    if (cityId) setBrowseCityId(cityId);
+                    navigateTo('browse');
+                  }}
+                  onSelectPersonalized={() => navigateTo('personalized')}
+                />
+              )}
 
-            {currentView === 'browse' && (
-              <BrowseView
-                onNavigatePersonalized={() => navigateTo('personalized')}
-              />
-            )}
+              {currentView === 'browse' && (
+                <BrowseView
+                  initialCityId={browseCityId}
+                  onNavigatePersonalized={() => navigateTo('personalized')}
+                />
+              )}
 
-            {currentView === 'personalized' && (
-              <PersonalizedView
-                onBackToBrowse={() => navigateTo('browse')}
-              />
-            )}
-          </div>
-        </main>
-
-        {/* Footer */}
-        <footer style={{ borderTop: '1px solid var(--border-subtle)', padding: '2rem 1.5rem', textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.8125rem' }}>
-          <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '1rem' }}>
-            <div>
-              <strong>Can I Survive There?</strong> — Free, open, confidence-aware cost intelligence.
+              {currentView === 'personalized' && (
+                <PersonalizedView
+                  onBackToBrowse={() => navigateTo('browse')}
+                />
+              )}
             </div>
-            <div>
-              Built with OpenStreetMap & World Bank PPP Open Data · Zero tracking
+          </main>
+
+          {/* Application Footer (High-Contrast, Zero Invisible Text) */}
+          <footer className="app-footer">
+            <div className="footer-container">
+              <div className="footer-brand-row">
+                <div className="footer-status-dot" />
+                <span className="footer-brand-copy">
+                  <strong className="footer-brand-title">Can I Survive There?</strong> — Open, honest, confidence-scored cost intelligence.
+                </span>
+              </div>
+              <div className="footer-meta-copy">
+                Built with OpenStreetMap &amp; World Bank PPP Open Data · 100% Private · Zero tracking
+              </div>
             </div>
-          </div>
-        </footer>
-      </div>
-    </CurrencyProvider>
+          </footer>
+        </div>
+      </CurrencyProvider>
+    </ThemeProvider>
   );
 }
 

@@ -1,8 +1,8 @@
 // src/components/BrowseView.tsx
-// Browse Mode Screen with Progressive Cold-Start Bootstrap & Global City Search per 03-ux-screens.md
+// Browse Mode Screen with Progressive Cold-Start Bootstrap & Global City Search per UI/UX Pro Max
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { MapPin, ArrowUpDown, Building2, Search, Globe } from 'lucide-react';
+import { MapPin, ArrowUpDown, Building2, Search, Globe, Sparkles, MessageSquare } from 'lucide-react';
 import type { City, AreaExpenseBreakdown } from '../types/database.types';
 import { db } from '../services/database';
 import { sortBrowseMode } from '../services/scoring';
@@ -18,15 +18,45 @@ import { searchGlobalCities, getOrRegisterGlobalCity, type GlobalCityItem } from
 
 interface BrowseViewProps {
   onNavigatePersonalized: () => void;
+  initialCityId?: string;
 }
 
-export const BrowseView: React.FC<BrowseViewProps> = ({ onNavigatePersonalized }) => {
+export const BrowseView: React.FC<BrowseViewProps> = ({ onNavigatePersonalized, initialCityId }) => {
   const [cities, setCities] = useState<(City & { country: any })[]>([]);
-  const [selectedCityId, setSelectedCityId] = useState<string>('city-jakarta-01');
+  const [selectedCityId, setSelectedCityId] = useState<string>(initialCityId || 'city-jakarta-01');
   const [areas, setAreas] = useState<AreaExpenseBreakdown[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [activeFilter, setActiveFilter] = useState<'all' | 'kost' | 'apartment'>('all');
   const [activeSubmitModalArea, setActiveSubmitModalArea] = useState<AreaExpenseBreakdown | null>(null);
+
+  useEffect(() => {
+    if (initialCityId) {
+      React.startTransition(() => {
+        setSelectedCityId(initialCityId);
+      });
+    }
+  }, [initialCityId]);
+
+  // Segmented Housing Filtering (All Types, Kost & Rooms, Apartments)
+  const medianRent = React.useMemo(() => {
+    const validRents = areas.map((a) => a.rent_or_kost_monthly).filter((r) => r > 0).sort((a, b) => a - b);
+    if (validRents.length === 0) return 0;
+    return validRents[Math.floor(validRents.length / 2)];
+  }, [areas]);
+
+  const kostAreas = React.useMemo(() => {
+    return areas.filter((a) => a.rent_or_kost_monthly <= medianRent);
+  }, [areas, medianRent]);
+
+  const apartmentAreas = React.useMemo(() => {
+    return areas.filter((a) => a.rent_or_kost_monthly > medianRent);
+  }, [areas, medianRent]);
+
+  const filteredAreas = React.useMemo(() => {
+    if (activeFilter === 'kost') return kostAreas;
+    if (activeFilter === 'apartment') return apartmentAreas;
+    return areas;
+  }, [activeFilter, areas, kostAreas, apartmentAreas]);
 
   // Global search input & suggestions
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -34,6 +64,7 @@ export const BrowseView: React.FC<BrowseViewProps> = ({ onNavigatePersonalized }
   const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState<number>(-1);
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
   const searchContainerRef = useRef<HTMLDivElement>(null);
+  const searchInputRef = useRef<HTMLInputElement>(null);
 
   // Community feedback & research request modal state
   const [isFeedbackModalOpen, setIsFeedbackModalOpen] = useState<boolean>(false);
@@ -43,6 +74,22 @@ export const BrowseView: React.FC<BrowseViewProps> = ({ onNavigatePersonalized }
   // Cold-start progress state
   const [isBootstrapping, setIsBootstrapping] = useState<boolean>(false);
   const [bootstrapProgress, setBootstrapProgress] = useState<BootstrapProgressEvent | null>(null);
+
+  // Keyboard shortcut (/) to focus search
+  useEffect(() => {
+    const handleGlobalKey = (e: KeyboardEvent) => {
+      if (
+        (e.key === '/' || (e.ctrlKey && e.key === 'k') || (e.metaKey && e.key === 'k')) &&
+        document.activeElement?.tagName !== 'INPUT' &&
+        document.activeElement?.tagName !== 'TEXTAREA'
+      ) {
+        e.preventDefault();
+        searchInputRef.current?.focus();
+      }
+    };
+    window.addEventListener('keydown', handleGlobalKey);
+    return () => window.removeEventListener('keydown', handleGlobalKey);
+  }, []);
 
   // Load available cities
   const reloadCityList = useCallback(() => {
@@ -146,248 +193,192 @@ export const BrowseView: React.FC<BrowseViewProps> = ({ onNavigatePersonalized }
     return () => bootstrapPipeline.removeListener(handleProgress);
   }, [selectedCityId]);
 
-  // Load areas or trigger cold-start when city changes
+  // Load city areas or trigger auto-discovery for unbootstrapped cities
   useEffect(() => {
-    async function checkAndLoadCityData() {
-      if (!selectedCityId) return;
-      // Immediately reset state to prevent stale data or 0-cost blinking
-      setAreas([]);
+    React.startTransition(() => {
       setIsLoading(true);
+      // Clear previous areas immediately to prevent stale state flash
+      setAreas([]);
+      setIsBootstrapping(false);
+      setBootstrapProgress(null);
+    });
 
-      const city = cities.find((c) => c.id === selectedCityId) || db.cities.find((c) => c.id === selectedCityId);
-      if (!city) {
-        setIsLoading(false);
-        return;
-      }
-
-      const country = (city as any).country || db.countries.find((co) => co.id === city.country_id);
-      if (!country) {
-        setIsLoading(false);
-        return;
-      }
-
-      const existingAreas = await db.getCityAreasWithExpenses(selectedCityId);
-      const validExisting = existingAreas.filter((a) => a.total_monthly_cost > 0);
-
-      if (city.bootstrap_status === 'not_started' || existingAreas.length === 0 || validExisting.length === 0) {
-        setIsBootstrapping(true);
-        setIsLoading(false);
-        const discovered = await discoverCityAreas(city, country);
-        setBootstrapProgress({
-          cityId: city.id,
-          totalAreas: discovered.length,
-          completedAreas: 0,
-          activeAreaName: discovered[0]?.name,
-          isComplete: false,
-          completedAreaIds: [],
-        });
-        bootstrapPipeline.bootstrapCity(city, country, discovered);
-      } else {
-        setIsBootstrapping(false);
-        setAreas(sortBrowseMode(validExisting));
-        setIsLoading(false);
-      }
+    const targetCity = cities.find((c) => c.id === selectedCityId);
+    if (!targetCity) {
+      return;
     }
 
-    checkAndLoadCityData();
+    if (targetCity.bootstrap_status === 'not_started') {
+      React.startTransition(() => {
+        setIsBootstrapping(true);
+        setIsLoading(true);
+      });
+
+      const country = db.countries.find((c) => c.id === targetCity.country_id) || db.countries[0];
+      discoverCityAreas(targetCity, country).then(async (discovered) => {
+        await bootstrapPipeline.bootstrapCity(targetCity, country, discovered);
+      });
+    } else {
+      db.getCityAreasWithExpenses(selectedCityId).then((areaList) => {
+        // Strict non-zero living cost invariant
+        const readyList = areaList.filter((a) => a.total_monthly_cost > 0);
+        setAreas(sortBrowseMode(readyList));
+        setIsLoading(false);
+      });
+    }
   }, [selectedCityId, cities]);
 
-  const selectedCity = cities.find((c) => c.id === selectedCityId) || cities[0];
+  const selectedCity = cities.find((c) => c.id === selectedCityId);
 
+  // Reload data after fact submission
   const handleDataReload = async () => {
-    if (!selectedCityId) return;
     const areaList = await db.getCityAreasWithExpenses(selectedCityId);
     setAreas(sortBrowseMode(areaList));
   };
 
   return (
     <div className="browse-view">
-      {/* Header */}
-      <div className="browse-header">
-        <div className="browse-title-row">
-          <div>
-            <h1 className="section-title">City Cost of Living Explorer</h1>
-            <p className="section-subtitle">
-              Transparent, crowdsourced cost breakdowns for housing, sit-down food, and transport across 1,500+ global cities.
-            </p>
-          </div>
+      {/* Header Section */}
+      <div className="browse-header-section">
+        <div>
+          <h1 style={{ fontSize: '2.1rem', fontWeight: 800, marginBottom: '0.4rem', letterSpacing: '-0.025em' }}>
+            Relocation & Cost of Living Explorer
+          </h1>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.975rem' }}>
+            Verified student kosts, room rentals, daily warung meals, and commute passes for students, young workers, and migrants moving to a new city.
+          </p>
         </div>
 
-        {/* Controls Bar: Global Search, City Dropdown & Quick Pills */}
-        <div className="controls-bar" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          {/* Global City Search Auto-complete */}
-          <div ref={searchContainerRef} style={{ position: 'relative', width: '100%' }}>
-            <div style={{ position: 'relative' }}>
-              <Search size={18} className="input-icon-left" />
-              <input
-                type="text"
-                className="form-input"
-                style={{ paddingLeft: '2.5rem', background: 'var(--bg-secondary)', width: '100%' }}
-                placeholder="Search any city globally (e.g. Bangkok, Seoul, Paris, Sydney, São Paulo, Da Nang)..."
-                value={searchQuery}
-                onChange={(e) => handleSearchChange(e.target.value)}
-                onKeyDown={handleKeyDown}
-                onFocus={() => {
-                  if (suggestions.length > 0) setIsSearchOpen(true);
-                }}
-              />
-            </div>
+        {/* Command Search Bar */}
+        <div className="search-command-wrapper" ref={searchContainerRef}>
+          <div className="search-input-box">
+            <Search size={18} style={{ color: 'var(--brand-primary)' }} />
+            <input
+              ref={searchInputRef}
+              type="text"
+              placeholder="Where are you moving? Search city (e.g. Yogyakarta, Bandung, Jakarta, Tokyo, Melbourne)..."
+              value={searchQuery}
+              onChange={(e) => handleSearchChange(e.target.value)}
+              onKeyDown={handleKeyDown}
+              onFocus={() => {
+                if (suggestions.length > 0) setIsSearchOpen(true);
+              }}
+              maxLength={120}
+            />
+            <div className="search-shortcut-badge">/</div>
+          </div>
 
-            {/* Suggestions Dropdown */}
-            {isSearchOpen && suggestions.length > 0 && (
-              <div
-                style={{
-                  position: 'absolute',
-                  top: '100%',
-                  left: 0,
-                  right: 0,
-                  zIndex: 40,
-                  marginTop: 6,
-                  background: 'var(--bg-secondary)',
-                  border: '1px solid var(--border-medium)',
-                  borderRadius: 'var(--radius-md)',
-                  boxShadow: 'var(--shadow-lg)',
-                  maxHeight: 280,
-                  overflowY: 'auto',
-                }}
-              >
-                {suggestions.map((item, idx) => {
-                  const isHighlighted = idx === selectedSuggestionIndex;
-                  return (
-                    <div
-                      key={item.id}
-                      onClick={() => handleSelectGlobalCity(item)}
-                      style={{
-                        padding: '0.75rem 1.15rem',
-                        fontSize: '0.875rem',
-                        borderBottom: '1px solid var(--border-subtle)',
-                        cursor: 'pointer',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                        gap: '0.5rem',
-                        background: isHighlighted ? 'var(--bg-tertiary)' : 'transparent',
-                        borderLeft: isHighlighted ? '3px solid var(--accent-primary)' : '3px solid transparent',
-                      }}
-                      onMouseEnter={() => setSelectedSuggestionIndex(idx)}
-                    >
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                        <Globe size={15} color="var(--accent-secondary)" />
-                        <div>
-                          <strong style={{ color: 'var(--text-white)' }}>{item.name}</strong>
-                          <span style={{ color: 'var(--text-secondary)', marginLeft: '0.35rem' }}>
-                            {item.adminName ? `${item.adminName}, ` : ''}{item.country} ({item.iso2})
-                          </span>
+          {/* Suggestions Dropdown */}
+          {isSearchOpen && suggestions.length > 0 && (
+            <div className="search-dropdown-menu">
+              {suggestions.map((item, idx) => {
+                const isHighlighted = idx === selectedSuggestionIndex;
+                return (
+                  <div
+                    key={item.id}
+                    onClick={() => handleSelectGlobalCity(item)}
+                    className={`search-suggestion-item ${isHighlighted ? 'selected' : ''}`}
+                    onMouseEnter={() => setSelectedSuggestionIndex(idx)}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                      <Globe size={16} style={{ color: 'var(--accent-secondary)' }} />
+                      <div>
+                        <div className="suggestion-city-name">{item.name}</div>
+                        <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
+                          {item.adminName ? `${item.adminName}, ` : ''}{item.country} ({item.iso2})
                         </div>
                       </div>
-                      <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-                        {item.population ? `Pop: ${(item.population / 1000000).toFixed(1)}M` : item.iso2}
-                      </span>
                     </div>
-                  );
-                })}
-              </div>
-            )}
+                    <span className="suggestion-country-badge">
+                      {item.population ? `Pop: ${(item.population / 1000000).toFixed(1)}M` : item.iso2}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+          )}
 
-            {/* No match prompt */}
-            {isSearchOpen && suggestions.length === 0 && searchQuery.trim().length >= 2 && (
-              <div
-                style={{
-                  position: 'absolute',
-                  top: '100%',
-                  left: 0,
-                  right: 0,
-                  zIndex: 40,
-                  marginTop: 6,
-                  background: 'var(--bg-secondary)',
-                  border: '1px solid var(--border-medium)',
-                  borderRadius: 'var(--radius-md)',
-                  boxShadow: 'var(--shadow-lg)',
-                  padding: '1.25rem',
-                  textAlign: 'center',
+          {/* No match prompt */}
+          {isSearchOpen && suggestions.length === 0 && searchQuery.trim().length >= 2 && (
+            <div className="search-dropdown-menu" style={{ padding: '1.25rem', textAlign: 'center' }}>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', marginBottom: '0.85rem' }}>
+                No indexed city found for &quot;<strong>{searchQuery}</strong>&quot;.
+              </p>
+              <button
+                type="button"
+                onClick={() => {
+                  setFeedbackCityName(searchQuery);
+                  setFeedbackArea(null);
+                  setIsFeedbackModalOpen(true);
+                  setIsSearchOpen(false);
                 }}
+                className="btn-primary"
+                style={{ fontSize: '0.8125rem' }}
               >
-                <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', marginBottom: '0.75rem' }}>
-                  No indexed city found for &quot;<strong>{searchQuery}</strong>&quot;.
-                </p>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setFeedbackCityName(searchQuery);
-                    setFeedbackArea(null);
-                    setIsFeedbackModalOpen(true);
-                    setIsSearchOpen(false);
-                  }}
-                  className="btn btn-primary"
-                  style={{ fontSize: '0.75rem', padding: '0.4rem 0.85rem' }}
-                >
-                  ✨ Request Automated Research for &quot;{searchQuery}&quot;
-                </button>
-              </div>
-            )}
-          </div>
-
-          <div className="city-search-row">
-            <div className="city-select-box">
-              <MapPin size={18} className="input-icon-left" />
-              <select
-                className="city-dropdown"
-                value={selectedCityId}
-                onChange={(e) => setSelectedCityId(e.target.value)}
-                aria-label="Select City"
-              >
-                {cities.map((city) => (
-                  <option key={city.id} value={city.id}>
-                    {city.name}, {city.country?.name} ({city.country?.currency_code})
-                    {city.bootstrap_status === 'not_started' ? ' — [New City Research]' : ''}
-                  </option>
-                ))}
-              </select>
+                <Sparkles size={14} style={{ display: 'inline', marginRight: 4 }} />
+                Request Automated Research for &quot;{searchQuery}&quot;
+              </button>
             </div>
+          )}
+        </div>
 
-            {/* Quick-select city pills */}
-            <div className="quick-city-pills">
-              {cities.slice(0, 8).map((city) => (
-                <button
-                  key={city.id}
-                  className={`quick-pill ${selectedCityId === city.id ? 'active' : ''}`}
-                  onClick={() => setSelectedCityId(city.id)}
-                >
-                  {city.name}
-                  {city.bootstrap_status === 'not_started' && ' ✨'}
-                </button>
-              ))}
-            </div>
+        {/* Quick City Horizontal Scrollable Pills */}
+        <div className="city-pills-bar">
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', paddingRight: '0.4rem' }}>
+            <MapPin size={13} style={{ color: 'var(--accent-primary)' }} />
+            <span>Popular:</span>
           </div>
-
-          {/* Filter Chips */}
-          <div className="filter-chips-row">
-            <span className="filter-label">Focus:</span>
+          {cities.slice(0, 10).map((city) => (
             <button
-              className={`filter-chip ${activeFilter === 'all' ? 'active' : ''}`}
+              key={city.id}
+              className={`city-pill-btn ${selectedCityId === city.id ? 'active' : ''}`}
+              onClick={() => setSelectedCityId(city.id)}
+            >
+              <span>{city.name}</span>
+              {city.bootstrap_status === 'not_started' && ' ✨'}
+            </button>
+          ))}
+        </div>
+
+        {/* Controls Bar: Housing Segment & Feedback button */}
+        <div className="browse-controls-bar">
+          <div className="housing-filter-group">
+            <button
+              type="button"
+              className={`housing-filter-btn ${activeFilter === 'all' ? 'active' : ''}`}
               onClick={() => setActiveFilter('all')}
             >
-              All Neighborhoods ({areas.length})
+              All Types ({areas.length})
             </button>
             <button
-              className={`filter-chip ${activeFilter === 'kost' ? 'active' : ''}`}
+              type="button"
+              className={`housing-filter-btn ${activeFilter === 'kost' ? 'active' : ''}`}
               onClick={() => setActiveFilter('kost')}
             >
-              Kost & Dorm Friendly
+              Kost &amp; Rooms ({kostAreas.length})
             </button>
             <button
-              className={`filter-chip ${activeFilter === 'apartment' ? 'active' : ''}`}
+              type="button"
+              className={`housing-filter-btn ${activeFilter === 'apartment' ? 'active' : ''}`}
               onClick={() => setActiveFilter('apartment')}
             >
-              Apartment Focus
+              Apartments ({apartmentAreas.length})
             </button>
+          </div>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
             <button
-              className="filter-chip"
+              type="button"
+              className="btn-secondary"
               style={{
-                marginLeft: 'auto',
-                background: 'rgba(6, 182, 212, 0.08)',
-                borderColor: 'rgba(6, 182, 212, 0.25)',
+                fontSize: '0.8125rem',
+                padding: '0.4rem 0.85rem',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.4rem',
                 color: 'var(--accent-secondary)',
+                borderColor: 'rgba(6, 182, 212, 0.3)',
+                background: 'rgba(6, 182, 212, 0.08)',
               }}
               onClick={() => {
                 setFeedbackCityName(selectedCity?.name || '');
@@ -395,13 +386,14 @@ export const BrowseView: React.FC<BrowseViewProps> = ({ onNavigatePersonalized }
                 setIsFeedbackModalOpen(true);
               }}
             >
-              💬 Feedback / Request Research
+              <MessageSquare size={14} />
+              <span>Feedback / Research</span>
             </button>
           </div>
         </div>
       </div>
 
-      {/* Main Content Area: Cold-Start vs. Standard List */}
+      {/* Main Content Area: Cold-Start vs Standard List */}
       {isBootstrapping && selectedCity ? (
         <ColdStartView
           city={selectedCity}
@@ -413,14 +405,14 @@ export const BrowseView: React.FC<BrowseViewProps> = ({ onNavigatePersonalized }
         />
       ) : (
         <>
-          {/* Results Count Header */}
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem' }}>
-            <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
-              Showing <strong>{areas.length}</strong> neighborhoods in <strong>{selectedCity?.name}</strong>, sorted by lowest total cost
+          {/* Results Count & Sorting Header */}
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem' }}>
+            <div className="browse-stats-count">
+              Showing <strong>{filteredAreas.length}</strong> {activeFilter !== 'all' ? `(${activeFilter === 'kost' ? 'Kost & Rooms' : 'Apartments'}) ` : ''}verified neighborhoods in <strong>{selectedCity?.name}</strong>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.8125rem', color: 'var(--text-muted)' }}>
               <ArrowUpDown size={13} />
-              <span>Lowest Cost First</span>
+              <span>Ranked by Lowest Living Cost</span>
             </div>
           </div>
 
@@ -431,9 +423,9 @@ export const BrowseView: React.FC<BrowseViewProps> = ({ onNavigatePersonalized }
                 <AreaCardSkeleton key={`browse-skeleton-${i}`} rank={i} />
               ))}
             </div>
-          ) : areas.length > 0 ? (
+          ) : filteredAreas.length > 0 ? (
             <div className="area-cards-list">
-              {areas.map((areaData, index) => (
+              {filteredAreas.map((areaData, index) => (
                 <AreaExpenseCard
                   key={areaData.area.id}
                   data={areaData}
@@ -447,12 +439,32 @@ export const BrowseView: React.FC<BrowseViewProps> = ({ onNavigatePersonalized }
                 />
               ))}
             </div>
+          ) : areas.length > 0 ? (
+            <div className="filter-empty-state">
+              <Building2 size={36} color="var(--text-muted)" style={{ margin: '0 auto 0.75rem' }} />
+              <div className="filter-empty-state-title">
+                No neighborhoods match &quot;{activeFilter === 'kost' ? 'Kost & Rooms' : 'Apartments'}&quot;
+              </div>
+              <p className="filter-empty-state-desc">
+                All currently indexed areas in {selectedCity?.name} fall into other price tiers.
+              </p>
+              <button
+                type="button"
+                onClick={() => setActiveFilter('all')}
+                className="btn-secondary"
+                style={{ fontSize: '0.8125rem' }}
+              >
+                Show All {areas.length} Neighborhoods
+              </button>
+            </div>
           ) : (
-            <div style={{ padding: '3rem 1.5rem', textAlign: 'center', background: 'var(--bg-card)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-subtle)' }}>
-              <Building2 size={40} color="var(--text-muted)" style={{ margin: '0 auto 1rem' }} />
-              <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>No data for this city yet</h3>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', maxWidth: 400, margin: '0 auto 1.25rem' }}>
-                This city hasn&apos;t been researched yet. You can submit the first fact or request an automated research run.
+            <div style={{ padding: '3.5rem 1.5rem', textAlign: 'center', background: 'var(--bg-card)', borderRadius: 'var(--radius-xl)', border: '1px solid var(--border-subtle)' }}>
+              <Building2 size={44} color="var(--text-muted)" style={{ margin: '0 auto 1rem' }} />
+              <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', color: 'var(--text-primary)' }}>
+                No verified neighborhoods yet
+              </h3>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.9375rem', maxWidth: 440, margin: '0 auto 1.5rem' }}>
+                This city hasn&apos;t been fully mapped yet. You can submit the first neighborhood observation or request an automated research pass.
               </p>
               <button
                 type="button"
@@ -461,8 +473,8 @@ export const BrowseView: React.FC<BrowseViewProps> = ({ onNavigatePersonalized }
                   setFeedbackArea(null);
                   setIsFeedbackModalOpen(true);
                 }}
-                className="btn btn-primary"
-                style={{ fontSize: '0.85rem', padding: '0.5rem 1.2rem' }}
+                className="btn-primary"
+                style={{ fontSize: '0.875rem' }}
               >
                 ✨ Request Automated Research
               </button>
@@ -502,3 +514,5 @@ export const BrowseView: React.FC<BrowseViewProps> = ({ onNavigatePersonalized }
     </div>
   );
 };
+
+export default BrowseView;

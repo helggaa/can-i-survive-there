@@ -1,5 +1,5 @@
 // src/components/AreaCardSkeleton.tsx
-// High-fidelity glassmorphic loading skeleton matching AreaExpenseCard layout
+// High-fidelity cyber-glassmorphic loading skeleton matching AreaExpenseCard layout per UI/UX Pro Max
 
 import React from 'react';
 import { Loader2 } from 'lucide-react';
@@ -22,39 +22,40 @@ export const AreaCardSkeleton: React.FC<AreaCardSkeletonProps> = ({
       className="area-card fade-in-card"
       style={{
         border: isResearching
-          ? '1px solid rgba(6, 182, 212, 0.45)'
+          ? '1px solid var(--border-medium)'
           : '1px solid var(--border-subtle)',
-        background: isResearching
-          ? 'linear-gradient(135deg, rgba(15, 23, 42, 0.7), rgba(6, 182, 212, 0.05))'
-          : 'var(--bg-card)',
+        background: 'var(--bg-card)',
         overflow: 'hidden',
         position: 'relative',
+        boxShadow: isResearching ? 'var(--shadow-sm)' : undefined,
       }}
     >
-      {/* Active Research Indicator Pill if currently computing this area */}
+      {/* Active Research Indicator Header */}
       {isResearching && (
         <div
           style={{
-            padding: '0.4rem 1rem',
-            background: 'rgba(6, 182, 212, 0.12)',
-            borderBottom: '1px solid rgba(6, 182, 212, 0.25)',
+            padding: '0.45rem 1.25rem',
+            background: 'var(--brand-primary-light)',
+            borderBottom: '1px solid var(--border-subtle)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            fontSize: '0.78rem',
-            color: 'var(--accent-secondary)',
+            fontSize: '0.8125rem',
+            color: 'var(--brand-primary)',
             fontWeight: 600,
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <Loader2 size={13} className="spin" style={{ animation: 'spin 1.2s linear infinite' }} />
+            <Loader2 size={14} style={{ animation: 'spinRadar 1.2s linear infinite' }} />
             <span>
               {activeAreaName
-                ? `Researching ${activeAreaName} housing & food costs…`
-                : 'Researching local room rents and meals…'}
+                ? `Researching ${activeAreaName} rent & meal prices…`
+                : 'Synthesizing verified living costs…'}
             </span>
           </div>
-          <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>Cross-checking OSM & crowdsource</span>
+          <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+            Cross-checking OSM & PPP open data
+          </span>
         </div>
       )}
 
@@ -65,51 +66,47 @@ export const AreaCardSkeleton: React.FC<AreaCardSkeletonProps> = ({
           <div
             className="area-rank-badge"
             style={{
-              background: isResearching ? 'rgba(6, 182, 212, 0.15)' : 'rgba(255, 255, 255, 0.04)',
-              color: isResearching ? 'var(--accent-secondary)' : 'var(--text-muted)',
+              background: isResearching ? 'var(--brand-primary-light)' : 'var(--bg-surface-alt)',
+              color: isResearching ? 'var(--brand-primary)' : 'var(--text-muted)',
             }}
           >
-            {rank ? `#${rank}` : <div className="skeleton" style={{ width: 16, height: 16, borderRadius: 4 }} />}
+            {rank ? `#${rank}` : <div className="skeleton" style={{ width: 18, height: 18, borderRadius: 4 }} />}
           </div>
 
           {/* Area Title & Location Subtitle */}
-          <div className="area-title-group">
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.35rem' }}>
+          <div className="area-title-group" style={{ width: '100%', maxWidth: '280px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.45rem' }}>
               {activeAreaName ? (
-                <span style={{ fontWeight: 600, fontSize: '1.05rem', color: 'var(--text-white)' }}>
+                <span style={{ fontWeight: 700, fontSize: '1.15rem', color: 'var(--text-primary)' }}>
                   {activeAreaName}
                 </span>
               ) : (
-                <div className="skeleton" style={{ width: 140 + ((rank || 1) % 3) * 30, height: 20 }} />
+                <div className="skeleton" style={{ width: 150 + ((rank || 1) % 3) * 35, height: 22 }} />
               )}
               {statusText && (
-                <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)', paddingLeft: '0.25rem' }}>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
                   ({statusText})
                 </span>
               )}
             </div>
-            <div className="skeleton" style={{ width: 110, height: 14 }} />
+            {/* Visual Expense Breakdown Bar Skeleton */}
+            <div className="skeleton" style={{ width: '100%', maxWidth: 220, height: 6, borderRadius: 999 }} />
           </div>
         </div>
 
         {/* Cost & Confidence Preview Skeleton */}
-        <div className="area-cost-preview">
-          <div className="total-cost-display">
-            <div className="cost-label">Est. Living Cost</div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', marginTop: '0.2rem' }}>
-              <div className="skeleton" style={{ width: 95, height: 22, borderRadius: 4 }} />
-            </div>
+        <div className="area-price-group">
+          <div>
+            <div className="area-price-sublabel" style={{ marginBottom: 4 }}>Est. Monthly Cost</div>
+            <div className="skeleton" style={{ width: 110, height: 26, borderRadius: 6 }} />
           </div>
 
           {/* Confidence Badge Skeleton */}
-          <div className="skeleton" style={{ width: 84, height: 24, borderRadius: 12 }} />
-
-          {/* Dummy Chevron */}
-          <div style={{ width: 20, height: 20, opacity: 0.2 }}>
-            <div className="skeleton" style={{ width: 14, height: 14, borderRadius: '50%' }} />
-          </div>
+          <div className="skeleton" style={{ width: 88, height: 26, borderRadius: 999 }} />
         </div>
       </div>
     </div>
   );
 };
+
+export default AreaCardSkeleton;

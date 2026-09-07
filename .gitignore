@@ -46,7 +46,16 @@ lerna-debug.log*
 *.sw?
 Thumbs.db
 
+# Python Bytecode & Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+*.pyd
+
 # Agentic / Scratch Workspace Artifacts
+.agents/
 .system_generated/
 .gemini/
 scratch/

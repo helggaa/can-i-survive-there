@@ -1,5 +1,5 @@
 // src/components/PersonalizedView.tsx
-// Personalized Mode Screen per 03-ux-screens.md (Sections 3, 4, 5) with Global City Bootstrap Support
+// Personalized Mode Screen with Commute Algorithm & Multi-factor Ranking per UI/UX Pro Max
 
 import React, { useState, useEffect, useRef } from 'react';
 import {
@@ -9,6 +9,7 @@ import {
   ArrowUpDown,
   Compass,
   Building2,
+  SlidersHorizontal,
 } from 'lucide-react';
 import { db } from '../services/database';
 import type { AreaExpenseBreakdown } from '../types/database.types';
@@ -18,6 +19,7 @@ import { calculateCommute } from '../services/routing';
 import { AreaExpenseCard } from './AreaExpenseCard';
 import { AreaCardSkeleton } from './AreaCardSkeleton';
 import { formatCurrency } from '../utils/formatters';
+import { convertCurrency } from '../services/currency';
 import { SubmitFactModal } from './SubmitFactModal';
 import { FeedbackModal } from './FeedbackModal';
 import { discoverCityAreas } from '../services/bootstrap/area-discovery';
@@ -42,6 +44,9 @@ export const PersonalizedView: React.FC<PersonalizedViewProps> = ({ onBackToBrow
   });
 
   const [suggestions, setSuggestions] = useState<GeocodeResult[]>([]);
+  const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState<number>(-1);
+  const [isSuggestionsOpen, setIsSuggestionsOpen] = useState<boolean>(false);
+  const workplaceContainerRef = useRef<HTMLDivElement>(null);
   const [isCalculating, setIsCalculating] = useState<boolean>(false);
   const [rankedResults, setRankedResults] = useState<AreaExpenseBreakdown[]>([]);
   const [hasCalculated, setHasCalculated] = useState<boolean>(false);
@@ -54,8 +59,20 @@ export const PersonalizedView: React.FC<PersonalizedViewProps> = ({ onBackToBrow
 
   const debounceTimerRef = useRef<any>(null);
 
+  // Dismiss suggestions on outside click
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (workplaceContainerRef.current && !workplaceContainerRef.current.contains(e.target as Node)) {
+        setIsSuggestionsOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   const handleWorkplaceChange = (val: string) => {
     setWorkplaceQuery(val);
+    setSelectedSuggestionIndex(-1);
     if (debounceTimerRef.current) {
       clearTimeout(debounceTimerRef.current);
     }
@@ -65,12 +82,15 @@ export const PersonalizedView: React.FC<PersonalizedViewProps> = ({ onBackToBrow
         try {
           const results = await searchAddress(val);
           setSuggestions(results);
+          setIsSuggestionsOpen(results.length > 0);
         } catch {
           setSuggestions([]);
+          setIsSuggestionsOpen(false);
         }
       }, 350);
     } else {
       setSuggestions([]);
+      setIsSuggestionsOpen(false);
     }
   };
 
@@ -78,7 +98,82 @@ export const PersonalizedView: React.FC<PersonalizedViewProps> = ({ onBackToBrow
     setSelectedGeocode(item);
     setWorkplaceQuery(item.displayName);
     setSuggestions([]);
+    setIsSuggestionsOpen(false);
+    setSelectedSuggestionIndex(-1);
   };
+
+  const handleWorkplaceKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (!isSuggestionsOpen || suggestions.length === 0) {
+      if (e.key === 'ArrowDown' && suggestions.length > 0) {
+        setIsSuggestionsOpen(true);
+      }
+      return;
+    }
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      setSelectedSuggestionIndex((prev) => (prev < suggestions.length - 1 ? prev + 1 : 0));
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      setSelectedSuggestionIndex((prev) => (prev > 0 ? prev - 1 : suggestions.length - 1));
+    } else if (e.key === 'Enter') {
+      if (selectedSuggestionIndex >= 0 && selectedSuggestionIndex < suggestions.length) {
+        e.preventDefault();
+        selectSuggestion(suggestions[selectedSuggestionIndex]);
+      }
+    } else if (e.key === 'Escape') {
+      e.preventDefault();
+      setIsSuggestionsOpen(false);
+    }
+  };
+
+  // Dynamic currency-aware presets
+  const getPresetAmount = React.useCallback((preset: 'student' | 'fresh_grad' | 'worker', curr: string): number => {
+    if (curr === 'IDR') {
+      return preset === 'student' ? 2500000 : preset === 'fresh_grad' ? 5000000 : 10000000;
+    }
+    if (curr === 'JPY') {
+      return preset === 'student' ? 80000 : preset === 'fresh_grad' ? 160000 : 300000;
+    }
+    if (curr === 'USD') {
+      return preset === 'student' ? 500 : preset === 'fresh_grad' ? 1200 : 2500;
+    }
+    if (curr === 'EUR') {
+      return preset === 'student' ? 450 : preset === 'fresh_grad' ? 1100 : 2200;
+    }
+    if (curr === 'GBP') {
+      return preset === 'student' ? 400 : preset === 'fresh_grad' ? 1000 : 2000;
+    }
+    if (curr === 'AUD') {
+      return preset === 'student' ? 700 : preset === 'fresh_grad' ? 1600 : 3200;
+    }
+    if (curr === 'SGD') {
+      return preset === 'student' ? 650 : preset === 'fresh_grad' ? 1500 : 3000;
+    }
+    const baseUsd = preset === 'student' ? 500 : preset === 'fresh_grad' ? 1200 : 2500;
+    return convertCurrency(baseUsd, 'USD', curr);
+  }, []);
+
+  const salaryInputRef = useRef(salaryInput);
+  useEffect(() => {
+    salaryInputRef.current = salaryInput;
+  }, [salaryInput]);
+
+  // When selected geocode currency changes, calibrate salary input or convert smoothly
+  const prevCurrencyRef = useRef<string>('IDR');
+  useEffect(() => {
+    const newCurr = selectedGeocode?.currencyCode || 'IDR';
+    if (prevCurrencyRef.current !== newCurr) {
+      const currentNum = parseFloat(salaryInputRef.current.replace(/[^0-9.]/g, '')) || 0;
+      if (currentNum > 0) {
+        const converted = convertCurrency(currentNum, prevCurrencyRef.current, newCurr);
+        setSalaryInput(String(Math.round(converted)));
+      } else {
+        setSalaryInput(String(getPresetAmount('fresh_grad', newCurr)));
+      }
+      prevCurrencyRef.current = newCurr;
+    }
+  }, [selectedGeocode?.currencyCode, getPresetAmount]);
 
   const handleRunCalculation = React.useCallback(async () => {
     setIsCalculating(true);
@@ -175,18 +270,31 @@ export const PersonalizedView: React.FC<PersonalizedViewProps> = ({ onBackToBrow
   return (
     <div className="personalized-view">
       {/* Header */}
-      <div className="browse-header">
-        <div className="browse-title-row">
-          <div>
-            <h1 className="section-title">Personalized Match & Commute Ranking</h1>
-            <p className="section-subtitle">
-              Calculates exact neighborhood affordability and commute times near your workplace anywhere globally.
-            </p>
-          </div>
-        </div>
+      <div style={{ marginBottom: '2rem' }}>
+        <h1 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '0.35rem' }}>
+          Personalized Match & Commute Ranking
+        </h1>
+        <p style={{ color: 'var(--text-secondary)', fontSize: '0.9375rem' }}>
+          Calculates neighborhood affordability, commute durations, and ranked suitability tailored to your office.
+        </p>
+      </div>
 
-        {/* Input Form */}
-        <div className="controls-bar">
+      {/* Main Two-Column Layout */}
+      <div className="personalized-grid-layout">
+        {/* Left Column: Configuration Controls Panel */}
+        <div className="personalized-config-card">
+          <div className="config-card-header">
+            <div className="config-header-icon">
+              <SlidersHorizontal size={20} />
+            </div>
+            <div>
+              <h2 className="config-header-title">Relocation Profile</h2>
+              <div className="config-header-subtitle">
+                Configure your destination campus or office & monthly budget
+              </div>
+            </div>
+          </div>
+
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -194,201 +302,219 @@ export const PersonalizedView: React.FC<PersonalizedViewProps> = ({ onBackToBrow
             }}
             style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}
           >
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem' }}>
-              {/* Workplace Address Field with Auto-complete */}
-              <div className="form-group" style={{ position: 'relative' }}>
-                <label className="form-label" htmlFor="workplace-input">
-                  Workplace Address / Neighborhood
-                </label>
-                <div style={{ position: 'relative' }}>
-                  <MapPin size={18} className="input-icon-left" />
-                  <input
-                    id="workplace-input"
-                    type="text"
-                    className="form-input"
-                    style={{ paddingLeft: '2.5rem' }}
-                    placeholder="e.g. Pantai Indah Kapuk, Jakarta"
-                    value={workplaceQuery}
-                    onChange={(e) => handleWorkplaceChange(e.target.value)}
-                    required
-                  />
-                </div>
+            {/* Workplace Address Field */}
+            <div className="form-field-group" style={{ position: 'relative' }} ref={workplaceContainerRef}>
+              <label className="form-field-label" htmlFor="workplace-input">
+                <span>Destination Campus or Office</span>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Auto-geocoded</span>
+              </label>
+              <div className="search-input-box">
+                <MapPin size={17} style={{ color: 'var(--brand-primary)', flexShrink: 0 }} />
+                <input
+                  id="workplace-input"
+                  type="text"
+                  placeholder="e.g. Universitas Indonesia, PIK Jakarta, NUS Singapore, Monash..."
+                  value={workplaceQuery}
+                  onChange={(e) => handleWorkplaceChange(e.target.value)}
+                  onKeyDown={handleWorkplaceKeyDown}
+                  onFocus={() => {
+                    if (suggestions.length > 0) setIsSuggestionsOpen(true);
+                  }}
+                  maxLength={200}
+                  required
+                />
+              </div>
 
-                {/* Suggestions Dropdown */}
-                {suggestions.length > 0 && (
-                  <div
-                    style={{
-                      position: 'absolute',
-                      top: '100%',
-                      left: 0,
-                      right: 0,
-                      zIndex: 30,
-                      marginTop: 4,
-                      background: 'var(--bg-secondary)',
-                      border: '1px solid var(--border-medium)',
-                      borderRadius: 'var(--radius-md)',
-                      boxShadow: 'var(--shadow-lg)',
-                      maxHeight: 220,
-                      overflowY: 'auto',
-                    }}
-                  >
-                    {suggestions.map((item, idx) => (
+              {/* Suggestions Dropdown */}
+              {isSuggestionsOpen && suggestions.length > 0 && (
+                <div className="search-dropdown-menu" style={{ width: '100%' }}>
+                  {suggestions.map((item, idx) => {
+                    const isHighlighted = idx === selectedSuggestionIndex;
+                    return (
                       <div
                         key={idx}
                         onClick={() => selectSuggestion(item)}
-                        style={{
-                          padding: '0.65rem 1rem',
-                          fontSize: '0.8125rem',
-                          borderBottom: '1px solid var(--border-subtle)',
-                          cursor: 'pointer',
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '0.5rem',
-                        }}
-                        onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--bg-tertiary)')}
-                        onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
+                        className={`search-suggestion-item ${isHighlighted ? 'selected' : ''}`}
+                        onMouseEnter={() => setSelectedSuggestionIndex(idx)}
                       >
-                        <Compass size={14} color="var(--accent-secondary)" />
-                        <span style={{ color: 'var(--text-primary)' }}>{item.displayName}</span>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                          <Compass size={14} style={{ color: 'var(--brand-primary)' }} />
+                          <span style={{ color: 'var(--text-primary)', fontSize: '0.8125rem' }}>
+                            {item.displayName}
+                          </span>
+                        </div>
                       </div>
-                    ))}
-                  </div>
-                )}
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+
+            {/* Net Monthly Salary / Budget Field */}
+            <div className="form-field-group">
+              <label className="form-field-label" htmlFor="salary-input">
+                <span>Monthly Living Budget / Allowance</span>
+                <span className="field-value-badge">
+                  {formatCurrency(numericSalary, currencyCode)}/mo
+                </span>
+              </label>
+              <div className="search-input-box">
+                <DollarSign size={17} style={{ color: 'var(--brand-secondary)', flexShrink: 0 }} />
+                <input
+                  id="salary-input"
+                  type="number"
+                  step="any"
+                  placeholder={`e.g. ${currencyCode === 'IDR' ? '4500000' : '3000'}`}
+                  value={salaryInput}
+                  onChange={(e) => setSalaryInput(e.target.value)}
+                  maxLength={15}
+                  required
+                />
               </div>
 
-              {/* Net Monthly Salary Field */}
-              <div className="form-group">
-                <label className="form-label" htmlFor="salary-input">
-                  Monthly Net Salary ({currencyCode})
-                </label>
-                <div style={{ position: 'relative' }}>
-                  <DollarSign size={18} className="input-icon-left" />
-                  <input
-                    id="salary-input"
-                    type="number"
-                    step="any"
-                    className="form-input"
-                    style={{ paddingLeft: '2.5rem' }}
-                    placeholder={`e.g. ${currencyCode === 'IDR' ? '4500000' : '3000'}`}
-                    value={salaryInput}
-                    onChange={(e) => setSalaryInput(e.target.value)}
-                    required
-                  />
+              {/* Quick Persona Budget Presets */}
+              <div style={{ marginTop: '0.65rem' }}>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '0.35rem' }}>
+                  Quick relocation presets:
+                </div>
+                <div className="preset-pills-row">
+                  {(() => {
+                    const studentPreset = getPresetAmount('student', currencyCode);
+                    const freshGradPreset = getPresetAmount('fresh_grad', currencyCode);
+                    const workerPreset = getPresetAmount('worker', currencyCode);
+                    return (
+                      <>
+                        <button
+                          type="button"
+                          className={`preset-pill-btn ${numericSalary === studentPreset ? 'active' : ''}`}
+                          onClick={() => setSalaryInput(String(studentPreset))}
+                        >
+                          🎓 Student ({formatCurrency(studentPreset, currencyCode)})
+                        </button>
+                        <button
+                          type="button"
+                          className={`preset-pill-btn ${numericSalary === freshGradPreset ? 'active' : ''}`}
+                          onClick={() => setSalaryInput(String(freshGradPreset))}
+                        >
+                          💼 Fresh Grad ({formatCurrency(freshGradPreset, currencyCode)})
+                        </button>
+                        <button
+                          type="button"
+                          className={`preset-pill-btn ${numericSalary === workerPreset ? 'active' : ''}`}
+                          onClick={() => setSalaryInput(String(workerPreset))}
+                        >
+                          🏢 Worker ({formatCurrency(workerPreset, currencyCode)})
+                        </button>
+                      </>
+                    );
+                  })()}
                 </div>
               </div>
             </div>
 
-            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '1rem', borderTop: '1px solid var(--border-subtle)', paddingTop: '1rem' }}>
-              <div style={{ fontSize: '0.8125rem', color: 'var(--text-muted)' }}>
-                *Formula weights: Affordability 50% · Commute 35% · Confidence 15%
+            {/* Multi-factor formula info card */}
+            <div className="formula-info-card">
+              <div className="formula-info-title">
+                <Sparkles size={13} style={{ color: 'var(--brand-primary)' }} />
+                <span>Multi-Factor Recommendation Weighting</span>
               </div>
+              <div className="formula-chips-row">
+                <span className="formula-chip">🏡 Housing Cost 50%</span>
+                <span className="formula-chip">⏱️ Commute Time 35%</span>
+                <span className="formula-chip">📊 Data Confidence 15%</span>
+              </div>
+            </div>
 
-              <div style={{ display: 'flex', gap: '0.75rem' }}>
-                <button type="button" className="btn-secondary" onClick={onBackToBrowse}>
-                  Switch to Browse Mode
-                </button>
-                <button type="submit" className="btn-primary" disabled={isCalculating}>
-                  <Sparkles size={15} />
-                  <span>{isCalculating ? 'Calculating Routes...' : 'Calculate Best Matches'}</span>
-                </button>
-              </div>
+            {/* Action Buttons */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem', marginTop: '0.25rem' }}>
+              <button
+                type="submit"
+                className="btn-primary"
+                disabled={isCalculating}
+                style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', padding: '0.8rem' }}
+              >
+                <Sparkles size={16} />
+                <span>{isCalculating ? 'Routing & Scoring Neighborhoods…' : 'Calculate Best Matches'}</span>
+              </button>
+
+              <button
+                type="button"
+                className="btn-secondary"
+                onClick={onBackToBrowse}
+                style={{ width: '100%', textAlign: 'center', padding: '0.75rem' }}
+              >
+                ← Back to City Explorer
+              </button>
             </div>
           </form>
         </div>
-      </div>
 
-      {/* Query Echo Banner */}
-      {hasCalculated && (
-        <div
-          style={{
-            background: 'rgba(15, 23, 42, 0.8)',
-            border: '1px solid var(--border-subtle)',
-            borderRadius: 'var(--radius-md)',
-            padding: '1rem 1.25rem',
-            marginBottom: '1.5rem',
-            display: 'flex',
-            flexWrap: 'wrap',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '0.75rem',
-          }}
-        >
-          <div>
-            <div style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--text-white)' }}>
-              Near <span style={{ color: 'var(--accent-secondary)' }}>{selectedGeocode?.displayName.split(',')[0] || workplaceQuery}</span> · Budget <span style={{ color: 'var(--accent-primary)' }}>{formatCurrency(numericSalary, currencyCode)}/mo</span>
-            </div>
-            <div style={{ fontSize: '0.8125rem', color: 'var(--text-secondary)', marginTop: '0.2rem' }}>
-              Showing {rankedResults.length} neighborhoods ranked by affordability & commute time
-            </div>
-          </div>
-
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.8125rem', color: 'var(--text-muted)' }}>
-            <ArrowUpDown size={14} />
-            <span>Score (Best Match First)</span>
-          </div>
-        </div>
-      )}
-
-      {/* Progressive Skeleton Loader or Ranked Cards */}
-      {isCalculating ? (
-        <div className="area-cards-list">
-          {[1, 2, 3, 4].map((i) => (
-            <AreaCardSkeleton
-              key={`personalized-skeleton-${i}`}
-              rank={i}
-              statusText={i === 1 ? 'Routing & scoring…' : 'Calculating commute…'}
-              isResearching={i === 1}
-            />
-          ))}
-        </div>
-      ) : rankedResults.length > 0 ? (
-        <div className="area-cards-list">
-          {rankedResults.map((areaData, index) => (
-            <div key={areaData.area.id} style={{ position: 'relative' }}>
-              {index === 0 && (
-                <div
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.4rem',
-                    padding: '0.3rem 0.85rem',
-                    background: 'linear-gradient(90deg, var(--accent-primary), var(--accent-secondary))',
-                    color: '#041017',
-                    fontWeight: 800,
-                    fontSize: '0.75rem',
-                    borderRadius: '6px 6px 0 0',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.05em',
-                  }}
-                >
-                  <Sparkles size={13} />
-                  <span>Best Match</span>
+        {/* Right Column: Ranked Recommendations List */}
+        <div className="personalized-results-panel">
+          {/* Query Echo Status Banner */}
+          {hasCalculated && (
+            <div className="personalized-echo-banner">
+              <div className="echo-main-info">
+                <div className="echo-destination-title">
+                  <MapPin size={18} className="echo-pin-icon" />
+                  <span>Destination: {selectedGeocode?.displayName.split(',')[0] || workplaceQuery}</span>
                 </div>
-              )}
-              <AreaExpenseCard
-                data={areaData}
-                rank={index + 1}
-                isPersonalized={true}
-                salary={numericSalary}
-                onOpenSubmitFact={(area) => setActiveSubmitModalArea(area)}
-                onOpenFeedback={(area) => {
-                  setFeedbackCityName(selectedGeocode?.city || '');
-                  setFeedbackArea({ id: area.area.id, name: area.area.name });
-                  setIsFeedbackModalOpen(true);
-                }}
-              />
+                <div className="echo-details">
+                  Showing <strong>{rankedResults.length} scored neighborhoods</strong> matching your budget of <strong className="echo-budget-highlight">{formatCurrency(numericSalary, currencyCode)}/mo</strong>
+                </div>
+              </div>
+
+              <div className="echo-meta-badge">
+                <ArrowUpDown size={14} />
+                <span>Highest Match Score First</span>
+              </div>
             </div>
-          ))}
+          )}
+
+          {/* Progressive Skeleton Loader or Ranked Cards */}
+          {isCalculating ? (
+            <div className="area-cards-list">
+              {[1, 2, 3, 4].map((i) => (
+                <AreaCardSkeleton
+                  key={`personalized-skeleton-${i}`}
+                  rank={i}
+                  statusText={i === 1 ? 'Routing commute & scoring…' : 'Calculating route…'}
+                  isResearching={i === 1}
+                />
+              ))}
+            </div>
+          ) : rankedResults.length > 0 ? (
+            <div className="area-cards-list">
+              {rankedResults.map((areaData, index) => (
+                <AreaExpenseCard
+                  key={areaData.area.id}
+                  data={areaData}
+                  rank={index + 1}
+                  isPersonalized={true}
+                  isTopRecommendation={index === 0}
+                  salary={numericSalary}
+                  onOpenSubmitFact={(area) => setActiveSubmitModalArea(area)}
+                  onOpenFeedback={(area) => {
+                    setFeedbackCityName(selectedGeocode?.city || '');
+                    setFeedbackArea({ id: area.area.id, name: area.area.name });
+                    setIsFeedbackModalOpen(true);
+                  }}
+                />
+              ))}
+            </div>
+          ) : (
+            <div style={{ padding: '3.5rem 1.5rem', textAlign: 'center', background: 'var(--bg-card)', borderRadius: 'var(--radius-xl)', border: '1px solid var(--border-subtle)' }}>
+              <Building2 size={44} color="var(--text-muted)" style={{ margin: '0 auto 1rem' }} />
+              <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', color: 'var(--text-primary)' }}>
+                No ranked neighborhoods found
+              </h3>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.9375rem', maxWidth: 420, margin: '0 auto' }}>
+                Try adjusting your monthly budget or entering a different destination campus/office address.
+              </p>
+            </div>
+          )}
         </div>
-      ) : (
-        <div style={{ padding: '3rem 1.5rem', textAlign: 'center', background: 'var(--bg-card)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-subtle)' }}>
-          <Building2 size={40} color="var(--text-muted)" style={{ margin: '0 auto 1rem' }} />
-          <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>No ranked areas found</h3>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', maxWidth: 400, margin: '0 auto' }}>
-            Try entering a different workplace address or adjusting your budget.
-          </p>
-        </div>
-      )}
+      </div>
 
       {/* Fact Submission Modal */}
       <SubmitFactModal
@@ -409,3 +535,5 @@ export const PersonalizedView: React.FC<PersonalizedViewProps> = ({ onBackToBrow
     </div>
   );
 };
+
+export default PersonalizedView;

@@ -1,5 +1,5 @@
 // src/components/CurrencySelector.tsx
-// Sleek glassmorphic currency switcher dropdown for global cost comparison
+// Clean, friendly currency switcher dropdown for global cost comparison
 
 import React, { useState, useRef, useEffect } from 'react';
 import { Globe, ChevronDown, Check } from 'lucide-react';
@@ -18,34 +18,88 @@ export const CurrencySelector: React.FC = () => {
         setIsOpen(false);
       }
     };
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        setIsOpen(false);
+      }
+    };
     document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isOpen]);
 
   return (
-    <div className="relative inline-block text-left" ref={containerRef}>
+    <div style={{ position: 'relative', display: 'inline-block' }} ref={containerRef}>
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium border border-white/10 bg-white/5 hover:bg-white/10 text-gray-200 transition shadow-sm backdrop-blur-md cursor-pointer"
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.45rem',
+          padding: '0.45rem 0.95rem',
+          borderRadius: 'var(--radius-full)',
+          fontSize: '0.8125rem',
+          fontWeight: 600,
+          border: '1px solid var(--border-subtle)',
+          background: 'var(--bg-surface-alt)',
+          color: 'var(--text-primary)',
+          cursor: 'pointer',
+          transition: 'all var(--transition-fast)',
+          boxShadow: 'var(--shadow-xs)'
+        }}
         title="Switch display currency"
       >
-        <Globe className="w-3.5 h-3.5 text-cyan-400" />
-        <span className="font-semibold text-cyan-300">
+        <Globe size={15} style={{ color: 'var(--brand-primary)' }} />
+        <span style={{ color: 'var(--brand-primary)', fontWeight: 700 }}>
           {activeConfig.code === 'LOCAL' ? 'Native' : activeConfig.code}
         </span>
-        <span className="text-gray-400">({activeConfig.symbol})</span>
-        <ChevronDown className={`w-3 h-3 text-gray-400 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+        <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem' }}>
+          ({activeConfig.symbol})
+        </span>
+        <ChevronDown
+          size={14}
+          style={{
+            color: 'var(--text-muted)',
+            transition: 'transform 0.2s',
+            transform: isOpen ? 'rotate(180deg)' : 'none'
+          }}
+        />
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-56 rounded-xl bg-slate-900/95 border border-white/15 shadow-2xl backdrop-blur-xl z-50 py-1.5 focus:outline-none animate-in fade-in zoom-in-95 duration-150">
-          <div className="px-3 py-1.5 border-b border-white/10">
-            <p className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider">
-              Display Currency
-            </p>
+        <div
+          style={{
+            position: 'absolute',
+            right: 0,
+            marginTop: '0.5rem',
+            width: '240px',
+            borderRadius: 'var(--radius-md)',
+            background: 'var(--bg-card)',
+            border: '1px solid var(--border-subtle)',
+            boxShadow: 'var(--shadow-lg)',
+            zIndex: 90,
+            padding: '0.4rem',
+            animation: 'fadeInCard 0.18s cubic-bezier(0.16, 1, 0.3, 1)'
+          }}
+        >
+          <div
+            style={{
+              padding: '0.5rem 0.75rem',
+              borderBottom: '1px solid var(--border-subtle)',
+              fontSize: '0.6875rem',
+              fontWeight: 700,
+              color: 'var(--text-muted)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.05em'
+            }}
+          >
+            Display Currency
           </div>
-          <div className="max-h-64 overflow-y-auto py-1">
+          <div style={{ maxHeight: '260px', overflowY: 'auto', padding: '0.25rem 0' }}>
             {availableCurrencies.map((curr) => {
               const isSelected = curr.code === targetCurrency;
               return (
@@ -56,23 +110,41 @@ export const CurrencySelector: React.FC = () => {
                     setTargetCurrency(curr.code);
                     setIsOpen(false);
                   }}
-                  className={`w-full text-left px-3 py-2 text-xs flex items-center justify-between hover:bg-white/10 transition cursor-pointer ${
-                    isSelected ? 'text-cyan-400 bg-cyan-500/10 font-medium' : 'text-gray-300'
-                  }`}
+                  style={{
+                    width: '100%',
+                    textAlign: 'left',
+                    padding: '0.55rem 0.75rem',
+                    fontSize: '0.8125rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    borderRadius: 'var(--radius-sm)',
+                    border: 'none',
+                    background: isSelected ? 'var(--brand-primary-light)' : 'transparent',
+                    color: isSelected ? 'var(--brand-primary)' : 'var(--text-primary)',
+                    cursor: 'pointer',
+                    transition: 'all var(--transition-fast)'
+                  }}
+                  onMouseEnter={(e) => {
+                    if (!isSelected) (e.currentTarget as HTMLElement).style.background = 'var(--bg-surface-alt)';
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!isSelected) (e.currentTarget as HTMLElement).style.background = 'transparent';
+                  }}
                 >
-                  <div className="flex items-center gap-2">
-                    <span className="text-sm">{curr.flag}</span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                    <span style={{ fontSize: '1rem' }}>{curr.flag}</span>
                     <div>
-                      <div className="flex items-center gap-1.5">
-                        <span className="font-bold">{curr.code}</span>
-                        <span className="text-[11px] text-gray-400">({curr.symbol})</span>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
+                        <span style={{ fontWeight: 700 }}>{curr.code}</span>
+                        <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>({curr.symbol})</span>
                       </div>
-                      <div className="text-[10px] text-gray-400 truncate max-w-[130px]">
+                      <div style={{ fontSize: '0.6875rem', color: 'var(--text-secondary)', maxWidth: '130px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                         {curr.name}
                       </div>
                     </div>
                   </div>
-                  {isSelected && <Check className="w-3.5 h-3.5 text-cyan-400 shrink-0" />}
+                  {isSelected && <Check size={14} style={{ color: 'var(--brand-primary)' }} />}
                 </button>
               );
             })}
@@ -82,3 +154,5 @@ export const CurrencySelector: React.FC = () => {
     </div>
   );
 };
+
+export default CurrencySelector;

@@ -1,9 +1,10 @@
 // src/components/Navbar.tsx
-// Navigation Bar with logo, mode switcher, and data confidence status
+// Warm, clean navigation bar with student & worker relocation tagline
 
 import React from 'react';
 import { Compass } from 'lucide-react';
 import { CurrencySelector } from './CurrencySelector';
+import { ThemeToggle } from './ThemeToggle';
 
 interface NavbarProps {
   currentView: 'landing' | 'browse' | 'personalized';
@@ -14,22 +15,30 @@ export const Navbar: React.FC<NavbarProps> = ({ currentView, onSelectView }) => 
   return (
     <header className="navbar">
       <div className="navbar-container">
+        {/* Brand Logo & Friendly Tagline */}
         <div className="logo-brand" onClick={() => onSelectView('landing')}>
-          <div className="logo-icon">
-            <Compass size={20} />
+          <div className="logo-icon-wrap">
+            <Compass size={22} strokeWidth={2.5} />
           </div>
-          <span>Can I Survive There?</span>
+          <div className="logo-title-group">
+            <h1>Can I Survive There?</h1>
+            <div className="logo-tagline">
+              Relocation & Living Cost Guide for Students & Workers
+            </div>
+          </div>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+        {/* Right Navigation & Controls */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <CurrencySelector />
+          <ThemeToggle />
 
           <nav className="nav-links">
             <button
               className={`nav-btn ${currentView === 'landing' ? 'active' : ''}`}
               onClick={() => onSelectView('landing')}
             >
-              Home
+              Overview
             </button>
             <button
               className={`nav-btn ${currentView === 'browse' ? 'active' : ''}`}
@@ -49,3 +58,5 @@ export const Navbar: React.FC<NavbarProps> = ({ currentView, onSelectView }) => 
     </header>
   );
 };
+
+export default Navbar;
