@@ -245,7 +245,7 @@ export const BrowseView: React.FC<BrowseViewProps> = ({ onNavigatePersonalized, 
             Relocation & Cost of Living Explorer
           </h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.975rem' }}>
-            Verified student kosts, room rentals, daily warung meals, and commute passes for students, young workers, and migrants moving to a new city.
+            Estimated student kosts, room rentals, daily warung meals, and commute passes for students, young workers, and migrants moving to a new city.
           </p>
         </div>
 
@@ -342,44 +342,43 @@ export const BrowseView: React.FC<BrowseViewProps> = ({ onNavigatePersonalized, 
 
         {/* Controls Bar: Housing Segment & Feedback button */}
         <div className="browse-controls-bar">
-          <div className="housing-filter-group">
+          <div className="housing-filter-group" role="tablist" aria-label="Housing Types">
             <button
               type="button"
+              role="tab"
+              aria-selected={activeFilter === 'all'}
               className={`housing-filter-btn ${activeFilter === 'all' ? 'active' : ''}`}
               onClick={() => setActiveFilter('all')}
             >
-              All Types ({areas.length})
+              <span className="filter-text-full">All Types ({areas.length})</span>
+              <span className="filter-text-short">All ({areas.length})</span>
             </button>
             <button
               type="button"
+              role="tab"
+              aria-selected={activeFilter === 'kost'}
               className={`housing-filter-btn ${activeFilter === 'kost' ? 'active' : ''}`}
               onClick={() => setActiveFilter('kost')}
             >
-              Kost &amp; Rooms ({kostAreas.length})
+              <span className="filter-text-full">Kost &amp; Rooms ({kostAreas.length})</span>
+              <span className="filter-text-short">Kost ({kostAreas.length})</span>
             </button>
             <button
               type="button"
+              role="tab"
+              aria-selected={activeFilter === 'apartment'}
               className={`housing-filter-btn ${activeFilter === 'apartment' ? 'active' : ''}`}
               onClick={() => setActiveFilter('apartment')}
             >
-              Apartments ({apartmentAreas.length})
+              <span className="filter-text-full">Apartments ({apartmentAreas.length})</span>
+              <span className="filter-text-short">Apartments ({apartmentAreas.length})</span>
             </button>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+          <div className="browse-controls-actions">
             <button
               type="button"
-              className="btn-secondary"
-              style={{
-                fontSize: '0.8125rem',
-                padding: '0.4rem 0.85rem',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.4rem',
-                color: 'var(--accent-secondary)',
-                borderColor: 'rgba(6, 182, 212, 0.3)',
-                background: 'rgba(6, 182, 212, 0.08)',
-              }}
+              className="browse-feedback-btn"
               onClick={() => {
                 setFeedbackCityName(selectedCity?.name || '');
                 setFeedbackArea(null);
@@ -406,11 +405,11 @@ export const BrowseView: React.FC<BrowseViewProps> = ({ onNavigatePersonalized, 
       ) : (
         <>
           {/* Results Count & Sorting Header */}
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem' }}>
+          <div className="browse-results-header">
             <div className="browse-stats-count">
-              Showing <strong>{filteredAreas.length}</strong> {activeFilter !== 'all' ? `(${activeFilter === 'kost' ? 'Kost & Rooms' : 'Apartments'}) ` : ''}verified neighborhoods in <strong>{selectedCity?.name}</strong>
+              Showing <strong>{filteredAreas.length}</strong> {activeFilter !== 'all' ? `(${activeFilter === 'kost' ? 'Kost & Rooms' : 'Apartments'}) ` : ''}indexed neighborhoods in <strong>{selectedCity?.name}</strong>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.8125rem', color: 'var(--text-muted)' }}>
+            <div className="browse-sort-indicator">
               <ArrowUpDown size={13} />
               <span>Ranked by Lowest Living Cost</span>
             </div>
@@ -461,7 +460,7 @@ export const BrowseView: React.FC<BrowseViewProps> = ({ onNavigatePersonalized, 
             <div style={{ padding: '3.5rem 1.5rem', textAlign: 'center', background: 'var(--bg-card)', borderRadius: 'var(--radius-xl)', border: '1px solid var(--border-subtle)' }}>
               <Building2 size={44} color="var(--text-muted)" style={{ margin: '0 auto 1rem' }} />
               <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', color: 'var(--text-primary)' }}>
-                No verified neighborhoods yet
+                No indexed neighborhoods yet
               </h3>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.9375rem', maxWidth: 440, margin: '0 auto 1.5rem' }}>
                 This city hasn&apos;t been fully mapped yet. You can submit the first neighborhood observation or request an automated research pass.

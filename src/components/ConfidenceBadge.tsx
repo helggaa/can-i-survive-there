@@ -27,7 +27,7 @@ export const ConfidenceBadge: React.FC<ConfidenceBadgeProps> = ({
           bg: 'var(--conf-high-bg)',
           color: 'var(--conf-high-text)',
           border: 'var(--conf-high-border)',
-          tooltip: 'Supported by 20+ verified data points & submissions',
+          tooltip: 'Based on 20+ recorded data points & submissions',
         };
       case 'medium':
         return {
@@ -36,7 +36,7 @@ export const ConfidenceBadge: React.FC<ConfidenceBadgeProps> = ({
           bg: 'var(--conf-med-bg)',
           color: 'var(--conf-med-text)',
           border: 'var(--conf-med-border)',
-          tooltip: 'Supported by 5–19 verified sources/submissions',
+          tooltip: 'Based on 5–19 recorded sources & submissions',
         };
       case 'low':
         return {
@@ -45,7 +45,7 @@ export const ConfidenceBadge: React.FC<ConfidenceBadgeProps> = ({
           bg: 'var(--conf-low-bg)',
           color: 'var(--conf-low-text)',
           border: 'var(--conf-low-border)',
-          tooltip: '1–4 sources. Useful estimate, but under-sampled',
+          tooltip: 'Based on 1–4 recorded sources. Under-sampled',
         };
       case 'estimated':
       default:

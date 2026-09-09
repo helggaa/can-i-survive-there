@@ -2,9 +2,11 @@
 // Community Feedback & City/Area Research Request Modal per UI/UX Pro Max
 
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { X, Send, CheckCircle2, MessageSquarePlus, Sparkles } from 'lucide-react';
 import { db } from '../services/database';
 import type { FeedbackType } from '../types/database.types';
+import { sanitizeTextInput, sanitizeExternalLink } from '../utils/security';
 
 interface FeedbackModalProps {
   isOpen: boolean;
@@ -63,26 +65,39 @@ const FeedbackModalDialog: React.FC<FeedbackModalProps> = ({
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [onClose]);
 
+  // Lock background body scroll while modal is open, allowing only the modal form to scroll
+  React.useEffect(() => {
+    const originalOverflow = document.body.style.overflow;
+    const originalOverscroll = document.body.style.overscrollBehavior;
+    document.body.style.overflow = 'hidden';
+    document.body.style.overscrollBehavior = 'none';
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      document.body.style.overscrollBehavior = originalOverscroll;
+    };
+  }, []);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!cityName.trim()) {
+    const cleanCity = sanitizeTextInput(cityName, 100);
+    const cleanMessage = sanitizeTextInput(message, 1000);
+    const cleanCurrency = sanitizeTextInput(currencyCode, 10).toUpperCase();
+
+    if (!cleanCity) {
       setErrorMsg('Please specify the city name.');
       return;
     }
-    if (!message.trim()) {
+    if (!cleanMessage) {
       setErrorMsg('Please describe your suggestion or research request.');
       return;
     }
 
     let sanitizedEvidenceUrl: string | null = null;
     if (evidenceUrl.trim()) {
-      const raw = evidenceUrl.trim();
-      if (raw.startsWith('http://') || raw.startsWith('https://')) {
-        sanitizedEvidenceUrl = raw;
-      } else if (!raw.includes('://')) {
-        sanitizedEvidenceUrl = `https://${raw}`;
-      } else {
-        setErrorMsg('Invalid evidence URL. Only http:// and https:// links are supported.');
+      sanitizedEvidenceUrl = sanitizeExternalLink(evidenceUrl.trim());
+      if (!sanitizedEvidenceUrl) {
+        setErrorMsg('Invalid evidence URL. Only valid http:// and https:// links are supported.');
         return;
       }
     }
@@ -93,12 +108,12 @@ const FeedbackModalDialog: React.FC<FeedbackModalProps> = ({
     try {
       const res = await db.submitFeedback({
         city_id: cityId || null,
-        city_name: cityName.trim(),
+        city_name: cleanCity,
         area_id: effectiveAreaId,
         feedback_type: feedbackType,
-        message: message.trim(),
+        message: cleanMessage,
         suggested_value: suggestedValue ? parseFloat(suggestedValue) : null,
-        currency_code: currencyCode.trim() || null,
+        currency_code: cleanCurrency || null,
         evidence_url: sanitizedEvidenceUrl,
       });
 
@@ -122,8 +137,10 @@ const FeedbackModalDialog: React.FC<FeedbackModalProps> = ({
     }
   };
 
-  return (
-    <div className="modal-backdrop" onClick={onClose}>
+  if (typeof document === 'undefined') return null;
+
+  return createPortal(
+    <div className="modal-backdrop" onClick={onClose} role="dialog" aria-modal="true">
       <div className="modal-dialog" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
@@ -198,7 +215,7 @@ const FeedbackModalDialog: React.FC<FeedbackModalProps> = ({
             </p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="modal-form">
             <div className="modal-body">
               {errorMsg && (
                 <div className="form-error-alert">
@@ -360,7 +377,8 @@ const FeedbackModalDialog: React.FC<FeedbackModalProps> = ({
           </form>
         )}
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 

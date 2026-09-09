@@ -51,6 +51,7 @@ export const PersonalizedView: React.FC<PersonalizedViewProps> = ({ onBackToBrow
   const [rankedResults, setRankedResults] = useState<AreaExpenseBreakdown[]>([]);
   const [hasCalculated, setHasCalculated] = useState<boolean>(false);
   const [activeSubmitModalArea, setActiveSubmitModalArea] = useState<AreaExpenseBreakdown | null>(null);
+  const resultsRef = useRef<HTMLDivElement>(null);
 
   // Feedback modal state
   const [isFeedbackModalOpen, setIsFeedbackModalOpen] = useState<boolean>(false);
@@ -252,6 +253,13 @@ export const PersonalizedView: React.FC<PersonalizedViewProps> = ({ onBackToBrow
       const sorted = sortPersonalizedMode(scoredAreas);
       setRankedResults(sorted);
       setHasCalculated(true);
+
+      // On mobile / tablet screens, smoothly scroll to results once computed
+      setTimeout(() => {
+        if (resultsRef.current && typeof window !== 'undefined' && window.innerWidth <= 900) {
+          resultsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
     } finally {
       setIsCalculating(false);
     }
@@ -270,11 +278,11 @@ export const PersonalizedView: React.FC<PersonalizedViewProps> = ({ onBackToBrow
   return (
     <div className="personalized-view">
       {/* Header */}
-      <div style={{ marginBottom: '2rem' }}>
-        <h1 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '0.35rem' }}>
-          Personalized Match & Commute Ranking
+      <div className="personalized-header-section">
+        <h1 className="personalized-title">
+          Personalized Match &amp; Commute Ranking
         </h1>
-        <p style={{ color: 'var(--text-secondary)', fontSize: '0.9375rem' }}>
+        <p className="personalized-subtitle">
           Calculates neighborhood affordability, commute durations, and ranked suitability tailored to your office.
         </p>
       </div>
@@ -450,7 +458,7 @@ export const PersonalizedView: React.FC<PersonalizedViewProps> = ({ onBackToBrow
         </div>
 
         {/* Right Column: Ranked Recommendations List */}
-        <div className="personalized-results-panel">
+        <div className="personalized-results-panel" ref={resultsRef}>
           {/* Query Echo Status Banner */}
           {hasCalculated && (
             <div className="personalized-echo-banner">

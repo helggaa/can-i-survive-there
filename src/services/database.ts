@@ -19,6 +19,7 @@ import type {
 } from '../types/database.types';
 import { validateAreaMetricInput } from './validation';
 import { calculateTotalCost } from './scoring';
+import { sanitizeTextInput, sanitizeExternalLink } from '../utils/security';
 import {
   SEED_COUNTRIES,
   SEED_METRICS,
@@ -88,7 +89,7 @@ export class AppDatabase {
             area_id: record.area_id,
             metric_id: metric.id,
             value: record.value,
-            note: record.note || `Verified fact from ${record.source_url}`,
+            note: record.note || `Observed data point from ${record.source_url}`,
             evidence_url: record.source_url,
             source_type: i === 0 ? 'agent_bootstrap' : 'listing_site',
             agent_confidence: record.confidence as any,
@@ -649,10 +650,9 @@ export class AppDatabase {
       (s) => s.area_id === input.area_id && s.metric_id === metric.id
     ).length;
 
-    const sourceUrl =
-      input.evidence_url && (input.evidence_url.startsWith('http://') || input.evidence_url.startsWith('https://'))
-        ? input.evidence_url
-        : 'https://can-i-survive-there.org/community-fact';
+    const cleanNote = sanitizeTextInput(input.note, 500);
+    const cleanUrl = sanitizeExternalLink(input.evidence_url);
+    const sourceUrl = cleanUrl || 'https://can-i-survive-there.org/community-fact';
 
     const validation = validateAreaMetricInput(
       {
@@ -663,7 +663,7 @@ export class AppDatabase {
         source_url: sourceUrl,
         source_type: 'user_fact',
         agent_confidence: 'medium',
-        note: input.note,
+        note: cleanNote || undefined,
       },
       {
         area,
@@ -683,9 +683,9 @@ export class AppDatabase {
       area_id: input.area_id,
       metric_id: metric.id,
       value: input.value,
-      note: input.note || 'User submitted community observation',
+      note: cleanNote || 'User submitted community observation',
       evidence_url: sourceUrl,
-      submitted_by: input.submitted_by || 'community_user',
+      submitted_by: sanitizeTextInput(input.submitted_by, 100) || 'community_user',
       source_type: 'user_fact',
       agent_confidence: 'medium',
       observed_at: new Date().toISOString().split('T')[0],
@@ -700,9 +700,9 @@ export class AppDatabase {
           area_id: input.area_id,
           metric_id: metric.id,
           value: input.value,
-          note: input.note || 'User submitted community observation',
+          note: cleanNote || 'User submitted community observation',
           evidence_url: sourceUrl,
-          submitted_by: input.submitted_by || 'community_user',
+          submitted_by: sanitizeTextInput(input.submitted_by, 100) || 'community_user',
           source_type: 'user_fact',
           agent_confidence: 'medium',
           observed_at: new Date().toISOString().split('T')[0],
@@ -795,20 +795,20 @@ export class AppDatabase {
 
   public async submitFeedback(input: SubmitFeedbackInput): Promise<{ success: boolean; id?: string; reason?: string }> {
     const feedbackId = generateUUID();
-    const sanitizedUrl =
-      input.evidence_url && (input.evidence_url.startsWith('http://') || input.evidence_url.startsWith('https://'))
-        ? input.evidence_url.trim()
-        : null;
+    const sanitizedUrl = sanitizeExternalLink(input.evidence_url);
+    const cleanCity = sanitizeTextInput(input.city_name, 100);
+    const cleanMessage = sanitizeTextInput(input.message, 1000);
+    const cleanCurrency = input.currency_code ? sanitizeTextInput(input.currency_code, 10).toUpperCase() : null;
 
     const newFeedback: UserFeedback = {
       id: feedbackId,
       city_id: input.city_id || null,
       area_id: input.area_id || null,
-      city_name: input.city_name,
+      city_name: cleanCity,
       feedback_type: input.feedback_type,
-      message: input.message,
+      message: cleanMessage,
       suggested_value: input.suggested_value || null,
-      currency_code: input.currency_code || null,
+      currency_code: cleanCurrency,
       evidence_url: sanitizedUrl,
       status: 'new',
       created_at: new Date().toISOString(),

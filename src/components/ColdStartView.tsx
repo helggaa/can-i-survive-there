@@ -35,16 +35,7 @@ export const ColdStartView: React.FC<ColdStartViewProps> = ({
   return (
     <div style={{ maxWidth: '980px', margin: '0 auto' }}>
       {/* Progress Radar Banner */}
-      <div
-        className="glass-panel"
-        style={{
-          border: '1px solid var(--border-subtle)',
-          padding: '1.75rem 2rem',
-          marginBottom: '2rem',
-          background: 'var(--bg-card)',
-          boxShadow: 'var(--shadow-md)',
-        }}
-      >
+      <div className="glass-panel coldstart-progress-banner">
         <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '1.25rem' }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--brand-primary)', fontSize: '0.8125rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
@@ -68,7 +59,7 @@ export const ColdStartView: React.FC<ColdStartViewProps> = ({
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginTop: '0.35rem' }}>
               {!isComplete && completedAreas.length < totalAreasCount
                 ? 'Synthesizing student room rents, authentic warung meals, and transit passes from OpenStreetMap & World Bank open data.'
-                : 'Enriched dataset validated. You can explore or personalize any neighborhood below.'}
+                : 'Dataset compiled. You can explore or personalize any neighborhood below.'}
             </p>
           </div>
 

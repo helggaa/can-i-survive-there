@@ -99,11 +99,11 @@ export function App() {
               <div className="footer-brand-row">
                 <div className="footer-status-dot" />
                 <span className="footer-brand-copy">
-                  <strong className="footer-brand-title">Can I Survive There?</strong> — Open, honest, confidence-scored cost intelligence.
+                  <strong className="footer-brand-title">Can I Survive There?</strong> — Open, sample-based living cost estimates.
                 </span>
               </div>
               <div className="footer-meta-copy">
-                Built with OpenStreetMap &amp; World Bank PPP Open Data · 100% Private · Zero tracking
+                Data sourced from OpenStreetMap, World Bank PPP benchmarks, and community submissions · Open-source
               </div>
             </div>
           </footer>

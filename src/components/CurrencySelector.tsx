@@ -32,74 +32,34 @@ export const CurrencySelector: React.FC = () => {
   }, [isOpen]);
 
   return (
-    <div style={{ position: 'relative', display: 'inline-block' }} ref={containerRef}>
+    <div className="currency-selector-container" ref={containerRef}>
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.45rem',
-          padding: '0.45rem 0.95rem',
-          borderRadius: 'var(--radius-full)',
-          fontSize: '0.8125rem',
-          fontWeight: 600,
-          border: '1px solid var(--border-subtle)',
-          background: 'var(--bg-surface-alt)',
-          color: 'var(--text-primary)',
-          cursor: 'pointer',
-          transition: 'all var(--transition-fast)',
-          boxShadow: 'var(--shadow-xs)'
-        }}
+        className="currency-selector-btn"
         title="Switch display currency"
+        aria-haspopup="listbox"
+        aria-expanded={isOpen}
       >
-        <Globe size={15} style={{ color: 'var(--brand-primary)' }} />
-        <span style={{ color: 'var(--brand-primary)', fontWeight: 700 }}>
+        <Globe size={15} className="currency-globe-icon" />
+        <span className="currency-code-label">
           {activeConfig.code === 'LOCAL' ? 'Native' : activeConfig.code}
         </span>
-        <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem' }}>
+        <span className="currency-symbol-label">
           ({activeConfig.symbol})
         </span>
         <ChevronDown
           size={14}
-          style={{
-            color: 'var(--text-muted)',
-            transition: 'transform 0.2s',
-            transform: isOpen ? 'rotate(180deg)' : 'none'
-          }}
+          className={`currency-chevron ${isOpen ? 'open' : ''}`}
         />
       </button>
 
       {isOpen && (
-        <div
-          style={{
-            position: 'absolute',
-            right: 0,
-            marginTop: '0.5rem',
-            width: '240px',
-            borderRadius: 'var(--radius-md)',
-            background: 'var(--bg-card)',
-            border: '1px solid var(--border-subtle)',
-            boxShadow: 'var(--shadow-lg)',
-            zIndex: 90,
-            padding: '0.4rem',
-            animation: 'fadeInCard 0.18s cubic-bezier(0.16, 1, 0.3, 1)'
-          }}
-        >
-          <div
-            style={{
-              padding: '0.5rem 0.75rem',
-              borderBottom: '1px solid var(--border-subtle)',
-              fontSize: '0.6875rem',
-              fontWeight: 700,
-              color: 'var(--text-muted)',
-              textTransform: 'uppercase',
-              letterSpacing: '0.05em'
-            }}
-          >
+        <div className="currency-dropdown-panel" role="listbox">
+          <div className="currency-dropdown-header">
             Display Currency
           </div>
-          <div style={{ maxHeight: '260px', overflowY: 'auto', padding: '0.25rem 0' }}>
+          <div className="currency-dropdown-list">
             {availableCurrencies.map((curr) => {
               const isSelected = curr.code === targetCurrency;
               return (
@@ -110,41 +70,23 @@ export const CurrencySelector: React.FC = () => {
                     setTargetCurrency(curr.code);
                     setIsOpen(false);
                   }}
-                  style={{
-                    width: '100%',
-                    textAlign: 'left',
-                    padding: '0.55rem 0.75rem',
-                    fontSize: '0.8125rem',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    borderRadius: 'var(--radius-sm)',
-                    border: 'none',
-                    background: isSelected ? 'var(--brand-primary-light)' : 'transparent',
-                    color: isSelected ? 'var(--brand-primary)' : 'var(--text-primary)',
-                    cursor: 'pointer',
-                    transition: 'all var(--transition-fast)'
-                  }}
-                  onMouseEnter={(e) => {
-                    if (!isSelected) (e.currentTarget as HTMLElement).style.background = 'var(--bg-surface-alt)';
-                  }}
-                  onMouseLeave={(e) => {
-                    if (!isSelected) (e.currentTarget as HTMLElement).style.background = 'transparent';
-                  }}
+                  className={`currency-option-item ${isSelected ? 'selected' : ''}`}
+                  role="option"
+                  aria-selected={isSelected}
                 >
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
-                    <span style={{ fontSize: '1rem' }}>{curr.flag}</span>
-                    <div>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-                        <span style={{ fontWeight: 700 }}>{curr.code}</span>
-                        <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>({curr.symbol})</span>
+                  <div className="currency-option-info">
+                    <span className="currency-option-flag">{curr.flag}</span>
+                    <div className="currency-option-details">
+                      <div className="currency-option-primary">
+                        <strong>{curr.code}</strong>
+                        <span className="currency-option-symbol">({curr.symbol})</span>
                       </div>
-                      <div style={{ fontSize: '0.6875rem', color: 'var(--text-secondary)', maxWidth: '130px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                      <div className="currency-option-name" title={curr.name}>
                         {curr.name}
                       </div>
                     </div>
                   </div>
-                  {isSelected && <Check size={14} style={{ color: 'var(--brand-primary)' }} />}
+                  {isSelected && <Check size={14} className="currency-check-icon" />}
                 </button>
               );
             })}
@@ -156,3 +98,4 @@ export const CurrencySelector: React.FC = () => {
 };
 
 export default CurrencySelector;
+

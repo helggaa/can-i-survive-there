@@ -253,7 +253,7 @@ class BootstrapPipeline {
         source_url: matchedCity.sources.rent_url,
         source_type: 'listing_site',
         agent_confidence: 'high',
-        note: `${notePrefix}Verified room / kost rental average in ${area.name}, ${city.name}`,
+        note: `${notePrefix}Observed room / kost rental average in ${area.name}, ${city.name}`,
       });
 
       // Food (Meals Only)

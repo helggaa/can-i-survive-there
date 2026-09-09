@@ -169,7 +169,8 @@ html {
   transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
-[data-theme="dark"] html {
+/* color-scheme declaration: data-theme is on <html>, so we target html itself */
+html[data-theme="dark"] {
   color-scheme: dark;
 }
 
@@ -185,7 +186,7 @@ body {
   transition: background var(--transition-normal);
 }
 
-[data-theme="dark"] body {
+html[data-theme="dark"] body {
   background: 
     radial-gradient(circle at 12% 10%, rgba(59, 130, 246, 0.08), transparent 50%),
     radial-gradient(circle at 88% 85%, rgba(249, 115, 22, 0.06), transparent 45%),
@@ -209,12 +210,17 @@ a {
 }
 
 a:hover {
-  color: #1d4ed8;
+  /* Use filter so both light (#1d4ed8) and dark (#93c5fd) modes look right
+     via the same CSS variable */
+  color: var(--brand-primary);
+  filter: brightness(1.15);
 }
 
 button, input, select, textarea {
   font: inherit;
   color: inherit;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Clean Card Panel */
@@ -288,10 +294,10 @@ button, input, select, textarea {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: var(--border-medium);
   border-radius: var(--radius-full);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: var(--text-muted);
 }

@@ -25,8 +25,8 @@ import {
 import type { AreaExpenseBreakdown, CommuteMode, Submission } from '../types/database.types';
 import { db } from '../services/database';
 import { ConfidenceBadge } from './ConfidenceBadge';
-import { formatCurrency } from '../utils/formatters';
 import { useCurrency } from '../context/CurrencyContext';
+import { sanitizeExternalLink } from '../utils/security';
 
 interface AreaExpenseCardProps {
   data: AreaExpenseBreakdown;
@@ -105,10 +105,10 @@ export const AreaExpenseCard: React.FC<AreaExpenseCardProps> = ({
         <div className="top-recommendation-ribbon">
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
             <Sparkles size={14} />
-            <span>#1 Top Recommended Match for Your Relocation</span>
+            <span>#1 Highest Scored Neighborhood</span>
           </div>
           <span style={{ fontSize: '0.75rem', opacity: 0.9, fontWeight: 600 }}>
-            Optimal Balance of Rent &amp; Commute
+            Based on commute &amp; budget formula
           </span>
         </div>
       )}
@@ -127,71 +127,72 @@ export const AreaExpenseCard: React.FC<AreaExpenseCardProps> = ({
           }
         }}
       >
-        <div className="area-info-main">
-          {/* Rank Badge */}
-          <div className={`area-rank-badge ${rank === 1 ? 'top-rank' : ''}`}>
-            {rank === 1 ? (
-              <span style={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                <Award size={14} style={{ color: 'var(--brand-warm)' }} />1
-              </span>
-            ) : (
-              `#${rank}`
-            )}
+        {/* Row 1: Area Identity on Left, Total Living Cost + Chevron on Right */}
+        <div className="area-summary-top">
+          <div className="area-title-cluster">
+            {/* Rank Badge */}
+            <div className={`area-rank-badge ${rank === 1 ? 'top-rank' : ''}`}>
+              {rank === 1 ? (
+                <span style={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+                  <Award size={14} style={{ color: 'var(--brand-warm)' }} />1
+                </span>
+              ) : (
+                `#${rank}`
+              )}
+            </div>
+
+            <div className="area-heading-text">
+              <h3 className="area-name">{data.area.name}</h3>
+              <div className="area-location-label">
+                <MapPin size={13} style={{ color: 'var(--brand-primary)', flexShrink: 0 }} />
+                <span>{data.city.name}, {data.country.name}</span>
+              </div>
+            </div>
           </div>
 
-          <div className="area-title-group">
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-              <h3>{data.area.name}</h3>
-              {isPersonalized && data.score && (
-                <span className="match-score-badge" title={`Overall Match Score: ${Math.round(data.score.final_score * 100)}%`}>
-                  <Sparkles size={12} />
-                  <span>{Math.round(data.score.final_score * 100)}% Match</span>
-                </span>
-              )}
-              {isPersonalized && affordabilityPct !== null && (
-                <span className={`affordability-badge ${isUnaffordable ? 'unaffordable' : 'affordable'}`}>
-                  {isUnaffordable ? '⚠️ ' : '✓ '}
-                  {affordabilityPct}% of budget
-                </span>
-              )}
+          {/* Cost & Expand Cluster */}
+          <div className="area-cost-cluster">
+            <div className="area-cost-amount-block">
+              <span className="area-price-sublabel">Est. Living Cost</span>
+              <div className="area-price-total">
+                {data.total_monthly_cost > 0 ? (
+                  <>
+                    <span>{formattedTotal.primary}</span>
+                    <span className="area-price-period">/mo</span>
+                    {formattedTotal.isConverted && (
+                      <div className="area-price-secondary">
+                        {formattedTotal.secondary}
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <div className="skeleton" style={{ width: 85, height: 20, display: 'inline-block' }} />
+                )}
+              </div>
             </div>
 
-            <div style={{ fontSize: '0.8125rem', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '0.3rem', marginTop: '0.15rem' }}>
-              <MapPin size={13} style={{ color: 'var(--brand-primary)' }} />
-              <span>{data.city.name}, {data.country.name}</span>
-            </div>
-
-            {/* Proportional Expense Breakdown Bar with Clean Labels */}
-            <div className="expense-breakdown-bar-wrap">
-              <div
-                className="expense-breakdown-bar"
-                title={`Kost: ${rentPct}% | Food: ${foodPct}% | Commute/Other: ${transitPct}%`}
-              >
-                <div className="breakdown-bar-segment rent" style={{ width: `${rentPct}%` }} />
-                <div className="breakdown-bar-segment food" style={{ width: `${foodPct}%` }} />
-                <div className="breakdown-bar-segment transit" style={{ width: `${transitPct}%` }} />
-              </div>
-              <div className="breakdown-legend-row">
-                <span className="legend-item">
-                  <span className="legend-dot" style={{ background: 'var(--brand-secondary)' }} />
-                  <span>Kost {rentPct}%</span>
-                </span>
-                <span className="legend-item">
-                  <span className="legend-dot" style={{ background: 'var(--brand-warm)' }} />
-                  <span>Food {foodPct}%</span>
-                </span>
-                <span className="legend-item">
-                  <span className="legend-dot" style={{ background: 'var(--brand-commute)' }} />
-                  <span>Transit {transitPct}%</span>
-                </span>
-              </div>
+            <div className="area-expand-indicator" aria-hidden="true">
+              <ChevronDown size={18} className={`expand-chevron ${isExpanded ? 'expanded' : ''}`} />
             </div>
           </div>
         </div>
 
-        {/* Cost & Metrics Preview */}
-        <div className="area-price-group">
-          {/* Commute Time Preview if Personalized */}
+        {/* Row 2: Comprehensive Badges Row (Match Score, Budget Affordability, Commute Time, Data Confidence) */}
+        <div className="area-badges-row">
+          {isPersonalized && data.score && (
+            <span className="match-score-badge" title={`Overall Match Score: ${Math.round(data.score.final_score * 100)}%`}>
+              <Sparkles size={12} />
+              <span>{Math.round(data.score.final_score * 100)}% Match</span>
+            </span>
+          )}
+
+          {isPersonalized && affordabilityPct !== null && (
+            <span className={`affordability-badge ${isUnaffordable ? 'unaffordable' : 'affordable'}`}>
+              {isUnaffordable ? '⚠️ ' : '✓ '}
+              {affordabilityPct}% of budget
+            </span>
+          )}
+
           {isPersonalized && data.commute && (
             <div className="commute-preview-badge">
               {getModeIcon(data.commute.mode)}
@@ -199,43 +200,32 @@ export const AreaExpenseCard: React.FC<AreaExpenseCardProps> = ({
             </div>
           )}
 
-          {/* Living Cost Amount */}
-          <div>
-            <div className="area-price-sublabel">Est. Living Cost</div>
-            <div className="area-price-total">
-              {data.total_monthly_cost > 0 ? (
-                <>
-                  <span>{formattedTotal.primary}</span>
-                  <span style={{ fontSize: '0.8125rem', color: 'var(--text-muted)', fontWeight: 500, marginLeft: 3 }}>/mo</span>
-                  {formattedTotal.isConverted && (
-                    <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 500 }}>
-                      {formattedTotal.secondary}
-                    </div>
-                  )}
-                </>
-              ) : (
-                <div className="skeleton" style={{ width: 85, height: 20, display: 'inline-block' }} />
-              )}
-            </div>
-          </div>
-
           <ConfidenceBadge confidence={data.confidence} sampleSize={data.sample_size} />
+        </div>
 
+        {/* Row 3: Proportional Expense Breakdown Bar with Clean Legend */}
+        <div className="expense-breakdown-bar-wrap">
           <div
-            style={{
-              color: 'var(--text-secondary)',
-              transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
-              transform: isExpanded ? 'rotate(180deg)' : 'none',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: 32,
-              height: 32,
-              borderRadius: 'var(--radius-full)',
-              background: 'var(--bg-surface-alt)',
-            }}
+            className="expense-breakdown-bar"
+            title={`Kost: ${rentPct}% | Food: ${foodPct}% | Commute/Other: ${transitPct}%`}
           >
-            <ChevronDown size={18} />
+            <div className="breakdown-bar-segment rent" style={{ width: `${rentPct}%` }} />
+            <div className="breakdown-bar-segment food" style={{ width: `${foodPct}%` }} />
+            <div className="breakdown-bar-segment transit" style={{ width: `${transitPct}%` }} />
+          </div>
+          <div className="breakdown-legend-row">
+            <span className="legend-item">
+              <span className="legend-dot" style={{ background: 'var(--brand-secondary)' }} />
+              <span>Kost {rentPct}%</span>
+            </span>
+            <span className="legend-item">
+              <span className="legend-dot" style={{ background: 'var(--brand-warm)' }} />
+              <span>Food {foodPct}%</span>
+            </span>
+            <span className="legend-item">
+              <span className="legend-dot" style={{ background: 'var(--brand-commute)' }} />
+              <span>Transit {transitPct}%</span>
+            </span>
           </div>
         </div>
       </div>
@@ -418,7 +408,7 @@ export const AreaExpenseCard: React.FC<AreaExpenseCardProps> = ({
             </div>
           )}
 
-          {/* Verified Facts & Sources Inspector */}
+          {/* Recorded Sources & Evidence Inspector */}
           <div
             style={{
               background: 'var(--bg-surface)',
@@ -440,7 +430,7 @@ export const AreaExpenseCard: React.FC<AreaExpenseCardProps> = ({
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', fontWeight: 600, color: 'var(--brand-primary)' }}>
                 <ShieldCheck size={16} />
-                <span>Verified Facts & Sources ({data.sample_size} observations)</span>
+                <span>Sources & Evidence ({data.sample_size} observations)</span>
               </div>
               <span style={{ fontSize: '0.8125rem', color: 'var(--text-muted)', fontWeight: 600 }}>
                 {showFactsDrawer ? 'Hide Sources ▲' : 'Inspect Sources ▼'}
@@ -458,35 +448,39 @@ export const AreaExpenseCard: React.FC<AreaExpenseCardProps> = ({
                           background: 'var(--bg-surface-alt)',
                           border: '1px solid var(--border-subtle)',
                           borderRadius: 'var(--radius-sm)',
-                          padding: '0.75rem 1rem',
-                          fontSize: '0.8125rem',
+                          padding: '0.65rem 0.85rem',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'space-between',
+                          gap: '0.85rem',
                         }}
                       >
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.25rem' }}>
-                          <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>
-                            {sub.note || 'Community Observation'}
-                          </span>
-                          <span style={{ fontWeight: 700, color: 'var(--brand-primary)', fontFamily: 'var(--font-sans)' }}>
-                            {formatCurrency(sub.value, currency)}
-                          </span>
+                        <div style={{ minWidth: 0 }}>
+                          <div style={{ fontSize: '0.8125rem', fontWeight: 600, color: 'var(--text-primary)' }}>
+                            {sub.note || 'Sample observation'}: {sub.value.toLocaleString()} {data.country.currency_code}
+                          </div>
                         </div>
 
-                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', color: 'var(--text-muted)', fontSize: '0.75rem', flexWrap: 'wrap', gap: '0.5rem' }}>
-                          <span>
-                            Source: <strong style={{ color: 'var(--text-secondary)' }}>{sub.source_type}</strong> · Observed {sub.observed_at}
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexShrink: 0 }}>
+                          <span style={{ fontSize: '0.6875rem', color: 'var(--text-muted)', background: 'var(--bg-card)', padding: '0.2rem 0.45rem', borderRadius: 4, border: '1px solid var(--border-subtle)' }}>
+                            {sub.source_type}
                           </span>
-                          {sub.evidence_url && (sub.evidence_url.startsWith('http://') || sub.evidence_url.startsWith('https://')) && (
-                            <a
-                              href={sub.evidence_url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem', color: 'var(--brand-primary)', textDecoration: 'none', fontWeight: 600 }}
-                              onClick={(e) => e.stopPropagation()}
-                            >
-                              <span>View evidence</span>
-                              <ExternalLink size={11} />
-                            </a>
-                          )}
+                          {(() => {
+                            const safeLink = sanitizeExternalLink(sub.evidence_url);
+                            if (!safeLink) return null;
+                            return (
+                              <a
+                                href={safeLink}
+                                target="_blank"
+                                rel="noreferrer noopener"
+                                className="evidence-link-btn"
+                                title="Inspect evidence link"
+                              >
+                                <ExternalLink size={12} />
+                                <span>Source</span>
+                              </a>
+                            );
+                          })()}
                         </div>
                       </div>
                     ))}
@@ -505,19 +499,18 @@ export const AreaExpenseCard: React.FC<AreaExpenseCardProps> = ({
             <div className="card-citations">
               <span className="citation-tag">
                 <CheckCircle2 size={13} color="var(--brand-secondary)" />
-                <span>OpenStreetMap Verified</span>
+                <span>OpenStreetMap Geodata</span>
               </span>
               <span>·</span>
               <span className="citation-tag">
-                <span>World Bank PPP Synthesis</span>
+                <span>World Bank PPP Benchmark</span>
               </span>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+            <div className="card-footer-actions">
               <button
                 type="button"
-                className="btn-secondary"
-                style={{ padding: '0.45rem 0.95rem', fontSize: '0.8125rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}
+                className="btn-secondary card-action-btn"
                 onClick={(e) => {
                   e.stopPropagation();
                   onOpenSubmitFact(data);
@@ -530,14 +523,7 @@ export const AreaExpenseCard: React.FC<AreaExpenseCardProps> = ({
               {onOpenFeedback && (
                 <button
                   type="button"
-                  className="btn-secondary"
-                  style={{
-                    padding: '0.45rem 0.95rem',
-                    fontSize: '0.8125rem',
-                    background: 'var(--brand-primary-light)',
-                    borderColor: 'var(--border-subtle)',
-                    color: 'var(--brand-primary)',
-                  }}
+                  className="btn-secondary card-action-btn report-btn"
                   onClick={(e) => {
                     e.stopPropagation();
                     onOpenFeedback(data);

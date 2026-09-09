@@ -2,9 +2,11 @@
 // Crowdsourcing Modal per UI/UX Pro Max cyber-fintech specification
 
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { X, Send, CheckCircle, ShieldCheck } from 'lucide-react';
 import type { AreaExpenseBreakdown } from '../types/database.types';
 import { db } from '../services/database';
+import { isSafeUrl, sanitizeTextInput } from '../utils/security';
 
 interface SubmitFactModalProps {
   areaData: AreaExpenseBreakdown | null;
@@ -38,6 +40,20 @@ export const SubmitFactModal: React.FC<SubmitFactModalProps> = ({
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isOpen, onClose]);
 
+  // Lock background body scroll while modal is open, allowing only the modal form to scroll
+  React.useEffect(() => {
+    if (!isOpen) return;
+    const originalOverflow = document.body.style.overflow;
+    const originalOverscroll = document.body.style.overscrollBehavior;
+    document.body.style.overflow = 'hidden';
+    document.body.style.overscrollBehavior = 'none';
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      document.body.style.overscrollBehavior = originalOverscroll;
+    };
+  }, [isOpen]);
+
   if (!isOpen || !areaData) return null;
 
   const currency = areaData.country?.currency_code || 'IDR';
@@ -52,10 +68,11 @@ export const SubmitFactModal: React.FC<SubmitFactModalProps> = ({
       return;
     }
 
+    const sanitizedNote = sanitizeTextInput(note, 500);
     const trimmedEvidence = evidenceUrl.trim();
     if (trimmedEvidence) {
-      if (!trimmedEvidence.startsWith('http://') && !trimmedEvidence.startsWith('https://')) {
-        setErrorMessage('Invalid source link. Evidence URLs must start with http:// or https://');
+      if (!isSafeUrl(trimmedEvidence)) {
+        setErrorMessage('Invalid source link. Only valid http:// and https:// URLs are supported.');
         return;
       }
     }
@@ -66,8 +83,8 @@ export const SubmitFactModal: React.FC<SubmitFactModalProps> = ({
         area_id: areaData.area.id,
         metric_key: metricKey,
         value: numericAmount,
-        note: note.trim().slice(0, 500) || undefined,
-        evidence_url: trimmedEvidence.slice(0, 250) || undefined,
+        note: sanitizedNote || undefined,
+        evidence_url: trimmedEvidence.slice(0, 500) || undefined,
       });
 
       if (result.success) {
@@ -92,8 +109,10 @@ export const SubmitFactModal: React.FC<SubmitFactModalProps> = ({
     }
   };
 
-  return (
-    <div className="modal-backdrop" onClick={onClose}>
+  if (typeof document === 'undefined') return null;
+
+  return createPortal(
+    <div className="modal-backdrop" onClick={onClose} role="dialog" aria-modal="true">
       <div className="modal-dialog" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
           <div>
@@ -146,11 +165,11 @@ export const SubmitFactModal: React.FC<SubmitFactModalProps> = ({
               Thank You for Contributing!
             </h4>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', maxWidth: 380, margin: '0 auto', lineHeight: 1.5 }}>
-              Your observation has been verified and recorded. It is blended in during data recomputation to keep estimates accurate.
+              Your observation has been recorded. It is factored into subsequent metric recomputations.
             </p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="modal-form">
             <div className="modal-body">
               <div
                 style={{
@@ -165,7 +184,7 @@ export const SubmitFactModal: React.FC<SubmitFactModalProps> = ({
               >
                 <ShieldCheck size={18} color="var(--accent-secondary)" style={{ flexShrink: 0, marginTop: 2 }} />
                 <div style={{ fontSize: '0.8125rem', color: 'var(--text-secondary)', lineHeight: 1.4 }}>
-                  <strong style={{ color: 'var(--text-primary)' }}>Wikipedia facts, not direct edits:</strong> Submissions are verified and blended into the algorithm, preventing bad-faith price manipulations.
+                  <strong style={{ color: 'var(--text-primary)' }}>Evidence-backed submissions:</strong> Submissions with evidence links or notes are reviewed and aggregated into metric samples.
                 </div>
               </div>
 
@@ -253,7 +272,8 @@ export const SubmitFactModal: React.FC<SubmitFactModalProps> = ({
           </form>
         )}
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 

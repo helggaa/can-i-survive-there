@@ -4,6 +4,24 @@ import { defineConfig } from 'vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  server: {
+    headers: {
+      'X-Frame-Options': 'DENY',
+      'X-Content-Type-Options': 'nosniff',
+      'Referrer-Policy': 'strict-origin-when-cross-origin',
+      'Permissions-Policy': 'camera=(), microphone=(), geolocation=(self)',
+      'Cross-Origin-Opener-Policy': 'same-origin',
+    },
+  },
+  preview: {
+    headers: {
+      'X-Frame-Options': 'DENY',
+      'X-Content-Type-Options': 'nosniff',
+      'Referrer-Policy': 'strict-origin-when-cross-origin',
+      'Permissions-Policy': 'camera=(), microphone=(), geolocation=(self)',
+      'Cross-Origin-Opener-Policy': 'same-origin',
+    },
+  },
   build: {
     chunkSizeWarningLimit: 3000,
     rollupOptions: {

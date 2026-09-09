@@ -6,6 +6,7 @@ node_modules/
 # Testing and Coverage
 coverage/
 *.lcov
+.nyc_output/
 
 # Production Build
 dist/
@@ -24,6 +25,17 @@ build/
 *.crt
 *.pfx
 *.p12
+*.pub
+id_rsa*
+id_ed25519*
+*.token
+*.secret
+*credentials*
+*secret*
+service-account*.json
+gcp-*.json
+aws-*.json
+firebase-adminsdk*.json
 
 # Logs & Diagnostics
 logs/
@@ -39,12 +51,17 @@ lerna-debug.log*
 !.vscode/extensions.json
 .idea/
 .DS_Store
+.DS_Store?
+._*
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+*.bak
+*.tmp
 Thumbs.db
+desktop.ini
 
 # Python Bytecode & Cache
 __pycache__/
