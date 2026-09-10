@@ -82,3 +82,6 @@ brain/
 implementation_plan.md
 walkthrough.md
 scratchpad*.md
+design-system/
+AGENTS.md
+supabase/seed_global_database.sql
