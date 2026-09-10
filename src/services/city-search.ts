@@ -79,11 +79,13 @@ let cscModulePromise: Promise<typeof import('country-state-city')> | null = null
 const countryByIso = new Map<string, ICountry>();
 let cachedAllCities: ICity[] | null = null;
 let cachedCscIndex: Map<string, ICity> | null = null;
+let cachedPrefixMap: Map<string, ICity[]> | null = null;
 
 export async function ensureCscData(): Promise<{
   countryByIso: Map<string, ICountry>;
   allCities: ICity[];
   cityIndex: Map<string, ICity>;
+  prefixMap: Map<string, ICity[]>;
 }> {
   if (!cscModulePromise) {
     cscModulePromise = import('country-state-city');
@@ -97,18 +99,26 @@ export async function ensureCscData(): Promise<{
     }
   }
 
-  if (!cachedAllCities || !cachedCscIndex) {
+  if (!cachedAllCities || !cachedCscIndex || !cachedPrefixMap) {
     cachedAllCities = CSC_City.getAllCities();
     cachedCscIndex = new Map();
+    cachedPrefixMap = new Map();
     for (const c of cachedAllCities) {
       const k = `${c.name.toLowerCase()}:${c.countryCode}`;
       if (!cachedCscIndex.has(k)) {
         cachedCscIndex.set(k, c);
       }
+      const p2 = c.name.toLowerCase().slice(0, 2);
+      let bucket = cachedPrefixMap.get(p2);
+      if (!bucket) {
+        bucket = [];
+        cachedPrefixMap.set(p2, bucket);
+      }
+      bucket.push(c);
     }
   }
 
-  return { countryByIso, allCities: cachedAllCities, cityIndex: cachedCscIndex };
+  return { countryByIso, allCities: cachedAllCities, cityIndex: cachedCscIndex, prefixMap: cachedPrefixMap };
 }
 
 /**
@@ -126,7 +136,7 @@ export async function searchGlobalCities(
   const results: GlobalCityItem[] = [];
   const seenKeys = new Set<string>();
 
-  const { countryByIso, allCities, cityIndex } = await ensureCscData();
+  const { countryByIso, allCities, cityIndex, prefixMap } = await ensureCscData();
 
   // 0. High-priority search in verified global cost database (including aliases like Jogja, Saigon, NYC, KL, SF, CDMX)
   for (const gc of (GLOBAL_COST_DB as any[])) {
@@ -156,8 +166,11 @@ export async function searchGlobalCities(
     }
   }
 
-  // Prefix match first
-  for (const c of allCities) {
+  // 1. Prefix match using 2-char bucket (extremely fast: scans only 200-800 cities instead of 150,000)
+  const prefixKey = clean.slice(0, 2);
+  const candidates = prefixMap.get(prefixKey) || allCities;
+
+  for (const c of candidates) {
     const nameLower = c.name.toLowerCase();
     if (nameLower.startsWith(clean)) {
       const countryObj = countryByIso.get(c.countryCode);
@@ -183,8 +196,8 @@ export async function searchGlobalCities(
     }
   }
 
-  // Substring match if under limit
-  if (results.length < limit) {
+  // Substring match if under limit and query is at least 3 chars
+  if (results.length < limit && clean.length >= 3) {
     for (const c of allCities) {
       const nameLower = c.name.toLowerCase();
       if (!nameLower.startsWith(clean) && nameLower.includes(clean)) {

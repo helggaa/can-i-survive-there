@@ -1,5 +1,5 @@
 // src/components/AreaExpenseCard.tsx
-// Warm, approachable, and transparent expense card designed for students, workers, and migrants
+// Survive Atlas — Premium glassmorphic area expense card with stagger animation
 
 import React, { useState, useEffect } from 'react';
 import {
@@ -18,7 +18,6 @@ import {
   Navigation,
   ExternalLink,
   ShieldCheck,
-  Award,
   MapPin,
   Sparkles,
 } from 'lucide-react';
@@ -47,7 +46,7 @@ export const AreaExpenseCard: React.FC<AreaExpenseCardProps> = ({
   onOpenSubmitFact,
   onOpenFeedback,
 }) => {
-  const [isExpanded, setIsExpanded] = useState<boolean>(rank === 1);
+  const [isExpanded, setIsExpanded]           = useState<boolean>(rank === 1);
   const [showFactsDrawer, setShowFactsDrawer] = useState<boolean>(false);
   const [areaSubmissions, setAreaSubmissions] = useState<Submission[]>([]);
   const [selectedCommuteMode, setSelectedCommuteMode] = useState<CommuteMode>(
@@ -55,13 +54,13 @@ export const AreaExpenseCard: React.FC<AreaExpenseCardProps> = ({
   );
 
   const { formatPrice } = useCurrency();
-  const currency = data.country?.currency_code || 'IDR';
-  const formattedTotal = formatPrice(data.total_monthly_cost, currency);
-  const formattedRent = formatPrice(data.rent_or_kost_monthly, currency);
-  const formattedFood = formatPrice(data.food_cost_monthly, currency);
-  const formattedMeal = formatPrice(data.food_meal_avg, currency);
+  const currency          = data.country?.currency_code || 'IDR';
+  const formattedTotal    = formatPrice(data.total_monthly_cost, currency);
+  const formattedRent     = formatPrice(data.rent_or_kost_monthly, currency);
+  const formattedFood     = formatPrice(data.food_cost_monthly, currency);
+  const formattedMeal     = formatPrice(data.food_meal_avg, currency);
   const formattedTransport = formatPrice(data.transport_monthly, currency);
-  const formattedGrocery = formatPrice(data.grocery_monthly, currency);
+  const formattedGrocery  = formatPrice(data.grocery_monthly, currency);
 
   const affordabilityPct =
     salary && salary > 0 ? Math.round((data.total_monthly_cost / salary) * 100) : null;
@@ -69,22 +68,16 @@ export const AreaExpenseCard: React.FC<AreaExpenseCardProps> = ({
 
   useEffect(() => {
     if (showFactsDrawer) {
-      db.getAreaSubmissions(data.area.id).then((subs) => {
-        setAreaSubmissions(subs);
-      });
+      db.getAreaSubmissions(data.area.id).then((subs) => setAreaSubmissions(subs));
     }
   }, [showFactsDrawer, data.area.id]);
 
   const getModeIcon = (mode: CommuteMode) => {
     switch (mode) {
-      case 'drive':
-        return <Car size={14} />;
-      case 'bike':
-        return <Bike size={14} />;
-      case 'transit':
-        return <Bus size={14} />;
-      case 'walk':
-        return <Footprints size={14} />;
+      case 'drive':   return <Car size={14} />;
+      case 'bike':    return <Bike size={14} />;
+      case 'transit': return <Bus size={14} />;
+      case 'walk':    return <Footprints size={14} />;
     }
   };
 
@@ -92,28 +85,27 @@ export const AreaExpenseCard: React.FC<AreaExpenseCardProps> = ({
     (m: any) => m.mode === selectedCommuteMode
   );
 
-  // Proportional expense breakdown percentages for visual bar
-  const total = Math.max(data.total_monthly_cost, 1);
-  const rentPct = Math.round((data.rent_or_kost_monthly / total) * 100) || 45;
-  const foodPct = Math.round((data.food_cost_monthly / total) * 100) || 35;
-  const transitPct = Math.max(0, 100 - rentPct - foodPct);
+  // Proportional expense bars
+  const total    = Math.max(data.total_monthly_cost, 1);
+  const rentPct  = Math.round((data.rent_or_kost_monthly / total) * 100) || 45;
+  const foodPct  = Math.round((data.food_cost_monthly   / total) * 100) || 35;
+  const transitPct = Math.round((data.transport_monthly  / total) * 100) || 10;
+  const groceryPct = Math.max(0, 100 - rentPct - foodPct - transitPct);
+
+  const rankClass = rank === 1 ? 'rank-1' : rank === 2 ? 'rank-2' : rank === 3 ? 'rank-3' : '';
 
   return (
-    <div className={`area-card fade-in-card ${isUnaffordable ? 'unaffordable' : ''}`}>
-      {/* Top Recommendation Integrated Ribbon */}
+    <div className={`area-card stagger-item ${isTopRecommendation ? 'top-pick' : ''} ${isUnaffordable ? 'area-card-unaffordable' : ''}`} style={{ position: 'relative' }}>
+
+      {/* Top-pick banner */}
       {isTopRecommendation && (
-        <div className="top-recommendation-ribbon">
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
-            <Sparkles size={14} />
-            <span>#1 Highest Scored Neighborhood</span>
-          </div>
-          <span style={{ fontSize: '0.75rem', opacity: 0.9, fontWeight: 600 }}>
-            Based on commute &amp; budget formula
-          </span>
+        <div className="top-pick-banner">
+          <Sparkles size={13} />
+          <span>#1 Highest Scored Neighborhood · Based on commute &amp; budget formula</span>
         </div>
       )}
 
-      {/* Collapsed Summary Header */}
+      {/* Summary row — collapsed view */}
       <div
         className="area-card-summary"
         onClick={() => setIsExpanded(!isExpanded)}
@@ -127,320 +119,295 @@ export const AreaExpenseCard: React.FC<AreaExpenseCardProps> = ({
           }
         }}
       >
-        {/* Row 1: Area Identity on Left, Total Living Cost + Chevron on Right */}
         <div className="area-summary-top">
+          {/* Area identity */}
           <div className="area-title-cluster">
-            {/* Rank Badge */}
-            <div className={`area-rank-badge ${rank === 1 ? 'top-rank' : ''}`}>
-              {rank === 1 ? (
-                <span style={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                  <Award size={14} style={{ color: 'var(--brand-warm)' }} />1
-                </span>
-              ) : (
-                `#${rank}`
-              )}
+            <div className={`area-rank-badge ${rankClass}`}>
+              #{rank}
             </div>
-
             <div className="area-heading-text">
-              <h3 className="area-name">{data.area.name}</h3>
-              <div className="area-location-label">
-                <MapPin size={13} style={{ color: 'var(--brand-primary)', flexShrink: 0 }} />
-                <span>{data.city.name}, {data.country.name}</span>
+              <div className="area-name-row">
+                <h3 className="area-name">{data.area.name}</h3>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '2px' }}>
+                <MapPin size={11} style={{ color: 'var(--brand-primary)', flexShrink: 0 }} />
+                <span className="area-city-country">{data.city.name}, {data.country.name}</span>
               </div>
             </div>
           </div>
 
-          {/* Cost & Expand Cluster */}
+          {/* Cost + expand */}
           <div className="area-cost-cluster">
             <div className="area-cost-amount-block">
-              <span className="area-price-sublabel">Est. Living Cost</span>
-              <div className="area-price-total">
+              <div className="area-price-sublabel">Est. Living Cost</div>
+              <div className={`area-price-total ${isUnaffordable ? 'unaffordable' : ''}`}>
                 {data.total_monthly_cost > 0 ? (
                   <>
                     <span>{formattedTotal.primary}</span>
-                    <span className="area-price-period">/mo</span>
+                    <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: 500 }}>/mo</span>
                     {formattedTotal.isConverted && (
-                      <div className="area-price-secondary">
+                      <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 500, marginTop: '1px' }}>
                         {formattedTotal.secondary}
                       </div>
                     )}
                   </>
                 ) : (
-                  <div className="skeleton" style={{ width: 85, height: 20, display: 'inline-block' }} />
+                  <div className="skeleton" style={{ width: 85, height: 22 }} />
                 )}
               </div>
             </div>
 
-            <div className="area-expand-indicator" aria-hidden="true">
-              <ChevronDown size={18} className={`expand-chevron ${isExpanded ? 'expanded' : ''}`} />
+            <div
+              className="area-expand-btn"
+              aria-hidden="true"
+            >
+              <ChevronDown
+                size={17}
+                className={`area-expand-chevron ${isExpanded ? 'expanded' : ''}`}
+              />
             </div>
           </div>
         </div>
 
-        {/* Row 2: Comprehensive Badges Row (Match Score, Budget Affordability, Commute Time, Data Confidence) */}
+        {/* Badges row */}
         <div className="area-badges-row">
+          {data.area.source === 'modeled' && (
+            <span
+              className="area-badge"
+              style={{
+                background: 'rgba(234, 179, 8, 0.12)',
+                color: '#ca8a04',
+                border: '1px solid rgba(234, 179, 8, 0.3)',
+                fontSize: '0.72rem',
+                fontWeight: 600,
+                padding: '2px 7px',
+                borderRadius: '6px',
+              }}
+              title="Centroid quadrant fallback with modeled estimates"
+            >
+              Modeled District
+            </span>
+          )}
+
           {isPersonalized && data.score && (
-            <span className="match-score-badge" title={`Overall Match Score: ${Math.round(data.score.final_score * 100)}%`}>
-              <Sparkles size={12} />
-              <span>{Math.round(data.score.final_score * 100)}% Match</span>
+            <span
+              className="area-badge"
+              style={{ background: 'var(--brand-primary-light)', color: 'var(--brand-primary)', border: '1px solid rgba(59,130,246,0.25)' }}
+              title={`Match Score: ${Math.round(data.score.final_score * 100)}%`}
+            >
+              <Sparkles size={11} />
+              {Math.round(data.score.final_score * 100)}% Match
             </span>
           )}
 
           {isPersonalized && affordabilityPct !== null && (
-            <span className={`affordability-badge ${isUnaffordable ? 'unaffordable' : 'affordable'}`}>
-              {isUnaffordable ? '⚠️ ' : '✓ '}
+            <span className={`affordability-tag ${isUnaffordable ? 'over' : affordabilityPct >= 80 ? 'tight' : 'safe'}`}>
+              {isUnaffordable ? <AlertTriangle size={11} /> : <CheckCircle2 size={11} />}
               {affordabilityPct}% of budget
             </span>
           )}
 
           {isPersonalized && data.commute && (
-            <div className="commute-preview-badge">
+            <span
+              className="area-badge transit"
+              style={{ border: '1px solid rgba(129,140,248,0.25)' }}
+            >
               {getModeIcon(data.commute.mode)}
-              <span>{data.commute.duration_min} min commute</span>
-            </div>
+              {data.commute.duration_min} min commute
+            </span>
           )}
 
           <ConfidenceBadge confidence={data.confidence} sampleSize={data.sample_size} />
         </div>
 
-        {/* Row 3: Proportional Expense Breakdown Bar with Clean Legend */}
+        {/* Expense bar */}
         <div className="expense-breakdown-bar-wrap">
           <div
-            className="expense-breakdown-bar"
-            title={`Kost: ${rentPct}% | Food: ${foodPct}% | Commute/Other: ${transitPct}%`}
+            className="breakdown-bar-track"
+            title={`Kost: ${rentPct}% | Food: ${foodPct}% | Transit: ${transitPct}% | Grocery: ${groceryPct}%`}
           >
-            <div className="breakdown-bar-segment rent" style={{ width: `${rentPct}%` }} />
-            <div className="breakdown-bar-segment food" style={{ width: `${foodPct}%` }} />
+            <div className="breakdown-bar-segment rent"    style={{ width: `${rentPct}%` }} />
+            <div className="breakdown-bar-segment food"    style={{ width: `${foodPct}%` }} />
             <div className="breakdown-bar-segment transit" style={{ width: `${transitPct}%` }} />
+            <div className="breakdown-bar-segment grocery" style={{ width: `${groceryPct}%` }} />
           </div>
           <div className="breakdown-legend-row">
-            <span className="legend-item">
-              <span className="legend-dot" style={{ background: 'var(--brand-secondary)' }} />
-              <span>Kost {rentPct}%</span>
-            </span>
-            <span className="legend-item">
-              <span className="legend-dot" style={{ background: 'var(--brand-warm)' }} />
-              <span>Food {foodPct}%</span>
-            </span>
-            <span className="legend-item">
-              <span className="legend-dot" style={{ background: 'var(--brand-commute)' }} />
-              <span>Transit {transitPct}%</span>
-            </span>
+            {[
+              { label: `Kost ${rentPct}%`,    color: 'var(--brand-secondary)' },
+              { label: `Food ${foodPct}%`,     color: 'var(--brand-warm)' },
+              { label: `Transit ${transitPct}%`, color: 'var(--brand-commute)' },
+              { label: `Grocery ${groceryPct}%`, color: 'var(--brand-grocery)' },
+            ].map(({ label, color }) => (
+              <span key={label} className="breakdown-legend-item">
+                <span className="breakdown-dot" style={{ background: color }} />
+                {label}
+              </span>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Expanded Breakdown */}
+      {/* Expanded breakdown */}
       {isExpanded && (
-        <div className="area-card-expanded">
-          {/* 4 Spacious Breakdown Tiles Grid (No squishing, no wrapping bugs) */}
-          <div className="breakdown-tiles-grid">
-            {/* 1. Housing / Kost */}
-            <div className="breakdown-tile">
-              <div>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
-                  <div className="tile-icon-badge" style={{ background: 'var(--brand-secondary-light)', color: 'var(--brand-secondary)' }}>
-                    <Home size={18} />
-                  </div>
-                  {data.metric_values['rent_or_kost_monthly'] && (
-                    <ConfidenceBadge
-                      confidence={data.metric_values['rent_or_kost_monthly'].confidence}
-                      sampleSize={data.metric_values['rent_or_kost_monthly'].sample_size}
-                      compact
-                    />
-                  )}
-                </div>
-                <div className="tile-title">Kost & Room Rent</div>
-                <div className="tile-price">
-                  <span>{formattedRent.primary}</span>
-                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: 400, marginLeft: 2 }}>/mo</span>
-                </div>
+        <div className="area-card-details">
+          {/* 4 expense tiles */}
+          <div className="expense-rows-grid">
+            {/* Rent */}
+            <div className="expense-row-card">
+              <div className="expense-row-icon rent">
+                <Home size={17} />
               </div>
-              <div className="tile-desc">Single room or student kost baseline average</div>
+              <div>
+                <div className="expense-row-label">Kost &amp; Room Rent</div>
+                <div className="expense-row-value">{formattedRent.primary}<span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 400 }}>/mo</span></div>
+                <div className="expense-row-sub">Single room or student kost baseline</div>
+              </div>
+              {data.metric_values?.['rent_or_kost_monthly'] && (
+                <div style={{ marginLeft: 'auto', flexShrink: 0 }}>
+                  <ConfidenceBadge
+                    confidence={data.metric_values['rent_or_kost_monthly'].confidence}
+                    sampleSize={data.metric_values['rent_or_kost_monthly'].sample_size}
+                    compact
+                  />
+                </div>
+              )}
             </div>
 
-            {/* 2. Food & Local Meals */}
-            <div className="breakdown-tile">
+            {/* Food */}
+            <div className="expense-row-card">
+              <div className="expense-row-icon food">
+                <Utensils size={17} />
+              </div>
               <div>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
-                  <div className="tile-icon-badge" style={{ background: 'var(--brand-warm-light)', color: 'var(--brand-warm)' }}>
-                    <Utensils size={18} />
-                  </div>
-                  {data.metric_values['food_meal_avg'] && (
-                    <ConfidenceBadge
-                      confidence={data.metric_values['food_meal_avg'].confidence}
-                      sampleSize={data.metric_values['food_meal_avg'].sample_size}
-                      compact
-                    />
-                  )}
-                </div>
-                <div className="tile-title">Warung & Daily Meals</div>
-                <div className="tile-price">
-                  <span>{formattedFood.primary}</span>
-                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: 400, marginLeft: 2 }}>/mo</span>
-                </div>
+                <div className="expense-row-label">Warung &amp; Daily Meals</div>
+                <div className="expense-row-value">{formattedFood.primary}<span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 400 }}>/mo</span></div>
+                <div className="expense-row-sub">~{formattedMeal.primary}/meal · 3 meals daily</div>
               </div>
-              <div className="tile-desc">
-                ~{formattedMeal.primary}/meal · 3 daily authentic canteen or warung meals
-              </div>
+              {data.metric_values?.['food_meal_avg'] && (
+                <div style={{ marginLeft: 'auto', flexShrink: 0 }}>
+                  <ConfidenceBadge
+                    confidence={data.metric_values['food_meal_avg'].confidence}
+                    sampleSize={data.metric_values['food_meal_avg'].sample_size}
+                    compact
+                  />
+                </div>
+              )}
             </div>
 
-            {/* 3. Transit & Commute */}
-            <div className="breakdown-tile">
-              <div>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
-                  <div className="tile-icon-badge" style={{ background: 'var(--brand-commute-light)', color: 'var(--brand-commute)' }}>
-                    <Bus size={18} />
-                  </div>
-                  {data.metric_values['transport_monthly'] && (
-                    <ConfidenceBadge
-                      confidence={data.metric_values['transport_monthly'].confidence}
-                      sampleSize={data.metric_values['transport_monthly'].sample_size}
-                      compact
-                    />
-                  )}
-                </div>
-                <div className="tile-title">Transit & Commute</div>
-                <div className="tile-price">
-                  <span>{formattedTransport.primary}</span>
-                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: 400, marginLeft: 2 }}>/mo</span>
-                </div>
+            {/* Transit */}
+            <div className="expense-row-card">
+              <div className="expense-row-icon transit">
+                <Bus size={17} />
               </div>
-              <div className="tile-desc">Local commuter rail, busway passes, or daily commute trips</div>
+              <div>
+                <div className="expense-row-label">Transit &amp; Commute</div>
+                <div className="expense-row-value">{formattedTransport.primary}<span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 400 }}>/mo</span></div>
+                <div className="expense-row-sub">Commuter rail, busway, or daily trips</div>
+              </div>
+              {data.metric_values?.['transport_monthly'] && (
+                <div style={{ marginLeft: 'auto', flexShrink: 0 }}>
+                  <ConfidenceBadge
+                    confidence={data.metric_values['transport_monthly'].confidence}
+                    sampleSize={data.metric_values['transport_monthly'].sample_size}
+                    compact
+                  />
+                </div>
+              )}
             </div>
 
-            {/* 4. Groceries & Supplies */}
-            <div className="breakdown-tile">
-              <div>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
-                  <div className="tile-icon-badge" style={{ background: 'var(--brand-grocery-light)', color: 'var(--brand-grocery)' }}>
-                    <ShoppingBasket size={18} />
-                  </div>
-                  {data.metric_values['grocery_basket'] && (
-                    <ConfidenceBadge
-                      confidence={data.metric_values['grocery_basket'].confidence}
-                      sampleSize={data.metric_values['grocery_basket'].sample_size}
-                      compact
-                    />
-                  )}
-                </div>
-                <div className="tile-title">Groceries & Essentials</div>
-                <div className="tile-price">
-                  <span>{formattedGrocery.primary}</span>
-                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: 400, marginLeft: 2 }}>/mo</span>
-                </div>
+            {/* Grocery */}
+            <div className="expense-row-card">
+              <div className="expense-row-icon grocery">
+                <ShoppingBasket size={17} />
               </div>
-              <div className="tile-desc">Household toiletries, drinking water, and weekly student staples</div>
+              <div>
+                <div className="expense-row-label">Groceries &amp; Essentials</div>
+                <div className="expense-row-value">{formattedGrocery.primary}<span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 400 }}>/mo</span></div>
+                <div className="expense-row-sub">Household basics &amp; weekly staples</div>
+              </div>
+              {data.metric_values?.['grocery_basket'] && (
+                <div style={{ marginLeft: 'auto', flexShrink: 0 }}>
+                  <ConfidenceBadge
+                    confidence={data.metric_values['grocery_basket'].confidence}
+                    sampleSize={data.metric_values['grocery_basket'].sample_size}
+                    compact
+                  />
+                </div>
+              )}
             </div>
           </div>
 
-          {/* Commute Section (Personalized Mode) */}
+          {/* Commute detail (personalized mode) */}
           {isPersonalized && data.commute && (
-            <div
-              style={{
-                background: 'var(--bg-surface)',
-                border: '1px solid var(--border-subtle)',
-                borderRadius: 'var(--radius-md)',
-                padding: '1.25rem 1.5rem',
-                marginBottom: '1.25rem',
-                boxShadow: 'var(--shadow-xs)',
-              }}
-            >
-              <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  fontSize: '0.9375rem',
-                  fontWeight: 700,
-                  color: 'var(--text-primary)',
-                  marginBottom: '0.85rem',
-                }}
-              >
-                <Navigation size={16} color="var(--brand-primary)" />
-                <span>Commute to Workplace or Campus ({data.commute.distance_km} km away)</span>
+            <div className="commute-section">
+              <div className="commute-section-title">
+                <Navigation size={12} />
+                Commute to Workplace ({data.commute.distance_km} km)
               </div>
-
-              {/* Commute Mode Selector */}
-              <div className="commute-mode-bar">
+              <div className="commute-mode-tabs">
                 {data.commute.available_modes.map((modeDetail: any) => (
                   <button
                     key={modeDetail.mode}
                     type="button"
                     disabled={!modeDetail.is_available}
                     onClick={() => setSelectedCommuteMode(modeDetail.mode)}
-                    className={`commute-mode-pill ${selectedCommuteMode === modeDetail.mode ? 'active' : ''}`}
+                    className={`commute-mode-btn ${selectedCommuteMode === modeDetail.mode ? 'active' : ''}`}
                   >
                     {getModeIcon(modeDetail.mode)}
                     <span style={{ textTransform: 'capitalize' }}>{modeDetail.mode}</span>
                     {modeDetail.is_available && (
-                      <span style={{ opacity: 0.85, fontWeight: 700 }}>({modeDetail.duration_min} min)</span>
+                      <span style={{ fontWeight: 700 }}>{modeDetail.duration_min} min</span>
                     )}
                   </button>
                 ))}
               </div>
 
-              {/* Selected Mode Detail */}
               {selectedCommuteDetail && (
-                <div
-                  style={{
-                    fontSize: '0.8125rem',
-                    color: selectedCommuteDetail.is_available
-                      ? 'var(--text-secondary)'
-                      : 'var(--accent-warning)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.45rem',
-                    marginTop: '0.75rem',
-                  }}
-                >
-                  {selectedCommuteDetail.is_available ? (
-                    <Clock size={14} color="var(--brand-primary)" />
-                  ) : (
-                    <AlertTriangle size={14} color="var(--accent-warning)" />
-                  )}
-                  <span>
-                    {selectedCommuteDetail.status_note ||
-                      `Estimated travel duration: ${selectedCommuteDetail.duration_min} min`}
+                <div className="commute-info-row" style={{ marginTop: '0.75rem' }}>
+                  <span className="commute-detail-chip">
+                    {selectedCommuteDetail.is_available
+                      ? <Clock size={13} style={{ color: 'var(--brand-primary)' }} />
+                      : <AlertTriangle size={13} style={{ color: 'var(--accent-warning)' }} />}
+                    <span style={{ color: selectedCommuteDetail.is_available ? 'var(--text-secondary)' : 'var(--accent-warning)' }}>
+                      {selectedCommuteDetail.status_note ||
+                        `Estimated travel: ${selectedCommuteDetail.duration_min} min`}
+                    </span>
                   </span>
                 </div>
               )}
             </div>
           )}
 
-          {/* Recorded Sources & Evidence Inspector */}
+          {/* Sources & evidence inspector */}
           <div
             style={{
               background: 'var(--bg-surface)',
               border: '1px solid var(--border-subtle)',
               borderRadius: 'var(--radius-md)',
-              padding: '1rem 1.25rem',
-              marginBottom: '1.25rem',
-              boxShadow: 'var(--shadow-xs)',
+              padding: '0.9rem 1.1rem',
+              marginBottom: '1rem',
             }}
           >
             <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                cursor: 'pointer',
-              }}
+              style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer' }}
               onClick={() => setShowFactsDrawer(!showFactsDrawer)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setShowFactsDrawer(!showFactsDrawer); } }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', fontWeight: 600, color: 'var(--brand-primary)' }}>
-                <ShieldCheck size={16} />
-                <span>Sources & Evidence ({data.sample_size} observations)</span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', fontSize: '0.875rem', fontWeight: 700, color: 'var(--brand-primary)' }}>
+                <ShieldCheck size={15} />
+                Sources &amp; Evidence ({data.sample_size} observations)
               </div>
-              <span style={{ fontSize: '0.8125rem', color: 'var(--text-muted)', fontWeight: 600 }}>
-                {showFactsDrawer ? 'Hide Sources ▲' : 'Inspect Sources ▼'}
+              <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 600 }}>
+                {showFactsDrawer ? 'Hide ▲' : 'Inspect ▼'}
               </span>
             </div>
 
             {showFactsDrawer && (
-              <div style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid var(--border-subtle)' }}>
+              <div style={{ marginTop: '0.9rem', paddingTop: '0.9rem', borderTop: '1px solid var(--border-subtle)' }}>
                 {areaSubmissions.length > 0 ? (
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.55rem' }}>
                     {areaSubmissions.map((sub) => (
                       <div
                         key={sub.id}
@@ -448,11 +415,11 @@ export const AreaExpenseCard: React.FC<AreaExpenseCardProps> = ({
                           background: 'var(--bg-surface-alt)',
                           border: '1px solid var(--border-subtle)',
                           borderRadius: 'var(--radius-sm)',
-                          padding: '0.65rem 0.85rem',
+                          padding: '0.6rem 0.8rem',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'space-between',
-                          gap: '0.85rem',
+                          gap: '0.75rem',
                         }}
                       >
                         <div style={{ minWidth: 0 }}>
@@ -460,9 +427,8 @@ export const AreaExpenseCard: React.FC<AreaExpenseCardProps> = ({
                             {sub.note || 'Sample observation'}: {sub.value.toLocaleString()} {data.country.currency_code}
                           </div>
                         </div>
-
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexShrink: 0 }}>
-                          <span style={{ fontSize: '0.6875rem', color: 'var(--text-muted)', background: 'var(--bg-card)', padding: '0.2rem 0.45rem', borderRadius: 4, border: '1px solid var(--border-subtle)' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', flexShrink: 0 }}>
+                          <span style={{ fontSize: '0.6875rem', color: 'var(--text-muted)', background: 'var(--glass-bg)', padding: '0.15rem 0.45rem', borderRadius: 4, border: '1px solid var(--border-subtle)' }}>
                             {sub.source_type}
                           </span>
                           {(() => {
@@ -473,11 +439,10 @@ export const AreaExpenseCard: React.FC<AreaExpenseCardProps> = ({
                                 href={safeLink}
                                 target="_blank"
                                 rel="noreferrer noopener"
-                                className="evidence-link-btn"
-                                title="Inspect evidence link"
+                                style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem', fontSize: '0.75rem', color: 'var(--brand-primary)', fontWeight: 600 }}
                               >
-                                <ExternalLink size={12} />
-                                <span>Source</span>
+                                <ExternalLink size={11} />
+                                Source
                               </a>
                             );
                           })()}
@@ -487,49 +452,35 @@ export const AreaExpenseCard: React.FC<AreaExpenseCardProps> = ({
                   </div>
                 ) : (
                   <div style={{ fontSize: '0.8125rem', color: 'var(--text-muted)' }}>
-                    Loading factual observations...
+                    Loading factual observations…
                   </div>
                 )}
               </div>
             )}
           </div>
 
-          {/* Area Card Footer: Citations & Action Buttons */}
-          <div className="area-card-footer">
-            <div className="card-citations">
-              <span className="citation-tag">
-                <CheckCircle2 size={13} color="var(--brand-secondary)" />
-                <span>OpenStreetMap Geodata</span>
-              </span>
-              <span>·</span>
-              <span className="citation-tag">
-                <span>World Bank PPP Benchmark</span>
-              </span>
+          {/* Card action buttons */}
+          <div className="area-card-actions-row">
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.6875rem', color: 'var(--text-muted)' }}>
+              <CheckCircle2 size={11} style={{ color: 'var(--brand-secondary)' }} />
+              OpenStreetMap · World Bank PPP Benchmark
             </div>
-
-            <div className="card-footer-actions">
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <button
                 type="button"
-                className="btn-secondary card-action-btn"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onOpenSubmitFact(data);
-                }}
+                className="area-action-btn submit-fact"
+                onClick={(e) => { e.stopPropagation(); onOpenSubmitFact(data); }}
               >
-                <PlusCircle size={14} />
-                <span>Submit Fact</span>
+                <PlusCircle size={13} />
+                Submit Fact
               </button>
-
               {onOpenFeedback && (
                 <button
                   type="button"
-                  className="btn-secondary card-action-btn report-btn"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    onOpenFeedback(data);
-                  }}
+                  className="area-action-btn"
+                  onClick={(e) => { e.stopPropagation(); onOpenFeedback(data); }}
                 >
-                  <span>Report Update</span>
+                  Report Update
                 </button>
               )}
             </div>

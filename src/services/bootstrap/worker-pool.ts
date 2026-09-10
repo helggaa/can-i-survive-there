@@ -13,6 +13,8 @@ export interface BootstrapProgressEvent {
   activeAreaName?: string;
   isComplete: boolean;
   completedAreaIds: string[];
+  hasError?: boolean;
+  errorMessage?: string;
 }
 
 export type ProgressListener = (event: BootstrapProgressEvent) => void;
@@ -148,57 +150,72 @@ class BootstrapPipeline {
       completedAreaIds: [],
     });
 
-    const queue = [...areas];
-    const inFlight: Promise<void>[] = [];
+    try {
+      const queue = [...areas];
+      const inFlight: Promise<void>[] = [];
 
-    const processArea = async (area: Area) => {
-      this.notify({
-        cityId: city.id,
-        totalAreas: areas.length,
-        completedAreas: completedAreaIds.length,
-        activeAreaName: area.name,
-        isComplete: false,
-        completedAreaIds: [...completedAreaIds],
-      });
-
-      await this.researchAndInsertAreaMetrics(area, city, country);
-      await db.recomputeAreaMetrics(area.id);
-      completedAreaIds.push(area.id);
-
-      this.notify({
-        cityId: city.id,
-        totalAreas: areas.length,
-        completedAreas: completedAreaIds.length,
-        activeAreaName: queue[0]?.name,
-        isComplete: completedAreaIds.length === areas.length,
-        completedAreaIds: [...completedAreaIds],
-      });
-    };
-
-    while (queue.length > 0 || inFlight.length > 0) {
-      while (queue.length > 0 && inFlight.length < this.concurrencyLimit) {
-        const area = queue.shift()!;
-        const p = processArea(area).then(() => {
-          inFlight.splice(inFlight.indexOf(p), 1);
+      const processArea = async (area: Area) => {
+        this.notify({
+          cityId: city.id,
+          totalAreas: areas.length,
+          completedAreas: completedAreaIds.length,
+          activeAreaName: area.name,
+          isComplete: false,
+          completedAreaIds: [...completedAreaIds],
         });
-        inFlight.push(p);
+
+        await this.researchAndInsertAreaMetrics(area, city, country);
+        await db.recomputeAreaMetrics(area.id);
+        completedAreaIds.push(area.id);
+
+        this.notify({
+          cityId: city.id,
+          totalAreas: areas.length,
+          completedAreas: completedAreaIds.length,
+          activeAreaName: queue[0]?.name,
+          isComplete: completedAreaIds.length === areas.length,
+          completedAreaIds: [...completedAreaIds],
+        });
+      };
+
+      while (queue.length > 0 || inFlight.length > 0) {
+        while (queue.length > 0 && inFlight.length < this.concurrencyLimit) {
+          const area = queue.shift()!;
+          const p = processArea(area).then(() => {
+            inFlight.splice(inFlight.indexOf(p), 1);
+          });
+          inFlight.push(p);
+        }
+        if (inFlight.length > 0) {
+          await Promise.race(inFlight);
+        }
       }
-      if (inFlight.length > 0) {
-        await Promise.race(inFlight);
-      }
+
+      city.bootstrap_status = 'enriched';
+      city.last_refreshed_at = new Date().toISOString();
+
+      this.notify({
+        cityId: city.id,
+        totalAreas: areas.length,
+        completedAreas: areas.length,
+        isComplete: true,
+        completedAreaIds,
+      });
+    } catch (err: any) {
+      console.error(`Bootstrap pipeline failure for city ${city.name}:`, err);
+      this.notify({
+        cityId: city.id,
+        totalAreas: areas.length,
+        completedAreas: completedAreaIds.length,
+        isComplete: true,
+        hasError: true,
+        errorMessage: err?.message || 'Bootstrap pipeline failed',
+        completedAreaIds,
+      });
+      throw err;
+    } finally {
+      this.activeJobs.delete(city.id);
     }
-
-    this.activeJobs.delete(city.id);
-    city.bootstrap_status = 'enriched';
-    city.last_refreshed_at = new Date().toISOString();
-
-    this.notify({
-      cityId: city.id,
-      totalAreas: areas.length,
-      completedAreas: areas.length,
-      isComplete: true,
-      completedAreaIds,
-    });
   }
 
   /**
@@ -251,9 +268,9 @@ class BootstrapPipeline {
         value: safeRent,
         currency_code: country.currency_code,
         source_url: matchedCity.sources.rent_url,
-        source_type: 'listing_site',
-        agent_confidence: 'high',
-        note: `${notePrefix}Observed room / kost rental average in ${area.name}, ${city.name}`,
+        source_type: 'agent_bootstrap',
+        agent_confidence: 'medium',
+        note: `${notePrefix}Modeled neighborhood rent based on ${matchedCity.city} baseline with variance heuristic`,
       });
 
       // Food (Meals Only)
@@ -263,9 +280,9 @@ class BootstrapPipeline {
         value: safeMeal,
         currency_code: country.currency_code,
         source_url: matchedCity.sources.food_url,
-        source_type: 'aggregator',
-        agent_confidence: 'high',
-        note: `${notePrefix}Average sit-down meal cost in ${area.name} (strictly meals only, excludes snacks & drinks)`,
+        source_type: 'agent_bootstrap',
+        agent_confidence: 'medium',
+        note: `${notePrefix}Modeled casual meal cost in ${area.name} based on ${matchedCity.city} baseline`,
       });
 
       // Transport
@@ -275,9 +292,9 @@ class BootstrapPipeline {
         value: safeTransport,
         currency_code: country.currency_code,
         source_url: matchedCity.sources.transport_url,
-        source_type: 'government_data',
-        agent_confidence: 'high',
-        note: `${notePrefix}Monthly public transport pass in ${city.name}`,
+        source_type: 'agent_bootstrap',
+        agent_confidence: 'medium',
+        note: `${notePrefix}Estimated monthly public transit cost in ${city.name}`,
       });
 
       // Groceries
@@ -287,9 +304,9 @@ class BootstrapPipeline {
         value: safeGrocery,
         currency_code: country.currency_code,
         source_url: matchedCity.sources.grocery_url,
-        source_type: 'aggregator',
-        agent_confidence: 'high',
-        note: `${notePrefix}Weekly 1-person essential grocery basket in ${city.name}`,
+        source_type: 'agent_bootstrap',
+        agent_confidence: 'medium',
+        note: `${notePrefix}Estimated weekly essential groceries in ${city.name}`,
       });
 
       return;
@@ -320,10 +337,10 @@ class BootstrapPipeline {
       metric_key: 'rent_or_kost_monthly',
       value: safeRent,
       currency_code: country.currency_code,
-      source_url: `https://www.numbeo.com/cost-of-living/in/${encodeURIComponent(city.name)}`,
-      source_type: 'listing_site',
-      agent_confidence: 'medium',
-      note: `Research average for single room kost / dorm in ${area.name}, ${city.name}`,
+      source_url: 'https://data.worldbank.org',
+      source_type: 'agent_bootstrap',
+      agent_confidence: 'estimated',
+      note: `Modeled single room rent from ${country.name} GNI PPP economic baseline`,
     });
 
     // Staging write: Food (Meals Only)
@@ -332,10 +349,10 @@ class BootstrapPipeline {
       metric_key: 'food_meal_avg',
       value: safeFood,
       currency_code: country.currency_code,
-      source_url: `https://www.numbeo.com/cost-of-living/in/${encodeURIComponent(city.name)}`,
-      source_type: 'aggregator',
-      agent_confidence: 'medium',
-      note: `Average casual sit-down meal cost in ${area.name} (strictly meals only)`,
+      source_url: 'https://data.worldbank.org',
+      source_type: 'agent_bootstrap',
+      agent_confidence: 'estimated',
+      note: `Modeled casual meal cost from ${country.name} GNI PPP economic baseline`,
     });
 
     // Staging write: Transport
@@ -344,10 +361,10 @@ class BootstrapPipeline {
       metric_key: 'transport_monthly',
       value: safeTransport,
       currency_code: country.currency_code,
-      source_url: `https://www.numbeo.com/cost-of-living/in/${encodeURIComponent(city.name)}`,
-      source_type: 'government_data',
-      agent_confidence: 'high',
-      note: `Monthly public transport pass rate for ${city.name}`,
+      source_url: 'https://data.worldbank.org',
+      source_type: 'agent_bootstrap',
+      agent_confidence: 'estimated',
+      note: `Modeled monthly transit pass from ${country.name} GNI PPP economic baseline`,
     });
 
     // Staging write: Groceries
@@ -356,10 +373,10 @@ class BootstrapPipeline {
       metric_key: 'grocery_basket',
       value: safeGrocery,
       currency_code: country.currency_code,
-      source_url: `https://www.numbeo.com/cost-of-living/in/${encodeURIComponent(city.name)}`,
-      source_type: 'aggregator',
-      agent_confidence: 'medium',
-      note: `Weekly 1-person essential grocery basket in ${city.name}`,
+      source_url: 'https://data.worldbank.org',
+      source_type: 'agent_bootstrap',
+      agent_confidence: 'estimated',
+      note: `Modeled weekly essential groceries from ${country.name} GNI PPP economic baseline`,
     });
   }
 }

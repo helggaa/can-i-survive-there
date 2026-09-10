@@ -77,3 +77,8 @@ __pycache__/
 .gemini/
 scratch/
 brain/
+*plan*.md
+*walkthrough*.md
+implementation_plan.md
+walkthrough.md
+scratchpad*.md

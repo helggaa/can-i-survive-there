@@ -434,7 +434,7 @@ export async function discoverCityAreas(city: City, _country: Country): Promise<
         name: dist.name,
         lat: Number((city.lat + dist.latOffset).toFixed(4)),
         lng: Number((city.lng + dist.lngOffset).toFixed(4)),
-        source: 'osm',
+        source: 'curated',
         created_at: new Date().toISOString(),
       };
       db.areas.push(newArea);
@@ -462,7 +462,7 @@ export async function discoverCityAreas(city: City, _country: Country): Promise<
         name: quad.name,
         lat: Number((city.lat + quad.latOffset).toFixed(4)),
         lng: Number((city.lng + quad.lngOffset).toFixed(4)),
-        source: 'osm',
+        source: 'modeled',
         created_at: new Date().toISOString(),
       };
       db.areas.push(newArea);

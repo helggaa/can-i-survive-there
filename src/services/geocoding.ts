@@ -1,7 +1,7 @@
 // src/services/geocoding.ts
 // Geocoding service using OpenStreetMap Nominatim with local caching and offline fallbacks
 
-import { Country as CSC_Country } from 'country-state-city';
+import GLOBAL_COUNTRIES from '../data/global-countries.json';
 
 export interface GeocodeResult {
   lat: number;
@@ -27,15 +27,11 @@ const COUNTRY_CURRENCY_MAP: Record<string, string> = {
   AU: 'AUD',
 };
 
-// Populate comprehensive ISO -> currency mappings from country-state-city
-try {
-  for (const c of CSC_Country.getAllCountries()) {
-    if (c.isoCode && c.currency) {
-      COUNTRY_CURRENCY_MAP[c.isoCode.toUpperCase()] = c.currency.toUpperCase();
-    }
+// Populate comprehensive ISO -> currency mappings from compact global countries dataset
+for (const c of GLOBAL_COUNTRIES as Array<{ iso_code: string; currency_code: string }>) {
+  if (c.iso_code && c.currency_code) {
+    COUNTRY_CURRENCY_MAP[c.iso_code.toUpperCase()] = c.currency_code.toUpperCase();
   }
-} catch {
-  // fallback map remains active
 }
 
 // In-memory geocoding cache

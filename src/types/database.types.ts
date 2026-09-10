@@ -7,7 +7,7 @@ export type MetricCategory = 'housing' | 'transport' | 'food' | 'other';
 export type SubmissionStatus = 'pending' | 'accepted' | 'rejected' | 'flagged';
 export type HousingType = 'dorm' | 'kos' | 'apartment' | 'shared_house';
 export type CommuteMode = 'walk' | 'transit' | 'drive' | 'bike';
-export type AreaSource = 'osm' | 'manual' | 'curated' | 'crowdsourced';
+export type AreaSource = 'osm' | 'manual' | 'curated' | 'crowdsourced' | 'modeled';
 export type SourceType = 'listing_site' | 'aggregator' | 'news_article' | 'government_data' | 'agent_bootstrap' | 'user_fact';
 
 export interface Country {
@@ -117,7 +117,7 @@ export interface InsertAreaMetricInput {
   source_url: string;
   source_type?: 'listing_site' | 'aggregator' | 'news_article' | 'government_data' | 'agent_bootstrap' | 'user_fact';
   observed_at?: string;
-  agent_confidence?: 'low' | 'medium' | 'high';
+  agent_confidence?: ConfidenceLevel;
   note?: string;
 }
 

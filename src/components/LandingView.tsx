@@ -1,5 +1,5 @@
 // src/components/LandingView.tsx
-// Warm, welcoming relocation guide for students, migrants, and new arrivals
+// Survive Atlas — Premium dark cinema landing with staggered hero, glass cards & FAQ
 
 import React, { useState } from 'react';
 import {
@@ -7,13 +7,14 @@ import {
   Sparkles,
   Shield,
   ArrowRight,
-  MapPin,
   Utensils,
   GraduationCap,
   Briefcase,
   Users,
   ChevronDown,
   Home,
+  Globe,
+  Zap,
 } from 'lucide-react';
 
 interface LandingViewProps {
@@ -28,80 +29,79 @@ export const LandingView: React.FC<LandingViewProps> = ({
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   const sampleCities = [
-    { name: 'Yogyakarta', id: 'city-yogyakarta-02', country: '🇮🇩', cost: 'Rp 2.1M/mo', tag: 'Top Student Hub' },
-    { name: 'Bandung', id: 'city-bandung-04', country: '🇮🇩', cost: 'Rp 2.8M/mo', tag: 'Campus & Creative' },
-    { name: 'Jakarta', id: 'city-jakarta-01', country: '🇮🇩', cost: 'Rp 3.8M/mo', tag: 'Jobs & Capital' },
-    { name: 'Surabaya', id: 'city-surabaya-03', country: '🇮🇩', cost: 'Rp 2.9M/mo', tag: 'Industry & Study' },
-    { name: 'Tokyo', id: 'city-tokyo-05', country: '🇯🇵', cost: '¥ 145K/mo', tag: 'Global Study' },
-    { name: 'Melbourne', id: 'city-melbourne-06', country: '🇦🇺', cost: 'A$ 2,200/mo', tag: 'Study Abroad' },
+    { name: 'Yogyakarta', id: 'city-yogyakarta-02', flag: '🇮🇩', cost: 'Rp 2.1M/mo', tag: 'Top Student Hub' },
+    { name: 'Bandung',    id: 'city-bandung-04',    flag: '🇮🇩', cost: 'Rp 2.8M/mo', tag: 'Campus & Creative' },
+    { name: 'Jakarta',    id: 'city-jakarta-01',    flag: '🇮🇩', cost: 'Rp 3.8M/mo', tag: 'Jobs & Capital' },
+    { name: 'Surabaya',   id: 'city-surabaya-03',   flag: '🇮🇩', cost: 'Rp 2.9M/mo', tag: 'Industry & Study' },
+    { name: 'Tokyo',      id: 'city-tokyo-05',      flag: '🇯🇵', cost: '¥145K/mo',   tag: 'Global Study' },
+    { name: 'Melbourne',  id: 'city-melbourne-06',  flag: '🇦🇺', cost: 'A$2,200/mo', tag: 'Study Abroad' },
   ];
 
   const faqs = [
     {
       q: 'Who is this guide built for?',
-      a: 'We built this specifically for university students moving to campus, migrant workers relocating to new cities, and fresh graduates planning their first independent apartment or kost.',
+      a: 'We built this for university students moving to campus, migrant workers relocating to new cities, and fresh graduates planning their first independent apartment or kost.',
     },
     {
       q: 'How are the kost and room rents calculated?',
       a: 'We prioritize entry-level single room and kost rents. Estimates are calculated from local listings, OpenStreetMap geodata, and crowdsourced community submissions.',
     },
     {
-      q: 'What does "Meals-Only Food Cost" mean?',
-      a: 'Instead of assuming discretionary dining, we model 3 everyday sit-down meals a day (such as local warungs, campus canteens, and casual eateries) across 30 days to outline an entry-level meal baseline.',
+      q: "What does \"Meals-Only Food Cost\" mean?",
+      a: 'We model 3 everyday sit-down meals a day (local warungs, campus canteens, casual eateries) across 30 days — excluding discretionary snacks and drinks.',
     },
     {
       q: 'Is this service free to access?',
-      a: 'Yes, free and open-source. Runs client-side without registration, accounts, or tracker cookies.',
+      a: 'Yes — free, open-source, and runs client-side without registration, accounts, or tracker cookies.',
     },
   ];
 
   return (
     <div className="landing-container">
-      {/* Hero Section */}
+      {/* ── Hero Section ── */}
       <div className="landing-hero">
         <div className="hero-tag">
-          <GraduationCap size={16} />
-          <span>Relocation & Living Cost Guide for Students & Workers</span>
+          <Globe size={14} />
+          <span>Relocation &amp; Living Cost Guide for Students &amp; Workers</span>
         </div>
 
         <h1 className="hero-title">
-          Moving somewhere new? Know before you pack.
+          Moving somewhere new?<br />Know before you pack.
         </h1>
 
         <p className="hero-desc">
-          Room and kost rent estimates, everyday meal averages, and calculated commute times near your campus or workplace. Plan your relocation budget with sample-based data.
+          Room and kost rent estimates, everyday meal averages, and calculated commute times near your campus or workplace. Plan your relocation budget with real, sample-based data.
         </p>
 
-        {/* Persona Badges */}
+        {/* Persona pills */}
         <div className="persona-pills-row">
           <div className="persona-pill">
             <GraduationCap size={14} style={{ color: 'var(--brand-primary)' }} />
-            <span>Moving for College / University</span>
+            <span>Moving for College</span>
           </div>
           <div className="persona-pill">
             <Briefcase size={14} style={{ color: 'var(--brand-secondary)' }} />
-            <span>Relocating for a New Job</span>
+            <span>Relocating for a Job</span>
           </div>
           <div className="persona-pill">
             <Home size={14} style={{ color: 'var(--brand-warm)' }} />
-            <span>First-Time Living Independently</span>
+            <span>First-Time Independent</span>
           </div>
         </div>
 
-        {/* Live City Cost Ticker Chips */}
+        {/* City chips */}
         <div className="landing-city-ticker-container">
-          <div className="landing-city-ticker-title">
-            Popular Student &amp; Worker Cities:
-          </div>
-          <div className="landing-city-chips-wrap">
+          <div className="landing-city-ticker-title">Popular cities to explore</div>
+          <div className="landing-city-chips-wrap stagger-list">
             {sampleCities.map((item) => (
               <button
                 key={item.name}
                 type="button"
-                className="landing-city-chip"
+                className="landing-city-chip stagger-item"
                 onClick={() => onSelectBrowse(item.id)}
+                title={`Explore ${item.name} costs`}
               >
-                <span>{item.country}</span>
+                <span style={{ fontSize: '1.05rem' }}>{item.flag}</span>
                 <strong className="city-chip-name">{item.name}</strong>
                 <span className="city-chip-cost">{item.cost}</span>
               </button>
@@ -109,9 +109,9 @@ export const LandingView: React.FC<LandingViewProps> = ({
           </div>
         </div>
 
-        {/* Dual Choice Path Cards */}
+        {/* ── Dual Choice Cards ── */}
         <div className="choice-cards-grid">
-          {/* Choice 1: Browse Mode */}
+          {/* Browse mode */}
           <div
             className="choice-card"
             onClick={() => onSelectBrowse()}
@@ -126,10 +126,11 @@ export const LandingView: React.FC<LandingViewProps> = ({
           >
             <div>
               <div className="choice-icon-wrap browse-icon">
-                <Compass size={28} />
+                <Compass size={26} />
               </div>
               <div className="choice-badge-wrap browse-badge">
-                <Shield size={12} /> Open-Access Cost Data
+                <Shield size={11} />
+                Open-Access Cost Data
               </div>
               <h2 className="choice-title">Browse City Survival Costs</h2>
               <p className="choice-body">
@@ -138,11 +139,11 @@ export const LandingView: React.FC<LandingViewProps> = ({
             </div>
             <div className="choice-cta">
               <span>Explore Cities</span>
-              <ArrowRight size={18} />
+              <ArrowRight size={17} />
             </div>
           </div>
 
-          {/* Choice 2: Personalized Mode */}
+          {/* Personalized mode */}
           <div
             className="choice-card"
             onClick={onSelectPersonalized}
@@ -157,27 +158,28 @@ export const LandingView: React.FC<LandingViewProps> = ({
           >
             <div>
               <div className="choice-icon-wrap personalized-icon">
-                <MapPin size={28} />
+                <Sparkles size={26} />
               </div>
               <div className="choice-badge-wrap personalized-badge">
-                <Sparkles size={12} /> Campus &amp; Office Match
+                <Zap size={11} />
+                Campus &amp; Office Match
               </div>
               <h2 className="choice-title">Calculate My Move</h2>
               <p className="choice-body">
-                Enter your monthly allowance or salary and your campus or office address. We will rank the most affordable neighborhoods with realistic commute routes.
+                Enter your monthly allowance or salary and your campus or office address. We rank the most affordable neighborhoods with realistic commute routes.
               </p>
             </div>
             <div className="choice-cta" style={{ color: 'var(--brand-secondary)' }}>
               <span>Match My Budget</span>
-              <ArrowRight size={18} />
+              <ArrowRight size={17} />
             </div>
           </div>
         </div>
       </div>
 
-      {/* Trust & Philosophy Pillars */}
-      <div className="trust-pillars-grid">
-        <div className="trust-pillar-card">
+      {/* ── Trust Pillars ── */}
+      <div className="trust-pillars-grid stagger-list">
+        <div className="trust-pillar-card stagger-item">
           <div className="trust-pillar-header">
             <div className="pillar-icon-box secondary">
               <Home size={18} />
@@ -189,7 +191,7 @@ export const LandingView: React.FC<LandingViewProps> = ({
           </p>
         </div>
 
-        <div className="trust-pillar-card">
+        <div className="trust-pillar-card stagger-item">
           <div className="trust-pillar-header">
             <div className="pillar-icon-box warm">
               <Utensils size={18} />
@@ -197,11 +199,11 @@ export const LandingView: React.FC<LandingViewProps> = ({
             <span>Everyday Meals Baseline</span>
           </div>
           <p className="trust-pillar-text">
-            Calculated around 3 everyday local meals a day (campus canteens and neighborhood warungs), intentionally excluding discretionary snacks and drinks.
+            Calculated around 3 everyday local meals a day — campus canteens and neighborhood warungs — excluding discretionary snacks.
           </p>
         </div>
 
-        <div className="trust-pillar-card">
+        <div className="trust-pillar-card stagger-item">
           <div className="trust-pillar-header">
             <div className="pillar-icon-box primary">
               <Users size={18} />
@@ -214,11 +216,9 @@ export const LandingView: React.FC<LandingViewProps> = ({
         </div>
       </div>
 
-      {/* FAQ Section */}
+      {/* ── FAQ Section ── */}
       <div className="faq-section">
-        <h3 className="faq-title">
-          Frequently Asked Questions
-        </h3>
+        <h3 className="faq-title">Frequently Asked Questions</h3>
         <div className="faq-list">
           {faqs.map((faq, index) => {
             const isOpen = openFaqIndex === index;
@@ -229,6 +229,7 @@ export const LandingView: React.FC<LandingViewProps> = ({
                 onClick={() => setOpenFaqIndex(isOpen ? null : index)}
                 role="button"
                 tabIndex={0}
+                aria-expanded={isOpen}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
@@ -237,19 +238,13 @@ export const LandingView: React.FC<LandingViewProps> = ({
                 }}
               >
                 <div className="faq-header">
-                  <span className="faq-question">
-                    {faq.q}
-                  </span>
+                  <span className="faq-question">{faq.q}</span>
                   <ChevronDown
-                    size={18}
+                    size={17}
                     className={`faq-chevron ${isOpen ? 'open' : ''}`}
                   />
                 </div>
-                {isOpen && (
-                  <p className="faq-answer">
-                    {faq.a}
-                  </p>
-                )}
+                {isOpen && <p className="faq-answer">{faq.a}</p>}
               </div>
             );
           })}
@@ -260,4 +255,3 @@ export const LandingView: React.FC<LandingViewProps> = ({
 };
 
 export default LandingView;
-

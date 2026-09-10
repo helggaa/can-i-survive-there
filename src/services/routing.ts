@@ -106,7 +106,7 @@ export async function calculateCommute(
     duration_min: driveDurationMin,
     distance_km: driveDistanceKm,
     is_available: true,
-    status_note: 'Estimated driving / taxi duration in typical traffic',
+    status_note: 'Estimated driving / taxi duration in typical traffic (OSRM route)',
   };
 
   const bikeDetail: RouteDetail = {
@@ -114,7 +114,7 @@ export async function calculateCommute(
     duration_min: bikeDurationMin,
     distance_km: driveDistanceKm,
     is_available: true,
-    status_note: 'Motorbike / scooter duration',
+    status_note: 'Modeled motorbike / scooter duration (road corridor estimate)',
   };
 
   const transitDetail: RouteDetail = {
@@ -123,7 +123,7 @@ export async function calculateCommute(
     distance_km: driveDistanceKm,
     is_available: cityHasGtfsTransit,
     status_note: cityHasGtfsTransit
-      ? 'Estimated transit bus / metro route'
+      ? 'Modeled transit estimate (derived from road corridor)'
       : 'No scheduled public transit data available for this city yet',
   };
 

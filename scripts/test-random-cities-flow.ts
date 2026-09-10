@@ -8,6 +8,14 @@ import { bootstrapPipeline, findMatchedCostCity } from '../src/services/bootstra
 import { getOrRegisterGlobalCity } from '../src/services/city-search';
 import { sortBrowseMode } from '../src/services/scoring';
 import GLOBAL_COST_DB from '../src/data/global-cost-database.json';
+import GLOBAL_CITIES from '../src/data/global-cities.json';
+
+const globalCityLookup = new Map<string, { lat: number; lng: number }>();
+for (const gc of (GLOBAL_CITIES as any[])) {
+  if (gc.name && gc.iso2) {
+    globalCityLookup.set(`${gc.name.toLowerCase()}:${gc.iso2.toLowerCase()}`, { lat: gc.lat, lng: gc.lng });
+  }
+}
 
 // Deterministic seedable pseudo-random generator (LCG) so runs are randomized but reproducible if needed
 function createRng(seed: number) {
@@ -125,6 +133,10 @@ async function runRandomCitiesFlowTest() {
       `[#${cityIndexNum}] ${target.city}, ${target.country} (${target.iso2}) matched in cost database`
     );
 
+    const cityCoord = globalCityLookup.get(`${target.city.toLowerCase()}:${target.iso2.toLowerCase()}`);
+    const resolvedLat = cityCoord?.lat ?? 12.5;
+    const resolvedLng = cityCoord?.lng ?? 100.5;
+
     const registeredCity = getOrRegisterGlobalCity({
       id: `city-test-${target.iso2.toLowerCase()}-${target.city.toLowerCase().replace(/[^a-z0-9]/g, '')}`,
       name: target.city,
@@ -132,8 +144,8 @@ async function runRandomCitiesFlowTest() {
       country: target.country,
       iso2: target.iso2,
       currencyCode: target.currency,
-      lat: 0.0,
-      lng: 0.0,
+      lat: resolvedLat,
+      lng: resolvedLng,
     });
 
     const country = registeredCity.country || db.countries.find((c) => c.id === registeredCity.country_id)!;
@@ -220,6 +232,18 @@ async function runRandomCitiesFlowTest() {
       assertCheck(
         Number.isFinite(area.total_monthly_cost),
         `[#${cityIndexNum}] ${target.city} -> "${area.area.name}" total cost is finite number`
+      );
+
+      // INVARIANT E: Source and confidence labeling truthfulness
+      const validSources = new Set(['osm', 'manual', 'curated', 'crowdsourced', 'modeled']);
+      assertCheck(
+        validSources.has(area.area.source),
+        `[#${cityIndexNum}] ${target.city} -> "${area.area.name}" has truthful source attribution (${area.area.source})`
+      );
+      const validConfidence = new Set(['estimated', 'low', 'medium', 'high']);
+      assertCheck(
+        validConfidence.has(area.confidence),
+        `[#${cityIndexNum}] ${target.city} -> "${area.area.name}" has valid confidence level (${area.confidence})`
       );
     }
 

@@ -4,6 +4,7 @@
 import { db } from '../src/services/database';
 import { discoverCityAreas } from '../src/services/bootstrap/area-discovery';
 import { bootstrapPipeline, type BootstrapProgressEvent } from '../src/services/bootstrap/worker-pool';
+import type { City } from '../src/types/database.types';
 
 async function runPhase3Tests() {
   console.log('====================================================');
@@ -27,21 +28,21 @@ async function runPhase3Tests() {
 
   // 1. Area Discovery for Unbootstrapped City (Bandung)
   console.log('--- 1. Area Discovery for Unbootstrapped City ---');
-  const bandungCity = {
+  const bandungCity: City = {
     id: 'city-test-bandung',
     country_id: idCountry.id,
     name: 'Bandung',
     lat: -6.9175,
     lng: 107.6191,
-    bootstrap_status: 'not_started' as const,
-    data_confidence: 'low' as const,
+    bootstrap_status: 'not_started',
+    data_confidence: 'low',
     created_at: new Date().toISOString(),
   };
   db.cities.push(bandungCity);
 
   const discoveredAreas = await discoverCityAreas(bandungCity, idCountry);
   assert(discoveredAreas.length >= 4, `Discovered ${discoveredAreas.length} neighborhood areas in Bandung`);
-  assert(discoveredAreas[0].source === 'osm', 'Discovered areas tagged with source = osm');
+  assert(discoveredAreas[0].source === 'curated' || discoveredAreas[0].source === 'osm', 'Discovered areas tagged with authentic source (curated/osm)');
   assert(typeof discoveredAreas[0].lat === 'number' && typeof discoveredAreas[0].lng === 'number', 'Areas have valid centroid coordinates');
 
   // 2. Bounded Worker Pool & Progress Event Lifecycle

@@ -1,5 +1,5 @@
 // src/components/AreaCardSkeleton.tsx
-// High-fidelity cyber-glassmorphic loading skeleton matching AreaExpenseCard layout per UI/UX Pro Max
+// Survive Atlas — Premium glassmorphic shimmer skeleton matching the new AreaExpenseCard layout
 
 import React from 'react';
 import { Loader2 } from 'lucide-react';
@@ -19,105 +19,83 @@ export const AreaCardSkeleton: React.FC<AreaCardSkeletonProps> = ({
 }) => {
   return (
     <div
-      className="area-card fade-in-card"
-      style={{
-        border: isResearching
-          ? '1px solid var(--border-medium)'
-          : '1px solid var(--border-subtle)',
-        background: 'var(--bg-card)',
-        overflow: 'hidden',
-        position: 'relative',
-        boxShadow: isResearching ? 'var(--shadow-sm)' : undefined,
-      }}
+      className={`skeleton-card stagger-item ${isResearching ? 'top-pick' : ''}`}
+      style={{ boxShadow: isResearching ? 'var(--shadow-md), 0 0 0 1px rgba(59,130,246,0.15)' : 'var(--shadow-xs)' }}
     >
-      {/* Active Research Indicator Header */}
+      {/* Researching pulse bar */}
       {isResearching && (
-        <div
-          style={{
-            padding: '0.45rem 1.25rem',
-            background: 'var(--brand-primary-light)',
-            borderBottom: '1px solid var(--border-subtle)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            fontSize: '0.8125rem',
-            color: 'var(--brand-primary)',
-            fontWeight: 600,
-          }}
-        >
+        <div className="skeleton-researching-bar">
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <Loader2 size={14} style={{ animation: 'spinRadar 1.2s linear infinite' }} />
             <span>
               {activeAreaName
                 ? `Researching ${activeAreaName} rent & meal prices…`
-                : 'Estimating neighborhood living costs…'}
+                : statusText || 'Estimating neighborhood living costs…'}
             </span>
           </div>
-          <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-            Referencing OSM &amp; PPP open data
-          </span>
+          <span style={{ fontSize: '0.6875rem', color: 'var(--text-muted)' }}>OSM &amp; PPP open data</span>
         </div>
       )}
 
-      {/* Main Card Summary Skeleton */}
-      <div className="area-card-summary" style={{ cursor: 'default' }}>
-        {/* Row 1: Area Identity on Left, Total Living Cost on Right */}
-        <div className="area-summary-top">
+      {/* Skeleton body */}
+      <div className="skeleton-body">
+        {/* Top row */}
+        <div className="area-summary-top" style={{ cursor: 'default' }}>
           <div className="area-title-cluster">
-            {/* Rank Badge */}
+            {/* Rank badge skeleton */}
             <div
               className="area-rank-badge"
               style={{
-                background: isResearching ? 'var(--brand-primary-light)' : 'var(--bg-surface-alt)',
+                background: isResearching ? 'var(--brand-primary-light)' : 'var(--border-subtle)',
                 color: isResearching ? 'var(--brand-primary)' : 'var(--text-muted)',
+                border: 'none',
               }}
             >
               {rank ? `#${rank}` : <div className="skeleton" style={{ width: 18, height: 18, borderRadius: 4 }} />}
             </div>
 
             <div className="area-heading-text">
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: 6 }}>
                 {activeAreaName ? (
-                  <span style={{ fontWeight: 700, fontSize: '1.15rem', color: 'var(--text-primary)' }}>
+                  <span style={{ fontWeight: 700, fontSize: '1.1rem', color: 'var(--text-primary)' }}>
                     {activeAreaName}
                   </span>
                 ) : (
-                  <div className="skeleton" style={{ width: 140 + ((rank || 1) % 3) * 30, height: 22 }} />
+                  <div className="skeleton" style={{ width: 140 + ((rank || 1) % 3) * 30, height: 20 }} />
                 )}
-                {statusText && (
-                  <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-                    ({statusText})
-                  </span>
+                {statusText && !activeAreaName && (
+                  <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>({statusText})</span>
                 )}
               </div>
-              <div className="skeleton" style={{ width: 120, height: 14, marginTop: 4, borderRadius: 4 }} />
+              <div className="skeleton" style={{ width: 110, height: 13 }} />
             </div>
           </div>
 
-          {/* Cost & Expand Cluster */}
+          {/* Cost skeleton */}
           <div className="area-cost-cluster">
             <div className="area-cost-amount-block">
-              <div className="area-price-sublabel" style={{ marginBottom: 4 }}>Est. Monthly Cost</div>
-              <div className="skeleton" style={{ width: 100, height: 24, borderRadius: 6 }} />
+              <div className="area-price-sublabel" style={{ marginBottom: 5 }}>Est. Living Cost</div>
+              <div className="skeleton" style={{ width: 95, height: 24 }} />
             </div>
-            <div className="skeleton" style={{ width: 22, height: 22, borderRadius: 4 }} />
+            <div className="skeleton" style={{ width: 28, height: 28, borderRadius: 8 }} />
           </div>
         </div>
 
-        {/* Row 2: Badges Row Skeleton */}
-        <div className="area-badges-row">
-          <div className="skeleton" style={{ width: 90, height: 24, borderRadius: 999 }} />
-          <div className="skeleton" style={{ width: 110, height: 24, borderRadius: 999 }} />
-          <div className="skeleton" style={{ width: 85, height: 24, borderRadius: 999 }} />
+        {/* Badges row skeleton */}
+        <div className="area-badges-row" style={{ marginTop: '0.85rem' }}>
+          <div className="skeleton" style={{ width: 88, height: 22, borderRadius: 999 }} />
+          <div className="skeleton" style={{ width: 108, height: 22, borderRadius: 999 }} />
+          <div className="skeleton" style={{ width: 82, height: 22, borderRadius: 999 }} />
         </div>
 
-        {/* Row 3: Expense Breakdown Bar Skeleton */}
-        <div className="expense-breakdown-bar-wrap">
-          <div className="skeleton" style={{ width: '100%', height: 7, borderRadius: 999 }} />
-          <div className="breakdown-legend-row" style={{ opacity: 0.5 }}>
-            <div className="skeleton" style={{ width: 55, height: 12, borderRadius: 4 }} />
-            <div className="skeleton" style={{ width: 55, height: 12, borderRadius: 4 }} />
-            <div className="skeleton" style={{ width: 65, height: 12, borderRadius: 4 }} />
+        {/* Expense bar skeleton */}
+        <div className="expense-breakdown-bar-wrap" style={{ marginTop: '0.85rem' }}>
+          <div className="skeleton" style={{ width: '100%', height: 6, borderRadius: 999 }} />
+          <div className="breakdown-legend-row" style={{ opacity: 0.45 }}>
+            <div className="skeleton" style={{ width: 52, height: 11 }} />
+            <div className="skeleton" style={{ width: 52, height: 11 }} />
+            <div className="skeleton" style={{ width: 62, height: 11 }} />
+            <div className="skeleton" style={{ width: 65, height: 11 }} />
           </div>
         </div>
       </div>
