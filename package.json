@@ -1,7 +1,8 @@
 {
   "name": "can-i-survive-there",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "A free, privacy-first, global cost-of-living recommender and neighborhood affordability engine.",
   "type": "module",
   "scripts": {
     "dev": "vite",

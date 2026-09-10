@@ -2,11 +2,19 @@
 
 > A free, privacy-first, global cost-of-living recommender and neighborhood affordability engine.
 
-[![CI](https://github.com/can-i-survive-there/can-i-survive-there/actions/workflows/ci.yml/badge.svg)](https://github.com/can-i-survive-there/can-i-survive-there/actions)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Node.js](https://img.shields.io/badge/Node.js-20%2B-green.svg)](https://nodejs.org)
-[![React](https://img.shields.io/badge/React-19-blue.svg)](https://react.dev)
-[![TypeScript](https://img.shields.io/badge/TypeScript-6.0-blue.svg)](https://www.typescriptlang.org/)
+<p align="center">
+  <img src="docs/screenshots/hero-landing.png" alt="Can I Survive There? — Relocation & Living Cost Guide" width="100%" style="border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.12);" />
+</p>
+
+<p align="center">
+  <a href="https://github.com/can-i-survive-there/can-i-survive-there/actions"><img src="https://github.com/can-i-survive-there/can-i-survive-there/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" /></a>
+  <a href="https://nodejs.org"><img src="https://img.shields.io/badge/Node.js-20%2B-green.svg" alt="Node.js" /></a>
+  <a href="https://react.dev"><img src="https://img.shields.io/badge/React-19-blue.svg" alt="React 19" /></a>
+  <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-6.0-blue.svg" alt="TypeScript 6.0" /></a>
+  <a href="https://vite.dev"><img src="https://img.shields.io/badge/Vite-8.2-646CFF.svg" alt="Vite" /></a>
+  <a href="https://supabase.com"><img src="https://img.shields.io/badge/Supabase-Ready-3ECF8E.svg" alt="Supabase" /></a>
+</p>
 
 ---
 
@@ -35,6 +43,16 @@ Existing cost-of-living platforms and expat calculators almost always fail to an
 
 ---
 
+## 📸 Visual Previews & Key User Flows
+
+| Flow / Feature | Preview Screenshot | Highlights |
+| :--- | :--- | :--- |
+| **1. Overview & Landing**<br>Entry Pathways | <img src="docs/screenshots/hero-landing.png" width="480" alt="Overview Landing" /> | • Dual entry points: **Browse Cities** vs. **My Match**.<br>• Curated intent buttons (*Moving for College*, *Relocating for a Job*, *First-Time Independent*).<br>• Instant light/dark mode and native currency toggle. |
+| **2. Cost of Living Explorer**<br>Neighborhood Breakdown | <img src="docs/screenshots/cost-explorer.png" width="480" alt="Cost Explorer" /> | • Neighborhood-level rankings (e.g. Grogol Petamburan @ Rp 2.962.700/mo).<br>• Filter chips (*All*, *Kost & Rooms*, *Apartments*).<br>• Confidence scoring (`High Confidence (142)`).<br>• Quick-jump pills for popular metropolises. |
+| **3. Personalized Match**<br>Commute & Budget Engine | <img src="docs/screenshots/personalized-match.png" width="480" alt="Personalized Match" /> | • Auto-geocoded campus or workplace address.<br>• Customizable monthly budget / allowance.<br>• Algorithmic match score (e.g. `60% Match`, `66% of budget`, `18 min commute`).<br>• Transparent visual expense split: Kost 51%, Food 15%, Transit 7%, Grocery 27%. |
+
+---
+
 ## ✨ Features
 
 - **🌐 153,765+ Global Cities & Towns**: Instant 2-character prefix index matching across 250 sovereign countries and territories with live OpenStreetMap Nominatim fallback.
@@ -45,6 +63,54 @@ Existing cost-of-living platforms and expat calculators almost always fail to an
 - **🤖 Autonomous Cold-Start City Bootstrap**: When exploring unindexed towns, a bounded parallel worker pool discovers centroid boundaries and estimates validated metrics via mathematical GNI PPP sanity bands.
 - **🛡️ Honest & Transparent Confidence Badges**: Displays confidence metrics (`High`, `Medium`, `Low`, `Estimated`) and clearly flags synthesized quadrant fallbacks as `Modeled District`.
 - **⚡ Privacy-First & Offline Resilient**: Zero tracking cookies, local storage caching, and high-performance bundle architecture with `country-state-city` dynamically loaded on demand.
+
+---
+
+## 🌐 100% Free-Forever Deployment Guide
+
+This project is architected to run **100% free forever** on standard developer free tiers without any credit card or ongoing maintenance costs.
+
+### Architecture Overview
+- **Frontend Hosting**: **Vercel** (Hobby Plan — $0 forever) or **Cloudflare Pages** ($0 forever, unlimited bandwidth).
+- **Database & Backend**: **Supabase** (Free Plan — 500 MB PostgreSQL database, 50,000 monthly active users, 100% free).
+- **Offline Fallback**: Even without Supabase connected, the app runs completely standalone with its embedded in-memory database covering 287+ verified global metropolises.
+
+### Deploying to Vercel in 3 Steps
+
+#### Step 1: Push Repository to GitHub
+Ensure your repository is pushed to your GitHub account.
+
+```bash
+git add .
+git commit -m "feat: initial public release"
+git push origin main
+```
+
+#### Step 2: Configure Supabase (Free Tier)
+1. Sign up at [supabase.com](https://supabase.com) and create a new free project.
+2. In the Supabase Dashboard, open the **SQL Editor**.
+3. Run the migration scripts located in `supabase/migrations/`:
+   - `20260324000001_initial_schema.sql` (Creates core tables: `countries`, `cities`, `areas`, `area_metric_values`)
+   - `20260324000002_row_level_security.sql` (Enforces public read-only RLS and authenticated write policies)
+   - `20260324000003_staging_and_audit.sql` (Configures staging table for crowdsourced fact submissions)
+4. Navigate to **Project Settings → API** to copy:
+   - **Project URL** (`https://<project-ref>.supabase.co`)
+   - **anon / public key** (`eyJh...`)
+
+#### Step 3: Import into Vercel
+1. Go to [vercel.com](https://vercel.com) and click **"Add New Project"**.
+2. Select your `can-i-survive-there` GitHub repository.
+3. Vercel automatically detects **Vite**. Keep standard build settings:
+   - **Framework Preset**: `Vite`
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `dist`
+4. Add the following **Environment Variables**:
+   | Variable | Value | Description |
+   | :--- | :--- | :--- |
+   | `VITE_SUPABASE_URL` | `https://your-project.supabase.co` | Your Supabase project endpoint |
+   | `VITE_SUPABASE_ANON_KEY` | `your-anon-public-key` | Safe public anonymous API key |
+5. Click **Deploy**.
+6. Single Page Application (SPA) client-side routing is handled automatically by the included `vercel.json` rewrites and `public/_redirects`.
 
 ---
 
@@ -80,7 +146,10 @@ can-i-survive-there/
 │   ├── test-phase2.ts           # Geocoding, routing & scoring tests
 │   ├── test-phase3.ts           # Bootstrap pipeline & worker pool tests
 │   └── test-random-cities-flow.ts # 50-100 randomized cities flow verification
-└── supabase/                    # PostgreSQL DDL migrations & RLS hardening
+├── supabase/                    # PostgreSQL DDL migrations & RLS hardening
+└── docs/
+    ├── 04-testing-specification.md # SDD testing invariants specification
+    └── screenshots/             # Walkthrough screenshots & UI assets
 ```
 
 ---
@@ -95,7 +164,7 @@ can-i-survive-there/
 
 ```bash
 # Clone repository
-git clone https://github.com/your-username/can-i-survive-there.git
+git clone https://github.com/can-i-survive-there/can-i-survive-there.git
 cd can-i-survive-there
 
 # Install dependencies
